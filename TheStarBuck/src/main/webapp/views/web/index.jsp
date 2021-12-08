@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- Favicon -->
+ <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+ <!-- Boxicons -->
+ <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+ <!-- Custom StyleSheet -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <!-- animated -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+ <!-- CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+   <!-- jquery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <!-- slier-image -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- slier-image -->
+  <!--custom navigation-->
+  <link rel="stylesheet" href="css/navigation.css" />
+  <!--custom footer-->
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <title>Home</title>
+</head>
+
+<body>
+<!-- sncdsxj -->
+
+  <!-- Navigation -->
+  <nav id="header" class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="index.jsp">
+          <img src="./images/logo.png" alt="">
+        </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="products.jsp">Menu</a></li>
+        <li><a href="poster.jsp">Blog</a></li>
+
+
+        <li>
+          <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
+          <input type="checkbox" id="showdrop2" />
+          <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
+          <ul class="drop-menu2">
+            <li><a href="aboutUs.jsp">About Us</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+          </ul>
+        </li>
+
+        <!-- icons -->
+        <li class="icons">
+          <a href="#">
+            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+          </a>
+          <a href="cart.jsp">
+            <span>
+              <img src="./images/shoppingBag.svg" alt="" />
+              <small class="count d-flex">0</small>
+            </span>
+          </a>
+          <a href="login.jsp">
+            <span>
+              <img src="./images/user.svg" alt="" />
+            </span>
+          </a>
+        </li>
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+  <!-- serchBar -->
+  <section class="ipSearchBox"></section>
+  <!-- thumbnail -->
+  <div class="hero" id="hero1" >
+    <div class="row hero-layout">
+      <!-- <div class="circle "></div> -->
+      <div class="content">
+        <div class="textBox">
+          <h2 class="animate__animated animate__fadeInTopLeft" id="title_hero1">It's not just Coffee<br>It's <span>Starbucks</span></h2>
+          <p class="animate__animated animate__backInLeft" id="text_hero1">Let's check it out!</p>
+          <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
+        </div>
+        <div class="imgBox animate__animated animate__backInRight">
+          <img id="starbuckAv" src="images/img1.png" class="starbucks " />
+        </div>
+      </div>
+      <ul class="thumb ">
+        <li><img id="thumb1" src="images/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
+        <li><img id="thumb2" src="images/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
+        <li><img id="thumb3" src="images/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="image-slider">
+    <div class="image-item">
+      <div class="image">
+        <img
+          src="images/banner_mini_1.png"
+          alt="" />
+      </div>
+    </div>
+    <div class="image-item">
+      <div class="image">
+        <img
+          src="images/banner_mini_2.png"
+          alt="" />
+      </div>
+    </div>
+    <div class="image-item">
+      <div class="image">
+        <img
+          src="images/banner_mini_3.png"
+          alt="" />
+      </div>
+    </div>
+    <div class="image-item">
+      <div class="image">
+        <img
+          src="images/banner_mini_4.png"
+          alt="" />
+      </div>
+    </div>
+    <div class="image-item">
+      <div class="image">
+        <img
+          src="images/banner_mini_5.png"
+          alt="" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Products -->
+  <section class="section products " id="products">
+    <div class="section-title">
+      <h2>Product popularity</h2>
+    </div>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="featured_tab" data-toggle="tab" href="#featured" role="tab"
+            aria-controls="featured" aria-selected="true">Featured</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="latest"
+            aria-selected="false">Latest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="bestsellers-tab" data-toggle="tab" href="#bestsellers" role="tab"
+            aria-controls="bestsellers" aria-selected="false">Bestsellers</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab"">
+        
+    <div class=" product-layout">
+
+          <div class="product" >
+            <div class="img-container">
+              <img src="./images/products/1.png" alt="" />
+              <div class="addCart">
+                <a href="productDetails.jsp">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="productDetails.jsp">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/2.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/3.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/4.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/5.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/6.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/7.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/8.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            View More
+          </a>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+
+        <div class="product-layout">
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/9.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/10.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/11.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/12.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/13.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/14.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/15.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/16.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            View More
+          </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="bestsellers" role="tabpanel" aria-labelledby="bestsellers-tab">
+
+        <div class="product-layout">
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/17.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/18.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/19.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/20.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/21.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/22.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/23.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img-container">
+              <img src="./images/products/24.png" alt="" />
+              <div class="addCart">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="sale-text">
+                <span class="section-sale">20% Off</span>
+              </div>
+
+              <ul class="side-icons">
+                <span><i class="fas fa-search"></i></span>
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fas fa-sliders-h"></i></span>
+              </ul>
+            </div>
+            <div class="bottom">
+              <div class="price-rating">
+                <div class="rating">
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
+                </div>
+              </div>
+              <a href="">Bambi Print Mini Backpack</a>
+              <div class="price">
+                <span>$150</span>
+                <span class="cancel">$160</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            View More
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+    <!-- /.container -->
+  </section>
+
+
+  <!-- Banner Begin -->
+  <section class="banner">
+    <div class="container">
+      <div class="col">
+        <img class="banner__decor" src="images/bell__xmas.png" alt="" srcset="">
+        <div class="banner_box">
+          <div class="banner_content ">
+            <h2>CELEBRATE TO X-MAS</h2>
+            <p>Come celebrate the season with our merry holiday drinks: Peppermint Mocha, Caramel Brulée Latte and
+              Toasted White Chocolate Mocha. Cheers!</p>
+            <a>find your favorite</a>
+          </div>
+          <div class="banner__pic">
+            <img src="images/banner__2.png" alt="">
+          </div>
+        </div>
+      </div>
+      <audio id="beep" preload="auto">
+        <source id="src__music" src="music/baner_decor.mp3"></source>
+      </audio>
+    </div>
+  </section>
+  <!-- Banner End -->
+
+
+  <!-- about -->
+  <section class="section about">
+    <div class="about-layout container">
+      <div class="wrapper">
+        <div class="one item">
+          <img src="images/about1.png" alt="">
+          <img src="images/about1_1.png" alt="" class="img-change">
+        </div>
+        <div class="two item">
+          <img src="images/about2.png" alt="">
+          <img src="images/about2_2.png" alt="" class="img-change">
+        </div>
+        <div class="three item">
+          <img src="images/about3.png" alt="">
+          <img src="images/about3_3.png" alt="" class="img-change">
+        </div>
+        <div class="four item">
+          <img src="images/about4.png" alt="">
+          <img src="images/about4_4.png" alt="" class="img-change">
+        </div>
+        <div class="five">
+          <div class="content">
+            <h3>Starbucks</h3>
+            <h1>About us</h1>
+            <p>Besides being proud of delicious - clean - fresh milk tea cups, we are always confident to bring
+              customers the best experience in terms of service and space.</p>
+
+
+          </div>
+          <div class="btn-box">
+            <a href="">
+              View More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section Begin -->
+  <section class="from-blog spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title from-blog__title">
+            <h2>From The Blog</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="blog__item">
+            <div class="blog__item__pic">
+              <img src="images/blog_1_title.png" alt="">
+            </div>
+            <div class="blog__item__text">
+              <ul>
+                <li><i class="far fa-calendar"></i> May 4,2019</li>
+                <li><i class="far fa-comment"></i> 5</li>
+              </ul>
+              <h5><a href="#">Cooking tips make cooking simple</a></h5>
+              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="blog__item">
+            <div class="blog__item__pic">
+              <img src="images/blog_2_title.jpg" alt="">
+            </div>
+            <div class="blog__item__text">
+              <ul>
+                <li><i class="far fa-calendar"></i> May 4,2019</li>
+                <li><i class="far fa-comment"></i> 5</li>
+              </ul>
+              <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
+              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="blog__item">
+            <div class="blog__item__pic">
+              <img src="images/blog.png" alt="">
+            </div>
+            <div class="blog__item__text">
+              <ul>
+                <li><i class="far fa-calendar"></i> May 4,2019</li>
+                <li><i class="far fa-comment"></i> 5</li>
+              </ul>
+              <h5><a href="#">Visit the clean farm in the US</a></h5>
+              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- Blog Section End -->
+
+  <!-- ordering -->
+  <section class="ordering steps">
+    <div class="ordering-layout">
+      <h2>Step by step</h2>
+      <div class="ordering-stepss">
+        <div class="item steps-one">
+          <div class="criea">
+            <img src="images/step_1.png" alt="" width="40px" height="40px">
+          </div>
+          <h4>Contact</h4>
+        </div>
+        <div class="item min">
+          <img src="images/step.png" alt="" width="40px" height="40px">
+        </div>
+        <div class="item steps-two">
+          <div class="criea">
+            <img src="images/step_2.png" alt="" width="40px" height="40px">
+          </div>
+          <h4>Create order</h4>
+        </div>
+        <div class="item min">
+          <img src="images/step.png" alt="" width="40px" height="40px">
+        </div>
+        <div class="item steps-three">
+          <div class="criea">
+            <img src="images/step_3.png" alt="" width="40px" height="40px">
+          </div>
+          <h4>Delivery</h4>
+        </div>
+        <div class="item min">
+          <img src="images/step.png" alt="" width="40px" height="40px">
+        </div>
+        <div class="item steps-four">
+          <div class="criea">
+            <img src="images/step_4.png" alt="" width="40px" height="40px">
+          </div>
+          <h4>Pay</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- messenger -->
+  <div class="messenger">
+    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
+  </div>
+  <div class="up">
+    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
+  </div>
+ 
+  <!-- Footer -->
+  <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+
+        <div class="footer-center">
+          <h3>INFORMATION</h3>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Site Map</a>
+        </div>
+
+        <div class="footer-center">
+          <h3>SOCIAL MEDIA</h3>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-facebook"></i>
+            </span>
+            <a href="#">Facebook</a>
+
+
+          </div>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-twitter"></i>
+            </span>
+            <a href="#">Twitter</a>
+
+          </div>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-instagram"></i>
+            </span>
+            <a href="#">Instagram</a>
+
+          </div>
+
+
+        </div>
+        <div class="footer-center">
+          <h3>CONTACT US</h3>
+          <div>
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            42 Dream House, Dreammy street, 7131 Dreamville, USA
+          </div>
+          <div>
+            <span>
+              <i class="far fa-envelope"></i>
+            </span>
+            company@gmail.com
+          </div>
+          <div>
+            <span>
+              <i class="fas fa-phone"></i>
+            </span>
+            456-456-4512
+          </div>
+          <div class="payment-methods">
+            <img src="./images/payment.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- slier-image -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="js/index.js"></script>
+</body>
+
+</html>
