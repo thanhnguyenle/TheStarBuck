@@ -5,25 +5,25 @@
   Time: 10:32 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ include file="/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/common/taglib.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Bootstrap 4 CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!--Icons-->
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <!--custom navigation-->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<c:url value='/template/web/images/logo.png'/>" type="image/png" />
+    <link rel="shortcut icon" href="<c:url value='/template/web/images/logo.png'/>" type="image/png"/>
     <!--Custom CSS-->
-    <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>"/>
     <!--custom footer-->
-    <link rel="stylesheet" href="<c:url value='/template/web/css/footer.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/template/web/css/footer.css'/>"/>
     <link href="<c:url value='/template/web/css/payment.css'/>" rel="stylesheet">
     <title>Payment</title>
 </head>
@@ -46,7 +46,7 @@
             <li><a href="poster.jsp">Blog</a></li>
             <li>
                 <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
-                <input type="checkbox" id="showdrop2" />
+                <input type="checkbox" id="showdrop2"/>
                 <label for="showdrop2" class="mobile-item">Page <span><i
                         class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu2">
@@ -58,17 +58,17 @@
             <!-- icons -->
             <li class="icons">
                 <a href="#">
-                    <span class="searchBt"><img src="<c:url value='/template/web/images/search.svg'/>" alt="" /></span>
+                    <span class="searchBt"><img src="<c:url value='/template/web/images/search.svg'/>" alt=""/></span>
                 </a>
                 <a href="cart.jsp">
                         <span>
-                            <img src="<c:url value='/template/web/images/shoppingBag.svg'/>" alt="" />
+                            <img src="<c:url value='/template/web/images/shoppingBag.svg'/>" alt=""/>
                             <small class="count d-flex">0</small>
                         </span>
                 </a>
                 <a href="login.jsp">
                         <span>
-                            <img src="<c:url value='/template/web/images/user.svg'/>" alt="" />
+                            <img src="<c:url value='/template/web/images/user.svg'/>" alt=""/>
                         </span>
                 </a>
             </li>
@@ -105,29 +105,38 @@
             <div id="details" class="bg-white rounded pb-5">
                 <form>
                     <!--Name-->
-                    <div class="form-group"> <label class="">Name</label>
-                        <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input type="text"
-                                                                                                        id="name" name="name" placeholder="Nguyen Van A" required> <span
-                                class="fas fa-check text-success pr-sm-2 pr-0"></span> </div>
+                    <div class="form-group"><label class="" for="name">Name</label>
+                        <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="text"
+                                                                                                       id="name"
+                                                                                                       name="name"
+                                                                                                       placeholder="Nguyen Van A"
+                                                                                                       required> <span
+                                class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
                     <!--phone number-->
-                    <div class="form-group"> <label class="">Phone number</label>
-                        <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input type="tel"
-                                                                                                        id="phone" name="phone" placeholder="0123456789" required> <span
-                                class="fas fa-check text-success pr-sm-2 pr-0"></span> </div>
+                    <div class="form-group"><label class="" for="phone">Phone number</label>
+                        <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="tel"
+                                                                                                       id="phone"
+                                                                                                       name="phone"
+                                                                                                       placeholder="0123456789"
+                                                                                                       required> <span
+                                class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
                     <!--mail-->
-                    <div class="form-group"> <label class="">Email</label>
-                        <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input type="email"
-                                                                                                        id="email" name="email" placeholder="david.343@gmail.com"> <span
-                                class="fas fa-check text-success pr-sm-2 pr-0"></span> </div>
+                    <div class="form-group"><label class="" for="email">Email</label>
+                        <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="email"
+                                                                                                       id="email"
+                                                                                                       name="email"
+                                                                                                       placeholder="david.343@gmail.com">
+                            <span
+                                    class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
 
                     <div class="row">
-                       <!--Country-->
-                         <div class="col-lg-6">
+                        <!--Country-->
+                        <div class="col-lg-6">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label for="country">Country</label>
                                 <select class="d-flex jusify-content-start align-items-center rounded p-2"
                                         name="country" id="country">
                                     <option value="Vietnam">Vietnam</option>
@@ -137,55 +146,62 @@
                         </div>
                         <!--City-->
                         <div class="col-lg-6">
-                            <div class="form-group"> <label>City</label>
-                                <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input
-                                        type="text" id="city" name="city" placeholder="TP Hồ Chí Minh"> <span
-                                        class="fas fa-check text-success pr-2"></span> </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <select class="d-flex jusify-content-start align-items-center rounded p-2"
+                                        name="city" id="city">
+                                </select>
                             </div>
                         </div>
+                    </div>
+                    <!--Province-->
+                    <div class="form-group">
+                        <label for="province">Province</label>
+                        <select class="d-flex jusify-content-start align-items-center rounded p-2"
+                                name="province" id="province">
+                        </select>
                     </div>
 
                     <div class="row">
-                        <!--Province-->
-                        <div class="col-lg-6">
-                            <div class="form-group"> <label>Province</label>
-                                <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input
-                                        type="text" id="province" name="province" placeholder="Linh Trung" required> <span
-                                        class="fas fa-check text-success pr-2"></span> </div>
-                            </div>
-                        </div>
                         <!--District-->
                         <div class="col-lg-6">
-                            <div class="form-group"> <label>District</label>
-                                <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input
-                                        type="text" id="district" name="district" placeholder="Thu Duc" required>
-                                    <span class="fas fa-check text-success pr-2"></span> </div>
+                            <div class="form-group">
+                                <label for="district">District</label>
+                                <select class="d-flex jusify-content-start align-items-center rounded p-2"
+                                        name="district" id="district">
+                                </select>
+                            </div>
+                        </div>
+                        <!--Ward-->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="ward">Ward</label>
+                                <select class="d-flex jusify-content-start align-items-center rounded p-2"
+                                        name="ward" id="ward">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Address Detail</label>
+                            <div class="d-flex jusify-content-start align-items-center rounded p-2"><label>
+                                <input
+                                        type="text" value="NY" id="addressDetail" name="addressDetail">
+                            </label> <span class="fas fa-check text-success pr-sm-2 pr-0"></span>
                             </div>
                         </div>
                     </div>
-                    <!--Ward-->
-                        <div class="form-group"> <label>Ward</label>
-                            <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input
-                                    type="text" id="ward" name="ward" placeholder="Khu phố 6" required>
-                                <span class="fas fa-check text-success pr-2"></span> </div>
-                        </div>
-
-                    <div class="form-group"> <label>Address Detail</label>
-                        <div class="d-flex jusify-content-start align-items-center rounded p-2"> <input
-                                type="text" value="NY"> <span class="fas fa-check text-success pr-sm-2 pr-0"></span>
-                        </div>
-                    </div>
-
                 </form>
-            </div> <input type="checkbox" checked> <label>Shipping address is same as billing</label>
+            </div>
+            <label>
+                <input type="checkbox" checked>
+            </label> <label>Shipping address is same as billing</label>
             <div id="address" class="bg-light rounded mt-3">
-                <div class="h5 font-weight-bold text-primary"> Shopping Address </div>
+                <div class="h5 font-weight-bold text-primary"> Shopping Address</div>
                 <div class="d-md-flex justify-content-md-start align-items-md-center pt-3">
-                    <div class="mr-auto"> <b>Home Address</b>
+                    <div class="mr-auto"><b>Home Address</b>
                         <p class="text-justify text-muted">542 W.14th Street</p>
                         <p class="text-uppercase text-muted">NY</p>
                     </div>
-                    <div class="rounded py-2 px-3" id="register"> <a href="#"> <b>Register Now</b> </a>
+                    <div class="rounded py-2 px-3" id="register"><a href="#"> <b>Register Now</b> </a>
                         <p class="text-muted">Create account to have multiple address saved</p>
                     </div>
                 </div>
@@ -195,20 +211,23 @@
             <div id="cart" class="bg-white rounded">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="h6">Cart Summary</div>
-                    <div class="h6"> <a href="#">Edit</a> </div>
+                    <div class="h6"><a href="#">Edit</a></div>
                 </div>
                 <div class="d-flex jusitfy-content-between align-items-center pt-3 pb-2 border-bottom">
-                    <div class="item pr-2"> <img
+                    <div class="item pr-2"><img
                             src="https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                             alt="" width="80" height="80">
                         <div class="number">2</div>
                     </div>
-                    <div class="d-flex flex-column px-3"> <b class="h5">BattleCreek Coffee</b> <a href="#"
-                                                                                                  class="h5 text-primary">C-770</a> </div>
-                    <div class="ml-auto"> <b class="h5">$80.9</b> </div>
+                    <div class="d-flex flex-column px-3"><b class="h5">BattleCreek Coffee</b> <a href="#"
+                                                                                                 class="h5 text-primary">C-770</a>
+                    </div>
+                    <div class="ml-auto"><b class="h5">$80.9</b></div>
                 </div>
-                <div class="my-3"> <input type="text" class="w-100 form-control text-center"
-                                          placeholder="Gift Card or Promo Card"> </div>
+                <div class="my-3"><label>
+                    <input type="text" class="w-100 form-control text-center"
+                           placeholder="Gift Card or Promo Card">
+                </label></div>
                 <div class="d-flex align-items-center">
                     <div class="display-5">Subtotal</div>
                     <div class="ml-auto font-weight-bold">$80.9</div>
@@ -227,8 +246,9 @@
             </div>
             <p class="text-muted">Need help with an order?</p>
             <p class="text-muted"><a href="#" class="text-danger">Hotline:</a>+314440160 (International)</p>
-            <div class="h4 pt-3"> <span class="fas fa-shield-alt text-primary pr-2"></span> Security of your
-                shopping</div>
+            <div class="h4 pt-3"><span class="fas fa-shield-alt text-primary pr-2"></span> Security of your
+                shopping
+            </div>
             <div id="summary" class="bg-white rounded py-2 my-4">
                 <div class="table-responsive">
                     <table class="table table-borderless w-75">
@@ -249,7 +269,7 @@
                             <td>
                                 <div class="d-flex align-items-center"> <span
                                         class="fas fa-minus btn text-muted"></span> <span>2</span> <span
-                                        class="fas fa-plus btn text-muted"></span> </div>
+                                        class="fas fa-plus btn text-muted"></span></div>
                             </td>
                         </tr>
                         </tbody>
@@ -267,14 +287,14 @@
                 </div>
                 <div class="col-md-6 pt-md-0 pt-3">
                     <div class="btnNav ml-auto text-uppercase btnContinue"><span class="fas fa-lock"></span>
-                        Continue</div>
+                        Continue
+                    </div>
                 </div>
             </div>
-            <div class="text-muted pt-3" id="mobile"> <span class="fas fa-lock"></span>Your information is save
+            <div class="text-muted pt-3" id="mobile"><span class="fas fa-lock"></span>Your information is save
             </div>
         </div>
     </div>
-    <div class="text-muted"> <span class="fas fa-lock"></span> Your information is save </div>
 </div>
 
 <!-- messenger -->
@@ -314,7 +334,7 @@
             </span>
                     <a href="#">Twitter</a>
 
-                </div >
+                </div>
                 <div class="social_media">
             <span>
               <i class="fab fa-instagram"></i>
