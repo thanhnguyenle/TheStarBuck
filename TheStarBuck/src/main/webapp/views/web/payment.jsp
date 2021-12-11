@@ -19,7 +19,7 @@
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <!--custom navigation-->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<c:url value='/template/web/images/logo.png'/>" type="image/png" />
+    <link rel="shortcut icon" href="<c:url value='https://i.ibb.co/nMxcqW4/logo.png'/>" type="image/png" />
     <!--Custom CSS-->
     <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>" />
     <!--custom footer-->
@@ -31,51 +31,7 @@
 <body>
 
 <!-- Navigation -->
-<nav id="header" class="nav">
-    <div class="wrapper container">
-        <div class="logo"><a href="index.jsp">
-            <img src="<c:url value='/template/web/images/logo.png'/>" alt="">
-        </a>
-        </div>
-        <ul class="nav-list">
-            <div class="top">
-                <label class="btn close-btn"><i class="fas fa-times"></i></label>
-            </div>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="products.jsp">Menu</a></li>
-            <li><a href="poster.jsp">Blog</a></li>
-            <li>
-                <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
-                <input type="checkbox" id="showdrop2" />
-                <label for="showdrop2" class="mobile-item">Page <span><i
-                        class="fas fa-chevron-down"></i></span></label>
-                <ul class="drop-menu2">
-                    <li><a href="aboutUs.jsp">About Us</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
-                </ul>
-            </li>
-
-            <!-- icons -->
-            <li class="icons">
-                <a href="#">
-                    <span class="searchBt"><img src="<c:url value='/template/web/images/search.svg'/>" alt="" /></span>
-                </a>
-                <a href="cart.jsp">
-                        <span>
-                            <img src="<c:url value='/template/web/images/shoppingBag.svg'/>" alt="" />
-                            <small class="count d-flex">0</small>
-                        </span>
-                </a>
-                <a href="login.jsp">
-                        <span>
-                            <img src="<c:url value='/template/web/images/user.svg'/>" alt="" />
-                        </span>
-                </a>
-            </li>
-        </ul>
-        <label class="btn open-btn"><i class="fas fa-bars"></i></label>
-    </div>
-</nav>
+<%@ include file="layout/header.jsp" %>
 <!-- Navigation -->
 <!-- serchBar -->
 <section class="ipSearchBox"></section>
@@ -279,7 +235,7 @@
 
 <!-- messenger -->
 <div class="messenger">
-    <a href=""><img src="<c:url value='/template/web/images/mees.png'/>" alt="" width="70px"></a>
+    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>
 </div>
 <div class="up">
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
@@ -287,72 +243,7 @@
 
 
 <!-- Footer -->
-<footer id="footer" class="section footer">
-    <div class="container">
-        <div class="footer-container">
-
-            <div class="footer-center">
-                <h3>INFORMATION</h3>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Site Map</a>
-            </div>
-
-            <div class="footer-center">
-                <h3>Social Media</h3>
-                <div class="social_media">
-            <span>
-              <i class="fab fa-facebook"></i>
-            </span>
-                    <a href="#">Facebook</a>
-
-
-                </div>
-                <div class="social_media">
-            <span>
-              <i class="fab fa-twitter"></i>
-            </span>
-                    <a href="#">Twitter</a>
-
-                </div >
-                <div class="social_media">
-            <span>
-              <i class="fab fa-instagram"></i>
-            </span>
-                    <a href="#">Instagram</a>
-
-                </div>
-
-
-            </div>
-            <div class="footer-center">
-                <h3>CONTACT US</h3>
-                <div>
-            <span>
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-                    42 Dream House, Dreammy street, 7131 Dreamville, USA
-                </div>
-                <div>
-            <span>
-              <i class="far fa-envelope"></i>
-            </span>
-                    company@gmail.com
-                </div>
-                <div>
-            <span>
-              <i class="fas fa-phone"></i>
-            </span>
-                    456-456-4512
-                </div>
-                <div class="payment-methods">
-                    <img src="<c:url value='/template/web/images/payment.png'/>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-</footer>
+<%@ include file="layout/footer.jsp" %>
 <!-- End Footer -->
 
 <!--Bootstrap 4 JS-->

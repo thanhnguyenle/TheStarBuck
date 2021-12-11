@@ -1,9 +1,22 @@
+// const imgBox = document.querySelector(".personalImg");
+// const imgAdKA = document.querySelector("#adKA");
+// const imgAdNhu = document.querySelector("#adNhu");
+// const imgAdThanh = document.querySelector("#adThanh");
+// const fullName = document.querySelector(".fullName");
+// const idStu = document.querySelector(".idStu");
+
 const openNav = document.querySelector(".open-btn");
 const closeNav = document.querySelector(".close-btn");
 const menu = document.querySelector(".nav-list");
 const searchBt = document.querySelector(".searchBt");
 const ipSearchBox = document.querySelector(".ipSearchBox");
 const iconUp = document.querySelector(".iconUp");
+const clickKA = document.querySelector("#clickKA");
+const clickThanh = document.querySelector("#clickThanh");
+const clickNhu = document.querySelector("#clickNhu");
+const cClickKA = document.querySelector(".clickKA");
+const cClickThanh = document.querySelector(".clickThanh");
+const cClickNhu = document.querySelector(".clickNhu");
 
 
 console.log("abcd");
@@ -20,7 +33,6 @@ function remove1() {
   menu.classList.remove("show");
 }
 function onclick1() {
-    // openNav.classList.toggle("label")
     if (flag === 0) {
         add1();
         flag++;
@@ -67,6 +79,12 @@ links.map((link) => {
     document.body.classList.remove("show");
   });
 });
+
+
+
+
+
+
 // shadow when scrolling use jquery
 $(window).scroll(function () {
     var scroll = $(window).scrollTop();
@@ -98,6 +116,54 @@ function onclick() {
 }
 searchBt.addEventListener("click", onclick);
 
+
+var count = 0;
+const onClickChangeAd = (event) => {
+    const temp = event.target.id;
+    console.log(temp);
+    if(count === 0 &&temp === "clickNhu"){
+       cClickNhu.style.color='#000000';
+       count++;
+    }
+    else if(temp === "clickNhu"){
+      cClickNhu.style.color='#ffffff';
+      count = 0;
+    }
+}
+
+var count1 = 0;
+const onClickChangeAd1 = (event) => {
+    const temp = event.target.id;
+    console.log(temp);
+    if(count1 === 0 &&temp === "clickThanh"){
+       cClickThanh.style.color='#000000';
+       count1++;
+    }
+    else if(temp === "clickThanh"){
+      cClickThanh.style.color='#ffffff';
+      count1 = 0;
+    }
+  }
+
+ var count2 = 0;
+const onClickChangeAd2 = (event) => {
+    const temp = event.target.id;
+    console.log(temp);
+    if(count2 === 0 &&temp === "clickKA"){
+       cClickKA.style.color='#000000';
+       count2++;
+    }
+    else if(temp === "clickKA"){
+      cClickKA.style.color='#ffffff';
+      count2 = 0;
+    }
+  }
+
+clickKA.addEventListener("click", onClickChangeAd2);
+clickNhu.addEventListener("click", onClickChangeAd);
+clickThanh.addEventListener("click", onClickChangeAd1);
+
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -116,45 +182,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 iconUp.addEventListener("click", scrollFunction);
-
-
-
-
-
-$(document).ready(function () {
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-
-        var href = $(e.target).attr('href');
-        var $curr = $(".checkout-bar  a[href='" + href + "']").parent();
-
-        $('.checkout-bar li').removeClass();
-
-        $curr.addClass("active");
-        $curr.prevAll().addClass("visited");
-    });
-});
-
-//AJAX read file json -> generate list province, district, ward
-$(document).ready(function (){
-    const xmlhttp = new XMLHttpRequest();
-    const url = "https://provinces.open-api.vn/api/?depth=3";
-
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            const myArr = JSON.parse(this.responseText);
-            myFunction(myArr);
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-
-    function myFunction(arr) {
-        let out = "";
-        let i;
-        for(i = 0; i < arr.length; i++) {
-            out += '<a href="' + arr[i].url + '">' +
-                arr[i].display + '</a><br>';
-        }
-        document.getElementById("id01").innerHTML = out;
-    }
-});

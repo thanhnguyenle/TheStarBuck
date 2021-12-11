@@ -1,3 +1,5 @@
+<%@ include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <!-- Favicon -->
- <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+ <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
  <!-- Boxicons -->
@@ -31,10 +33,10 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- slier-image -->
   <!--custom navigation-->
-  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>"/>
   <!--custom footer-->
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="<c:url value='/template/web/css/footer.css'/>" />
+  <link rel="stylesheet" href="<c:url value='/template/web/css/home.css'/>" />
   <title>Home</title>
 </head>
 
@@ -42,52 +44,7 @@
 <!-- sncdsxj -->
 
   <!-- Navigation -->
-  <nav id="header" class="nav">
-    <div class="wrapper container">
-      <div class="logo"><a href="index.jsp">
-          <img src="./images/logo.png" alt="">
-        </a>
-      </div>
-      <ul class="nav-list">
-        <div class="top">
-          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
-        </div>
-        <li><a href="index.jsp">Home</a></li>
-        <li><a href="products.jsp">Menu</a></li>
-        <li><a href="poster.jsp">Blog</a></li>
-
-
-        <li>
-          <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
-          <input type="checkbox" id="showdrop2" />
-          <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
-          <ul class="drop-menu2">
-            <li><a href="aboutUs.jsp">About Us</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-          </ul>
-        </li>
-
-        <!-- icons -->
-        <li class="icons">
-          <a href="#">
-            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
-          </a>
-          <a href="cart.jsp">
-            <span>
-              <img src="./images/shoppingBag.svg" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
-          </a>
-          <a href="login.jsp">
-            <span>
-              <img src="./images/user.svg" alt="" />
-            </span>
-          </a>
-        </li>
-      </ul>
-      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
-    </div>
-  </nav>
+<%@ include file="layout/header.jsp" %>
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- thumbnail -->
@@ -101,13 +58,13 @@
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
-          <img id="starbuckAv" src="images/img1.png" class="starbucks " />
+          <img id="starbuckAv" src="<c:url value='https://i.ibb.co/2FjC2zg/img1.png'/>" class="starbucks " />
         </div>
       </div>
       <ul class="thumb ">
-        <li><img id="thumb1" src="images/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
-        <li><img id="thumb2" src="images/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
-        <li><img id="thumb3" src="images/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
+        <li><img id="thumb1"  src="<c:url value='https://i.ibb.co/j4YxX6j/thumb1.png'/>" class="animate__animated animate__backInUp animate__delay-1s"></li>
+        <li><img id="thumb2" src="<c:url value='https://i.ibb.co/25ZcP5F/thumb2.png'/>" class="animate__animated animate__backInUp animate__delay-2s"></li>
+        <li><img id="thumb3" src="<c:url value='https://i.ibb.co/cQb0DNS/thumb3.png'/>" class="animate__animated animate__backInUp animate__delay-3s"></li>
       </ul>
     </div>
   </div>
@@ -116,35 +73,35 @@
     <div class="image-item">
       <div class="image">
         <img
-          src="images/banner_mini_1.png"
+         src="<c:url value='https://i.ibb.co/M8jxQyG/banner-mini-1.png'/>"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-          src="images/banner_mini_2.png"
+         src="<c:url value='https://i.ibb.co/Nms68wt/banner-mini-2.png'/>"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-          src="images/banner_mini_3.png"
+         src="<c:url value='https://i.ibb.co/0GZxQj0/banner-mini-3.png'/>"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-          src="images/banner_mini_4.png"
+        src="<c:url value='https://i.ibb.co/fS7SPHp/banner-mini-4.png'/>"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-          src="images/banner_mini_5.png"
+        src="<c:url value='https://i.ibb.co/6PMh170/banner-mini-5.png'/>"
           alt="" />
       </div>
     </div>
@@ -1226,72 +1183,7 @@
   </div>
  
   <!-- Footer -->
-  <footer id="footer" class="section footer">
-    <div class="container">
-      <div class="footer-container">
-
-        <div class="footer-center">
-          <h3>INFORMATION</h3>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Site Map</a>
-        </div>
-
-        <div class="footer-center">
-          <h3>SOCIAL MEDIA</h3>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-facebook"></i>
-            </span>
-            <a href="#">Facebook</a>
-
-
-          </div>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-twitter"></i>
-            </span>
-            <a href="#">Twitter</a>
-
-          </div>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-instagram"></i>
-            </span>
-            <a href="#">Instagram</a>
-
-          </div>
-
-
-        </div>
-        <div class="footer-center">
-          <h3>CONTACT US</h3>
-          <div>
-            <span>
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-            42 Dream House, Dreammy street, 7131 Dreamville, USA
-          </div>
-          <div>
-            <span>
-              <i class="far fa-envelope"></i>
-            </span>
-            company@gmail.com
-          </div>
-          <div>
-            <span>
-              <i class="fas fa-phone"></i>
-            </span>
-            456-456-4512
-          </div>
-          <div class="payment-methods">
-            <img src="./images/payment.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </footer>
+<%@ include file="layout/footer.jsp.jsp" %>
   <!-- End Footer -->
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
