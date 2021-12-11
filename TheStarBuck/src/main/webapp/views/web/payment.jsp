@@ -19,7 +19,11 @@
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <!--custom navigation-->
     <!-- Favicon -->
+<<<<<<< HEAD
     <link rel="shortcut icon" href="<c:url value='/template/web/images/logo.png'/>" type="image/png"/>
+=======
+    <link rel="shortcut icon" href="<c:url value='https://i.ibb.co/nMxcqW4/logo.png'/>" type="image/png" />
+>>>>>>> origin/main
     <!--Custom CSS-->
     <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>"/>
     <!--custom footer-->
@@ -31,6 +35,7 @@
 <body>
 
 <!-- Navigation -->
+<<<<<<< HEAD
 <nav id="header" class="nav">
     <div class="wrapper container">
         <div class="logo"><a href="index.jsp">
@@ -76,6 +81,9 @@
         <label class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
 </nav>
+=======
+<%@ include file="layout/header.jsp" %>
+>>>>>>> origin/main
 <!-- Navigation -->
 <!-- serchBar -->
 <section class="ipSearchBox"></section>
@@ -299,7 +307,7 @@
 
 <!-- messenger -->
 <div class="messenger">
-    <a href=""><img src="<c:url value='/template/web/images/mees.png'/>" alt="" width="70px"></a>
+    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>
 </div>
 <div class="up">
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
@@ -307,6 +315,7 @@
 
 
 <!-- Footer -->
+<<<<<<< HEAD
 <footer id="footer" class="section footer">
     <div class="container">
         <div class="footer-container">
@@ -373,6 +382,9 @@
     </div>
 
 </footer>
+=======
+<%@ include file="layout/footer.jsp" %>
+>>>>>>> origin/main
 <!-- End Footer -->
 
 <!--Bootstrap 4 JS-->
