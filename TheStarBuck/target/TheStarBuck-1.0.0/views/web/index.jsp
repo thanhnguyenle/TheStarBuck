@@ -129,13 +129,13 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab"">
+        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab">
         
     <div class=" product-layout">
 
           <div class="product" >
             <div class="img-container">
-              <img src="./images/products/1.png" alt="" />
+              <img src="https://i.ibb.co/fqK0cqx/1.png" alt="" />
               <div class="addCart">
                 <a href="productDetails.jsp">
                   <i class="fas fa-shopping-cart"></i>
@@ -171,7 +171,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="./images/products/2.png" alt="" />
+              <img src="https://i.ibb.co/wYR3W5d/2.png" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
@@ -1183,7 +1183,7 @@
   </div>
  
   <!-- Footer -->
-<%@ include file="layout/footer.jsp.jsp" %>
+<%@ include file="layout/footer.jsp" %>
   <!-- End Footer -->
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
