@@ -13,8 +13,12 @@ public class DBConnection {
     }
 
     public static DBConnection getInstance() {
-        if (dbConnection == null) {
-            dbConnection = new DBConnection();
+        try {
+            if (dbConnection == null || dbConnection.getConnection().isClosed()) {
+                dbConnection = new DBConnection();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return dbConnection;
     }
