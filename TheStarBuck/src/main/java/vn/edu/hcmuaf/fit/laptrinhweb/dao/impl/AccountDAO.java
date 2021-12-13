@@ -1,5 +1,29 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
-public class PaymentDAO {
+import vn.edu.hcmuaf.fit.laptrinhweb.dao.IAccountDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 
+import java.util.List;
+
+public class AccountDAO extends AbstractDAO_normal<Account> implements IAccountDAO {
+    private static AccountDAO instance;
+
+    private AccountDAO() {
+    }
+
+    public static AccountDAO getInstance(){
+        if(instance == null)
+            instance = new AccountDAO();
+        return instance;
+    }
+
+    @Override
+    public List<Account> findAll() {
+        return null;
+    }
+
+    @Override
+    public Long save(Account account) {
+        return null;
+    }
 }

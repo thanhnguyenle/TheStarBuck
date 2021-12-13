@@ -17,6 +17,9 @@
         <servlet.version>4.0.1</servlet.version>
         <jsp.version>2.0</jsp.version>
         <jstl.version>1.2</jstl.version>
+        <inject.version>1</inject.version>
+        <mysql.connector.version>8.0.18</mysql.connector.version>
+        <weldservlet.api.version>2.4.8.Final</weldservlet.api.version>
     </properties>
 
     <dependencies>
@@ -32,7 +35,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
+            <version>${jsp.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -48,11 +51,12 @@
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
+            <version>${mysql.connector.version}</version>
         </dependency>
 
         <!--JDBC 8 maven-->
@@ -64,6 +68,11 @@
             <systemPath>${project.basedir}/lib/ojdbc8.jar</systemPath>
         </dependency>
 
+        <!--Jupiter
+       + created java servlets with RESTful APIs to handle HTTP requests and responses
+       + Designed algorithms
+       + Built relational
+       -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

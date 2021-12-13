@@ -142,7 +142,6 @@ $(document).ready(function () {
 });
 
 //AJAX read file json -> generate list province, district, ward
-<<<<<<< HEAD
 $(document).ready(function () {
     const xmlhttp = new XMLHttpRequest();
     const url = "https://provinces.open-api.vn/api/?depth=3";
@@ -156,22 +155,11 @@ $(document).ready(function () {
         if (this.readyState == 4 && this.status == 200) {
             myArrProvince = JSON.parse(this.responseText);
             addOption(myArrProvince,'#province');
-=======
-$(document).ready(function (){
-    const xmlhttp = new XMLHttpRequest();
-    const url = "https://provinces.open-api.vn/api/?depth=3";
-
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            const myArr = JSON.parse(this.responseText);
-            myFunction(myArr);
->>>>>>> origin/main
         }
     };
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 
-<<<<<<< HEAD
     function addOption(arr,id) {
         for (let i = 0; i < arr.length; i++) {
             let optionValue = arr[i].code;
@@ -236,15 +224,4 @@ $(document).ready(function (){
         }
     });
 
-=======
-    function myFunction(arr) {
-        let out = "";
-        let i;
-        for(i = 0; i < arr.length; i++) {
-            out += '<a href="' + arr[i].url + '">' +
-                arr[i].display + '</a><br>';
-        }
-        document.getElementById("id01").innerHTML = out;
-    }
->>>>>>> origin/main
 });

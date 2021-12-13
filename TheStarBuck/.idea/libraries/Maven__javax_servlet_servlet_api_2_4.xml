@@ -1,13 +1,13 @@
 <component name="libraryTable">
-  <library name="Maven: jakarta.el:jakarta.el-api:3.0.3">
+  <library name="Maven: javax.servlet:servlet-api:2.4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.m2/repository/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.m2/repository/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.m2/repository/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

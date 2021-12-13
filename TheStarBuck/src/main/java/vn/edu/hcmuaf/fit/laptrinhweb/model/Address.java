@@ -2,6 +2,16 @@ package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
 public class Address extends AbsModel {
     private String id;
+    private String idAccount;
+
+    public String getIdAccount() {
+        return idAccount;
+    }
+
+    public void setIdAccount(String idAccount) {
+        this.idAccount = idAccount;
+    }
+
     private String provinceCode;
     private String districtCode;
     private String wardCode;

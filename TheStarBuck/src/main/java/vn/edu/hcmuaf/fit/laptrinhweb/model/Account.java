@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-public class Account implements Serializable {
+public class Account extends AbsModel implements Serializable {
 	private String id;
 	private String username;
 	private String fullname;
@@ -18,6 +18,16 @@ public class Account implements Serializable {
 	private String groupId;
 	private boolean active;
 	private String rememberToken;
+	private String addressId;
+
+	public String getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(String addressId) {
+		this.addressId = addressId;
+	}
+
 	private List<String> listAddressId;
 
 	public Account() {

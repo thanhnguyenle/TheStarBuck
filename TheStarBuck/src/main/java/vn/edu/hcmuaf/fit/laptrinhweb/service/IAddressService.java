@@ -1,2 +1,10 @@
-package vn.edu.hcmuaf.fit.laptrinhweb.service;public interface IAddressService {
+package vn.edu.hcmuaf.fit.laptrinhweb.service;
+
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Address;
+
+import java.util.List;
+
+public interface IAddressService {
+    List<Address> findAll();
+    Long save(Address address);
 }

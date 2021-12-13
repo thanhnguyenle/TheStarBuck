@@ -8,7 +8,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractDAO<T> implements IGenericDAO<T> {
+public abstract class AbstractDAO_normal<T> implements IGenericDAO<T> {
+   private DBConnection dbConnection = DBConnection.getInstance();
     @Override
     public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameter) {
         List<T> results = new ArrayList<>();
@@ -19,7 +20,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
         ResultSet resultSet = null;
 
         //Step1: Establishing a Connection
-        connection = DBConnection.getInstance().getConnection();
+        connection = dbConnection.getConnection();
 
         if(connection != null) {
             try {
@@ -55,12 +56,52 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
 
     @Override
     public void update(String sql, Object... parameter) {
+        //OPEN CONNECTION
+        Connection connection = null;
+        PreparedStatement statement = null;
 
+        //Step1: Establishing a Connection
+        connection =dbConnection.getConnection();
+        if(connection!=null){
+            try{
+                //turn off auto commit :
+                //when throw 1 error, program will not update database
+                connection.setAutoCommit(false);
+
+                //Step 2: Create a statement using connection object
+                statement = connection.prepareStatement(sql);
+
+                //set multiple parameter
+                setParameter(statement,parameter);
+
+                //update
+                statement.executeUpdate();
+
+                //save to database
+                connection.commit();
+
+            }catch (SQLException e){
+                if(connection!=null){
+                    try{
+                        connection.rollback();
+                    }catch (SQLException e1){
+                        e1.printStackTrace();
+                    }
+                }
+            }finally {
+                try {
+                    if (connection != null) connection.close();
+                    if (statement != null) statement.close();
+                }catch(SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
     public Long insert(String sql, Object... parameter) {
-        return null;
+      return 0L;
     }
 
     public void setParameter(PreparedStatement statement, Object... parameters) {

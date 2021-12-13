@@ -119,30 +119,18 @@ function imgSlider(event) {
   if (temp === thumb1.id) {
     starbuckAv.src = "images/img1.png";
     // circle.style.backgroundColor = "#017143";
-<<<<<<< HEAD
-    title_banner.style.background = "#fff url('images/title1.png') repeat-x bottom left";
-=======
     title_banner.style.background = "#fff url('https://i.ibb.co/L0myK85/title1.png') repeat-x bottom left";
->>>>>>> origin/main
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb2.id) {
     starbuckAv.src = "images/img2.png";
     // circle.style.backgroundColor = "#eb7495";
-<<<<<<< HEAD
-    title_banner.style.background = "#fff url('images/title2.png') repeat-x bottom left";
-=======
     title_banner.style.background = "#fff url('https://i.ibb.co/LP8dSrR/title2.png') repeat-x bottom left";
->>>>>>> origin/main
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb3.id) {
     starbuckAv.src = "images/img3.png";
-<<<<<<< HEAD
-    title_banner.style.background = "#fff url('images/title3.png') repeat-x bottom left";
-=======
     title_banner.style.background = "#fff url('https://i.ibb.co/jGdks8G/title3.png') repeat-x bottom left";
->>>>>>> origin/main
     title_h2.style.color = "black";
     title_p.style.color = "black";
     // circle.style.backgroundColor = "#d752b1";

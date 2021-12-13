@@ -19,11 +19,8 @@
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <!--custom navigation-->
     <!-- Favicon -->
-<<<<<<< HEAD
     <link rel="shortcut icon" href="<c:url value='/template/web/images/logo.png'/>" type="image/png"/>
-=======
     <link rel="shortcut icon" href="<c:url value='https://i.ibb.co/nMxcqW4/logo.png'/>" type="image/png" />
->>>>>>> origin/main
     <!--Custom CSS-->
     <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>"/>
     <!--custom footer-->
@@ -35,56 +32,7 @@
 <body>
 
 <!-- Navigation -->
-<<<<<<< HEAD
-<nav id="header" class="nav">
-    <div class="wrapper container">
-        <div class="logo"><a href="index.jsp">
-            <img src="<c:url value='/template/web/images/logo.png'/>" alt="">
-        </a>
-        </div>
-        <ul class="nav-list">
-            <div class="top">
-                <label class="btn close-btn"><i class="fas fa-times"></i></label>
-            </div>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="products.jsp">Menu</a></li>
-            <li><a href="poster.jsp">Blog</a></li>
-            <li>
-                <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
-                <input type="checkbox" id="showdrop2"/>
-                <label for="showdrop2" class="mobile-item">Page <span><i
-                        class="fas fa-chevron-down"></i></span></label>
-                <ul class="drop-menu2">
-                    <li><a href="aboutUs.jsp">About Us</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
-                </ul>
-            </li>
-
-            <!-- icons -->
-            <li class="icons">
-                <a href="#">
-                    <span class="searchBt"><img src="<c:url value='/template/web/images/search.svg'/>" alt=""/></span>
-                </a>
-                <a href="cart.jsp">
-                        <span>
-                            <img src="<c:url value='/template/web/images/shoppingBag.svg'/>" alt=""/>
-                            <small class="count d-flex">0</small>
-                        </span>
-                </a>
-                <a href="login.jsp">
-                        <span>
-                            <img src="<c:url value='/template/web/images/user.svg'/>" alt=""/>
-                        </span>
-                </a>
-            </li>
-        </ul>
-        <label class="btn open-btn"><i class="fas fa-bars"></i></label>
-    </div>
-</nav>
-=======
 <%@ include file="layout/header.jsp" %>
->>>>>>> origin/main
-<!-- Navigation -->
 <!-- serchBar -->
 <section class="ipSearchBox"></section>
 
@@ -115,29 +63,20 @@
                     <!--Name-->
                     <div class="form-group"><label class="" for="name">Name</label>
                         <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="text"
-                                                                                                       id="name"
-                                                                                                       name="name"
-                                                                                                       placeholder="Nguyen Van A"
-                                                                                                       required> <span
+                                                                                                       id="name" name="name" placeholder="Nguyen Van A" required> <span
                                 class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
                     <!--phone number-->
                     <div class="form-group"><label class="" for="phone">Phone number</label>
                         <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="tel"
-                                                                                                       id="phone"
-                                                                                                       name="phone"
-                                                                                                       placeholder="0123456789"
-                                                                                                       required> <span
+                                                                                                       id="phone" name="phone" placeholder="0123456789" required> <span
                                 class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
                     <!--mail-->
                     <div class="form-group"><label class="" for="email">Email</label>
                         <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="email"
-                                                                                                       id="email"
-                                                                                                       name="email"
-                                                                                                       placeholder="david.343@gmail.com">
-                            <span
-                                    class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
+                                                                                                       id="email" name="email" placeholder="david.343@gmail.com">
+                            <span class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                     </div>
 
                     <div class="row">
@@ -152,23 +91,18 @@
                                 </select>
                             </div>
                         </div>
-                        <!--City-->
+
                         <div class="col-lg-6">
+                            <!--Province-->
                             <div class="form-group">
-                                <label for="city">City</label>
+                                <label for="province">Province</label>
                                 <select class="d-flex jusify-content-start align-items-center rounded p-2"
-                                        name="city" id="city">
+                                        name="province" id="province">
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <!--Province-->
-                    <div class="form-group">
-                        <label for="province">Province</label>
-                        <select class="d-flex jusify-content-start align-items-center rounded p-2"
-                                name="province" id="province">
-                        </select>
-                    </div>
+
 
                     <div class="row">
                         <!--District-->
@@ -189,19 +123,25 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group"><label>Address Detail</label>
-                            <div class="d-flex jusify-content-start align-items-center rounded p-2"><label>
-                                <input
-                                        type="text" value="NY" id="addressDetail" name="addressDetail">
-                            </label> <span class="fas fa-check text-success pr-sm-2 pr-0"></span>
+                        <div class="col-lg-12">
+                            <div class="form-group"><label for="addressDetail">Address Detail</label>
+                                <div class="d-flex jusify-content-start align-items-center rounded p-2">
+                                        <textarea style="width:100%;resize: none;border: none;" id="addressDetail"
+                                                  name="addressDetail"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
+            </div style="display:flex;font-size:0.5rem">
+            <div>
+                <input type="checkbox" id="checkboxSave" name="checkboxSave" checked>
+                <label for="checkboxSave">Save this address</label>
             </div>
-            <label>
-                <input type="checkbox" checked>
-            </label> <label>Shipping address is same as billing</label>
+            <div>
+                <input type="checkbox" id="checkboxBilling" name="checkboxBilling" checked>
+                <label for="checkboxBilling">Shipping address is same as billing</label>
+            </div>
             <div id="address" class="bg-light rounded mt-3">
                 <div class="h5 font-weight-bold text-primary"> Shopping Address</div>
                 <div class="d-md-flex justify-content-md-start align-items-md-center pt-3">
@@ -209,8 +149,8 @@
                         <p class="text-justify text-muted">542 W.14th Street</p>
                         <p class="text-uppercase text-muted">NY</p>
                     </div>
-                    <div class="rounded py-2 px-3" id="register"><a href="#"> <b>Register Now</b> </a>
-                        <p class="text-muted">Create account to have multiple address saved</p>
+                    <div class="rounded py-2 px-3" id="register"><a href="#"> <b>List Address</b> </a>
+                        <p class="text-muted">Have multiple address saved</p>
                     </div>
                 </div>
             </div>
@@ -252,8 +192,6 @@
                     </div>
                 </div>
             </div>
-            <p class="text-muted">Need help with an order?</p>
-            <p class="text-muted"><a href="#" class="text-danger">Hotline:</a>+314440160 (International)</p>
             <div class="h4 pt-3"><span class="fas fa-shield-alt text-primary pr-2"></span> Security of your
                 shopping
             </div>
@@ -299,8 +237,6 @@
                     </div>
                 </div>
             </div>
-            <div class="text-muted pt-3" id="mobile"><span class="fas fa-lock"></span>Your information is save
-            </div>
         </div>
     </div>
 </div>
@@ -312,81 +248,7 @@
 <div class="up">
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
-
-
-<!-- Footer -->
-<<<<<<< HEAD
-<footer id="footer" class="section footer">
-    <div class="container">
-        <div class="footer-container">
-
-            <div class="footer-center">
-                <h3>INFORMATION</h3>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Site Map</a>
-            </div>
-
-            <div class="footer-center">
-                <h3>Social Media</h3>
-                <div class="social_media">
-            <span>
-              <i class="fab fa-facebook"></i>
-            </span>
-                    <a href="#">Facebook</a>
-
-
-                </div>
-                <div class="social_media">
-            <span>
-              <i class="fab fa-twitter"></i>
-            </span>
-                    <a href="#">Twitter</a>
-
-                </div>
-                <div class="social_media">
-            <span>
-              <i class="fab fa-instagram"></i>
-            </span>
-                    <a href="#">Instagram</a>
-
-                </div>
-
-
-            </div>
-            <div class="footer-center">
-                <h3>CONTACT US</h3>
-                <div>
-            <span>
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-                    42 Dream House, Dreammy street, 7131 Dreamville, USA
-                </div>
-                <div>
-            <span>
-              <i class="far fa-envelope"></i>
-            </span>
-                    company@gmail.com
-                </div>
-                <div>
-            <span>
-              <i class="fas fa-phone"></i>
-            </span>
-                    456-456-4512
-                </div>
-                <div class="payment-methods">
-                    <img src="<c:url value='/template/web/images/payment.png'/>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-</footer>
-=======
 <%@ include file="layout/footer.jsp" %>
->>>>>>> origin/main
-<!-- End Footer -->
-
 <!--Bootstrap 4 JS-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <!--Jquery-->
