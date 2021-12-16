@@ -1,6 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
-import vn.edu.hcmuaf.fit.laptrinhweb.db.JDBIConnector;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAccountService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAddressService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IProductService;
@@ -36,7 +36,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            JDBIConnector.get().open();
+            DBConnection.getInstance().getConnection();
             response.getWriter().println("Connection successful");
         }catch (Exception e){
             response.getWriter().println("Connection refuse : "+e.getMessage());

@@ -39,11 +39,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--lib of jdbi-->
-        <dependency>
-            <groupId>org.jdbi</groupId>
-            <artifactId>jdbi3-core</artifactId>
-        </dependency>
 
         <!--lib of jstl-->
         <dependency>
