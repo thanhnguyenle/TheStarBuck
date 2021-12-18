@@ -1174,14 +1174,6 @@
       </div>
     </div>
   </section>
-  <!-- messenger -->
-  <div class="messenger">
-    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
-  </div>
-  <div class="up">
-    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-  </div>
- 
   <!-- Footer -->
 <%@ include file="layout/footer.jsp" %>
   <!-- End Footer -->

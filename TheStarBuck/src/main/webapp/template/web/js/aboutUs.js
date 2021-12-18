@@ -1,10 +1,3 @@
-// const imgBox = document.querySelector(".personalImg");
-// const imgAdKA = document.querySelector("#adKA");
-// const imgAdNhu = document.querySelector("#adNhu");
-// const imgAdThanh = document.querySelector("#adThanh");
-// const fullName = document.querySelector(".fullName");
-// const idStu = document.querySelector(".idStu");
-
 const openNav = document.querySelector(".open-btn");
 const closeNav = document.querySelector(".close-btn");
 const menu = document.querySelector(".nav-list");
