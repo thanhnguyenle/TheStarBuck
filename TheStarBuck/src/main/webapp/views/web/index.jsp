@@ -45,8 +45,6 @@
 
   <!-- Navigation -->
 <%@ include file="layout/header.jsp" %>
-  <!-- serchBar -->
-  <section class="ipSearchBox"></section>
   <!-- thumbnail -->
   <div class="hero" id="hero1" >
     <div class="row hero-layout">
@@ -135,7 +133,7 @@
 
           <div class="product" >
             <div class="img-container">
-              <img src="https://i.ibb.co/fqK0cqx/1.png" alt="" />
+              <img src="<c:url value='https://i.ibb.co/Vj1KmVL/5.png'/>"alt="" />
               <div class="addCart">
                 <a href="productDetails.jsp">
                   <i class="fas fa-shopping-cart"></i>
@@ -171,7 +169,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="https://i.ibb.co/wYR3W5d/2.png" alt="" />
+              <img src="<c:url value='https://i.ibb.co/Vj1KmVL/5.png'/>" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
@@ -205,7 +203,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="./images/products/3.png" alt="" />
+              <img src="<c:url value='https://i.ibb.co/Vj1KmVL/5.png'/>" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
@@ -1113,21 +1111,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="blog__item">
-            <div class="blog__item__pic">
-              <img src="images/blog.png" alt="">
-            </div>
-            <div class="blog__item__text">
-              <ul>
-                <li><i class="far fa-calendar"></i> May 4,2019</li>
-                <li><i class="far fa-comment"></i> 5</li>
-              </ul>
-              <h5><a href="#">Visit the clean farm in the US</a></h5>
-              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </section>
@@ -1208,7 +1191,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <script src="js/index.js"></script>
+  <script src="<c:url value='/template/web/js/index.js'/>"></script>
 </body>
 
 </html>

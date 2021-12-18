@@ -33,9 +33,6 @@
 
 <!-- Navigation -->
 <%@ include file="layout/header.jsp" %>
-<!-- serchBar -->
-<section class="ipSearchBox"></section>
-
 <header>
     <!--Check-out bar-->
     <div class="row mrCheckout">
