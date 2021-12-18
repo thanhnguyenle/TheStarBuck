@@ -117,9 +117,9 @@ searchBt.addEventListener("click", onclick);
 function imgSlider(event) {
   const temp = event.target.id;
   if (temp === thumb1.id) {
-    starbuckAv.src = "images/img1.png";
+    starbuckAv.src = "https://i.ibb.co/2FjC2zg/img1.pngs";
     // circle.style.backgroundColor = "#017143";
-    title_banner.style.background = "#fff url('https://i.ibb.co/L0myK85/title1.png') repeat-x bottom left";
+    title_banner.style.background = "#fff url('https://i.ibb.co/HGdFkts/img2.png') repeat-x bottom left";
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb2.id) {
@@ -129,7 +129,7 @@ function imgSlider(event) {
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb3.id) {
-    starbuckAv.src = "images/img3.png";
+    starbuckAv.src = "https://i.ibb.co/6XHKb1m/img3.png";
     title_banner.style.background = "#fff url('https://i.ibb.co/jGdks8G/title3.png') repeat-x bottom left";
     title_h2.style.color = "black";
     title_p.style.color = "black";
