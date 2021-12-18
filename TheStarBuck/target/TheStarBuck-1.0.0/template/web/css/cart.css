@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"); /*common*/
+/*common*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
 :root {
     --primary: #017143;
     --white: #fff;
@@ -14,10 +16,12 @@
     padding: 0;
     box-sizing: inherit;
   }
+  
 
-html {
+  html {
     box-sizing: border-box;
     font-size: 62.5%;
+    cursor: url('https://i.ibb.co/c25t6d4/cursor-custom.png'), auto;
   }
   
   body {
@@ -133,6 +137,8 @@ html {
     
 }
 
+
+
   .total-price {
     display: flex;
     justify-content: flex-end;
@@ -156,7 +162,20 @@ html {
   .total-price table {
     border-top: 3px solid var(--primary);
     width: 100%;
-    max-width: 35rem;
+    max-width: 50rem;
+  }
+  .total-price input {
+    width: 100%;
+  }
+  #enterCode{
+    width: 100%;
+    height:inherit;
+    font-size:2rem;
+    padding:5px;
+    background-color: var(--primary);
+    color: var(--white);
+    border:none;
+    border-radius: 10px;
   }
   
   td:last-child {
@@ -170,7 +189,7 @@ html {
     margin-top: 2rem;
     height: 20px;
     margin-left: 2rem;
-  }
+  } 
   
   @media (max-width: 567px) {
     .cart-info p {

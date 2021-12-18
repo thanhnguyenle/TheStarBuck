@@ -1,10 +1,11 @@
 /* FOOTER */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 .footer {
     background-color: white;
     padding: 6rem 1rem;
     line-height: 3rem;
-    box-shadow: 0 0 10px rgba(0 0 0 0.4);
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
   }
   
   .footer-center span {

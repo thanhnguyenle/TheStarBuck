@@ -23,6 +23,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    cursor: url('https://i.ibb.co/c25t6d4/cursor-custom.png'), auto;
 }
 
 body {
@@ -332,7 +333,7 @@ select {
 }
 
 input[type="checkbox"]+label {
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     font-weight: 600;
     
 }
@@ -574,7 +575,7 @@ tr.text-muted td {
     color: var(--white);
     border-radius: 3rem;
     border-radius: 500px;
-    box-shadow: 0 0 6px rgba(0 0 0 0.24), 0 8px 12px rgba(0 0 0 0.14);
+    box-shadow: 0 0 6px rgb(0 0 0 / 24%), 0 8px 12px rgb(0 0 0 / 14%);
     font-size: 1.9rem;
     overflow: hidden;
     position: relative;
@@ -646,4 +647,10 @@ tr.text-muted td {
   .iconUp{
     display: none;
   }
-    
+
+  #addressDetail:focus{
+        display: block;
+        outline: none;
+        text-align: left;
+        max-width: 100%;
+  }
