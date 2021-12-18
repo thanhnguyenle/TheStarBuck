@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class FeedBack extends AbsModel {
+public class FeedBack extends AbsModel  implements Serializable {
 	private String id;
 	private String idAccount;
 	private String content;

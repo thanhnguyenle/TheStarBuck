@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Shipper extends AbsModel {
+public class Shipper extends AbsModel  implements Serializable {
 	private String id;
 	private String idOrder;
 	private double price;

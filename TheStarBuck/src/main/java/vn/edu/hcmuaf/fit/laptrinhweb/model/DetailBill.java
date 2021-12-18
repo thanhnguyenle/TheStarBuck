@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class DetailBill extends AbsModel {
+public class DetailBill extends AbsModel  implements Serializable {
 	private String id;
 	private String idBill;
 	private String idProduct;

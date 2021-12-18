@@ -5,7 +5,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 
 import java.util.List;
 
-public class AccountDAO extends AbstractDAO_normal<Account> implements IAccountDAO {
+public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     private static AccountDAO instance;
 
     private AccountDAO() {

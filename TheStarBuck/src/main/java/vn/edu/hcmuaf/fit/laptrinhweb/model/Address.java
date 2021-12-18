@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
-public class Address extends AbsModel {
+import java.io.Serializable;
+
+public class Address extends AbsModel  implements Serializable {
     private String id;
     private String idAccount;
 

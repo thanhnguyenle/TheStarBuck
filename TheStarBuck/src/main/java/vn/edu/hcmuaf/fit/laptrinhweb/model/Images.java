@@ -1,8 +1,9 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Images extends AbsModel {
+public class Images extends AbsModel  implements Serializable {
 	private String id;
 	private String link;
 	private boolean active;

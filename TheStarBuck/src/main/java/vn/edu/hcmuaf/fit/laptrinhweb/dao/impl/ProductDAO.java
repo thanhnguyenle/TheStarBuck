@@ -1,15 +1,13 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
-import vn.edu.hcmuaf.fit.laptrinhweb.dao.IAccountDAO;
-import vn.edu.hcmuaf.fit.laptrinhweb.dao.IGenericDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IProductDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ProductMapper;
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 
 import java.util.List;
 
-public class ProductDAO extends AbstractDAO_normal<Product> implements IProductDAO {
+public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     private static ProductDAO instance;
 
     private ProductDAO() {
@@ -25,7 +23,7 @@ public class ProductDAO extends AbstractDAO_normal<Product> implements IProductD
 
     @Override
     public List<Product> findAll() {
-        String sql = "SELECT * FROM Product";
+        String sql = "";
         return query(sql,new ProductMapper());
     }
 

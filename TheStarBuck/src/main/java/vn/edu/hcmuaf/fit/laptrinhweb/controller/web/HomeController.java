@@ -29,7 +29,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("product",productService.findAll());
-        RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/views/web/payment.jsp");
         rd.forward(request,response);
     }
 
