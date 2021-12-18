@@ -8,6 +8,13 @@
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<!-- messenger -->
+<div class="messenger">
+    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>
+</div>
+<div class="up">
+    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
+</div>
 <!-- Footer -->
 <footer id="footer" class="section footer">
     <div class="container">

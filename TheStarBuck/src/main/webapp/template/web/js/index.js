@@ -117,7 +117,7 @@ searchBt.addEventListener("click", onclick);
 function imgSlider(event) {
   const temp = event.target.id;
   if (temp === thumb1.id) {
-    starbuckAv.src = "https://i.ibb.co/2FjC2zg/img1.pngs";
+    starbuckAv.src = "https://i.ibb.co/2FjC2zg/img1.png";
     // circle.style.backgroundColor = "#017143";
     title_banner.style.background = "#fff url('https://i.ibb.co/L0myK85/title1.png') repeat-x bottom left";
     title_h2.style.color = "black";

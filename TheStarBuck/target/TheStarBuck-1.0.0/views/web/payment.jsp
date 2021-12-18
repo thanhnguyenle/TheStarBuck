@@ -33,8 +33,6 @@
 
 <!-- Navigation -->
 <%@ include file="layout/header.jsp" %>
-<!-- serchBar -->
-<section class="ipSearchBox"></section>
 
 <header>
     <!--Check-out bar-->
@@ -133,7 +131,7 @@
                         </div>
                     </div>
                 </form>
-            </div style="display:flex;font-size:0.5rem">
+            </div>
             <div>
                 <input type="checkbox" id="checkboxSave" name="checkboxSave" checked>
                 <label for="checkboxSave">Save this address</label>
@@ -241,13 +239,6 @@
     </div>
 </div>
 
-<!-- messenger -->
-<div class="messenger">
-    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>
-</div>
-<div class="up">
-    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-</div>
 <%@ include file="layout/footer.jsp" %>
 <!--Bootstrap 4 JS-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
