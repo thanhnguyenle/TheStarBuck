@@ -26,4 +26,13 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     public Long save(Account account) {
         return null;
     }
+
+    public Account login(String username, String password){
+        Account user = null;
+        return user;
+    }
+
+    public int register(){
+        return 0;
+    }
 }

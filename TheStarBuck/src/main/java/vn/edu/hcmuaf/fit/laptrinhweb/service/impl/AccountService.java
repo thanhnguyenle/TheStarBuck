@@ -27,4 +27,11 @@ public class AccountService implements IAccountService {
     public Long save(Account account) {
         return accountDAO.save(account);
     }
+
+    public boolean login(String username, String password){
+        if(accountDAO.login(username, password) != null){
+            return true;
+        }
+        return false;
+    }
 }
