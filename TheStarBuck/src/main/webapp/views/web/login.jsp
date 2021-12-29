@@ -1,6 +1,11 @@
+<%--<%@include file="common/taglib.jsp"%>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String error = (String) session.getAttribute("error");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +30,17 @@
                     <div class="logoImg ">
                         <a href="index.jsp"><img src="images/logo.png" alt=""> </a>
                     </div>
-                    <form>
+                    <%
+                        if(error != null) {
+                    %>
+                        <p> <%= error %> <p>
+                        <%
+                        }
+                    %>
+                    <form action="<%=request.getContextPath()%>/dologin" method="post">
                         <div class="form-row py-4 pt-5">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="inp px-3" placeholder="email">
+                                <input type="text" class="inp px-3" placeholder="username" name="username" <% if(request.getParameter("username") != null) { %> value="<%= request.getParameter("username") %>" <% } %>>
                             </div>
                         </div>
                         <div class="form-row py-3">

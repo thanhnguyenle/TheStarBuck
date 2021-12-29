@@ -28,10 +28,11 @@ public class AccountService implements IAccountService {
         return accountDAO.save(account);
     }
 
-    public boolean login(String username, String password){
-        if(accountDAO.login(username, password) != null){
-            return true;
-        }
-        return false;
+    public Account login(String username, String password){
+        return accountDAO.login(username, password);
+    }
+
+    public boolean checkUsername(String username){
+        return accountDAO.checkUsername(username);
     }
 }
