@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77e9c7d9-4a5c-498f-9f38-ee8918f81883" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck/TheStarBuck.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" afterDir="false" />
-    </list>
+    <list default="true" id="77e9c7d9-4a5c-498f-9f38-ee8918f81883" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +33,7 @@
       <workItem from="1639844443313" duration="196000" />
       <workItem from="1640782245951" duration="4000" />
       <workItem from="1640787249758" duration="38000" />
+      <workItem from="1640841932993" duration="66000" />
     </task>
     <servers />
   </component>
