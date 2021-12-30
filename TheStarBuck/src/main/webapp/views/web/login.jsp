@@ -1,4 +1,4 @@
-<%--<%@include file="common/taglib.jsp"%>--%>
+<%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String error = (String) session.getAttribute("error");
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="shortcut icon" type="images/logo.png" href="images/logo.png">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" type="images/logo.png" href="<c:url value="/template/web/image/logo.png"/>">
+    <link rel="stylesheet" href="<c:url value="/template/web/css/login.css"/>">
 </head>
 
 <body>
@@ -23,12 +23,12 @@
         <div class="">
             <div class="row g-0">
                 <div class="col-lg-5 thumb-box">
-                    <img src="images/loginTitle2.svg" class="img-fluid" alt="" srcset="">
+                    <img src="<c:url value="/template/web/image/loginTitle2.svg"/>" class="img-fluid" alt="" srcset="">
                 </div>
                 <div class="col-lg-7 text-center py-4 loginContent">
                     <h1>GET STARTED</h1>
                     <div class="logoImg ">
-                        <a href="index.jsp"><img src="images/logo.png" alt=""> </a>
+                        <a href="index.jsp"><img src="<c:url value="/template/web/image/logo.png"/>" alt=""> </a>
                     </div>
                     <%
                         if(error != null) {
@@ -37,7 +37,7 @@
                         <%
                         }
                     %>
-                    <form action="<%=request.getContextPath()%>/dologin" method="post">
+                    <form action="${pageContext.request.contextPath}/doLogin" method="post">
                         <div class="form-row py-4 pt-5">
                             <div class="offset-1 col-lg-10">
                                 <input type="text" class="inp px-3" placeholder="username" name="username" <% if(request.getParameter("username") != null) { %> value="<%= request.getParameter("username") %>" <% } %>>
@@ -63,11 +63,14 @@
                     <div class="pt-3">
                         <a class="creatAcc" href="createAcc.jsp">Create Account</a>
                     </div>
+                    <div class="pt-3">
+                        <a class="forgotPass" href="forgotpass.jsp">Forget Password</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <script src="<c:url value="/template/web/js/login.js"/>"></script>
 </body>
-<script src="js/login.js"></script>
+
 </html>

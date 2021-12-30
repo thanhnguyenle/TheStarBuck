@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREATE ACCOUNT</title>
+    <title>Create Account</title>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -24,7 +24,7 @@
                     <form>
                         <div class="form-row py-3 pt-5">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="inp px-3" placeholder="full name">
+                                <input type="text" class="inp px-3" placeholder="username">
                             </div>
                         </div>
                         <div class="form-row py-3">
@@ -54,9 +54,7 @@
                             </div>
                         </div>
                     </form>                    
-                        <a class="my-3 creatAcc" href="login.jsp">You Have An Account?</a>
-                        <br />
-                        <a class="my-3 creatAcc" href="forgotpass.jsp">Forgot Your Password?</a>
+                        <a class="my-3 creatAcc" href="login.html">You Have An Account?</a>
                     </div>
                 </div>
             </div>

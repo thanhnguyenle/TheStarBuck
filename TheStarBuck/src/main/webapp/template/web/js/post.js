@@ -116,3 +116,25 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 iconUp.addEventListener("click", scrollFunction);
+
+// Open modal in AJAX callback
+var onetime = false;
+$(document).ready(function(){
+$('#manual-ajax').click(function(event) {
+  event.preventDefault();
+  this.blur(); // Manually remove focus from clicked link.
+  if(!onetime){
+  $.get(this.href, function(html) {
+    $(html).appendTo('body').modal();
+  });
+  onetime = true;
+}
+});
+// Get the button that opens the modal
+var btn = document.getElementById('manual-ajax');
+
+// // When the user clicks the button, open the modal 
+btn.onclick = function() {
+  document.querySelectorAll(".modal").forEach(a=>a.style.display = "block");
+}
+});

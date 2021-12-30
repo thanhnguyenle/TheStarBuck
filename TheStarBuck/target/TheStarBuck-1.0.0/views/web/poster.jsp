@@ -18,7 +18,9 @@
   <link rel="stylesheet" href="css/footer.css" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="css/post.css" />
-  <title>Products</title>
+  <!--modal-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <title>Blog</title>
 </head>
 
 <body>
@@ -50,22 +52,47 @@
         </li>
 
         <!-- icons -->
-        <li class="icons">
-          <a href="#">
-            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
-          </a>
-          <a href="cart.jsp">
-            <span>
-              <img src="./images/shoppingBag.svg" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
-          </a>
-          <a href="login.jsp">
-            <span>
-              <img src="./images/user.svg" alt="" />
-            </span>
-          </a>
-        </li>
+        <!-- <li class="icons"> -->
+          <li class="icons">
+            <a href="#">
+              <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+            </a>
+          </li>
+          <li class="icons">
+            <a href="cart.jsp">
+              <span>
+                <img src="./images/shoppingBag.svg" alt="" />
+                <small class="count d-flex">5</small>
+              </span>
+            </a>
+          </li>
+          <li class="icons login">
+            <a href="login.html" class="desktop-item" style="float: left;">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+            </a>
+            <input type="checkbox" id="showdrop1" />
+            <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
+            <ul class="drop-menu1">
+              <li><a href="profileAccount.jsp" id="manual-ajax">Profile</a></li>
+              <li><a href="changePass.jsp">Change password</a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+            <!-- <a href="login.html"">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+             
+              <ul class="drop-menu2">
+                <li><a href="#">Profile</a></li>
+                <li><a href="changePass.jsp">Change password</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a> -->
+          </li>
+          
+        <!-- </li> -->
       </ul>
       <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -246,6 +273,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Custom Scripts -->
   <script src="./js/product.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 
 </html>

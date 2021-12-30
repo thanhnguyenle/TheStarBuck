@@ -182,4 +182,57 @@ $(document).ready(function() {
   });
 });
 
+// Open modal in AJAX callback
+var onetime = false;
+$(document).ready(function(){
+$('#manual-ajax').click(function(event) {
+  event.preventDefault();
+  this.blur(); // Manually remove focus from clicked link.
+  if(!onetime){
+  $.get(this.href, function(html) {
+    $(html).appendTo('body').modal();
+  });
+  onetime = true;
+}
+});
+// Get the button that opens the modal
+var btn = document.getElementById('manual-ajax');
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  document.querySelectorAll(".modal").forEach(a=>a.style.display = "block");
+}
+});
 
+//nzoom 
+function zoomForProduct(id){
+  let t = document.getElementById(id),
+  e = t.getAttribute("data-NZoomscale") <= 0 ? 1 : t.getAttribute("data-NZoomscale"),
+  s = t.clientWidth,
+  o = t.clientHeight;
+$("#"+id).replaceWith(`<div class="${id}Container">` + t.outerHTML + "</div>");
+let i = $("."+id+"Container"),
+  n = $("#"+id);
+i.mousemove(function (t) {
+  let e = $(this).offset(),
+      i = (t.pageX - e.left) / s * 100 <= 100 ? (t.pageX - e.left) / s * 100 : 100,
+      c = (t.pageY - e.top) / o * 100 <= 100 ? (t.pageY - e.top) / o * 100 : 100;
+  n.css("transform-origin", i + "% " + c + "%")
+}), i.mouseenter(function () {
+  n.css("cursor", "crosshair"), n.css("transform", "scale(" + e + ")")
+}).mouseleave(function () {
+  n.css("transition", "0.2s"), n.css("transform", "scale(1)")
+});
+}
+
+$(document).ready(function () {
+    zoomForProduct('NZoomImg1');
+    zoomForProduct('NZoomImg2');
+    zoomForProduct('NZoomImg3');
+}).ready(function () {
+  zoomForProduct('NZoomImg4');
+  zoomForProduct('NZoomImg5');
+  zoomForProduct('NZoomImg6');
+  
+}).ready(function(){
+  zoomForProduct('NZoomImg7');
+});

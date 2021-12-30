@@ -9,11 +9,12 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    doPost(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
+        rd.forward(request,response);
     }
 }

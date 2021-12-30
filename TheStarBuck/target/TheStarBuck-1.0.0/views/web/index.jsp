@@ -1,5 +1,3 @@
-<%@ include file="/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <!-- Favicon -->
- <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
+ <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
  <!-- Boxicons -->
@@ -15,16 +13,12 @@
  <!-- Custom StyleSheet -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
  <!-- animated -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
  <!-- CSS -->
  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-   <!-- jquery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <!-- slier-image -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -33,18 +27,89 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- slier-image -->
   <!--custom navigation-->
-  <link rel="stylesheet" href="<c:url value='/template/web/css/navigation.css'/>"/>
+  <link rel="stylesheet" href="css/navigation.css" />
+  <!--modal-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <!--custom footer-->
-  <link rel="stylesheet" href="<c:url value='/template/web/css/footer.css'/>" />
-  <link rel="stylesheet" href="<c:url value='/template/web/css/home.css'/>" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <title>Home</title>
 </head>
 
 <body>
 <!-- sncdsxj -->
-
   <!-- Navigation -->
-<%@ include file="layout/header.jsp" %>
+  <nav id="header" class="nav">
+    <div class="wrapper container">
+      <div class="logo"><a href="index.jsp">
+          <img src="./images/logo.png" alt="">
+        </a>
+      </div>
+      <ul class="nav-list">
+        <div class="top">
+          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="products.jsp">Menu</a></li>
+        <li><a href="poster.jsp">Blog</a></li>
+
+
+        <li>
+          <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
+          <input type="checkbox" id="showdrop2" />
+          <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
+          <ul class="drop-menu2">
+            <li><a href="aboutUs.jsp">About Us</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+          </ul>
+        </li>
+
+        <!-- icons -->
+        <!-- <li class="icons"> -->
+          <li class="icons">
+            <a href="#">
+              <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+            </a>
+          </li>
+          <li class="icons">
+            <a href="cart.jsp">
+              <span>
+                <img src="./images/shoppingBag.svg" alt="" />
+                <small class="count d-flex">5</small>
+              </span>
+            </a>
+          </li>
+          <li class="icons login">
+            <a href="login.html" class="desktop-item" style="float: left;">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+            </a>
+            <input type="checkbox" id="showdrop1" />
+            <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
+            <ul class="drop-menu1">
+              <li><a href="profileAccount.jsp" id="manual-ajax">Profile</a></li>
+              <li><a href="changePass.jsp">Change password</a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+            <!-- <a href="login.html"">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+             
+              <ul class="drop-menu2">
+                <li><a href="#">Profile</a></li>
+                <li><a href="changePass.jsp">Change password</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a> -->
+          </li>
+          
+        <!-- </li> -->
+      </ul>
+      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- thumbnail -->
@@ -58,13 +123,13 @@
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
-          <img id="starbuckAv" src="<c:url value='https://i.ibb.co/2FjC2zg/img1.png'/>" class="starbucks " />
+          <img id="starbuckAv" src="images/img1.png" class="starbucks " />
         </div>
       </div>
       <ul class="thumb ">
-        <li><img id="thumb1"  src="<c:url value='https://i.ibb.co/j4YxX6j/thumb1.png'/>" class="animate__animated animate__backInUp animate__delay-1s"></li>
-        <li><img id="thumb2" src="<c:url value='https://i.ibb.co/25ZcP5F/thumb2.png'/>" class="animate__animated animate__backInUp animate__delay-2s"></li>
-        <li><img id="thumb3" src="<c:url value='https://i.ibb.co/cQb0DNS/thumb3.png'/>" class="animate__animated animate__backInUp animate__delay-3s"></li>
+        <li><img id="thumb1" src="images/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
+        <li><img id="thumb2" src="images/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
+        <li><img id="thumb3" src="images/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
       </ul>
     </div>
   </div>
@@ -73,35 +138,35 @@
     <div class="image-item">
       <div class="image">
         <img
-         src="<c:url value='https://i.ibb.co/M8jxQyG/banner-mini-1.png'/>"
+          src="images/banner_mini_1.png"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-         src="<c:url value='https://i.ibb.co/Nms68wt/banner-mini-2.png'/>"
+          src="images/banner_mini_2.png"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-         src="<c:url value='https://i.ibb.co/0GZxQj0/banner-mini-3.png'/>"
+          src="images/banner_mini_3.png"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-        src="<c:url value='https://i.ibb.co/fS7SPHp/banner-mini-4.png'/>"
+          src="images/banner_mini_4.png"
           alt="" />
       </div>
     </div>
     <div class="image-item">
       <div class="image">
         <img
-        src="<c:url value='https://i.ibb.co/6PMh170/banner-mini-5.png'/>"
+          src="images/banner_mini_5.png"
           alt="" />
       </div>
     </div>
@@ -129,13 +194,13 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab">
+        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab"">
         
     <div class=" product-layout">
 
           <div class="product" >
             <div class="img-container">
-              <img src="https://i.ibb.co/fqK0cqx/1.png" alt="" />
+              <img src="https://i.ibb.co/VSzbmtf/147.png" alt="" />
               <div class="addCart">
                 <a href="productDetails.jsp">
                   <i class="fas fa-shopping-cart"></i>
@@ -171,7 +236,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="https://i.ibb.co/wYR3W5d/2.png" alt="" />
+              <img src="./images/products/2.png" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
@@ -1174,8 +1239,81 @@
       </div>
     </div>
   </section>
+  <!-- messenger -->
+  <div class="messenger">
+    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
+  </div>
+  <div class="up">
+    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
+  </div>
+ 
   <!-- Footer -->
-<%@ include file="layout/footer.jsp" %>
+  <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+
+        <div class="footer-center">
+          <h3>INFORMATION</h3>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Site Map</a>
+        </div>
+
+        <div class="footer-center">
+          <h3>SOCIAL MEDIA</h3>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-facebook"></i>
+            </span>
+            <a href="#">Facebook</a>
+
+
+          </div>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-twitter"></i>
+            </span>
+            <a href="#">Twitter</a>
+
+          </div>
+          <div class="social_media">
+            <span>
+              <i class="fab fa-instagram"></i>
+            </span>
+            <a href="#">Instagram</a>
+
+          </div>
+
+
+        </div>
+        <div class="footer-center">
+          <h3>CONTACT US</h3>
+          <div>
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            42 Dream House, Dreammy street, 7131 Dreamville, USA
+          </div>
+          <div>
+            <span>
+              <i class="far fa-envelope"></i>
+            </span>
+            company@gmail.com
+          </div>
+          <div>
+            <span>
+              <i class="fas fa-phone"></i>
+            </span>
+            456-456-4512
+          </div>
+          <div class="payment-methods">
+            <img src="./images/payment.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
   <!-- End Footer -->
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1183,12 +1321,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <!-- JavaScript -->
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> 
@@ -1199,8 +1331,10 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-  <script src="<c:url value='/template/web/js/index.js'/>"></script>
+  
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

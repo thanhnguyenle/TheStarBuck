@@ -9,10 +9,8 @@
   <!--Bootstrap 4 CSS -->
   <!--Important link from https://bootsnipp.com/snippets/XqvZr-->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <!------ Include the above in your HEAD tag ---------->
-  
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -28,7 +26,12 @@
   <link rel="stylesheet" href="css/footer.css" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="css/productDetails.css" />
-
+  <!--modal-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <!--lib support zoom-->
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="preload" href="https://source.unsplash.com/ILi48MzhxZA/900x1200" as="image">
+  
   <title>Product Details</title>
 </head>
 
@@ -37,7 +40,7 @@
   <!-- Navigation -->
   <nav id="header" class="nav">
     <div class="wrapper container">
-      <div class="logo"><a href="">
+      <div class="logo"><a href="index.jsp">
           <img src="./images/logo.png" alt="">
         </a>
       </div>
@@ -61,22 +64,47 @@
         </li>
 
         <!-- icons -->
-        <li class="icons">
-          <a href="#">
-            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
-          </a>
-          <a href="cart.jsp">
-            <span>
-              <img src="./images/shoppingBag.svg" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
-          </a>
-          <a href="login.jsp">
-            <span>
-              <img src="./images/user.svg" alt="" />
-            </span>
-          </a>
-        </li>
+        <!-- <li class="icons"> -->
+          <li class="icons">
+            <a href="#">
+              <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+            </a>
+          </li>
+          <li class="icons">
+            <a href="cart.jsp">
+              <span>
+                <img src="./images/shoppingBag.svg" alt="" />
+                <small class="count d-flex">5</small>
+              </span>
+            </a>
+          </li>
+          <li class="icons login">
+            <a href="login.html" class="desktop-item" style="float: left;">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+            </a>
+            <input type="checkbox" id="showdrop1" />
+            <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
+            <ul class="drop-menu1">
+              <li><a href="profileAccount.jsp" id="manual-ajax">Profile</a></li>
+              <li><a href="changePass.jsp">Change password</a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+            <!-- <a href="login.html"">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+             
+              <ul class="drop-menu2">
+                <li><a href="#">Profile</a></li>
+                <li><a href="changePass.jsp">Change password</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a> -->
+          </li>
+          
+        <!-- </li> -->
       </ul>
       <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -88,31 +116,31 @@
     <div class="row">
         <div class="col-md-6">
             <div id="slider" class="owl-carousel product-slider">
-                <div class="item">
-                      <img src="./images/products/34.png" />
+                <div class="item" id="NZoomImg3" data-NZoomscale="2">
+                      <img  src="images/products/37.png" alt="40.png"/>
                 </div>
-                <div class="item">
+                <div class="item" id="NZoomImg7" data-NZoomscale="2" >
                       <img src="./images/products/35.png" />
                 </div>
-                <div class="item">
+                <div class="item" id="NZoomImg2" data-NZoomscale="2">
                       <img src="./images/products/36.png" />
                 </div>
-                <div class="item">
-                      <img src="./images/products/37.png" />
+                <div class="item" id="NZoomImg1" data-NZoomscale="2">
+                      <img src="./images/products/40.png" />
                 </div>
-                <div class="item">
+                <div class="item" id="NZoomImg4" data-NZoomscale="2">
                       <img src="./images/products/38.png" />
                 </div>
-                <div class="item">
+                <div class="item" id="NZoomImg5" data-NZoomscale="2">
                       <img src="./images/products/39.png" />
                 </div>
-                <div class="item">
-                      <img src="./images/products/40.png" />
+                <div class="item" id="NZoomImg6" data-NZoomscale="2">
+                      <img src="./images/products/34.png" />
                 </div>
             </div>
             <div id="thumb" class="owl-carousel product-thumb">
-                <div class="item">
-                      <img src="./images/products/34.png" />
+                <div class="item" >
+                      <img src="./images/products/37.png" />
                 </div>
                 <div class="item">
                       <img src="./images/products/35.png" />
@@ -121,7 +149,7 @@
                       <img src="./images/products/36.png" />
                 </div>
                 <div class="item">
-                      <img src="./images/products/37.png" />
+                      <img src="./images/products/40.png" />
                 </div>
                 <div class="item">
                       <img src="./images/products/38.png" />
@@ -130,7 +158,7 @@
                       <img src="./images/products/39.png" />
                 </div>
                 <div class="item">
-                      <img src="./images/products/40.png" />
+                      <img src="./images/products/34.png" />
                 </div>
             </div>
         </div>
@@ -264,7 +292,7 @@
                         <input type="text" name="quantity" value="1" class="qty">
                         <div class="qtyplus">+</div>
                     </form>
-                    <a href="#" class="round-black-btn">Add to Cart</a>
+                    <a href="cart.jsp" class="round-black-btn">Add to Cart</a>
                     <h3>About It</h3>
                     <p>
                       Starfruit- and kiwi-flavored juice and real kiwi fruit pieces added to coconutmilk and shaken with ice. Summer
@@ -316,7 +344,7 @@
                         <label>Your message</label>
                         <textarea class="form-control" rows="10"></textarea>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" name="" class="form-control" placeholder="Name*">
@@ -327,7 +355,7 @@
                                 <input type="text" name="" class="form-control" placeholder="Email Id*">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <button class="round-black-btn">Submit Review</button>
                 </form>
               </div>
@@ -418,14 +446,16 @@
   <!-- End Footer -->
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <!-- Custom Scripts -->
   <script src="./js/productDetails.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>  
+    
 </body>
 
 </html>

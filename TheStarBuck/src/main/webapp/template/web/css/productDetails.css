@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
-
 :root {
 	--primary: #017143;
 	--white: #fff;
@@ -16,11 +14,12 @@
 	padding: 0;
 	box-sizing: inherit;
   }
-
-html {
+  
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+  
+  html {
 	box-sizing: border-box;
 	font-size: 62.5%;
-	cursor: url('https://i.ibb.co/c25t6d4/cursor-custom.png'), auto;
   }
   
   body {
@@ -420,11 +419,12 @@ font-size: 2rem;
 	  margin: 0rem 0.2rem;
   }
   .product-thumb .item img {
-    height: 80%;
-	width: 80%;
+    height: 100%;
+	width: 100%;
 }
 .modal-dialog{
 	margin-top:8rem;
+	z-index: 1000;
 }
 .modal-dialog .modal-title{
  font-size:2.5rem;
@@ -465,4 +465,16 @@ font-size: 2rem;
 }
 .modal-dialog .modal-content .modal-footer button.btn.btn-secondary{
 	font-size: 1.8rem;
+}
+
+.modal-backdrop{
+	z-index: 0;
+}
+
+#exampleModal{
+	position: fixed;
+	width: 100%;
+	max-width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 1050;
 }

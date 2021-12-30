@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/footer.css" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="css/cart.css" />
+  <!--modal-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>Cart</title>
 </head>
 
@@ -36,6 +38,7 @@
         <li><a href="products.jsp">Menu</a></li>
         <li><a href="poster.jsp">Blog</a></li>
 
+
         <li>
           <a href="" class="desktop-item">Page <span><i class="fas fa-chevron-down"></i></span></a>
           <input type="checkbox" id="showdrop2" />
@@ -47,22 +50,47 @@
         </li>
 
         <!-- icons -->
-        <li class="icons">
-          <a href="#">
-            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
-          </a>
-          <a href="cart.jsp">
-            <span>
-              <img src="./images/shoppingBag.svg" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
-          </a>
-          <a href="login.jsp">
-            <span>
-              <img src="./images/user.svg" alt="" />
-            </span>
-          </a>
-        </li>
+        <!-- <li class="icons"> -->
+          <li class="icons">
+            <a href="#">
+              <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+            </a>
+          </li>
+          <li class="icons">
+            <a href="cart.jsp">
+              <span>
+                <img src="./images/shoppingBag.svg" alt="" />
+                <small class="count d-flex">5</small>
+              </span>
+            </a>
+          </li>
+          <li class="icons login">
+            <a href="login.html" class="desktop-item" style="float: left;">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+            </a>
+            <input type="checkbox" id="showdrop1" />
+            <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
+            <ul class="drop-menu1">
+              <li><a href="profileAccount.jsp" id="manual-ajax">Profile</a></li>
+              <li><a href="changePass.jsp">Change password</a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+            <!-- <a href="login.html"">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+             
+              <ul class="drop-menu2">
+                <li><a href="#">Profile</a></li>
+                <li><a href="changePass.jsp">Change password</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a> -->
+          </li>
+          
+        <!-- </li> -->
       </ul>
       <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -162,23 +190,34 @@
       </tr>
     </table>
 
-    <div class="total-price">
-      <table>
-        <tr>
-          <td>Subtotal</td>
-          <td>$200</td>
-        </tr>
-        <tr>
-          <td>Tax</td>
-          <td>$50</td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td>$250</td>
-        </tr>
-      </table>
-      <a href="#" class="checkout btn">Proceed To Checkout</a>
-    </div>
+    <!-- <div class="row min"> -->
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Code</td>
+            <td><input type="text" width="100%"></td>
+            <td><button id="enterCode">Enter</button></td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td></td>
+            <td>$200</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td></td>
+            <td>$50</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td></td>
+            <td>$250</td>
+          </tr>
+        </table>
+        <a href="payment.jsp" class="checkout btn">Proceed To Checkout</a>
+      </div>
+    <!-- </div> -->
+  
   </div>
 <!-- messenger -->
 <div class="messenger">
@@ -260,6 +299,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Custom Scripts -->
   <script src="./js/cart.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 
 </html>

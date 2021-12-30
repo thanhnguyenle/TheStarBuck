@@ -117,19 +117,19 @@ searchBt.addEventListener("click", onclick);
 function imgSlider(event) {
   const temp = event.target.id;
   if (temp === thumb1.id) {
-    starbuckAv.src = "https://i.ibb.co/2FjC2zg/img1.png";
+    starbuckAv.src = "images/img1.png";
     // circle.style.backgroundColor = "#017143";
     title_banner.style.background = "#fff url('https://i.ibb.co/L0myK85/title1.png') repeat-x bottom left";
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb2.id) {
-    starbuckAv.src = "https://i.ibb.co/HGdFkts/img2.png";
+    starbuckAv.src = "images/img2.png";
     // circle.style.backgroundColor = "#eb7495";
     title_banner.style.background = "#fff url('https://i.ibb.co/LP8dSrR/title2.png') repeat-x bottom left";
     title_h2.style.color = "black";
     title_p.style.color = "black";
   } else if (temp === thumb3.id) {
-    starbuckAv.src = "https://i.ibb.co/6XHKb1m/img3.png";
+    starbuckAv.src = "images/img3.png";
     title_banner.style.background = "#fff url('https://i.ibb.co/jGdks8G/title3.png') repeat-x bottom left";
     title_h2.style.color = "black";
     title_p.style.color = "black";
@@ -233,3 +233,26 @@ $(document).ready(function () {
   });
 });
 
+// Open modal in AJAX callback
+var onetime = false;
+$(document).ready(function(){
+$('#manual-ajax').click(function(event) {
+  event.preventDefault();
+  this.blur(); // Manually remove focus from clicked link.
+  if(!onetime){
+  $.get(this.href, function(html) {
+    $(html).appendTo('body').modal();
+  });
+  onetime = true;
+}
+});
+
+// Get the button that opens the modal
+var btn = document.getElementById('manual-ajax');
+
+// // When the user clicks the button, open the modal 
+btn.onclick = function() {
+  document.querySelectorAll(".modal").forEach(a=>a.style.display = "block");
+}
+
+});

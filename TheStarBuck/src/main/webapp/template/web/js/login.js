@@ -40,4 +40,4 @@ btnElement2.addEventListener('click', function() {
     'type',
     currentType === 'password' ? 'text' : 'password'
   )
-})
+});

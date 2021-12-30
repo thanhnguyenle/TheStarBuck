@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="css/footer.css" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="css/product.css" />
-  <title>Products</title>
+  <!--modal-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <title>Menu</title>
 </head>
 
 <body>
@@ -52,22 +54,47 @@
         </li>
 
         <!-- icons -->
-        <li class="icons">
-          <a href="#">
-            <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
-          </a>
-          <a href="cart.jsp">
-            <span>
-              <img src="./images/shoppingBag.svg" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
-          </a>
-          <a href="login.jsp">
-            <span>
-              <img src="./images/user.svg" alt="" />
-            </span>
-          </a>
-        </li>
+        <!-- <li class="icons"> -->
+          <li class="icons">
+            <a href="#">
+              <span class="searchBt"><img src="./images/search.svg" alt="" /></span>
+            </a>
+          </li>
+          <li class="icons">
+            <a href="cart.jsp">
+              <span>
+                <img src="./images/shoppingBag.svg" alt="" />
+                <small class="count d-flex">5</small>
+              </span>
+            </a>
+          </li>
+          <li class="icons login">
+            <a href="login.html" class="desktop-item" style="float: left;">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+            </a>
+            <input type="checkbox" id="showdrop1" />
+            <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
+            <ul class="drop-menu1">
+              <li><a href="profileAccount.jsp" id="manual-ajax">Profile</a></li>
+              <li><a href="changePass.jsp">Change password</a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+            <!-- <a href="login.html"">
+              <span>
+                <img src="./images/user.svg" alt="" />
+              </span>
+             
+              <ul class="drop-menu2">
+                <li><a href="#">Profile</a></li>
+                <li><a href="changePass.jsp">Change password</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a> -->
+          </li>
+          
+        <!-- </li> -->
       </ul>
       <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -92,43 +119,75 @@
           <div class="panel-body">
             <ul class="nav prod-cat">
               <li >
-                <a href="#"><i class="fa fa-angle-right"></i> Dress</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Espresso</a>
                 <ul class="nav" style="display:none;">
-                  <li><a href="#">- Shirt</a></li>
-                  <li><a href="#">- Pant</a></li>
-                  <li><a href="#">- Shoes</a></li>
+                  <li><a href="#">- Ristretto</a></li>
+                  <li><a href="#">- Normal</a></li>
+                  <li><a href="#">- Lungo</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Bags &amp; Purses</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Latte</a>
+                <ul class="nav" style="display:none;">
+                  <li><a href="#">- Caffe Latte</a></li>
+                  <li><a href="#">- Cinnamon Dolce Latte</a></li>
+                  <li><a href="#">- Reserve Latte</a></li>
+                  <li><a href="#">- Bianco Latte</a></li>
+                  <li><a href="#">- Blonde Vanilla Latte</a></li>
+                  <li><a href="#">- Caramel Macchiato</a></li>
+                  <li><a href="#">- Caffe Mocha</a></li>
+                </ul>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Beauty</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Cappuccino</a>
+                <ul class="nav" style="display:none;">
+                  <li><a href="#">- Caffe Latte</a></li>
+                  <li><a href="#">- Cinnamon Dolce Latte</a></li>
+                </ul>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Coat &amp; Jacket</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Americano</a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Jeans</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Milk Tea</a>
+                <ul class="nav" style="display:none;">
+                  <li><a href="#">- Green milk tea</a></li>
+                  <li><a href="#">- Bubble milk tea</a></li>
+                  <li><a href="#">- Blueberry milk tea</a></li>
+                  <li><a href="#">- Mint milk tea</a></li>
+                  <li><a href="#">- Mango milk tea</a></li>
+                  <li><a href="#">- Peach milk tea</a></li>
+                  <li><a href="#">- Thai green tea</a></li>
+                  <li><a href="#">- Jasmine milk tea</a></li>
+                </ul>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Jewellery</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Beverage</a>
+                <ul class="nav" style="display:none;">
+                <li><a href="#">- Soda</a></li>
+                <li><a href="#">- Non-soda</a></li>
+              </ul>
               </li>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Electronics</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Cake</a>
+                <ul class="nav" style="display:none;">
+                <li><a href="#">- Pancake</a></li>
+                <li><a href="#">- Dorayaki</a></li>
+                <li><a href="#">- Cupcake</a></li>
+                <li><a href="#">- Donut</a></li>
+                <li><a href="#">- Cheesecake</a></li>
               </li>
+            </ul>
               <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Sports</a>
+                <a href="#"><i class="fa fa-angle-right"></i> Candy</a>
+                <ul class="nav" style="display:none;">
+                <li><a href="#">- Minty candy</a></li>
+                <li><a href="#">- Fruit drops</a></li>
+                <li><a href="#">- Sherbet</a></li>
+                <li><a href="#">- Lolipop</a></li>
+                <li><a href="#">- Beans</a></li>
               </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Technology</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Watches</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Accessories</a>
-              </li>
+           
             </ul>
           </div>
         </section>
@@ -161,10 +220,10 @@
                 <label>Brand</label>
                 <select class="form-control hasCustomSelect" id="selectBrand"
                   style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                  <option>Wallmart</option>
-                  <option>Catseye</option>
-                  <option>Moonsoon</option>
-                  <option>Textmart</option>
+                  <option>StarBuck</option>
+                  <option>Lays</option>
+                  <option>Fritos</option>
+                  <option>Lipton</option>
                 </select>
                 <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner"
                     style="width: 209px; display: inline-block;">Wallmart</span></span>
@@ -618,18 +677,14 @@
     </div>
   </footer>
   <!-- End Footer -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <!-- jquery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <!-- Custom Scripts -->
   <script src="./js/product.js"></script>
 </body>
