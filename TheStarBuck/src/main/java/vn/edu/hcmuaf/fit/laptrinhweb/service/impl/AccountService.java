@@ -38,17 +38,17 @@ public class AccountService implements IAccountService {
         return accountDAO.checkUsername(username);
     }
 
-    public Map<String, Object> register(String username, String email, String password, String retypePassword){
+    public Map<String, Object> register(String username, String email, String password,String retypepassword){
         Map<String, Object> output = new HashMap<>();
-        if(!accountDAO.register(username, email, password, retypePassword)){
+        if(!accountDAO.register(username, email, password)){
             if(checkUsername(username)){
                 output.put("errorUsername", "Username is exist");
             }
-            if(!password.equals(retypePassword)){
-                output.put("errorPassword", "Retyped Password is wrong");
-            }
             if(accountDAO.checkUserEmail(email)){
                 output.put("errorEmail", "Email is used");
+            }
+            if(!retypepassword.equals(password)){
+                output.put("errorPassword", "Retyped password is wrong");
             }
         }
         return output;

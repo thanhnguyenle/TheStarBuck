@@ -26,15 +26,15 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String error = "";
         //decode password
-        if(password!=null)
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(password.getBytes());
-            byte[] digest = md.digest();
-            password = DatatypeConverter.printHexBinary(digest).toUpperCase();
-        } catch (NoSuchAlgorithmException e) {
-            error = "Username is not exist";
-        }
+//        if(password!=null)
+//        try {
+//            MessageDigest md = MessageDigest.getInstance("MD5");
+//            md.update(password.getBytes());
+//            byte[] digest = md.digest();
+//            password = DatatypeConverter.printHexBinary(digest).toUpperCase();
+//        } catch (NoSuchAlgorithmException e) {
+//            error = "Username is not exist";
+//        }
         Account account = accountService.login(username, password);
         HttpSession session = request.getSession();
         if(account != null){

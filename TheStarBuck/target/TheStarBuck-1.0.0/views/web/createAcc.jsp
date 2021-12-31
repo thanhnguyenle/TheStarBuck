@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -17,7 +18,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="shortcut icon" type="images/logo.png" href="images/logo.png">
-    <link rel="stylesheet" href="css/createAcc.css">
+<%--    <link rel="stylesheet" href="css/createAcc.css">--%>
+    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/createAcc.css")%>">
 </head>
 
 <body>
@@ -52,7 +54,7 @@
                                     <%
                                         }
                                         %>
-                                <input type="text" class="inp px-3" placeholder="email" name=""email <% if(request.getParameter("email") != null) { %> value="<%= request.getParameter("email") %>" <% } %>>
+                                <input type="text" class="inp px-3" placeholder="email" name="email" <% if(request.getParameter("email") != null) { %> value="<%= request.getParameter("email") %>" <% } %>>
                             </div>
                         </div>
                         <div class="form-row py-3">

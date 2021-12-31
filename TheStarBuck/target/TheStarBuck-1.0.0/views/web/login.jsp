@@ -64,7 +64,7 @@
                     <span><i class="fab fa-facebook"></i></span>
                     <span><i class="fab fa-google-plus"></i></span>
                     <div class="pt-3">
-                        <a class="creatAcc" href="createAcc.jsp">Create Account</a>
+                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp" />">Create Account</a>
                     </div>
                     <div class="pt-3">
                         <a class="forgotPass" href="forgotpass.jsp">Forget Password</a>
