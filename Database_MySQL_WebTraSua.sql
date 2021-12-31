@@ -1143,3 +1143,19 @@ INSERT INTO `orderitem` VALUES ( 'pr0128', 'od0002', 1, NULL, '2021-12-18', '202
 INSERT INTO `orderitem` VALUES ('pr0129', 'od0003', 1000, NULL, '2021-12-18', '2021-12-18', 'thanhdev', 'thanhdev');
 INSERT INTO `orderitem` VALUES ( 'pr0130', 'od0004', 500, NULL, '2021-12-18', '2021-12-18', 'thanhdev', 'thanhdev');
 INSERT INTO `orderitem` VALUES ( 'pr0131', 'od0004',  10, NULL, '2021-12-18', '2021-12-18', 'thanhdev', 'thanhdev');
+
+---------------------------------------------------
+INSERT INTO Contact VALUES('co0001', 'ac0001',null,'19130011@st.hcmuaf.edu.vn','111111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0002', 'ac0001',null,'19130011@st.hcmuaf.edu.vn','111111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0003', 'ac0002',null,'19130206@st.hcmuaf.edu.vn','1111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0004', 'ac0002',null,'19130206@st.hcmuaf.edu.vn','1111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0005', 'ac0002',null,'19130206@st.hcmuaf.edu.vn','1111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0006', 'ac0005',null,'aadya@gmail.com','0522 702 6','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0007', 'ac0009',null,'elie@gmail.com','0559 495 2','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0008', 'ac0011',null,'saya@gmail.com','111111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0009', 'ac0018',null,'hashem@gmail.com','0559 190 2','holle',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Contact VALUES( 'co0010', 'ac0014',null,'ellana@gmail.com','0385 601 4','holle',1,'2022-09-12','2023-09-12','Dao','Dao');
+INSERT INTO Category VALUES ('cs0001', 'Cool drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
+INSERT INTO Category VALUES ('cs0002', 'Hot drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
+INSERT INTO Category VALUES ('cs0003', 'Bakery', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
+INSERT INTO Category VALUES ('cs0004', 'Bottled water', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
