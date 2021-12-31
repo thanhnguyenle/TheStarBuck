@@ -10,6 +10,7 @@ public class QUERIES {
         public static final String GET_ITEM_BYNAME = "select * from Account where ac_name = ?";
         public static final String LOGIN = "select * from Account where ac_username = ? and ac_password = ?";
         public static final String GET_ITEM_BYUSERNAME = "select * from Account where ac_username = ?";
+        public static final String GET_ITEM_BYEMAIL = "select * from Account where ac_email = ?";
     }
 
 //    PRODUCT

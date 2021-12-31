@@ -1,3 +1,11 @@
+<%@include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String errorUsername = (String) session.getAttribute("errorUsername");
+    String errorEmail = (String) session.getAttribute("errorEmail");
+    String errorPassword = (String) session.getAttribute("errorPassword");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,20 +29,35 @@
                 </div>
                 <div class="col-lg-7 text-center py-4 loginContent">
                     <h1>CREATE ACCOUNT</h1>
-                    <form>
-                        <div class="form-row py-3 pt-5">
+                    <form action="${pageContext.request.contextPath}/doRegister" method="post">
+
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="inp px-3" placeholder="username">
+                                <div class="form-row py-3 pt-5">
+                                    <%
+                                        if(errorUsername != null) {
+                                    %>
+                                    <p> <%= errorUsername %> <p>
+                                        <%
+                                        }
+                                        %>
+                                <input type="text" class="inp px-3" placeholder="username" name="username" <% if(request.getParameter("username") != null) { %> value="<%= request.getParameter("username") %>" <% } %>>
                             </div>
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="inp px-3" placeholder="email">
+                                <%
+                                    if(errorEmail != null) {
+                                %>
+                                <p> <%= errorEmail %> <p>
+                                    <%
+                                        }
+                                        %>
+                                <input type="text" class="inp px-3" placeholder="email" name=""email <% if(request.getParameter("email") != null) { %> value="<%= request.getParameter("email") %>" <% } %>>
                             </div>
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" class="inp px-3 ipnPassword"  placeholder="password" id="pass" >
+                                <input type="password" class="inp px-3 ipnPassword"  placeholder="password" id="pass" name="password" <% if(request.getParameter("password") != null) { %> value="<%= request.getParameter("password") %>" <% } %>>
                                 <button class="btn btn-outline-secondary btnPassword" type="button" id="passeye">
                                     <span class="fas fa-eye"></span>
                                   </button>
@@ -42,7 +65,14 @@
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" class="inp px-3 ipnPassword" placeholder="retype password" id="retypepass">
+                                <%
+                                    if(errorPassword != null) {
+                                %>
+                                <p> <%= errorPassword %> <p>
+                                    <%
+                                        }
+                                        %>
+                                <input type="password" class="inp px-3 ipnPassword" placeholder="retype password" id="retypepass" name="retypepassword">
                                 <button class="btn btn-outline-secondary btnPassword" type="button" id="retypeeye">
                                     <span class="fas fa-eye"></span>
                                   </button>

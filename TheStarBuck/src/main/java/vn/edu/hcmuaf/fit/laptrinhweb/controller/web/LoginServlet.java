@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String error = "";
         //decode password
-        if(password!=null) password = "";
+        if(password!=null)
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(password.getBytes());
@@ -43,8 +43,8 @@ public class LoginServlet extends HttpServlet {
         } else {
             if(!accountService.checkUsername(username)){
                 error = "Username is not exist";
-            }
-            error = "Password is incorrect";
+            } else {
+            error = "Password is incorrect";}
             session.setAttribute("error", error);
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
         }

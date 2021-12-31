@@ -30,22 +30,23 @@
                     <div class="logoImg ">
                         <a href="index.jsp"><img src="<c:url value="/template/web/image/logo.png"/>" alt=""> </a>
                     </div>
-                    <%
-                        if(error != null) {
-                    %>
-                        <p> <%= error %> <p>
+
+                    <form action="${pageContext.request.contextPath}/doLogin" method="post" class="pt-5">
                         <%
-                        }
-                    %>
-                    <form action="${pageContext.request.contextPath}/doLogin" method="post">
-                        <div class="form-row py-4 pt-5">
+                            if(error != null) {
+                        %>
+                        <p style="color: red; font-weight: bold"> <%= error %> <p>
+                        <%
+                            }
+                        %>
+                        <div class="form-row py-3 ">
                             <div class="offset-1 col-lg-10">
                                 <input type="text" class="inp px-3" placeholder="username" name="username" <% if(request.getParameter("username") != null) { %> value="<%= request.getParameter("username") %>" <% } %>>
                             </div>
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password"  class="inp px-3 ipnPassword" placeholder="password" id="pass">
+                                <input type="password"  class="inp px-3 ipnPassword" placeholder="password" id="pass" name="password">
                                 <button class="btn btn-outline-secondary btnPassword" type="button" id="passeye">
                                     <span class="fas fa-eye"></span>
                                   </button>

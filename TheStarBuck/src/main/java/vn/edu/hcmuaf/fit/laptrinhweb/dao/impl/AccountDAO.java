@@ -60,7 +60,22 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         return output;
     }
 
-    public int register(){
-        return 0;
+    public boolean register(String username, String email, String password, String retypePassword){
+        long number = insert(QUERIES.ACCOUNT.CREATE, username, email, password, retypePassword);
+        return number == 1;
+    }
+
+    public boolean checkUserEmail(String email){
+        boolean output = false;
+        Connection connection = dbConnection.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(QUERIES.ACCOUNT.GET_ITEM_BYEMAIL);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            output = rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return output;
     }
 }
