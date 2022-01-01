@@ -107,7 +107,6 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
         //OPEN CONNECTION
         Connection connection = null;
         PreparedStatement statement = null;
-        long output = 0L;
         System.out.println("1");
         //Step1: Establishing a Connection
         connection =dbConnection.getConnection();
@@ -116,7 +115,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 //turn off auto commit :
                 //when throw 1 error, program will not update database
                 System.out.println("2");
-                connection.setAutoCommit(false);
+//                connection.setAutoCommit(false);
 
                 System.out.println("3");
                 //Step 2: Create a statement using connection object
@@ -128,14 +127,14 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
 
                 System.out.println("5");
                 //insert
-                output = statement.executeUpdate();
-                System.out.println("------------" + output);
+                return (long) statement.executeUpdate();
+//                System.out.println("------------" + output);
+//
+//                System.out.println("6");
+//                //save to database
+//                connection.commit();
 
-                System.out.println("6");
-                //save to database
-                connection.commit();
 
-                return output;
 
             }catch (SQLException e){
                 if(connection!=null){
@@ -154,6 +153,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 }
             }
         }
+        System.out.println("5");
       return 0L;
     }
 
