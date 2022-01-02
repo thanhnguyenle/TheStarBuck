@@ -11,7 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
@@ -60,8 +62,10 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         return output;
     }
 
-    public boolean register(String username, String email, String password, String retypePassword){
-        long number = insert(QUERIES.ACCOUNT.CREATE, username, email, password, retypePassword);
+    public boolean register(String username, String email, String password){
+        long number =
+        insert(QUERIES.ACCOUNT.CREATE, "",username, "", 1, "123", email, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), password, "", "", "", "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "MEMBER", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "NONE", "NONE");
+        System.out.println(number);
         return number == 1;
     }
 

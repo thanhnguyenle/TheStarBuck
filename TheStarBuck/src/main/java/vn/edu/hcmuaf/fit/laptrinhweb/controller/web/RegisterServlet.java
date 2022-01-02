@@ -23,15 +23,14 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String retypepassword = request.getParameter("retypepassword");
         Map<String, Object> mapCheck = accountService.register(username, email, password, retypepassword);
+        HttpSession session = request.getSession();
         if(mapCheck.isEmpty()){
             RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
             rd.forward(request,response);
         } else {
-            HttpSession session = request.getSession();
             for (String error : mapCheck.keySet()) {
                 session.setAttribute(error, mapCheck.get(error));
             }
-
             request.getRequestDispatcher("/views/web/createAcc.jsp").forward(request, response);
         }
 
