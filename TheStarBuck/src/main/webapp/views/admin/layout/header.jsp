@@ -41,7 +41,7 @@
     <!-- /.navbar-top-links -->
 
     <div class="navbar-default navbar-static-side" role="navigation">
-        <jsp:include page="layout/menu.jsp"/>
+        <jsp:include page="menu.jsp"/>
         <!-- /.sidebar-collapse -->
     </div>
     <!-- /.navbar-static-side -->

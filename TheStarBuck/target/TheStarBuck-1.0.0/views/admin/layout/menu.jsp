@@ -22,19 +22,19 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="index.html"> Dashboard</a>
+            <a href="<c:url value='/views/admin/home.jsp'/>"> Dashboard</a>
         </li>
         <li>
-            <a href="accounttable.html">User management</a>
+            <a href="<c:url value='/views/admin/accountManagement.jsp'/>">User management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="accounttable.html">List User</a>
+                    <a href="<c:url value='/views/admin/accountManagement.jsp'/>">List User</a>
                 </li>
                 <li>
-                    <a href="addaccount.html">Add User</a>
+                    <a href="<c:url value='/views/admin/accountAddition.jsp'/>">Add User</a>
                 </li>
                 <li>
-                    <a href="editaccount.html">Edit User</a>
+                    <a href="<c:url value='/views/admin/accountEdition.jsp'/>">Edit User</a>
                 </li>
                 <li>
                     <a href="address.html">List Address</a>
