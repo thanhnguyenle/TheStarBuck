@@ -61,41 +61,13 @@
   </div>
 
   <section class="image-slider">
-    <div class="image-item">
-      <div class="image">
-        <img
-          src="images/banner_mini_1.png"
-          alt="" />
+    <c:forEach items="${slideMini}" var="item">
+      <div class="image-item">
+        <div class="image">
+          <img src="${item.image}" alt="" />
+        </div>
       </div>
-    </div>
-    <div class="image-item">
-      <div class="image">
-        <img
-          src="images/banner_mini_2.png"
-          alt="" />
-      </div>
-    </div>
-    <div class="image-item">
-      <div class="image">
-        <img
-          src="images/banner_mini_3.png"
-          alt="" />
-      </div>
-    </div>
-    <div class="image-item">
-      <div class="image">
-        <img
-          src="images/banner_mini_4.png"
-          alt="" />
-      </div>
-    </div>
-    <div class="image-item">
-      <div class="image">
-        <img
-          src="images/banner_mini_5.png"
-          alt="" />
-      </div>
-    </div>
+    </c:forEach>
   </section>
 
 
