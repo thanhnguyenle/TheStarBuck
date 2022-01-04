@@ -108,11 +108,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Create data Accounts</label>
-                                        <input class="form-control" type="text" name="createData" placeholder="Enter createData">
+                                        <input class="form-control" type="text" name="createdDate" placeholder="Enter createData">
                                     </div>
                                     <div class="form-group">
                                         <label>Created Accounts</label>
-                                        <input class="form-control" type="text" name="created" placeholder="Enter created">
+                                        <input class="form-control" type="text" name="createdBy" placeholder="Enter created">
                                     </div>
                                 </div>
                             </div>
