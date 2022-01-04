@@ -167,6 +167,9 @@
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
     });
+    jQuery(function (){
+        alert("abc")
+    })
 </script>
 <%--<script src="/js/commonHtml.js"></script>--%>
 <script src="<%= Asset.url("/template/admin/js/commonHtml.js")%>"></script>

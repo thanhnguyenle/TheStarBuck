@@ -167,6 +167,18 @@
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
     });
+    jQuery(function (){
+        url = "http://localhost:8080/TheStarBuck/api/account?action=list";
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "json",
+            contentType: "application/json",
+            success: function (){
+                
+            }
+        })
+    })
 </script>
 <%--<script src="/js/commonHtml.js"></script>--%>
 <script src="<%= Asset.url("/template/admin/js/commonHtml.js")%>"></script>

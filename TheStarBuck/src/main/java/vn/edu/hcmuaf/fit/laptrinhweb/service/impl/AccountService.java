@@ -30,6 +30,10 @@ public class AccountService implements IAccountService {
         return accountDAO.save(account);
     }
 
+    public Map<String, Account> getAll(){
+        return  AccountDAO.getInstance().getAll();
+    }
+
     public Account login(String username, String password){
         return accountDAO.login(username, password);
     }

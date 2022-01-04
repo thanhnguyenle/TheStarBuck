@@ -14,7 +14,9 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     private static AccountDAO instance;
@@ -37,7 +39,27 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
 
     @Override
     public Long save(Account account) {
-        return null;
+        if(account.getId().equals("")){
+            return  registerAd(account);
+        }
+        return editAd(account);
+    }
+
+    public Long registerAd(Account account){
+        return 0L;
+    }
+
+    public Long editAd(Account account){
+        return 0L;
+    }
+
+    public Map<String, Account> getAll(){
+        List<Account> list =  query(QUERIES.ACCOUNT.GET_LIST, new AccountMapper());
+        Map<String, Account> output = new HashMap<>();
+        for (Account acc: list) {
+            output.put(acc.getId(), acc);
+        }
+        return output;
     }
 
     public Account login(String username, String password){
