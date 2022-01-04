@@ -28,7 +28,7 @@ public class SlideDAO extends  AbstractDAO<Slide> implements ISlideDAO {
     }
 
     @Override
-    public List<Slide> printTypeSlide(String type, int number) {
-        return query(QUERIES.SLIDER.GETBANNER,new SlideMapper(),type,number);
+    public List<Slide> printTypeSlide(String type) {
+        return query(QUERIES.SLIDER.GETBANNER,new SlideMapper(),type);
     }
 }
