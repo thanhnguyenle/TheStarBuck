@@ -18,7 +18,7 @@
                 <label class="btn close-btn"><i class="fas fa-times"></i></label>
             </div>
             <li><a href="<c:url value='/views/web/index.jsp'/>">Home</a></li>
-            <li><a href="<c:url value='/views/web/cart.jsp'/>">Menu</a></li>
+            <li><a href="<c:url value='http://localhost:8080/TheStarBuck/menu'/>">Menu</a></li>
             <li><a href="<c:url value='/views/web/poster.jsp'/>">Blog</a></li>
 
 

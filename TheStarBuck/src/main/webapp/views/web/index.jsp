@@ -120,7 +120,7 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab"">
+        <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab">
         
     <div class=" product-layout">
 

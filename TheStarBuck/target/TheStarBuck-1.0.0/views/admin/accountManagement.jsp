@@ -61,72 +61,34 @@
                                 <thead>
                                 <tr>
                                     <th>id</th>
-                                    <th>name</th>
+                                    <th>username</th>
+                                    <th>fullname</th>
                                     <th>active</th>
                                     <th>phone number</th>
                                     <th>email</th>
-                                    <th>password</th>
-                                    <th>avatar</th>
+
+
                                     <th>Operation</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                            <c:forEach items="${accs}" var="item">
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>Nguyen Van A</td>
-                                    <td>1</td>
-                                    <td class="center">123456789</td>
-                                    <td class="center">a@gmail.com</td>
-                                    <td>123</td>
-                                    <td>123</td>
+                                    <td>${item.id}</td>
+                                    <td>${item.username}</td>
+                                    <td>${item.fullname}</td>
+                                    <td>${item.active}</td>
+                                    <td class="center">${item.phoneNumber}</td>
+                                    <td class="center">${item.email}</td>
+
+
                                     <td class=" text-center">
                                         <a href="#" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
                                         <a href="<c:url value='/views/admin/accountEdition.jsp'/>" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>2</td>
-                                    <td>Nguyen Van B</td>
-                                    <td>1</td>
-                                    <td class="center">145236987</td>
-                                    <td class="center">b@gmail.com</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editAccount.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>3</td>
-                                    <td>Nguyen Van C</td>
-                                    <td>1</td>
-                                    <td class="center">987563214</td>
-                                    <td class="center">c@gmail.com</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editAccount.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>4</td>
-                                    <td>Nguyen Van D</td>
-                                    <td>1</td>
-                                    <td class="center">98136982457</td>
-                                    <td class="center">d@gmail.com</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editAccount.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
+                            </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -168,7 +130,17 @@
         $('#dataTables-example').dataTable();
     });
     jQuery(function (){
-        alert("abc")
+        url = "http://localhost:8080/TheStarBuck/api/account?action=get";
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: {},
+            dataType: "json",
+            contentType: "application/json",
+            success: function (){
+
+            }
+        })
     })
 </script>
 <%--<script src="/js/commonHtml.js"></script>--%>

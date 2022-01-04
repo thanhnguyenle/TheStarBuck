@@ -5,6 +5,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IProductService;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProductService implements IProductService {
     private ProductDAO productDAO = ProductDAO.getInstance();
@@ -25,5 +26,9 @@ public class ProductService implements IProductService {
     @Override
     public Long save(Product product) {
         return productDAO.save(product);
+    }
+
+    public Map<String, Product> getAll(){
+        return productDAO.getAll();
     }
 }

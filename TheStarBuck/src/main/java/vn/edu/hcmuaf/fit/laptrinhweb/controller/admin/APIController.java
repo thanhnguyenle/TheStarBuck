@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,24 +33,25 @@ public class APIController extends HttpServlet {
         }
     }
 
-    private void account(HttpServletRequest request, HttpServletResponse response) {
+    private void account(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         switch (action){
             case "create":
                 creatAccount(request, response);
                 break;
-            case  "list":
-                listAccount(request, response);
+            case  "get":
+                getAccount(request, response);
                 break;
         }
     }
 
-    private void listAccount(HttpServletRequest request, HttpServletResponse response) {
+    private void getAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String, Account> list = accountService.getAll();
         HttpSession session = request.getSession();
-        List<Account> accs = (List<Account>) list.values();
+        List<Account> accs = new ArrayList<Account>(list.values());
         session.setAttribute("accs", accs);
-
+        RequestDispatcher rd = request.getRequestDispatcher("/views/admin/accountManagement.jsp");
+        rd.forward(request,response);
     }
 
     private void creatAccount(HttpServletRequest request, HttpServletResponse response) {
