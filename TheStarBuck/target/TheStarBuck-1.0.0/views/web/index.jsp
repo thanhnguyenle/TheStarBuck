@@ -1,4 +1,5 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -7,5 +7,5 @@ import java.util.List;
 public interface ISlideDAO extends IGenericDAO<Slide> {
     List<Slide> findAll();
     Long save(Slide slide);
-    List<Slide> printTypeSlide(String type,int number);
+    List<Slide> printTypeSlide(String type);
 }
