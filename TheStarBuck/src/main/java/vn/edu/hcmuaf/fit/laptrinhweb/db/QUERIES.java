@@ -31,4 +31,10 @@ public static class CATEGORY{
         public static  final String DELETE = "delete from Category where id_cs = ?";
         public static  final String UPDATE = "update Category set cs_name = ?, cs_icon = ?, cs_avatar = ?, cs_active = ?, modifiedDate = ?, modifiedBy = ? where id_cs = ?";
 }
+// Slider
+public static class SLIDER {
+    public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public static final String DELETE = "delete from Product where id_sl = ?";
+    public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
+}
 }
