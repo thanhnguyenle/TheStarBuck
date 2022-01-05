@@ -1,6 +1,5 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ include file="/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +54,7 @@
         </div>
       </div>
       <ul class="thumb ">
-        <li><img id="thumb1" src="https://i.ibb.co/j4YxX6j/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s" alt=""></li>
+        <li><img id="thumb1" src="https://i.ibb.co/j4YxX6j/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
         <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
         <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
       </ul>
@@ -63,11 +62,10 @@
   </div>
 
   <section class="image-slider">
-    <jsp:useBean id="slideMini" scope="request" type="java.util.List"/>
-    <c:forEach var="s" items="${slideMini}">
+    <c:forEach items="${slideMini}" var="item">
       <div class="image-item">
         <div class="image">
-          <img src="https://i.ibb.co/M8jxQyG/banner-mini-1.png" alt="" />
+          <img src="${item.image}" alt="" />
         </div>
       </div>
     </c:forEach>

@@ -70,4 +70,17 @@ public class Slide extends AbsModel  implements Serializable {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
+	@Override
+	public String toString() {
+		return "Slide{" +
+				"id='" + id + '\'' +
+				", image='" + image + '\'' +
+				", note='" + note + '\'' +
+				", greetingH2='" + greetingH2 + '\'' +
+				", greetingSpan='" + greetingSpan + '\'' +
+				", greetingP='" + greetingP + '\'' +
+				", active=" + active +
+				'}';
+	}
 }

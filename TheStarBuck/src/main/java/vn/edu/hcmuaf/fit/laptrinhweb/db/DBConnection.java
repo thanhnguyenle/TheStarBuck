@@ -27,7 +27,7 @@ public class DBConnection {
         Connection connection = null;
         try {
             String url;
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             url = "jdbc:mysql://" + getDbHost() + ":" + getDbPort() + "/" + getDbName() + "?useSSL=" + getDbUseSSL();
             connection = DriverManager.getConnection(url, getDbUsername(), getDbPassword());
         } catch (SQLException | ClassNotFoundException e) {
