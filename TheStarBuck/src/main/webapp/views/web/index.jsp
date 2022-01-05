@@ -63,10 +63,11 @@
   </div>
 
   <section class="image-slider">
-    <c:forEach items="${slideMini}" var="item">
+    <jsp:useBean id="slideMini" scope="request" type="java.util.List"/>
+    <c:forEach var="s" items="${slideMini}">
       <div class="image-item">
         <div class="image">
-          <img src="${item.image}" alt="" />
+          <img src="https://i.ibb.co/M8jxQyG/banner-mini-1.png" alt="" />
         </div>
       </div>
     </c:forEach>
