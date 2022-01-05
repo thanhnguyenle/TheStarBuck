@@ -35,6 +35,6 @@ public static class CATEGORY{
 public static class SLIDER {
     public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String DELETE = "delete from Product where id_sl = ?";
-    public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT 5";
+    public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
 }
 }

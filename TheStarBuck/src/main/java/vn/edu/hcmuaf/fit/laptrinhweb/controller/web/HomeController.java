@@ -38,7 +38,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Slide> slides = slideService.printTypeSlide("MINI");
+        List<Slide> slides = slideService.printTypeSlide("MINI",5);
         for(Slide s:slides)
         System.out.println(s.toString());
         HttpSession session = request.getSession();

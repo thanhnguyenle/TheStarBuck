@@ -31,7 +31,7 @@ public class SlideService implements ISlideService {
     }
 
     @Override
-    public List<Slide> printTypeSlide(String type) {
-        return slideDAO.printTypeSlide(type);
+    public List<Slide> printTypeSlide(String type,int num) {
+        return slideDAO.printTypeSlide(type,num);
     }
 }

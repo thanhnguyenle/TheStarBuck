@@ -1155,7 +1155,18 @@ INSERT INTO Contact VALUES( 'co0007', 'ac0009',null,'elie@gmail.com','0559 495 2
 INSERT INTO Contact VALUES( 'co0008', 'ac0011',null,'saya@gmail.com','111111111','hello',1,'2022-09-12','2023-09-12','Dao','Dao');
 INSERT INTO Contact VALUES( 'co0009', 'ac0018',null,'hashem@gmail.com','0559 190 2','holle',1,'2022-09-12','2023-09-12','Dao','Dao');
 INSERT INTO Contact VALUES( 'co0010', 'ac0014',null,'ellana@gmail.com','0385 601 4','holle',1,'2022-09-12','2023-09-12','Dao','Dao');
-INSERT INTO Category VALUES ('cs0001', 'Cool drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
-INSERT INTO Category VALUES ('cs0002', 'Hot drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
-INSERT INTO Category VALUES ('cs0003', 'Bakery', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
-INSERT INTO Category VALUES ('cs0004', 'Bottled water', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA')
+
+INSERT INTO Category VALUES ('cs0001', 'Cool drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA');
+INSERT INTO Category VALUES ('cs0002', 'Hot drink', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA');
+INSERT INTO Category VALUES ('cs0003', 'Bakery', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA');
+INSERT INTO Category VALUES ('cs0004', 'Bottled water', null, null, 1, '2022-09-12', '2022-09-12', 'KA', 'KA');
+
+INSERT INTO `slide` VALUES ('sl0001', 'https://i.ibb.co/M8jxQyG/banner-mini-1.png', 'MINI', NULL, NULL, NULL, '1', '2022-01-05 23:25:35.000', '2021-12-31 23:25:38.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0002', 'https://i.ibb.co/Nms68wt/banner-mini-2.png', 'MINI', NULL, NULL, NULL, '1', '2021-10-25 23:32:53.000', '2021-11-29 23:31:29.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0003', 'https://i.ibb.co/0GZxQj0/banner-mini-3.png', 'MINI', NULL, NULL, NULL, '1', '2021-11-29 23:32:38.000', '2021-11-29 23:32:45.000', 'Nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0004', 'https://i.ibb.co/fS7SPHp/banner-mini-4.png', 'MINI', NULL, NULL, NULL, '1', '2021-10-25 23:34:00.000', '2021-11-29 23:34:11.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0005', 'https://i.ibb.co/6PMh170/banner-mini-5.png', 'MINI', NULL, NULL, NULL, '1', '2021-11-29 23:36:03.000', '2021-11-29 23:36:07.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0006', 'https://i.ibb.co/vHkpc5T/banner-2.png', 'BANNER', 'CELEBRATE TO X-MAS', NULL, 'Come celebrate the season with our merry holiday drinks: Peppermint Mocha, Caramel Brulée Latte and Toasted White Chocolate Mocha. Cheers!', '1', '2022-01-04', '2022-01-04 22:26:35.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0007', 'https://i.ibb.co/L0myK85/title1.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-03 22:27:49.000', '2022-01-18 22:27:53.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0008', 'https://i.ibb.co/LP8dSrR/title2.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-04 22:28:46.000', '2022-01-04 22:28:49.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0009', 'https://i.ibb.co/jGdks8G/title3.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-18 22:29:48.000', '2022-01-04 22:29:52.000', 'nhu', 'nhu');

@@ -62,10 +62,10 @@
   </div>
 
   <section class="image-slider">
-    <c:forEach items="${slideMini}" var="item">
+    <c:forEach items="${slideMini}" var="x">
       <div class="image-item">
         <div class="image">
-          <img src="${item.image}" alt="" />
+          <img src="${x.image}" alt="" />
         </div>
       </div>
     </c:forEach>

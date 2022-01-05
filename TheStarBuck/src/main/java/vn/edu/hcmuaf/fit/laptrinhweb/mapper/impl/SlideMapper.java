@@ -18,7 +18,7 @@ public class SlideMapper implements IRowMapper<Slide> {
             slide.setGreetingH2(resultSet.getString("sl_greeting_h2"));
             slide.setGreetingSpan(resultSet.getString("sl_greeting1_span"));
             slide.setGreetingP(resultSet.getString("sl_greeting2_p"));
-            slide.setActive(resultSet.getBoolean("ac_active"));
+            slide.setActive(resultSet.getBoolean("sl_active"));
             slide.setCreatedDate(resultSet.getDate("createdDate"));
             slide.setModifiedDate(resultSet.getDate("modifiedDate"));
             slide.setCreatedBy(resultSet.getString("createdBy"));
