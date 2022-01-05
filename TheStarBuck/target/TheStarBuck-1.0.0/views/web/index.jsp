@@ -99,7 +99,7 @@
 
           <div class="product" >
             <div class="img-container">
-              <img src="https://i.ibb.co/VSzbmtf/147.png" alt="" />
+              <img src="http://localhost:8080/TheStarBuck/template/web/image/products/1.png" alt="" />
               <div class="addCart">
                 <a href="productDetails.jsp">
                   <i class="fas fa-shopping-cart"></i>
@@ -135,7 +135,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="./images/products/2.png" alt="" />
+              <img src="http://localhost:8080/TheStarBuck/template/web/image/products/2.png" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
@@ -169,7 +169,7 @@
 
           <div class="product">
             <div class="img-container">
-              <img src="./images/products/3.png" alt="" />
+              <img src="http://localhost:8080/TheStarBuck/template/web/image/products/3.png" alt="" />
               <div class="addCart">
                 <i class="fas fa-shopping-cart"></i>
               </div>
