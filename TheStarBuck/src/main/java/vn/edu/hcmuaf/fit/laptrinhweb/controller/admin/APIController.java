@@ -40,7 +40,14 @@ public class APIController extends HttpServlet {
             case  "get":
                 getAccount(request, response);
                 break;
+            case "update":
+                updateAccount(request, response);
+                break;
         }
+    }
+
+    private void updateAccount(HttpServletRequest request, HttpServletResponse response) {
+
     }
 
     private void getAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
