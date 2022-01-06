@@ -35,18 +35,20 @@
             <!-- icons -->
             <li class="icons">
                 <a href="#">
-                    <span class="searchBt"> <img src="<c:url value='/template/web/image/search.svg'/>" alt=""></span>
+                    <span class="searchBt">
+                        <img src="<c:url value='/template/web/image/search.svg'/>" alt="">
+                    </span>
                 </a>
                 <a href="<c:url value='/views/web/cart.jsp'/>" >
-            <span>
-              <img src="<c:url value='/template/web/image/shoppingBag.svg'/>" alt="" />
-              <small class="count d-flex">0</small>
-            </span>
+                    <span>
+                    <img src="<c:url value='/template/web/image/shoppingBag.svg'/>" alt="" />
+                    <small class="count d-flex">0</small>
+                    </span>
                 </a>
                 <a href="<c:url value='/views/web/login.jsp'/>">
-            <span>
-              <img src="<c:url value='/template/web/image/user.svg'/>" alt="" />
-            </span>
+                    <span>
+                    <img src="<c:url value='/template/web/image/user.svg'/>" alt="" />
+                    </span>
                 </a>
             </li>
         </ul>

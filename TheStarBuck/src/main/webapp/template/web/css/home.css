@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
 :root {
   --primary: #017143;
   --white: #fff;
@@ -229,7 +230,7 @@ li {
 
 /* PRODUCTS */
 .section.products{
-  padding: 5rem 0rem;
+  padding: 5rem 0;
 }
 
 .section .product-layout {
@@ -237,7 +238,6 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(19.5rem, 1fr));
   gap: 4rem;
   max-width:114rem;
-  margin: 0 auto;
   padding: 0 1.6rem;
   margin: auto;
 }
@@ -824,7 +824,7 @@ transform: rotate(-60deg)
   margin-bottom: 6rem;
 } */
 .about-layout{
-  padding: 2                                                                                                                                                                             0px;
+  padding: 20px;
   /* border: 5px solid #017143; */
   border-radius: 5px;
   padding: 20px;
