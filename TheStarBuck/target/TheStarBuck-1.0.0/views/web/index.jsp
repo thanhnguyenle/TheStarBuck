@@ -99,7 +99,8 @@
 
           <div class="product" >
             <div class="img-container">
-              <img src="http://localhost:8080/TheStarBuck/template/web/image/products/1.png" alt="" />
+<%--              <img src="http://localhost:8080/TheStarBuck/template/web/image/products/1.png" alt="" />--%>
+              <img src="<%= Asset.url("/template/web/image/products/1.png")%>" alt="" />
               <div class="addCart">
                 <a href="productDetails.jsp">
                   <i class="fas fa-shopping-cart"></i>
