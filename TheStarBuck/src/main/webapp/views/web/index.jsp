@@ -976,7 +976,7 @@
   <section class="banner">
     <div class="container">
       <div class="col">
-        <img class="banner__decor" src="images/bell__xmas.png" alt="" srcset="">
+        <img class="banner__decor" src="https://i.ibb.co/LNqqBR5/bell-xmas.png" alt="" srcset="">
         <div class="banner_box">
           <div class="banner_content ">
             <h2>CELEBRATE TO X-MAS</h2>

@@ -976,7 +976,7 @@
   <section class="banner">
     <div class="container">
       <div class="col">
-        <img class="banner__decor" src="images/bell__xmas.png" alt="" srcset="">
+        <img class="banner__decor" src="https://i.ibb.co/LNqqBR5/bell-xmas.png" alt="" srcset="">
         <div class="banner_box">
           <div class="banner_content ">
             <h2>CELEBRATE TO X-MAS</h2>
@@ -1050,7 +1050,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="blog__item">
             <div class="blog__item__pic">
-              <img src="images/blog_1_title.png" alt="">
+              <img src="" alt="">
             </div>
             <div class="blog__item__text">
               <ul>

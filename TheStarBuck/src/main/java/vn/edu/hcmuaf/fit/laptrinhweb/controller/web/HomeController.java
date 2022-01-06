@@ -40,11 +40,13 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Slide> slides = slideService.printTypeSlide("MINI",5);
         List<Slide> slides1 = slideService.printTypeSlide("TITLE",3);
+        List<Slide> slides2 = slideService.printTypeSlide("BANNER",3);
         for(Slide s:slides)
         System.out.println(s.toString());
         HttpSession session = request.getSession();
         session.setAttribute("slideMini", slides);
         session.setAttribute("slideTitle", slides1);
+        session.setAttribute("slideBanner", slides2);
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
         rd.forward(request,response);
     }
