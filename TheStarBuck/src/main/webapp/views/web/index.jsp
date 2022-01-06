@@ -45,8 +45,8 @@
       <!-- <div class="circle "></div> -->
       <div class="content">
         <div class="textBox">
-          <h2 class="animate__animated animate__fadeInTopLeft" id="title_hero1">It's not just Coffee<br>It's <span>Starbucks</span></h2>
-          <p class="animate__animated animate__backInLeft" id="text_hero1">Let's check it out!</p>
+          <h2 class="animate__animated animate__fadeInTopLeft" id="title_hero1">${slideTitle[0].greetingH2}<br>It's <span>${slideTitle[0].greetingSpan}</span></h2>
+          <p class="animate__animated animate__backInLeft" id="text_hero1">${slideTitle[0].greetingP}</p>
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
@@ -1050,7 +1050,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="blog__item">
             <div class="blog__item__pic">
-              <img src="images/blog_1_title.png" alt="">
+              <img src="" alt="">
             </div>
             <div class="blog__item__text">
               <ul>
