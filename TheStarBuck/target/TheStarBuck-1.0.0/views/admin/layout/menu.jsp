@@ -28,10 +28,12 @@
             <a href="<c:url value='/views/admin/accountManagement.jsp'/>">User management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="<c:url value='/views/admin/accountManagement.jsp'/>">List User</a>
+<%--                    <a href="<c:url value='/views/admin/accountManagement.jsp'/>">List User</a>--%>
+                    <a href="<%=request.getContextPath()%>/account">List User</a>
                 </li>
                 <li>
-                    <a href="<c:url value='/views/admin/accountAddition.jsp'/>">Add User</a>
+<%--                    <a href="<c:url value='/views/admin/accountAddition.jsp'/>">Add User</a>--%>
+                    <a href="<%=request.getContextPath()%>/createAccount">Add User</a>
                 </li>
                 <li>
                     <a href="<c:url value='/views/admin/accountEdition.jsp'/>">Edit User</a>
