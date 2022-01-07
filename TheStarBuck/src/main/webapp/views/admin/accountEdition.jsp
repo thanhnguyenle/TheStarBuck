@@ -1,3 +1,6 @@
+<%
+    Account acc = (Account) request.getAttribute("acc");
+%>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -6,6 +9,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -55,20 +59,20 @@
                         Data Account
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="${pageContext.request.contextPath}/updateAccount" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>ID Accounts</label>
-                                        <input class="form-control" name="idAccount" value="ac0001" placeholder="Enter Id">
+                                        <input class="form-control" name="idAccount" value="${acc.id}" placeholder="Enter Id">
                                     </div>
                                     <div class="form-group">
                                         <label>Name Accounts</label>
-                                        <input class="form-control" name="nameAccount" value="minhnhu01" placeholder="Enter name">
+                                        <input class="form-control" name="nameAccount" value="${acc.username}" placeholder="Enter name">
                                     </div>
                                     <div class="form-group">
                                         <label>FullName Accounts</label>
-                                        <input class="form-control" name="fullNameAccount" value="Duong Minh Nhu" placeholder="Enter full name">
+                                        <input class="form-control" name="fullNameAccount" value="${acc.fullname}" placeholder="Enter full name">
                                     </div>
                                     <div class="form-group">
                                         <label>Active</label>
@@ -79,30 +83,30 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Phone Accounts</label>
-                                        <input class="form-control" name="phoneAccount" value="0365448301" placeholder="Enter phone">
+                                        <input class="form-control" name="phoneAccount" value="${acc.phoneNumber}" placeholder="Enter phone">
                                     </div>
                                     <div class="form-group">
                                         <label>Email Accounts</label>
-                                        <input class="form-control" name="emailAccount" value="nhu@gmail" placeholder="Enter email">
+                                        <input class="form-control" name="emailAccount" value="${acc.email}" placeholder="Enter email">
                                     </div>
 
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>File Avatar</label>
-                                        <input type="file" name="avatar">
+                                        <input type="file" name="avatar" value="${acc.avatar}">
                                     </div>
                                     <div class="form-group">
                                         <label>Password Accounts</label>
-                                        <input class="form-control" type="password" value="010192" name="password" placeholder="Enter password">
+                                        <input class="form-control" type="password" value="${acc.password}" name="password" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
                                         <label>Address Accounts</label>
-                                        <input class="form-control" type="text" name="address" value="Ninh Thuan" placeholder="Enter address">
+                                        <input class="form-control" type="text" name="address" value="${acc.addressId}" placeholder="Enter address">
                                     </div>
                                     <div class="form-group">
                                         <label>About Accounts</label>
-                                        <input class="form-control" type="text" name="about" value="Khach vip" placeholder="Enter about">
+                                        <input class="form-control" type="text" name="about" value="${acc.aboutMe}" placeholder="Enter about">
                                     </div>
                                     <div class="form-group">
                                         <label>GroupId</label>
@@ -113,15 +117,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Create data Accounts</label>
-                                        <input class="form-control" type="text" name="createData" value="01/09/2001" placeholder="Enter createData">
+                                        <input class="form-control" type="text" name="createData" value="123" placeholder="Enter createData">
                                     </div>
                                     <div class="form-group">
                                         <label>Created Accounts</label>
-                                        <input class="form-control" type="text" name="created" value="Nhu" placeholder="Enter created">
+                                        <input class="form-control" type="text" name="created" value="123" placeholder="Enter created">
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" name="insert" class="btn btn-success">Update</button>
+                            <button type="submit" name="insert" class="btn btn-success">Update</button>
                             <button type="reset"  name="reset" class="btn btn-default">Reset</button>
                         </form>
                     </div>
