@@ -33,7 +33,12 @@ public class DBProperties {
     public static String getDbUseSSL(){
         return prop.get("db.useSSL").toString();
     }
-
+    public static int getDBMinConnections(){
+        return (int)prop.get("db.db_min_connections");
+    }
+    public static int getDbMaxConnections(){
+        return (int)prop.get("db.db_max_connections");
+    }
 
 
 
