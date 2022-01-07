@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.db.impl;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.db.DBProperties;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.IDBConnectionPool;
 
 import java.sql.Connection;
@@ -62,5 +63,12 @@ public class DBConnectionPool implements IDBConnectionPool {
             e.printStackTrace();
         }
         return false;
+    }
+    public synchronized String toString() {
+        StringBuilder sb = new StringBuilder();
+                sb.append("Max=" + DBProperties.getDbMaxConnections());
+                sb.append(" | Available=" + availableConnections.size());
+                sb.append(" | Busy=" + (DBProperties.getDbMaxConnections() - availableConnections.size()));
+        return sb.toString();
     }
 }

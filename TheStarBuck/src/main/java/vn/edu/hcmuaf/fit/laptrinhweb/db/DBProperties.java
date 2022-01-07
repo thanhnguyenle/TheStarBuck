@@ -34,10 +34,10 @@ public class DBProperties {
         return prop.get("db.useSSL").toString();
     }
     public static int getDBMinConnections(){
-        return (int)prop.get("db.db_min_connections");
+        return Integer.parseInt(prop.get("db.db_min_connections").toString());
     }
     public static int getDbMaxConnections(){
-        return (int)prop.get("db.db_max_connections");
+        return Integer.parseInt(prop.get("db.db_max_connections").toString());
     }
 
 

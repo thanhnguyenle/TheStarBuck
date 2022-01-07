@@ -4,10 +4,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.db.DBProperties;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.IDBConnectionPool;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import static vn.edu.hcmuaf.fit.laptrinhweb.db.DBProperties.*;
 
 public class DBConnection implements IDBConnectionPool {
     private static DBConnection dbConnection;
