@@ -24,7 +24,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Account` (
-		`id_ac` VARCHAR ( 6 ) NOT NULL,
+		`id_ac` int AUTO_INCREMENT,
 		`ac_username` VARCHAR ( 255 ) NOT NULL,
 		`ac_fullname` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL,
@@ -55,8 +55,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Address` ( 
-		`id_ad` VARCHAR ( 6 ) NOT NULL, 
-		`ad_userId` VARCHAR ( 6 ) NOT NULL, 
+		`id_ad` int AUTO_INCREMENT, 
+		`ad_userId` int , 
 		`ad_provinceCode` VARCHAR(5) NOT NULL,
 		`ad_districtCode` VARCHAR(5) NOT NULL,
 		`ad_wardCode` VARCHAR(5) NOT NULL,
@@ -76,7 +76,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Article` (
-		`id_ar` VARCHAR ( 6 ) NOT NULL,
+		`id_ar` int AUTO_INCREMENT,
 		`ar_name` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NOT NULL,
 		`ar_description` VARCHAR(500) CHARACTER 
@@ -85,7 +85,7 @@ IF
 		SET 'utf8mb4' NULL,
 		`ar_active` BOOL NOT NULL DEFAULT 1,
 		`ar_prId` VARCHAR ( 6 ) NULL,
-		`ar_acId` VARCHAR ( 6 ) NOT NULL,
+		`ar_acId` int ,
 		`ar_descriptionSeo` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL,
 		`ar_titleSeo` VARCHAR ( 255 ) CHARACTER 
@@ -110,8 +110,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Orders` (
-		`id_od` VARCHAR ( 6 ) NOT NULL,
-		`od_acId` VARCHAR ( 6 ) NOT NULL,
+		`id_od` int AUTO_INCREMENT,
+		`od_acId` int,
 		`od_sessionId` VARCHAR ( 100 ) NOT NULL,
 		`od_token` VARCHAR ( 100 ) NOT NULL,
 		`od_status` VARCHAR ( 10 ) CHARACTER 
@@ -141,8 +141,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`OrderItem` (
-		`oi_prId` VARCHAR ( 6 ) NOT NULL,
-		`oi_orId` VARCHAR ( 6 ) NOT NULL,
+		`oi_prId` int ,
+		`oi_orId` int ,
 		`oi_quantify` SMALLINT NOT NULL DEFAULT 0,
 		`oi_note` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL DEFAULT NULL,
@@ -162,7 +162,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Shipper` (
-		`id_sh` VARCHAR ( 6 ) NOT NULL,
+		`id_sh` int AUTO_INCREMENT,
 		`sh_name` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NOT NULL,
 		`sh_mobile` VARCHAR ( 10 ) NOT NULL,
@@ -182,9 +182,9 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Transactions` (
-		`id_tr` VARCHAR ( 6 ) NOT NULL,
-		`tr_acId` VARCHAR ( 6 ) NOT NULL,
-		`tr_orId` VARCHAR ( 6 ) NOT NULL,
+		`id_tr` int AUTO_INCREMENT,
+		`tr_acId` int ,
+		`tr_orId` int ,
 		`tr_code` VARCHAR ( 100 ) CHARACTER 
 		SET 'utf8mb4' NOT NULL,
 		`tr_type` VARCHAR ( 6 ) CHARACTER 
@@ -210,9 +210,9 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Feedback` (
-		`id_fe` VARCHAR ( 6 ) NOT NULL,
-		`fe_acId` VARCHAR ( 6 ) NOT NULL,
-		`fe_prId` VARCHAR(6) NOT NULL,
+		`id_fe` int AUTO_INCREMENT,
+		`fe_acId` int,
+		`fe_prId` int,
 		`fe_content` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL,
 		`fe_rate` INT NOT NULL DEFAULT 1,
@@ -233,7 +233,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Slide` (
-		`id_sl` VARCHAR ( 6 ) NOT NULL,
+		`id_sl` int AUTO_INCREMENT,
 		`sl_image` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL,
 		`sl_note` VARCHAR ( 255 ) CHARACTER 
@@ -260,8 +260,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Bill` (
-		`id_bi` VARCHAR ( 6 ) NOT NULL,
-		`bi_orId` VARCHAR ( 6 ) NOT NULL,
+		`id_bi` int AUTO_INCREMENT,
+		`bi_orId` int,
 		`bi_detail` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL DEFAULT NULL,
 		`bi_active` BOOL NULL DEFAULT 0,
@@ -281,7 +281,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Images` (
-		`id_im` VARCHAR ( 6 ) NOT NULL,
+		`id_im` int AUTO_INCREMENT,
 		`im_prId` VARCHAR(6) NULL,
 		`im_link` VARCHAR ( 255 ) NULL DEFAULT NULL,
 		`im_active` BOOL NULL DEFAULT 0,
@@ -300,8 +300,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Contact` (
-		`id_co` VARCHAR ( 6 ) NOT NULL,
-		`co_acId` VARCHAR ( 6 ) NOT NULL,
+		`id_co` int AUTO_INCREMENT,
+		`co_acId` int,
 		`co_locate` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL DEFAULT NULL,
 		`co_email` VARCHAR ( 100 ) NULL,
@@ -324,7 +324,7 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Category` (
-		`id_cs` VARCHAR ( 6 ) NOT NULL,
+		`id_cs` int AUTO_INCREMENT,
 		`cs_name` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NOT NULL,
 		`cs_icon` VARCHAR ( 255 ) CHARACTER 
@@ -347,9 +347,9 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Product` (
-		`id_pr` VARCHAR ( 6 ) NOT NULL,
+		`id_pr` int AUTO_INCREMENT,
 		`pr_name` VARCHAR ( 255 ) NOT NULL,
-		`pr_csId` VARCHAR(6) NULL,
+		`pr_csId` int,
 		`pr_ingredients` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NOT NULL,
 		`pr_price` FLOAT ( 24, 0 ) NOT NULL DEFAULT 0.0,
@@ -385,8 +385,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Product_category` (
-		`pc_prId` VARCHAR ( 6 ) NOT NULL,
-		`pc_csId` VARCHAR ( 6 ) NOT NULL,
+		`pc_prId` int,
+		`pc_csId` int,
 		PRIMARY KEY ( `pc_prId`, `pc_csId` ),
 		CONSTRAINT `FK__Product_c__pc_cs__72F1C02A` FOREIGN KEY ( `pc_prId` ) REFERENCES `WebTraSua`.`Product` ( `id_pr` ) ON DELETE NO ACTION ON UPDATE NO ACTION,
 		CONSTRAINT `FK__Product_c__pc_cs__73E5E463` FOREIGN KEY ( `pc_csId` ) REFERENCES `WebTraSua`.`Category` ( `id_cs` ) ON DELETE NO ACTION ON UPDATE NO ACTION 
@@ -397,8 +397,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`Cart` (
-		`id_ct` VARCHAR ( 6 ) NOT NULL,
-		`ct_acId` VARCHAR ( 6 ) NOT NULL,
+		`id_ct` int AUTO_INCREMENT,
+		`ct_acId` int,
 		`ct_sessionId` VARCHAR ( 100 ) NOT NULL,
 		`ct_token` VARCHAR ( 100 ) NOT NULL,
 		`ct_status` VARCHAR ( 10 ) CHARACTER 
@@ -421,8 +421,8 @@ IF
 CREATE TABLE
 IF
 	NOT EXISTS `WebTraSua`.`CartItem` (
-		`ci_prId` VARCHAR ( 6 ) NOT NULL,
-		`ci_ctId` VARCHAR ( 6 ) NOT NULL,
+		`ci_prId` int,
+		`ci_ctId` int,
 		`ci_quantity` INT NOT NULL DEFAULT 0,
 		`ci_active` BOOL NOT NULL DEFAULT 0,
 		`createdDate` DATETIME ( 6 ) NOT NULL,
@@ -455,7 +455,7 @@ CREATE TABLE `WebTraSua`.`RoleUser`(
 );
 DROP TABLE IF EXISTS `Topping`;
 CREATE TABLE `Topping`(
-		`id_tp` VARCHAR(6) PRIMARY KEY NOT NULL,
+		`id_tp` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 		`tp_name` VARCHAR(255) NULL,
 		`tp_quantity` INT NOT NULL DEFAULT 0,
 		`tp_price` FLOAT NOT NULL DEFAULT 0,
@@ -469,16 +469,16 @@ CREATE TABLE `Topping`(
 
 DROP TABLE IF EXISTS `ToppingOrder`;
 CREATE TABLE `ToppingOrder`(
-	`to_tpId` VARCHAR(6) NOT NULL,
-	`to_orId` VARCHAR(6) NOT NULL,
+	`to_tpId` int NOT NULL,
+	`to_orId` int NOT NULL,
 	PRIMARY KEY ( `to_tpId`,`to_orId` ),
 	FOREIGN KEY (`to_tpId`) REFERENCES `WebTraSua`.`Topping`(`id_tp`)ON DELETE NO ACTION ON UPDATE NO ACTION,
 	FOREIGN KEY (`to_orId`) REFERENCES `WebTraSua`.`Order`(`id_or`) ON DELETE NO ACTION ON UPDATE NO ACTION 
 );
 DROP TABLE IF EXISTS `Account_product_like`;
 CREATE TABLE `Account_product_like`(
-	`ap_acId` VARCHAR(6),
-	`ap_prId` VARCHAR(6),    
+	`ap_acId` int,
+	`ap_prId` int,    
 	CONSTRAINT `PK_Account_product_like` PRIMARY KEY (`ap_acId`,`ap_prId`),
 	FOREIGN KEY (`ap_acId`) REFERENCES `WebTraSua`.`Account`(`id_ac`),
 	FOREIGN KEY (`ap_prId`) REFERENCES `WebTraSua`.`Product`(`id_pr`)
