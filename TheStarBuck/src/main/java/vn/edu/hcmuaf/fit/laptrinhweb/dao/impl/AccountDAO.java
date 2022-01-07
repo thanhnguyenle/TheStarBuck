@@ -1,8 +1,7 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
-import com.mysql.cj.result.LocalDateTimeValueFactory;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IAccountDAO;
-import vn.edu.hcmuaf.fit.laptrinhweb.db.DBConnection;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.impl.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.AccountMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
@@ -15,7 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;

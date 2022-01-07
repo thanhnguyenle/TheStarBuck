@@ -1,14 +1,12 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IGenericDAO;
-import vn.edu.hcmuaf.fit.laptrinhweb.db.DBConnection;
-import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.impl.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.IRowMapper;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 public abstract class AbstractDAO<T> implements IGenericDAO<T> {
    private DBConnection dbConnection = DBConnection.getInstance();

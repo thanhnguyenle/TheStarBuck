@@ -51,7 +51,7 @@
                         Data Account
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="${pageContext.request.contextPath}/createAccount" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Email Accounts</label>
-                                        <input class="form-control" name="emailAccount" placeholder="Enter email">
+                                        <input class="form-control" type="email" name="emailAccount" placeholder="Enter email" >
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" name="insert" class="btn btn-success">Insert</button>
+                            <button type="submit" name="insert" class="btn btn-success">Insert</button>
                             <button type="reset"  name="reset" class="btn btn-default">Reset</button>
                         </form>
                     </div>

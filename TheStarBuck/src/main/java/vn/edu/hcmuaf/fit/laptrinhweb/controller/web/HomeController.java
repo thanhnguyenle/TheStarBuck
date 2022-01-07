@@ -1,8 +1,5 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
-import vn.edu.hcmuaf.fit.laptrinhweb.dao.ISlideDAO;
-import vn.edu.hcmuaf.fit.laptrinhweb.db.DBConnection;
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Slide;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAccountService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAddressService;
@@ -17,9 +14,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 @WebServlet(name = "user-home", value = "/user-home")
@@ -41,8 +36,6 @@ public class HomeController extends HttpServlet {
         List<Slide> slides = slideService.printTypeSlide("MINI",5);
         List<Slide> slides1 = slideService.printTypeSlide("TITLE",3);
         List<Slide> slides2 = slideService.printTypeSlide("BANNER",3);
-        for(Slide s:slides)
-        System.out.println(s.toString());
         HttpSession session = request.getSession();
         session.setAttribute("slideMini", slides);
         session.setAttribute("slideTitle", slides1);

@@ -72,6 +72,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                            <jsp:useBean id="accs" scope="request" type="java.util.List"/>
                             <c:forEach items="${accs}" var="item">
                                 <tr class="odd gradeX">
                                     <td>${item.id}</td>
@@ -85,7 +86,8 @@
                                     <td class=" text-center">
                                         <a href="#" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
-                                        <a href="<c:url value='/views/admin/accountEdition.jsp'/>" target="_blank" class="btn btn-info">Edit</a>
+<%-- //input hidden,  name = id                                       --%>
+                                        <a href="<%=request.getContextPath()%>/updateAccount?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -137,11 +139,18 @@
             data: {},
             dataType: "json",
             contentType: "application/json",
-            success: function (){
+            success: function (data){
+                console.log(data);
 
             }
         })
     })
+
+    //select.onChange(function(){
+    //$.ajax({
+    //
+    // })
+    // })
 </script>
 <%--<script src="/js/commonHtml.js"></script>--%>
 <script src="<%= Asset.url("/template/admin/js/commonHtml.js")%>"></script>

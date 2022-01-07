@@ -1,8 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
-import vn.edu.hcmuaf.fit.laptrinhweb.db.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
-import vn.edu.hcmuaf.fit.laptrinhweb.service.IProductService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ProductService;
 
 import javax.servlet.RequestDispatcher;
