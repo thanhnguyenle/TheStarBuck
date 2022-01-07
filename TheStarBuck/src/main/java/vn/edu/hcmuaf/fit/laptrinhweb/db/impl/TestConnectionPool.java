@@ -26,14 +26,14 @@ public class TestConnectionPool extends Thread{
     private void execute() {
         try {
             String sqlSelect = "SELECT COUNT(*) AS total FROM Account";
-            Connection connection = DBConnection.getInstance().getConnection();
+            Connection connection = DBConnection.getConnection();
             try (Statement st = connection.createStatement();
-                 ResultSet rs = st.executeQuery(sqlSelect);) {
+                ResultSet rs = st.executeQuery(sqlSelect);) {
                 Thread.sleep(2000);
                 rs.next();
                 System.out.println("Task = " + taskName + ": Run SQL successfully " + rs.getInt("total"));
             }
-            DBConnection.getInstance().releaseConnection(connection);
+            DBConnection.releaseConnection(connection);
         } catch (SQLException | InterruptedException e) {
             e.printStackTrace();
         }

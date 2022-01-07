@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     private static AccountDAO instance;
-    private DBConnection dbConnection = DBConnection.getInstance();
+    //private DBConnection dbConnection = DBConnection.getInstance();
     
 
     private AccountDAO() {
@@ -49,7 +49,6 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     public Long registerAd(Account account){
         long number =
                 insert(QUERIES.ACCOUNT.CREATE, account.getId(),account.getUsername(), account.getFullname(), 1, account.getPhoneNumber(), account.getEmail(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
-        System.out.println(number);
         return number;
     }
 
@@ -76,7 +75,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
 
     public boolean checkUsername(String username){
         boolean output = false;
-        Connection connection = dbConnection.getConnection();
+        Connection connection = DBConnection.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(QUERIES.ACCOUNT.GET_ITEM_BYUSERNAME);
             ps.setString(1, username);
@@ -84,6 +83,8 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
             output = rs.next();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            DBConnection.releaseConnection(connection);
         }
         return output;
     }
@@ -95,13 +96,12 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         password = DatatypeConverter.printHexBinary(digest).toUpperCase();
         long number =
         insert(QUERIES.ACCOUNT.CREATE, "",username, "", 1, "123", email, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), password, "", "", "", "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "MEMBER", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "NONE", "NONE");
-        System.out.println(number);
         return number == 1;
     }
 
     public boolean checkUserEmail(String email){
         boolean output = false;
-        Connection connection = dbConnection.getConnection();
+        Connection connection = DBConnection.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(QUERIES.ACCOUNT.GET_ITEM_BYEMAIL);
             ps.setString(1, email);
@@ -109,6 +109,8 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
             output = rs.next();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            DBConnection.releaseConnection(connection);
         }
         return output;
     }

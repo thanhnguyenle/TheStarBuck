@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractDAO<T> implements IGenericDAO<T> {
-   private DBConnection dbConnection = DBConnection.getInstance();
+   //private DBConnection dbConnection = DBConnection.getInstance();
 
     @Override
     public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameter) {
@@ -21,7 +21,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
         ResultSet resultSet = null;
 
         //Step1: Establishing a Connection
-        connection = dbConnection.getConnection();
+        connection = DBConnection.getConnection();
 
         if(connection != null) {
             try {
@@ -43,9 +43,9 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 e.printStackTrace();
                 return null;
             }finally {
-               dbConnection.releaseConnection(connection);
+                DBConnection.releaseConnection(connection);
                 try {
-                    if (connection != null) connection.close();
+                    DBConnection.releaseConnection(connection);
                     if (statement != null) statement.close();
                     if (resultSet != null) resultSet.close();
                 }catch(SQLException e){
@@ -63,7 +63,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
         PreparedStatement statement = null;
 
         //Step1: Establishing a Connection
-        connection =dbConnection.getConnection();
+        connection =DBConnection.getConnection();
         if(connection!=null){
             try{
                 //turn off auto commit :
@@ -91,8 +91,8 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                     }
                 }
             }finally {
+                DBConnection.releaseConnection(connection);
                 try {
-                    if (connection != null) connection.close();
                     if (statement != null) statement.close();
                 }catch(SQLException e){
                     e.printStackTrace();
@@ -106,34 +106,25 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
         //OPEN CONNECTION
         Connection connection = null;
         PreparedStatement statement = null;
-        System.out.println("1");
+
         //Step1: Establishing a Connection
-        connection =dbConnection.getConnection();
+        connection =DBConnection.getConnection();
         if(connection!=null){
             try{
                 //turn off auto commit :
                 //when throw 1 error, program will not update database
-                System.out.println("2");
 //                connection.setAutoCommit(false);
 
-                System.out.println("3");
                 //Step 2: Create a statement using connection object
                 statement = connection.prepareStatement(sql);
 
-                System.out.println("4");
                 //set multiple parameter
                 setParameter(statement,parameter);
 
-                System.out.println("5");
                 //insert
                 return (long) statement.executeUpdate();
-//                System.out.println("------------" + output);
-//
-//                System.out.println("6");
 //                //save to database
 //                connection.commit();
-
-
 
             }catch (SQLException e){
                 if(connection!=null){
@@ -144,15 +135,14 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                     }
                 }
             }finally {
+                DBConnection.releaseConnection(connection);
                 try {
-                    if (connection != null) connection.close();
                     if (statement != null) statement.close();
                 }catch(SQLException e){
                     e.printStackTrace();
                 }
             }
         }
-        System.out.println("5");
       return 0L;
     }
 

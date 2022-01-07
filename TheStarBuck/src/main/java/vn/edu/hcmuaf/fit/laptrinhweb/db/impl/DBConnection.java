@@ -6,7 +6,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.db.IDBConnectionPool;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DBConnection implements IDBConnectionPool {
+public class DBConnection {
     private static DBConnection dbConnection;
     private static final IDBConnectionPool dbPool = new DBConnectionPool(DBProperties.getDbMaxConnections());
     private DBConnection() {
@@ -14,7 +14,7 @@ public class DBConnection implements IDBConnectionPool {
 
     public static DBConnection getInstance() {
         try {
-            if (dbConnection == null || dbConnection.getConnection().isClosed()) {
+            if (dbConnection == null || getConnection().isClosed()) {
                 dbConnection = new DBConnection();
             }
         } catch (SQLException e) {
@@ -23,12 +23,13 @@ public class DBConnection implements IDBConnectionPool {
         return dbConnection;
     }
 
-    public Connection getConnection() {
-        return dbPool.getConnection();
+    public static Connection getConnection() {
+        Connection connection=dbPool.getConnection();
+        System.out.println("GPPool status: " + dbPool);
+        return connection;
     }
 
-    @Override
-    public boolean releaseConnection(Connection connection) {
+    public static boolean releaseConnection(Connection connection) {
         return dbPool.releaseConnection(connection);
     }
 

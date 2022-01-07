@@ -21,7 +21,7 @@ public class DBConnectionPool implements IDBConnectionPool {
         try {
            while (!checkIfConnectionPoolsFull()){
                 Connection newConnection = DBConnectionUtils.openConnection();
-                availableConnections.offer(newConnection);
+                availableConnections.add(newConnection);
            }
            notifyAll();
         }catch (Exception e){
@@ -48,7 +48,7 @@ public class DBConnectionPool implements IDBConnectionPool {
     }
 
     @Override
-    public boolean releaseConnection(Connection connection) {
+    public synchronized boolean releaseConnection(Connection connection) {
         try{
             if(connection.isClosed()){
                 initializeConnectionPool();
