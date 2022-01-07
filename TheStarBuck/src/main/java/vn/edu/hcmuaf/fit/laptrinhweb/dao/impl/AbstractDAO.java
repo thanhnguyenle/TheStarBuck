@@ -113,7 +113,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
             try{
                 //turn off auto commit :
                 //when throw 1 error, program will not update database
-//                connection.setAutoCommit(false);
+                connection.setAutoCommit(false);
 
                 //Step 2: Create a statement using connection object
                 statement = connection.prepareStatement(sql);
@@ -122,10 +122,10 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 setParameter(statement,parameter);
 
                 //insert
-                return (long) statement.executeUpdate();
-//                //save to database
-//                connection.commit();
-
+                long output = statement.executeUpdate();
+                //save to database
+                connection.commit();
+                return output;
             }catch (SQLException e){
                 if(connection!=null){
                     try{

@@ -117,11 +117,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Create data Accounts</label>
-                                        <input class="form-control" type="text" name="createData" value="123" placeholder="Enter createData">
+                                        <input class="form-control" type="text" name="createData" value="${acc.createdDate}" placeholder="Enter createData">
                                     </div>
                                     <div class="form-group">
                                         <label>Created Accounts</label>
-                                        <input class="form-control" type="text" name="created" value="123" placeholder="Enter created">
+                                        <input class="form-control" type="text" name="created" value="${acc.createdBy}" placeholder="Enter created">
                                     </div>
                                 </div>
                             </div>
