@@ -112,4 +112,10 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         }
         return output;
     }
+
+    public Account getItem(String id){
+        List<Account> list = query(QUERIES.ACCOUNT.GET_ITEM_BYID, new AccountMapper(), id);
+        Account output = list.get(0);
+        return output;
+    }
 }

@@ -58,6 +58,8 @@ public class AccountService implements IAccountService {
         }
         return output;
     }
-
+    public Account getAcc(String id){
+        return AccountDAO.getInstance().getItem(id);
+    }
 
 }
