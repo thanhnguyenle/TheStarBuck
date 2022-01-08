@@ -58,7 +58,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         int active = 0;
         active = account.isActive() ?  1 : 0;
         long number =
-                insert(QUERIES.ACCOUNT.UPDATE, account.getId(),account.getUsername(), account.getFullname(), active, account.getPhoneNumber(), account.getEmail(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(account.getCreatedDate()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
+                update(QUERIES.ACCOUNT.UPDATE, active, new SimpleDateFormat("yyyy-MM-dd").format(account.getLastLogin()) ,account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "ADMIN", account.getId());
         return number;
     }
 

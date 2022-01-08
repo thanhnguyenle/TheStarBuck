@@ -57,7 +57,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public void update(String sql, Object... parameter) {
+    public Long update(String sql, Object... parameter) {
         //OPEN CONNECTION
         Connection connection = null;
         PreparedStatement statement = null;
@@ -78,9 +78,11 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
 
                 //update
                 statement.executeUpdate();
-
+                long output = statement.executeUpdate();
                 //save to database
                 connection.commit();
+
+                return output;
 
             }catch (SQLException e){
                 if(connection!=null){
@@ -99,6 +101,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 }
             }
         }
+        return 0L;
     }
 
     @Override
