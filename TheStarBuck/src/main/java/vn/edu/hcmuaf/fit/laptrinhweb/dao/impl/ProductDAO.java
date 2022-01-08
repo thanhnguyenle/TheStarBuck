@@ -43,4 +43,10 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         }
         return output;
     }
+
+    public Product getItem(String id){
+        List<Product> products = query(QUERIES.PRODUCT.GET_ITEM_BYID, new ProductMapper(), id);
+        Product product = products.get(0);
+        return product;
+    }
 }

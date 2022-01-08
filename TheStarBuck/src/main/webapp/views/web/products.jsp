@@ -8,7 +8,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+  <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
   <!--jquery-ui css-->
   <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -233,7 +233,7 @@
               <ul class="side-icons">
                 <span><i class="fas fa-search"></i></span>
                 <span><i class="far fa-heart"></i></span>
-                <span><i class="fas fa-sliders-h"></i></span>
+                <span> <a href="<%=request.getContextPath()%>/detailProduct?id=${item.id}"><i class="fas fa-sliders-h"> </i></a></span>
               </ul>
             </div>
             <div class="bottom">
@@ -246,10 +246,10 @@
                   <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
                 </div>
               </div>
-              <a href="">${item.name}</a>
+              <a href="<%=request.getContextPath()%>/detailProduct?id=${item.id}">${item.name}</a>
               <div class="price">
-                <span>${item.price}</span>
-                <span class="cancel">$160</span>
+                <span>$${item.price}</span>
+                <span class="cancel">$${item.discount}</span>
               </div>
             </div>
           </div>

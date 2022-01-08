@@ -31,4 +31,8 @@ public class ProductService implements IProductService {
     public Map<String, Product> getAll(){
         return productDAO.getAll();
     }
+
+    public Product getItem(String id){
+        return ProductDAO.getInstance().getItem(id);
+    }
 }

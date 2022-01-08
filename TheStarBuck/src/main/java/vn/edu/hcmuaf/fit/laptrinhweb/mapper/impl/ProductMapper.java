@@ -13,6 +13,7 @@ public class ProductMapper implements IRowMapper<Product> {
             product.setId(resultSet.getString("id_pr"));
             product.setName(resultSet.getString("pr_name"));
             product.setIdCategory(resultSet.getString("pr_csId"));
+            product.setIngredients(resultSet.getString("pr_ingredients"));
             product.setPrice(resultSet.getFloat("pr_price"));
             product.setDiscount(resultSet.getFloat("pr_discount"));
             product.setQuantity(resultSet.getInt("pr_quantity"));
