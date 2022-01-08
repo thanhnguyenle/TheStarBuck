@@ -35,4 +35,6 @@ public class ProductService implements IProductService {
     public Product getItem(String id){
         return ProductDAO.getInstance().getItem(id);
     }
+
+
 }

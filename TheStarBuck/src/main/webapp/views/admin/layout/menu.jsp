@@ -84,7 +84,7 @@
                     <a href="<%=request.getContextPath()%>/product">List Product</a>
                 </li>
                 <li>
-                    <a href="addproduct.html">Add product</a>
+                    <a href="<%=request.getContextPath()%>/createProduct">Add product</a>
                 </li>
                 <li>
                     <a href="editproduct.html">Edit product</a>

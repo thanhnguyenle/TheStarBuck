@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@WebServlet(name = "CreateServlet", value = "/createAccount")
+@WebServlet(name = "CreateAccountServlet", value = "/createAccount")
 public class CreateServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override

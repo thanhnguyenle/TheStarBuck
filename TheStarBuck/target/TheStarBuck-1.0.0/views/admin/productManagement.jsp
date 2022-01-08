@@ -72,23 +72,25 @@
                                 </thead>
                                 <tbody>
 
+                                <jsp:useBean id="products" scope="request" type="java.util.List"/>
+                                <c:forEach items="${products}" var="item">
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>Milk Tea</td>
-                                    <td>Cold Drink</td>
-                                    <td class="center">15</td>
-                                    <td class="center">10</td>
-                                    <td>1</td>
+                                    <td>${item.id}</td>
+                                    <td>${item.name}</td>
+                                    <td>${item.idCategory}</td>
+                                    <td class="center">${item.price}</td>
+                                    <td class="center">${item.quantity}</td>
+                                    <td>${item.active}</td>
                                     <td class="center"><img style="width: 60px "
-                                                            src="https://globalassets.starbucks.com/assets/c59a4ee6bfa543de8788971494af3003.jpg?impolicy=1by1_wide_topcrop_630" alt="">
+                                                            src="${item.image}" alt="">
                                     </td>
                                     <td class=" text-center">
                                         <a href="#" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
-                                        <a href="editproduct.html" target="_blank" class="btn btn-info">Edit</a>
+                                        <a href="<%=request.getContextPath()%>/updateProduct?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
-
+                                </c:forEach>
 
 
                                 </tbody>
@@ -103,7 +105,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="deleteObject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
+             aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -117,7 +119,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Delete</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
                     </div>
                 </div>
             </div>
