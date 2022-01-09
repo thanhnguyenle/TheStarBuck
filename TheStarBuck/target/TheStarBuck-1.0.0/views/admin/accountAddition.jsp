@@ -30,7 +30,19 @@
     <!-- SB Admin CSS - Include with every page -->
 <%--    <link href="css/sb-admin.css" rel="stylesheet">--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/admin/css/sb-admin.css")%>" />
-
+    <%--    <script src="assets/js/tinymce.js"></script>--%>
+    <script type="text/javascript" src="<%= Asset.url("/template/admin/lib/ckeditor/ckeditor.js")%>"></script>
+    <script type="text/javascript" src="<%= Asset.url("/template/admin/lib/ckfinder/ckfinder.js")%>"></script>
+    <script type="text/javascript">
+        function BrowseServer() {
+            var finder = new CKFinder();
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+        }
+        function SetFileField(fileUrl) {
+            document.getElementById('Image').value = fileUrl;
+        }
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -60,12 +72,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Name Accounts</label>
-                                        <input class="form-control" name="nameAccount" placeholder="Enter name">
+                                        <input class="form-control"  name="nameAccount" placeholder="Enter name">
                                     </div>
                                     <div class="form-group">
                                         <label>FullName Accounts</label>
                                         <input class="form-control" name="fullNameAccount" placeholder="Enter full name">
                                     </div>
+
                                     <div class="form-group">
                                         <label>Active</label>
                                         <select class="form-control" name="active">
@@ -111,6 +124,8 @@
                                         <label>Created Accounts</label>
                                         <input class="form-control" type="text" name="createdBy" placeholder="Enter created">
                                     </div>
+                                    <input type="text" name="Image" id="Image" />
+                                    <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer();"/>
                                 </div>
                             </div>
                             <button type="submit" name="insert" class="btn btn-success">Insert</button>
@@ -130,7 +145,9 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
-
+<%--<script>--%>
+<%--    CKEDITOR.replace('content');--%>
+<%--</script>--%>
 <!-- Core Scripts - Include with every page -->
 <%--<script src="js/jquery-1.10.2.js"></script>--%>
 <script src="<%= Asset.url("/template/admin/js/jquery-1.10.2.js")%>"></script>
@@ -142,9 +159,7 @@
 <!-- Page-Level Plugin Scripts - Blank -->
 
 <!-- SB Admin Scripts - Include with every page -->
-<script src="js/sb-admin.js"></script>
-<script src="<%= Asset.url("/template/admin/js/sb-admin.js")%>"></script>
-
+<script src=""<%= Asset.url("/template/admin/js/sb-admin.js")%>""></script>
 <!-- Page-Level Demo Scripts - Blank - Use for reference -->
 
 </body>

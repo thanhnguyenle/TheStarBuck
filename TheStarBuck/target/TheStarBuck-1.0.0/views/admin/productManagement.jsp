@@ -128,10 +128,30 @@
     </div>
 </div>
 <!-- /#page-wrapper -->
-
 </div>
 <!-- /#wrapper -->
-
+<%--model delete--%>
+<form class="modal fade" id="deleteObject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" method="post"
+      aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Notify</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%--model delete--%>
 <!-- Core Scripts - Include with every page -->
 <%--<script src="js/jquery-1.10.2.js"></script>--%>
 <script src="<%= Asset.url("/template/admin/js/jquery-1.10.2.js")%>"></script>
