@@ -1,5 +1,10 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  Account account = (Account) request.getAttribute("account");
+  %>
 <!DOCTYPE html>
 <html lang="en">
 

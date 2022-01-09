@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         if(account != null){
             session.setAttribute("account", account);
-            request.getRequestDispatcher("/views/web/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/user-home").forward(request, response);
         } else {
             if(!accountService.checkUsername(username)){
                 error = "Username is not exist";
