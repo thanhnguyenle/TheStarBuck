@@ -27,8 +27,46 @@ public class CreateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("nameProduct");
+        String type = request.getParameter("type");
+        String ingredients = request.getParameter("Ingredients");
+        String price = request.getParameter("price");
+        String discount = request.getParameter("discount");
+        String quantity = request.getParameter("quantity");
+        String active = request.getParameter("active");
+        String isHot = request.getParameter("hot");
+        String view = request.getParameter("view");
+        String description = request.getParameter("description");
+        String image = request.getParameter("file");
+        String descriptionSeo = request.getParameter("descriptionSeo");
+        String keywordSeo = request.getParameter("keywordSeo");
+        String titleSeo = request.getParameter("titleSeo");
+        String createdBy = request.getParameter("createdBy");
 
         Product product = new Product();
+
+        product.setId("");
+        product.setName(name);
+        product.setIdCategory(type);
+        product.setIngredients(ingredients);
+        product.setPrice(Double.parseDouble(price));
+        product.setDiscount(Double.parseDouble(discount));
+        product.setQuantity(Integer.parseInt(quantity));
+        if(active.equals("0")){
+            product.setActive(false);
+        } else {
+        product.setActive(true);}
+        if(isHot.equals("0")){
+            product.setHot(false);
+        } else {
+        product.setHot(true);}
+        product.setView(Integer.parseInt(view));
+        product.setDescription(description);
+        product.setImage(image);
+        product.setDescriptionSeo(descriptionSeo);
+        product.setKeywordSeo(keywordSeo);
+        product.setTitleSeo(titleSeo);
+        product.setCreatedBy(createdBy);
 
         productService.save(product);
         response.sendRedirect(request.getContextPath() +"/product");

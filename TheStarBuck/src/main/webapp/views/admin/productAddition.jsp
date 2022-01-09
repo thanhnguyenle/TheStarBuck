@@ -69,7 +69,12 @@
 
                   <div class="form-group">
                     <label>Type</label>
-                    <input class="form-control" name="type" placeholder="Enter type">
+                    <select class="form-control" name="type">
+                      <option value="cs0001">Cool drink</option>
+                      <option value="cs0002">Hot drink</option>
+                      <option value="cs0003">Bakery</option>
+                      <option value="cs0004">Bottled water</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label>Ingredients</label>
@@ -104,10 +109,7 @@
                   </div>
                   <div class="form-group">
                     <label>View</label>
-                    <select class="form-control" name="view">
-                      <option value="0">NO</option>
-                      <option value="1">YES</option>
-                    </select>
+                    <input class="form-control" name="view" placeholder="product's view" value="0">
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -140,13 +142,10 @@
                     <textarea class="form-control" name="Note" placeholder="Enter note"
                               rows="3"></textarea>
                   </div>
-                  <div class="form-group">
-                    <label>Date Create</label>
-                    <input class="form-control" name="dateCreated" placeholder="Enter text">
-                  </div>
+
                   <div class="form-group">
                     <label>Created</label>
-                    <input class="form-control" name="created" placeholder="Enter text">
+                    <input class="form-control" name="createdBy" placeholder="Enter text">
                   </div>
                 </div>
                 <button type="submit" name="insert" class="btn btn-success">Insert</button>

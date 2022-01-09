@@ -15,7 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "UpdateServlet", value = "/updateAccount")
+@WebServlet(name = "UpdateAccountServlet", value = "/updateAccount")
 public class UpdateServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override

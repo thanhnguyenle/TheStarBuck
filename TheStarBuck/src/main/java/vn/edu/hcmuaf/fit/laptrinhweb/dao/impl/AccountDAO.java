@@ -126,4 +126,8 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         Account output = list.get(0);
         return output;
     }
+
+    public Long deleteItem(String id){
+        return 0L;
+    }
 }
