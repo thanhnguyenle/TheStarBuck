@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "UpdateServlet", value = "/updateAccount")
+@WebServlet(name = "UpdateAccountServlet", value = "/updateAccount")
 public class UpdateServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override
@@ -27,32 +29,29 @@ public class UpdateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String id = request.getParameter("idAccount");
-        String username = request.getParameter("nameAccount");
-        String fullname = request.getParameter("fullNameAccount");
         String active = request.getParameter("active"); // how to get?
-        String phoneNumber = request.getParameter("phoneAccount");
-        String email = request.getParameter("emailAccount");
-        String image = request.getParameter("avatar");
-        String password = request.getParameter("password");
-        String address = request.getParameter("address");
-        String about = request.getParameter("about");
-        String groupId = request.getParameter("groupId");
-//        String createdDate = request.getParameter("createdDate");//new SimpleDateFormat("yyyy-MM-dd").format(new Date())
-        String createdBy = request.getParameter("createdBy");
-        Account account = new Account();
-        account.setId(id);
-        account.setUsername(username);
-        account.setFullname(fullname);
-        account.setActive(true);
-        account.setPhoneNumber(phoneNumber);
-        account.setEmail(email);
-        account.setAvatar(image);
-        account.setPassword(password);
-        account.setAddressId(address);
-        account.setAboutMe(about);
-        account.setGroupId(groupId);
-        
+        String createdDate = request.getParameter("createData");
+
+        Account account = accountService.getAcc(id);
+
+
+        if(active.equals("0")){
+            account.setActive(false);
+        } else {
+            account.setActive(true);}
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        try {
+            date = df.parse(createdDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(account.isActive());
+
         accountService.save(account);
 
         response.sendRedirect(request.getContextPath() +"/account");

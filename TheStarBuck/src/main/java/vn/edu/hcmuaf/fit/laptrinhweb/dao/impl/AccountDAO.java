@@ -47,13 +47,19 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     }
 
     public Long registerAd(Account account){
+        int active = 0;
+        active = account.isActive() ?  1 : 0;
         long number =
-                insert(QUERIES.ACCOUNT.CREATE, account.getId(),account.getUsername(), account.getFullname(), 1, account.getPhoneNumber(), account.getEmail(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
+                insert(QUERIES.ACCOUNT.CREATE, account.getId(),account.getUsername(), account.getFullname(), active, account.getPhoneNumber(), account.getEmail(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
         return number;
     }
 
     public Long editAd(Account account){
-        return 0L;
+        int active = 0;
+        active = account.isActive() ?  1 : 0;
+        long number =
+                update(QUERIES.ACCOUNT.UPDATE, active, new SimpleDateFormat("yyyy-MM-dd").format(account.getLastLogin()) ,account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "ADMIN", account.getId());
+        return number;
     }
 
     public Map<String, Account> getAll(){
@@ -119,5 +125,9 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         List<Account> list = query(QUERIES.ACCOUNT.GET_ITEM_BYID, new AccountMapper(), id);
         Account output = list.get(0);
         return output;
+    }
+
+    public Long deleteItem(String id){
+        return 0L;
     }
 }

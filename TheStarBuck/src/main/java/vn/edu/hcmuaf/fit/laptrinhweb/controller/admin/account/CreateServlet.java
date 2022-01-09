@@ -6,9 +6,12 @@ import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.AccountService;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
-@WebServlet(name = "CreateServlet", value = "/createAccount")
+@WebServlet(name = "CreateAccountServlet", value = "/createAccount")
 public class CreateServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override
@@ -36,10 +39,22 @@ public class CreateServlet extends HttpServlet {
         account.setId("");
         account.setUsername(username);
         account.setFullname(fullname);
-        account.setActive(true);
+        if(active.equals("0")){
+            account.setActive(false);
+        } else {
+        account.setActive(true);}
         account.setPhoneNumber(phoneNumber);
         account.setEmail(email);
         account.setAvatar(image);
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(password.getBytes());
+        byte[] digest = md.digest();
+        password = DatatypeConverter.printHexBinary(digest).toUpperCase();
         account.setPassword(password);
         account.setAddressId(address);
         account.setAboutMe(about);

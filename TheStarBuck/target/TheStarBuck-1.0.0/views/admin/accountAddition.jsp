@@ -102,14 +102,11 @@
                                     <div class="form-group">
                                         <label>GroupId</label>
                                         <select class="form-control" name="groupId">
-                                            <option value="ADMIN">Customer</option>
-                                            <option value="MEMBER">Management</option>
+                                            <option value="ADMIN">ADMIN</option>
+                                            <option value="MEMBER">MEMBER</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Create data Accounts</label>
-                                        <input class="form-control" type="text" name="createdDate" placeholder="Enter createData">
-                                    </div>
+
                                     <div class="form-group">
                                         <label>Created Accounts</label>
                                         <input class="form-control" type="text" name="createdBy" placeholder="Enter created">

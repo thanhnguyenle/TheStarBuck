@@ -77,8 +77,8 @@
                                     <div class="form-group">
                                         <label>Active</label>
                                         <select class="form-control" name="active">
-                                            <option value="0">Inactive</option>
-                                            <option value="1">Still active</option>
+                                            <option value="0" <c:if test="${acc.active == false}"> selected </c:if>>Inactive</option>
+                                            <option value="1" <c:if test="${acc.active == true}"> selected </c:if>>Still active</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -110,18 +110,18 @@
                                     </div>
                                     <div class="form-group">
                                         <label>GroupId</label>
-                                        <select class="form-control" name="groupId">
-                                            <option value="ADMIN">Customer</option>
-                                            <option value="MEMBER">Management</option>
+                                        <select class="form-control" name="groupId" >
+                                            <option value="ADMIN" <c:if test="${acc.groupId.equals('ADMIN')}"> selected </c:if> >ADMIN</option>
+                                            <option value="MEMBER" <c:if test="${acc.groupId.equals('MEMBER')}"> selected </c:if>>MEMBER</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Create data Accounts</label>
-                                        <input class="form-control" type="text" name="createData" value="123" placeholder="Enter createData">
+                                        <input class="form-control" type="text" name="createData" value="${acc.createdDate}" placeholder="Enter createData">
                                     </div>
                                     <div class="form-group">
                                         <label>Created Accounts</label>
-                                        <input class="form-control" type="text" name="created" value="123" placeholder="Enter created">
+                                        <input class="form-control" type="text" name="created" value="${acc.createdBy}" placeholder="Enter created">
                                     </div>
                                 </div>
                             </div>

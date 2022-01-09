@@ -78,13 +78,13 @@
             </ul>
         </li>
         <li>
-            <a href="productstable.html">Product management</a>
+            <a href="<%=request.getContextPath()%>/product">Product management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="productstable.html">List Product</a>
+                    <a href="<%=request.getContextPath()%>/product">List Product</a>
                 </li>
                 <li>
-                    <a href="addproduct.html">Add product</a>
+                    <a href="<%=request.getContextPath()%>/createProduct">Add product</a>
                 </li>
                 <li>
                     <a href="editproduct.html">Edit product</a>

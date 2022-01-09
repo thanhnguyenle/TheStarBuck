@@ -62,4 +62,8 @@ public class AccountService implements IAccountService {
         return AccountDAO.getInstance().getItem(id);
     }
 
+    public boolean deleteItem(String id){
+        return accountDAO.deleteItem(id) == 1;
+    }
+
 }
