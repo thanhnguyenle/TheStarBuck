@@ -505,9 +505,9 @@ CREATE FUNCTION `func_autoid`(lastuserid VARCHAR ( 6 ),
     READS SQL DATA
     DETERMINISTIC
 BEGIN--  Khoi tao first id
-				DECLARE num_nextuserid TINYINT;
+				DECLARE num_nextuserid INT;
 				DECLARE nextuserid VARCHAR(6);
-				DECLARE temp TINYINT;
+				DECLARE temp INT;
 				SET size = 6;
 				IF lastuserid = ''  THEN
 								SET lastuserid = CONCAT(prefix ,REPEAT('0',size -  CHAR_LENGTH( prefix )));
