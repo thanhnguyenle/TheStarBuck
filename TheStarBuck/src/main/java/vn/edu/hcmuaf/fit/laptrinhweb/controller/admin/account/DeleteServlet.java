@@ -23,18 +23,21 @@ public class DeleteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/admin/accountManagement.jsp");
-        rd.forward(request,response);
-
+//        RequestDispatcher rd = request.getRequestDispatcher("/views/admin/accountManagement.jsp");
+//        rd.forward(request,response);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
+        boolean check = accountService.deleteItem(id);
+        if(check){
+            response.sendRedirect(request.getContextPath() +"/account");
+        } else {
+            System.out.println("------------- something wrong");
+        }
 
-        accountService.deleteItem(id);
-        response.sendRedirect(request.getContextPath() +"/account");
 
     }
 }

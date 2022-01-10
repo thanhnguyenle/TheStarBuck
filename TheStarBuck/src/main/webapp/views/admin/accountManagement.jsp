@@ -104,7 +104,7 @@
 <!-- /#wrapper -->
 <%--model delete--%>
 <form class="modal fade" id="deleteObject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" method="post"
-      aria-hidden="true">
+      aria-hidden="true" action="${pageContext.request.contextPath}/deleteAccount">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -118,7 +118,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Delete</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
             </div>
         </div>
     </div>

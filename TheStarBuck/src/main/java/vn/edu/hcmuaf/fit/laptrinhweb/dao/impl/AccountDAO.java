@@ -128,6 +128,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     }
 
     public Long deleteItem(String id){
-        return 0L;
+        long output = delete(QUERIES.ACCOUNT.DELETE, id);
+        return output;
     }
 }

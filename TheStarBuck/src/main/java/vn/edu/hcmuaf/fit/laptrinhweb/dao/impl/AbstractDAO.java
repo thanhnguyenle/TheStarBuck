@@ -149,6 +149,50 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
       return 0L;
     }
 
+    public Long delete(String sql, Object... parameter){
+        //OPEN CONNECTION
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        //Step1: Establishing a Connection
+        connection =DBConnection.getConnection();
+        if(connection!=null){
+            try{
+                //turn off auto commit :
+                //when throw 1 error, program will not update database
+                connection.setAutoCommit(false);
+
+                //Step 2: Create a statement using connection object
+                statement = connection.prepareStatement(sql);
+
+                //set multiple parameter
+                setParameter(statement,parameter);
+
+                //insert
+                long output = statement.executeUpdate();
+                //save to database
+                connection.commit();
+                return output;
+            }catch (SQLException e){
+                if(connection!=null){
+                    try{
+                        connection.rollback();
+                    }catch (SQLException e1){
+                        e1.printStackTrace();
+                    }
+                }
+            }finally {
+                DBConnection.releaseConnection(connection);
+                try {
+                    if (statement != null) statement.close();
+                }catch(SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return 0L;
+    }
+
     public void setParameter(PreparedStatement statement, Object... parameters) {
         try {
             for (int i = 0; i < parameters.length; i++) {
