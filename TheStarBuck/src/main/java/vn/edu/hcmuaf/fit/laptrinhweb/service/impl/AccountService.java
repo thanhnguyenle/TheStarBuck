@@ -55,6 +55,7 @@ public class AccountService implements IAccountService {
             if(!retypepassword.equals(password)){
                 output.put("errorPassword", "Retyped password is wrong");
             }
+
         }
         return output;
     }

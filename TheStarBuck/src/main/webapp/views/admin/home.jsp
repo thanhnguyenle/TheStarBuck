@@ -6,8 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Account account = (Account) request.getAttribute("account");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +49,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Dashboard ${account.fullname}</h1>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="card card-body mb-4 revenue">

@@ -36,14 +36,23 @@ public class LoginServlet extends HttpServlet {
 //            error = "Username is not exist";
         }
         Account account = accountService.login(username, password);
+//        System.out.println(account.isActive());
         HttpSession session = request.getSession();
         if(account != null){
+            if(!account.isActive()){
+                error = "Account is blocked";
+                session.setAttribute("error", error);
+                request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+            } else {
             session.setAttribute("account", account);
-            request.getRequestDispatcher("/user-home").forward(request, response);
-        } else {
+            if(account.getGroupId().equals("MOD")){
+            response.sendRedirect(request.getContextPath() +"/admin-home");} else {
+                request.getRequestDispatcher("/user-home").forward(request, response);}
+            }
+        }else {
             if(!accountService.checkUsername(username)){
                 error = "Username is not exist";
-            } else {
+            } else  {
             error = "Password is incorrect";}
             session.setAttribute("error", error);
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
