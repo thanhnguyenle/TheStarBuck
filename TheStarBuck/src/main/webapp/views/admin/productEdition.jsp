@@ -1,3 +1,7 @@
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -5,7 +9,11 @@
   Time: 11:09 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Product product = (Product) request.getAttribute("product");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -18,223 +26,22 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
     <!-- Core CSS - Include with every page -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<%--    <link href="css/bootstrap.min.css" rel="stylesheet">--%>
+    <link rel="stylesheet" href="<%= Asset.url("/template/admin/css/bootstrap.min.css")%>" />
+<%--    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">--%>
+    <link rel="stylesheet" href="<%= Asset.url("/template/admin/font-awesome/css/font-awesome.css")%>" />
 
     <!-- Page-Level Plugin CSS - Blank -->
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+<%--    <link href="css/sb-admin.css" rel="stylesheet">--%>
+    <link rel="stylesheet" href="<%= Asset.url("/template/admin/css/sb-admin.css")%>" />
 
 </head>
 
 <body>
 <div id="wrapper">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Admin Starbucks</a>
-        </div>
-        <!-- /.navbar-header -->
-
-        <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="profile.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li>
-                        <a href="changerole.html"><i class="fa fa-gear fa-fw"></i> Setting</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-        </ul>
-        <!-- /.navbar-top-links -->
-
-        <div class="navbar-default navbar-static-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                        </div>
-                        <!-- /input-group -->
-                    </li>
-                    <li>
-                        <a href="index.html"> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="accounttable.html">User management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="accounttable.html">List User</a>
-                            </li>
-                            <li>
-                                <a href="addaccount.html">Add User</a>
-                            </li>
-                            <li>
-                                <a href="editaccount.html">Edit User</a>
-                            </li>
-                            <li>
-                                <a href="address.html">List Address</a>
-                            </li>
-                            <li>
-                                <a href="addaddress.html">Add Address</a>
-                            </li>
-                            <li>
-                                <a href="editaddress.html">Edit Address</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="shippertable.html">Shipper management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="shippertable.html">List Shipper</a>
-                            </li>
-                            <li>
-                                <a href="addshipper.html">Add Shipper</a>
-                            </li>
-                            <li>
-                                <a href="editshipper.html">Edit Shipper</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="categoritable.html">Category management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="categoritable.html">List Category</a>
-                            </li>
-                            <li>
-                                <a href="addcategory.html">Add Category</a>
-                            </li>
-                            <li>
-                                <a href="editcategory.html">Edit Category</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="productstable.html">Product management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="productstable.html">List Product</a>
-                            </li>
-                            <li>
-                                <a href="addproduct.html">Add product</a>
-                            </li>
-                            <li>
-                                <a href="editproduct.html">Edit product</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="ordertable.html">Order management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="ordertable.html">List Order</a>
-                            </li>
-                            <li>
-                                <a href="addorder.html">Add Order</a>
-                            </li>
-                            <li>
-                                <a href="editorder.html">Edit Order</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="contact.html">List contact</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="feedbacktable.html">FeedBack management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="feedbacktable.html">List FeedBack</a>
-                            </li>
-                            <li>
-                                <a href="addfeedback.html">Add FeedBack</a>
-                            </li>
-                            <li>
-                                <a href="editfeedback.html">Edit FeedBack</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="slide.html">Pages management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="navigationtable.html">Navigation</a>
-                            </li>
-                            <li>
-                                <a href="slide.html">Slides</a>
-                            </li>
-                            <li>
-                                <a href="footer.html">Footer</a>
-                            </li>
-                            <li>
-                                <a href="menu.html">Menu</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blogtable.html">Blog management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="blogtable.html">List Blog</a>
-                            </li>
-                            <li>
-                                <a href="addblog.html">Add Blog</a>
-                            </li>
-                            <li>
-                                <a href="editblog.html">Edit Blog</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="toppingtable.html">Toppings management</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="toppingtable.html">List Topping</a>
-                            </li>
-                            <li>
-                                <a href="addtoppings.html">Add Topping</a>
-                            </li>
-                            <li>
-                                <a href="edittoppings.html">Edit Topping</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /#side-menu -->
-            </div>
-            <!-- /.sidebar-collapse -->
-        </div>
-        <!-- /.navbar-static-side -->
-    </nav>
+    <jsp:include page="layout/header.jsp"/>
 
 
     <div id="page-wrapper">
@@ -368,14 +175,18 @@
 <!-- /#wrapper -->
 
 <!-- Core Scripts - Include with every page -->
-<script src="js/jquery-1.10.2.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<%--<script src="js/jquery-1.10.2.js"></script>--%>
+<script src="<%= Asset.url("/template/admin/js/jquery-1.10.2.js")%>"></script>
+<%--<script src="js/bootstrap.min.js"></script>--%>
+<script src="<%= Asset.url("/template/admin/js/bootstrap.min.js")%>"></script>
+<%--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>--%>
+<script src="<%= Asset.url("/template/admin/js/plugins/metisMenu/jquery.metisMenu.js")%>"></script>
 
 <!-- Page-Level Plugin Scripts - Blank -->
 
 <!-- SB Admin Scripts - Include with every page -->
-<script src="js/sb-admin.js"></script>
+<%--<script src="js/sb-admin.js"></script>--%>
+<script src="<%= Asset.url("/template/admin/js/sb-admin.js")%>"></script>
 
 <!-- Page-Level Demo Scripts - Blank - Use for reference -->
 

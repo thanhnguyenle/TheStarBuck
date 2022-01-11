@@ -41,7 +41,9 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
 
     public Long addItem(Product product){
         int active = product.isActive() ? 1 : 0;
-        long output = insert(QUERIES.PRODUCT.CREATE, product.getId(), product.getName(), product.getIdCategory(), product.getIngredients(), product.getPrice(), product.getDiscount(), product.getQuantity(), active, product.isHot(), product.getView(), product.getDescription(), product.getImage(), product.getDescriptionSeo(), product.getKeywordSeo(), product.getTitleSeo(), product.getNote(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), product.getCreatedBy(), product.getCreatedBy());
+        int hot = product.isHot() ? 1 : 0;
+        System.out.println("======" + product.getImage());
+        long output = insert(QUERIES.PRODUCT.CREATE, product.getId(), product.getName(), product.getIdCategory(), product.getIngredients(), product.getPrice(), product.getDiscount(), product.getQuantity(), active, hot, product.getView(), product.getDescription(), product.getImage(), product.getDescriptionSeo(), product.getKeywordSeo(), product.getTitleSeo(), product.getNote(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), product.getCreatedBy(), product.getCreatedBy());
         return output;
     }
 

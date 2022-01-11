@@ -41,6 +41,7 @@ public class CreateServlet extends HttpServlet {
         String descriptionSeo = request.getParameter("descriptionSeo");
         String keywordSeo = request.getParameter("keywordSeo");
         String titleSeo = request.getParameter("titleSeo");
+        String note = request.getParameter("Note");
         String createdBy = request.getParameter("createdBy");
 
         Product product = new Product();
@@ -60,12 +61,13 @@ public class CreateServlet extends HttpServlet {
             product.setHot(false);
         } else {
         product.setHot(true);}
-        product.setView(Integer.parseInt(view));
+        product.setView(Integer.parseInt("0"));
         product.setDescription(description);
         product.setImage(image);
         product.setDescriptionSeo(descriptionSeo);
         product.setKeywordSeo(keywordSeo);
         product.setTitleSeo(titleSeo);
+        product.setNote(note);
         product.setCreatedBy(createdBy);
 
         productService.save(product);
