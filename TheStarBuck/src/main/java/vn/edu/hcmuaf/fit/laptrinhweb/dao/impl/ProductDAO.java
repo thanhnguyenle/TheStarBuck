@@ -48,7 +48,10 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     public Long updateItem(Product product){
-        return 0L;
+        int active = product.isActive() ? 1 : 0;
+        int hot = product.isHot() ? 1 : 0;
+        long output = insert(QUERIES.PRODUCT.UPDATE, product.getName(), product.getIdCategory(), product.getIngredients(), product.getPrice(), product.getDiscount(), product.getQuantity(), active, hot, product.getView(), product.getDescription(), product.getImage(), product.getDescriptionSeo(), product.getKeywordSeo(), product.getTitleSeo(), product.getNote(),  new SimpleDateFormat("yyyy-MM-dd").format(new Date()), product.getModifiedBy(), product.getId());
+        return output;
     }
 
     public Map<String, Product> getAll(){

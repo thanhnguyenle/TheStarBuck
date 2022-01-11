@@ -59,101 +59,103 @@
                         Data Product
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="${pageContext.request.contextPath}/updateProduct" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>ID Product</label>
-                                        <input class="form-control" name="idProduct" value="pr0001" placeholder="Enter id">
+                                        <input class="form-control" name="idProduct" value="${product.id}" placeholder="Enter id">
                                     </div>
                                     <div class="form-group">
                                         <label>Name Product</label>
-                                        <input class="form-control" name="nameProduct" value="Cafe" placeholder="Enter name">
+                                        <input class="form-control" name="nameProduct" value="${product.name}" placeholder="Enter name">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Type</label>
-                                        <input class="form-control" name="type" value="ca0001" placeholder="Enter type">
+                                        <select class="form-control" name="type">
+                                            <option value="cs0001" <c:if test="${product.idCategory.equals('cs0001')}"> selected </c:if>>Cool drink</option>
+                                            <option value="cs0002" <c:if test="${product.idCategory.equals('cs0002')}"> selected </c:if>>Hot drink</option>
+                                            <option value="cs0003" <c:if test="${product.idCategory.equals('cs0003')}"> selected </c:if>>Bakery</option>
+                                            <option value="cs0004" <c:if test="${product.idCategory.equals('cs0004')}"> selected </c:if>>Bottled water</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Ingredients</label>
                                         <textarea class="form-control" name="Ingredients"
-                                                  placeholder="Enter ingredients" rows="3" ></textarea>
+                                                  placeholder="Enter ingredients" rows="3" >${product.ingredients}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input class="form-control" name="price" value="100$" placeholder="Enter price">
+                                        <input class="form-control" name="price" value="${product.price}" placeholder="Enter price">
                                     </div>
                                     <div class="form-group">
                                         <label>Discount</label>
-                                        <input class="form-control" name="discount" placeholder="Enter discount">
+                                        <input class="form-control" name="discount" placeholder="Enter discount" value="${product.discount}">
                                     </div>
                                     <div class="form-group">
                                         <label>Quantity</label>
-                                        <input class="form-control" name="quantity" placeholder="Enter quantity">
+                                        <input class="form-control" name="quantity" placeholder="Enter quantity" value="${product.quantity}">
                                     </div>
                                     <div class="form-group">
                                         <label>Active</label>
                                         <select class="form-control" name="active">
-                                            <option value="0">NO</option>
-                                            <option value="1">YES</option>
+                                            <option value="0" <c:if test="${product.active == false}"> selected </c:if>>NO</option>
+                                            <option value="1" <c:if test="${product.active == true}"> selected </c:if>>YES</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Hot</label>
                                         <select class="form-control" name="hot">
-                                            <option value="0">NO</option>
-                                            <option value="1">YES</option>
+                                            <option value="0" <c:if test="${product.hot == false}"> selected </c:if>>NO</option>
+                                            <option value="1" <c:if test="${product.hot == true}"> selected </c:if>>YES</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>View</label>
-                                        <select class="form-control" name="view">
-                                            <option value="0">NO</option>
-                                            <option value="1">YES</option>
-                                        </select>
+                                        <input class="form-control" name="view" placeholder="product's view" value="${product.view}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Description</label>
                                         <textarea class="form-control" name="description" placeholder="Description"
-                                                  rows="3"></textarea>
+                                                  rows="3">${product.description}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>File Image</label>
-                                        <input type="file" name="file">
+                                        <input type="file" name="image" value="${product.image}">
                                     </div>
                                     <div class="form-group">
                                         <label>DescriptionSeo</label>
                                         <textarea class="form-control" name="descriptionSeo"
-                                                  placeholder="DescriptionSeo" rows="3"></textarea>
+                                                  placeholder="DescriptionSeo" rows="3">${product.descriptionSeo}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>KeywordSeo</label>
                                         <textarea class="form-control" name="keywordSeo" placeholder="KeywordSeo"
-                                                  rows="3"></textarea>
+                                                  rows="3">${product.keywordSeo}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>TitleSeo</label>
                                         <textarea class="form-control" name="titleSeo" placeholder="TitleSeo"
-                                                  rows="3"></textarea>
+                                                  rows="3">${product.titleSeo}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Note</label>
                                         <textarea class="form-control" name="Note" placeholder="Enter note"
-                                                  rows="3"></textarea>
+                                                  rows="3">${product.note}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Date Create</label>
-                                        <input class="form-control" name="dateCreated" placeholder="Enter text">
+                                        <input class="form-control" name="dateCreated" placeholder="Enter text" value="${product.createdDate}">
                                     </div>
                                     <div class="form-group">
-                                        <label>Created</label>
-                                        <input class="form-control" name="created" value="Nhu" placeholder="Enter text">
+                                        <label>Modified By</label>
+                                        <input class="form-control" name="modifiedBy" value="${product.modifiedBy}" placeholder="Enter text">
                                     </div>
                                 </div>
-                                <button type="button" name="insert" class="btn btn-success">Update</button>
+                                <button type="submit" name="insert" class="btn btn-success">Update</button>
                                 <button type="reset" name="reset" class="btn btn-default">Reset</button>
                             </div>
                         </form>
