@@ -64,10 +64,10 @@
             </ul>
         </li>
         <li>
-            <a href="categoritable.html">Category management</a>
+            <a href="<%=request.getContextPath()%>/category">Category management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="categoritable.html">List Category</a>
+                    <a href="<%=request.getContextPath()%>/category">List Category</a>
                 </li>
                 <li>
                     <a href="addcategory.html">Add Category</a>

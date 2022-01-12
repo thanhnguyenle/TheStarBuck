@@ -21,8 +21,8 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public List<Product> findAll() {
-        return null;
+    public List<Category> findAll() {
+        return categoryDAO.findAll();
     }
 
     @Override
