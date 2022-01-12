@@ -70,10 +70,10 @@
                     <a href="<%=request.getContextPath()%>/category">List Category</a>
                 </li>
                 <li>
-                    <a href="addcategory.html">Add Category</a>
+                    <a href="<%=request.getContextPath()%>/createCategory">Add Category</a>
                 </li>
                 <li>
-                    <a href="editcategory.html">Edit Category</a>
+                    <a href="<%=request.getContextPath()%>/updateCategory">Edit Category</a>
                 </li>
             </ul>
         </li>

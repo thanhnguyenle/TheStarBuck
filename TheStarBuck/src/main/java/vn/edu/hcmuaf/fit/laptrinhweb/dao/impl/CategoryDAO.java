@@ -5,6 +5,8 @@ import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.CategoryMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Category;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -30,26 +32,41 @@ public class CategoryDAO extends AbstractDAO<Category> implements ICategoryDAO {
 
     @Override
     public Long save(Category category) {
-        return null;
+        if(category.getId().equals("")){
+            return addItem(category);
+        }
+        return updateItem(category);
     }
 
     @Override
     public Long deleteItem(String id) {
-        return null;
-    }
-
-    @Override
-    public Long updateItem(String id) {
-        return null;
+        long output = delete(QUERIES.CATEGORY.DELETE, id);
+        return output;
     }
 
     @Override
     public Category getItem(String id) {
-        return null;
+        List<Category> list = query(QUERIES.CATEGORY.GET_ITEM_BYID, new CategoryMapper(), id);
+        Category output = list.get(0);
+        return output;
     }
 
     @Override
     public Map<String, Category> getAll() {
+        return null;
+    }
+
+    @Override
+    public Long addItem(Category category) {
+        int active = category.isActive() ? 1 : 0;
+        long output = insert(QUERIES.CATEGORY.CREATE, category.getId(), category.getName(), category.getIcon(), category.getAvatar(), active, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), category.getCreatedBy(), category.getCreatedBy());
+        return output;
+    }
+
+    @Override
+    public Long updateItem(Category category) {
+        int active = category.isActive() ? 1 : 0;
+        long output = update(QUERIES.CATEGORY.UPDATE, category.getName(), category.getIcon(), category.getAvatar(), active, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), category.getModifiedBy(), category.getId());
         return null;
     }
 }

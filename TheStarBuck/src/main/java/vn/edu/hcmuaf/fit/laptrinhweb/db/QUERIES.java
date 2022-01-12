@@ -30,6 +30,7 @@ public static class CATEGORY{
         public static  final String CREATE = "insert into Category values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         public static  final String DELETE = "delete from Category where id_cs = ?";
         public static  final String UPDATE = "update Category set cs_name = ?, cs_icon = ?, cs_avatar = ?, cs_active = ?, modifiedDate = ?, modifiedBy = ? where id_cs = ?";
+        public static  final String GET_ITEM_BYID = "select * from Category where id_cs = ?";
 }
 // Slider
 public static class SLIDER {

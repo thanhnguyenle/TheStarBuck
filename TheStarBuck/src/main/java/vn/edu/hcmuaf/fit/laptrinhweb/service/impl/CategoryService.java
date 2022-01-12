@@ -20,6 +20,7 @@ public class CategoryService implements ICategoryService {
         return instance;
     }
 
+
     @Override
     public List<Category> findAll() {
         return categoryDAO.findAll();
@@ -27,12 +28,12 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public Long save(Category category) {
-        return null;
+        return categoryDAO.save(category);
     }
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        return categoryDAO.deleteItem(id) ;
     }
 
     @Override
@@ -42,6 +43,6 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public Category getItem(String id) {
-        return null;
+        return categoryDAO.getItem(id);
     }
 }
