@@ -68,4 +68,9 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         Product product = products.get(0);
         return product;
     }
+
+    public Long deleteItem(String id){
+        long output = delete(QUERIES.PRODUCT.DELETE, id);
+        return output;
+    }
 }

@@ -85,8 +85,8 @@
                                                             src="${item.image}" alt="">
                                     </td>
                                     <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
+                                        <a href="<%=request.getContextPath()%>/deleteProduct?id=${item.id}" class="btn btn-danger" data-toggle="modal"
+                                           data-target="#deleteObject" >Delete</a>
                                         <a href="<%=request.getContextPath()%>/updateProduct?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
@@ -103,28 +103,7 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="deleteObject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true" >
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLabel">Notify</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Modal -->
+
     </div>
 </div>
 <!-- /#page-wrapper -->
@@ -132,7 +111,7 @@
 <!-- /#wrapper -->
 <%--model delete--%>
 <form class="modal fade" id="deleteObject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" method="post"
-      aria-hidden="true">
+      aria-hidden="true" action="${pageContext.request.contextPath}/deleteProduct">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -146,7 +125,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Delete</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
             </div>
         </div>
     </div>

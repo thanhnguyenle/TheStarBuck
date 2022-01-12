@@ -36,5 +36,8 @@ public class ProductService implements IProductService {
         return ProductDAO.getInstance().getItem(id);
     }
 
+    public boolean deleteItem(String id){
+        return productDAO.deleteItem(id) == 1;
+    }
 
 }
