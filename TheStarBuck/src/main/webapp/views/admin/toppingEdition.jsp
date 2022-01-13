@@ -6,9 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Category" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Topping" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Topping topping = (Topping) request.getAttribute("topping");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -54,36 +57,36 @@
                         Data Topping
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="${pageContext.request.contextPath}/updateTopping" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Id Topping</label>
-                                        <input class="form-control" name="idTopping" value="bl0001"
+                                        <input class="form-control" name="idTopping" value="${topping.id}"
                                                placeholder="Enter id">
                                     </div>
                                     <div class="form-group">
                                         <label>Name Topping</label>
-                                        <input class="form-control" name="nameTopping" placeholder="Enter name" value="Black bubble">
+                                        <input class="form-control" name="nameTopping" placeholder="Enter name" value="${topping.name}">
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input class="form-control" name="price" placeholder="Enter price" value="1">
+                                        <input class="form-control" name="price" placeholder="Enter price" value="${topping.price}">
                                     </div>
 
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Quantity</label>
-                                        <input class="form-control" name="quantity" placeholder="Enter quantity" value="10">
+                                        <input class="form-control" name="quantity" placeholder="Enter quantity" value="${topping.quantity}">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Modify By</label>
-                                        <input class="form-control" name="modifedBy" placeholder="Enter text" value="KA">
+                                        <input class="form-control" name="modifedBy" placeholder="Enter text" value="${topping.modifiedBy}">
                                     </div>
                                 </div>
-                                <button type="button" name="insert" class="btn btn-success">Insert</button>
+                                <button type="submit" name="insert" class="btn btn-success">Insert</button>
                                 <button type="reset" name="reset" class="btn btn-default">Reset</button>
                             </div>
                         </form>

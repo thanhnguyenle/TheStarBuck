@@ -53,17 +53,17 @@
                         Data Topping</a>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="${pageContext.request.contextPath}/createTopping" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Id Topping</label>
-                                        <input class="form-control" name="idTopping" value="bl0001"
+                                        <input class="form-control" name="idTopping"
                                                placeholder="Enter id">
                                     </div>
                                     <div class="form-group">
                                         <label>Name Topping</label>
-                                        <input class="form-control" name="nameTopping"value="Sua" placeholder="Enter name">
+                                        <input class="form-control" name="nameTopping" placeholder="Enter name">
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
@@ -82,7 +82,7 @@
                                         <input class="form-control" name="createdBy" placeholder="Enter text">
                                     </div>
                                 </div>
-                                <button type="button" name="insert" class="btn btn-success">Insert</button>
+                                <button type="submit" name="insert" class="btn btn-success">Insert</button>
                                 <button type="reset" name="reset" class="btn btn-default">Reset</button>
                             </div>
                         </form>

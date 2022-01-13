@@ -5,6 +5,8 @@ import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ToppingMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Topping;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -41,7 +43,9 @@ public class ToppingDAO extends  AbstractDAO<Topping> implements IToppingDAO {
 
     @Override
     public Topping getItem(String id) {
-        return null;
+        List<Topping> list = query(QUERIES.TOPPING.GET_ITEM_BYID, new ToppingMapper(), id);
+        Topping output = list.get(0);
+        return output;
     }
 
     @Override
@@ -51,11 +55,13 @@ public class ToppingDAO extends  AbstractDAO<Topping> implements IToppingDAO {
 
     @Override
     public Long addItem(Topping topping) {
-        return null;
+        long output = insert(QUERIES.TOPPING.CREATE, topping.getId(), topping.getName(), topping.getQuantity(), topping.getPrice(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), topping.getCreatedBy(), topping.getCreatedBy());
+        return output;
     }
 
     @Override
     public Long updateItem(Topping topping) {
-        return null;
+        long output = update(QUERIES.TOPPING.UPDATE, topping.getName(), topping.getQuantity(), topping.getPrice(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), topping.getModifiedBy(), topping.getId());
+        return output;
     }
 }

@@ -26,7 +26,7 @@ public class ToppingService implements IToppingService {
 
     @Override
     public Long save(Topping topping) {
-        return null;
+        return toppingDAO.save(topping);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ToppingService implements IToppingService {
 
     @Override
     public Topping getItem(String id) {
-        return null;
+        return toppingDAO.getItem(id);
     }
 
 }
