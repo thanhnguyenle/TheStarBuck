@@ -38,7 +38,8 @@ public class ToppingDAO extends  AbstractDAO<Topping> implements IToppingDAO {
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        long output = delete(QUERIES.TOPPING.DELETE, id);
+        return output;
     }
 
     @Override

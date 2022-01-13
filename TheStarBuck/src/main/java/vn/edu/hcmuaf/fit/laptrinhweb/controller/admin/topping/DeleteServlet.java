@@ -1,7 +1,8 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.topping;
 
 
-import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.CategoryService;
+
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ToppingService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet(name = "DeleteToppingServlet", value = "/deleteTopping")
 public class DeleteServlet extends HttpServlet {
-
+    private ToppingService toppingService = ToppingService.getInstance();
 
     @Override
     public void init() throws ServletException {
@@ -27,13 +28,13 @@ public class DeleteServlet extends HttpServlet {
         String id = request.getParameter("id");
 
         System.out.println(id);
-//        boolean check = categoryService.deleteItem(id) == 1;
-//        if(check){
-//            System.out.println("++++++++");
-//            doPost(request, response);
-//        } else {
-//            System.out.println("------------- something wrong");
-//        }
+        boolean check = toppingService.deleteItem(id) == 1;
+        if(check){
+            System.out.println("++++++++");
+            doPost(request, response);
+        } else {
+            System.out.println("------------- something wrong");
+        }
 
     }
 

@@ -31,7 +31,7 @@ public class ToppingService implements IToppingService {
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        return toppingDAO.deleteItem(id);
     }
 
 

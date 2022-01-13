@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Category" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Topping" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
