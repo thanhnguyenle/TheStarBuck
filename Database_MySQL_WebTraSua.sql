@@ -816,14 +816,32 @@ DELIMITER ;
 				END IF;
  END$$;
  DELIMITER ;
+ 
+ 	 -- -- Tao id_ci for Slide
+ DROP TRIGGER IF EXISTS tr_NextToppingID;
+ DELIMITER $$
+ CREATE TRIGGER tr_NextToppingID
+ BEFORE INSERT ON `Topping`
+ FOR EACH ROW
+ BEGIN
+				DECLARE lastToppingID VARCHAR(6);
+				SET lastToppingID = (SELECT `id_tp` FROM `Topping` ORDER BY `id_tp` DESC LIMIT 1);
+				IF lastToppingID IS NULL THEN
+						SET lastToppingID = '';
+				END IF;
+				IF NEW.`id_tp` = '' OR NEW.`id_tp` IS NULL	THEN
+						SET NEW.`id_tp`= func_autoid(lastToppingID, 'tp', 6);
+				END IF;
+ END$$;
+ DELIMITER ;
 		
 SET FOREIGN_KEY_CHECKS = 1;
 
 --  import data
 -- Account 
-INSERT INTO `Account` VALUES ('ac0001', 'kyanh01', N'Nguyễn Kỳ Anh', 1, '111111111', '19130011@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
-INSERT INTO `Account` VALUES ('ac0002', 'lethanh01', N'Nguyễn Lê Thành', 1, '1111111', '19130206@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
-INSERT INTO `Account` VALUES ('ac0003', 'minhnhu01', N'Dương Thị Minh Như', 1, '365448301', '19130163@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
+INSERT INTO `Account` VALUES ('ac0001', 'kyanh01', 'Nguyễn Kỳ Anh', 1, '111111111', '19130011@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
+INSERT INTO `Account` VALUES ('ac0002', 'lethanh01', 'Nguyễn Lê Thành', 1, '1111111', '19130206@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
+INSERT INTO `Account` VALUES ('ac0003', 'minhnhu01', 'Dương Thị Minh Như', 1, '365448301', '19130163@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 INSERT INTO `Account` VALUES ('ac0004', 'sebastion', 'Sebastion', 1, '0791 125 9', 'sebastion@gmail.com', '2021-09-12', 'c4ca4238a0b923820dcc509a6f75849b', 'https://i.pravatar.cc/500?img=33', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 INSERT INTO `Account` VALUES ('ac0005', 'aadya', 'Aadya', 1, '0522 702 6', 'aadya@gmail.com', '2021-09-12', 'c4ca4238a0b923820dcc509a6f75849b', 'https://i.pravatar.cc/500?img=44', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 INSERT INTO `Account` VALUES ('ac0006', 'malik', 'Malik', 1, '0899 984 6', 'malik@gmail.com', '2021-09-12', 'c4ca4238a0b923820dcc509a6f75849b', 'https://i.pravatar.cc/500?img=25', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
@@ -923,7 +941,7 @@ INSERT INTO `Account` VALUES ('ac0099', 'mehlani', 'Mehlani', 1, '099 815 13', '
 INSERT INTO `Account` VALUES ('ac0100', 'jae', 'Jae', 1, '0898 354 3', 'jae@gmail.com', '2021-09-12', '1', 'https://i.pravatar.cc/500?img=5', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 INSERT INTO `Account` VALUES ('ac0101', 'kinsely', 'Kinsely', 1, '0799 670 4', 'kinsely@gmail.com', '2021-09-12', 'c4ca4238a0b923820dcc509a6f75849b', 'https://i.pravatar.cc/500?img=25', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 INSERT INTO `Account` VALUES ('ac0102', 'houston', 'Houston', 1, '0362 001 2', 'houston@gmail.com', '2021-09-12', 'c4ca4238a0b923820dcc509a6f75849b', 'https://i.pravatar.cc/500?img=1', NULL, NULL, NULL, '2021-09-12', 'MEMBER', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
-INSERT INTO `Account` VALUES ('ac0103', 'linhdinh', N'Dinh Nhựt Linh', 1, '111111111', '19130128@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
+INSERT INTO `Account` VALUES ('ac0103', 'linhdinh', 'Dinh Nhựt Linh', 1, '111111111', '19130128@st.hcmuaf.edu.vn', '2021-08-11', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL, NULL, 'MOD', '2020-09-12', '2020-09-12', 'NONE', 'NONE');
 
 -- Product
 INSERT INTO `product` VALUES ('pr0001', 'Star Drink', 'cs0001', 'Starfruit- and kiwi-flavored juice and real kiwi fruit pieces added to coconutmilk and shaken with ice. Summer re-imagined.', 7, 7, 50, 1, 0, 0, 'Ice, Kiwi Starfruit Refresher Base [Water, Sugar, White Grape Juice Concentrate, Natural Flavors, Citric Acid, Natural Green Coffee Flavor, Fruit Juice For Color (Watermelon And Juito Fruit), Rebaudiside A, Turmeric For Color], Coconutmilk [Water, Coconut Cream, Cane Sugar, Contains 2 Or Less Of Tricalcium Phosphate, Coconut Water Concentrate, Sea Salt, Natural Flavors, Xanthan Gum, Gellan Gum, Corn Dextrin, Guar Gum, Vitamin A Palmitate, And Vitamin D 2], Freeze Dried Kiwi.', 'http://localhost:8080/TheStarBuck/template/web/image/products/1.png', NULL, NULL, NULL, NULL, '2021-12-18 00:00:00.000000', '2021-12-18 00:00:00.000000', 'KA', 'KA');
@@ -1172,3 +1190,8 @@ INSERT INTO `slide` VALUES ('sl0006', 'https://i.ibb.co/vHkpc5T/banner-2.png', '
 INSERT INTO `slide` VALUES ('sl0007', 'https://i.ibb.co/L0myK85/title1.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-03 22:27:49.000', '2022-01-18 22:27:53.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0008', 'https://i.ibb.co/LP8dSrR/title2.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-04 22:28:46.000', '2022-01-04 22:28:49.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0009', 'https://i.ibb.co/jGdks8G/title3.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-18 22:29:48.000', '2022-01-04 22:29:52.000', 'nhu', 'nhu');
+
+INSERT INTO`topping` VALUES ('tp0001', 'Black Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
+INSERT INTO `topping` VALUES ('tp0002', 'White Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
+INSERT INTO `topping` VALUES ('tp0003', 'Yarns Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
+INSERT INTO `topping` VALUES ('tp0004', 'Cheese Jelly', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
