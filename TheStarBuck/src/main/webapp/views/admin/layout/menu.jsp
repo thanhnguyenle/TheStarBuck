@@ -160,16 +160,16 @@
             </ul>
         </li>
         <li>
-            <a href="toppingtable.html">Toppings management</a>
+            <a href="<%=request.getContextPath()%>/topping">Toppings management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="toppingtable.html">List Topping</a>
+                    <a href="<%=request.getContextPath()%>/topping">List Topping</a>
                 </li>
                 <li>
-                    <a href="addtoppings.html">Add Topping</a>
+                    <a href="<%=request.getContextPath()%>/createTopping">Add Topping</a>
                 </li>
                 <li>
-                    <a href="edittoppings.html">Edit Topping</a>
+                    <a href="<%=request.getContextPath()%>/updateTopping">Edit Topping</a>
                 </li>
 
             </ul>

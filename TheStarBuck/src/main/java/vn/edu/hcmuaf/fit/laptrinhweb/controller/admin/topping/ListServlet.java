@@ -2,6 +2,9 @@ package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.topping;
 
 
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Topping;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ToppingService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +16,7 @@ import java.util.List;
 
 @WebServlet(name = "ToppingServlet", value = "/topping")
 public class ListServlet extends HttpServlet {
+    private ToppingService toppingService = ToppingService.getInstance();
 
 
     @Override
@@ -22,8 +26,9 @@ public class ListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Category> categories = categoryService.findAll();
-//        request.setAttribute("categories", categories);
+        List<Topping> toppings = toppingService.findAll();
+        System.out.println("----------" + toppings.get(0));
+        request.setAttribute("toppings", toppings);
         RequestDispatcher rd = request.getRequestDispatcher("/views/admin/toppingManagement.jsp");
         rd.forward(request,response);
 //        response.sendRedirect(request.getContextPath() + request.getServletPath() +  "/list");

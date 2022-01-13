@@ -68,49 +68,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <jsp:useBean id="toppings" scope="request" type="java.util.List"/>
+                                <c:forEach items="${toppings}" var="item">
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>Black Bubble</td>
-                                    <td class="center">1</td>
-                                    <td class="center">15</td>
-                                    <td class=" text-center">
+                                    <td>${item.id}</td>
+                                    <td>${item.name}</td>
+                                    <td class="center">${item.price}</td>
+                                    <td class="center">${item.quantity}</td>
                                     <td class=" text-center">
                                         <a href="<%=request.getContextPath()%>/deleteTopping?id=${item.id}" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
                                         <a href="<%=request.getContextPath()%>/updateTopping?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
-                                    </td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>2</td>
-                                    <td>White Bubble</td>
-                                    <td class="center">1</td>
-                                    <td class="center">15</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                        <a href="edittoppings.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>3</td>
-                                    <td>Yarns Bubble</td>
-                                    <td class="center">1</td>
-                                    <td class="center">15</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                        <a href="edittoppings.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>4</td>
-                                    <td>Cheese Jelly</td>
-                                    <td class="center">1</td>
-                                    <td class="center">15</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                        <a href="edittoppings.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
+                                </c:forEach>
+
 
                                 </tbody>
                             </table>

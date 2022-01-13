@@ -77,13 +77,10 @@
                                         <label>Quantity</label>
                                         <input class="form-control" name="quantity" placeholder="Enter quantity" value="10">
                                     </div>
+
                                     <div class="form-group">
-                                        <label>Created Date</label>
-                                        <input class="form-control" name="createdDate" placeholder="Enter text" value="12/10/2021">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Created By</label>
-                                        <input class="form-control" name="createdBy" placeholder="Enter text" value="KA">
+                                        <label>Modify By</label>
+                                        <input class="form-control" name="modifedBy" placeholder="Enter text" value="KA">
                                     </div>
                                 </div>
                                 <button type="button" name="insert" class="btn btn-success">Insert</button>

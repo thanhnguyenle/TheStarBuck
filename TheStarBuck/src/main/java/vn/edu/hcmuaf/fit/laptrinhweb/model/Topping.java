@@ -5,7 +5,8 @@ import java.io.Serializable;
 public class Topping extends AbsModel  implements Serializable {
     private String id;
     private String name;
-    private String quantify;
+    private int quantity;
+    private double price;
 
     public Topping() {
     }
@@ -26,11 +27,19 @@ public class Topping extends AbsModel  implements Serializable {
         this.name = name;
     }
 
-    public String getQuantify() {
-        return quantify;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuantify(String quantify) {
-        this.quantify = quantify;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

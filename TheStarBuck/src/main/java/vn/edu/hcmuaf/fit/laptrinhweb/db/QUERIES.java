@@ -32,10 +32,20 @@ public static class CATEGORY{
         public static  final String UPDATE = "update Category set cs_name = ?, cs_icon = ?, cs_avatar = ?, cs_active = ?, modifiedDate = ?, modifiedBy = ? where id_cs = ?";
         public static  final String GET_ITEM_BYID = "select * from Category where id_cs = ?";
 }
+
 // Slider
 public static class SLIDER {
     public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String DELETE = "delete from Product where id_sl = ?";
     public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
+}
+
+//TOPPING
+public static class TOPPING{
+    public static  final String GET_LIST = "select * from Topping";
+    public static  final String CREATE = "insert into Topping values (?, ?, ?, ?, ?, ?, ?, ?)";
+    public static  final String DELETE = "delete from Topping where id_tp = ?";
+    public static  final String UPDATE = "update Topping set tp_name = ?, tp_quantity = ?, tp_price = ?, modifiedDate = ?, modifiedBy = ? where id_tp = ?";
+    public static  final String GET_ITEM_BYID = "select * from Topping where id_tp = ?";
 }
 }

@@ -1,7 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.service;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Category;
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 
 import java.util.List;
 
