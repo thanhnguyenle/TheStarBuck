@@ -2,6 +2,9 @@ package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.shipper;
 
 
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Shipper;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ShipperService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,24 +15,26 @@ import java.io.IOException;
 
 @WebServlet(name = "UpdateShipperServlet", value = "/updateShipper")
 public class UpdateServlet extends HttpServlet {
+    private ShipperService shipperService = ShipperService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-//        Topping topping = toppingService.getItem(id);
+        Shipper shipper = shipperService.getItem(id);
 
         HttpSession session = request.getSession();
-//        session.setAttribute("shipper", shipper);
+        session.setAttribute("shipper", shipper);
         request.getRequestDispatcher("/views/admin/shipperEdition.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        Topping topping = toppingService.getItem(id);
+        String id = request.getParameter("id");
+        Shipper shipper = shipperService.getItem(id);
 
 
-//        toppingService.save(topping);
+        shipperService.save(shipper);
 
         response.sendRedirect(request.getContextPath() +"/shipper");
     }

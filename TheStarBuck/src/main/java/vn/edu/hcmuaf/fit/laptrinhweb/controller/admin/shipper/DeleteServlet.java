@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.shipper;
 
 
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ShipperService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(name = "DeleteShipperServlet", value = "/deleteShipper")
 public class DeleteServlet extends HttpServlet {
-
+    ShipperService shipperService = ShipperService.getInstance();
     @Override
     public void init() throws ServletException {
         super.init();
@@ -24,13 +26,13 @@ public class DeleteServlet extends HttpServlet {
         String id = request.getParameter("id");
 
         System.out.println(id);
-//        boolean check = toppingService.deleteItem(id) == 1;
-//        if(check){
-//            System.out.println("++++++++");
-//            doPost(request, response);
-//        } else {
-//            System.out.println("------------- something wrong");
-//        }
+        boolean check = shipperService.deleteItem(id) ;
+        if(check){
+            System.out.println("++++++++");
+            doPost(request, response);
+        } else {
+            System.out.println("------------- something wrong");
+        }
 
     }
 

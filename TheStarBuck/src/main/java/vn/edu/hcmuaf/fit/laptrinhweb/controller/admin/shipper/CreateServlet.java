@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.shipper;
 
 
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Shipper;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ShipperService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet(name = "CreateShipperServlet", value = "/createShipper")
 public class CreateServlet extends HttpServlet {
+    private ShipperService shipperService = ShipperService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +27,7 @@ public class CreateServlet extends HttpServlet {
 
         Shipper shipper = new Shipper();
 
-//        toppingService.save(shipper);
+        shipperService.save(shipper);
 
         response.sendRedirect(request.getContextPath() +"/shipper");
     }

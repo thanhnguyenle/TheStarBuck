@@ -5,11 +5,9 @@ import java.sql.Date;
 
 public class Shipper extends AbsModel  implements Serializable {
 	private String id;
-	private String idOrder;
-	private double price;
-	private double discount;
-	private int quantify;
-	private String note;
+	private String name;
+	private String mobile;
+	private String address;
 
 	public Shipper() {
 	}
@@ -22,43 +20,29 @@ public class Shipper extends AbsModel  implements Serializable {
 		this.id = id;
 	}
 
-	public String getIdOrder() {
-		return idOrder;
+	public String getName() {
+		return name;
 	}
 
-	public void setIdOrder(String idOrder) {
-		this.idOrder = idOrder;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public double getPrice() {
-		return price;
+	public String getMobile() {
+		return mobile;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
-	public double getDiscount() {
-		return discount;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setDiscount(double discount) {
-		this.discount = discount;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public int getQuantify() {
-		return quantify;
-	}
 
-	public void setQuantify(int quantify) {
-		this.quantify = quantify;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
 }
