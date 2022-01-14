@@ -30,9 +30,19 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String id = request.getParameter("id");
+        String id = request.getParameter("idShipper");
+        String name = request.getParameter("nameShipper");
+        String mobile = request.getParameter("mobile");
+        String address = request.getParameter("address");
+        String modifiedBy = request.getParameter("modifiedBy");
+
         Shipper shipper = shipperService.getItem(id);
 
+//        shipper.setId(id);
+        shipper.setName(name);
+        shipper.setMobile(mobile);
+        shipper.setAddress(address);
+        shipper.setModifiedBy(modifiedBy);
 
         shipperService.save(shipper);
 

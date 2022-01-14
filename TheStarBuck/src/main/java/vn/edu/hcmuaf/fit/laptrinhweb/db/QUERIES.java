@@ -48,4 +48,12 @@ public static class TOPPING{
     public static  final String UPDATE = "update Topping set tp_name = ?, tp_quantity = ?, tp_price = ?, modifiedDate = ?, modifiedBy = ? where id_tp = ?";
     public static  final String GET_ITEM_BYID = "select * from Topping where id_tp = ?";
 }
+//SHIPPER
+public static class SHIPPER{
+    public static  final String GET_LIST = "select * from Shipper";
+    public static  final String CREATE = "insert into Shipper values (?, ?, ?, ?, ?, ?, ?, ?)";
+    public static  final String DELETE = "delete from Shipper where id_sh = ?";
+    public static  final String UPDATE = "update Shipper set sh_name = ?, sh_mobile = ?, sh_adress = ?, modifiedDate = ?, modifiedBy = ? where id_sh = ?";
+    public static  final String GET_ITEM_BYID = "select * from Shipper where id_sh = ?";
+}
 }

@@ -25,7 +25,19 @@ public class CreateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String id = request.getParameter("idShipper");
+        String name = request.getParameter("nameShipper");
+        String mobile = request.getParameter("mobile");
+        String address = request.getParameter("address");
+        String createdBy = request.getParameter("createdBy");
+
         Shipper shipper = new Shipper();
+
+        shipper.setId("");
+        shipper.setName(name);
+        shipper.setMobile(mobile);
+        shipper.setAddress(address);
+        shipper.setCreatedBy(createdBy);
 
         shipperService.save(shipper);
 

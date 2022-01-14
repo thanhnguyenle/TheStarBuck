@@ -1,9 +1,12 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IShipperDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ShipperMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Shipper;
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Topping;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -18,22 +21,29 @@ public class ShipperDAO extends  AbstractDAO<Shipper> implements IShipperDAO {
     }
     @Override
     public List<Shipper> findAll() {
-        return null;
+        List<Shipper> output = query(QUERIES.SHIPPER.GET_LIST, new ShipperMapper());
+        return output;
     }
 
     @Override
     public Long save(Shipper shipper) {
-        return null;
+        if(shipper.getId().equals("")){
+            return addItem(shipper);
+        }
+        return updateItem(shipper);
     }
 
     @Override
     public Long deleteItem(String id) {
+        long output = delete(QUERIES.SHIPPER.DELETE, id);
         return null;
     }
 
     @Override
-    public Topping getItem(String id) {
-        return null;
+    public Shipper getItem(String id) {
+        List<Shipper> list = query(QUERIES.SHIPPER.GET_ITEM_BYID, new ShipperMapper(), id);
+        Shipper shipper = list.get(0);
+        return shipper;
     }
 
     @Override
@@ -43,11 +53,13 @@ public class ShipperDAO extends  AbstractDAO<Shipper> implements IShipperDAO {
 
     @Override
     public Long addItem(Shipper shipper) {
-        return null;
+        long output = insert(QUERIES.SHIPPER.CREATE, shipper.getId(), shipper.getName(), shipper.getMobile(), shipper.getAddress(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), shipper.getCreatedBy(), shipper.getCreatedBy());
+        return output;
     }
 
     @Override
     public Long updateItem(Shipper shipper) {
-        return null;
+        long output  = update(QUERIES.SHIPPER.UPDATE, shipper.getName(), shipper.getMobile(), shipper.getAddress(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), shipper.getModifiedBy(), shipper.getId());
+        return output;
     }
 }

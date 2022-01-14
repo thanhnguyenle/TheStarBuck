@@ -61,23 +61,23 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>ID</label>
-                                        <input class="form-control" name="idAccount" value="sh0001" placeholder="Enter id">
+                                        <input class="form-control" name="idShipper" value="${shipper.id}" placeholder="Enter id">
                                     </div>
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input class="form-control" name="nameAccount" value="nhu" placeholder="Enter name">
+                                        <input class="form-control" name="nameShipper" value="${shipper.name}" placeholder="Enter name">
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input class="form-control" name="mobile" value="001022" placeholder="Enter phone">
+                                        <input class="form-control" name="mobile" value="${shipper.mobile}" placeholder="Enter phone">
                                     </div>
                                     <div class="form-group">
                                         <label>Address Accounts</label>
-                                        <input class="form-control" type="text" value="Ninh Thuan" name="address" placeholder="Enter address">
+                                        <input class="form-control" type="text" value="${shipper.address}" name="address" placeholder="Enter address">
                                     </div>
                                     <div class="form-group">
                                         <label>Modify by</label>
-                                        <input class="form-control" type="text" name="modifiedBy" value="Nhu" placeholder="Enter create by ">
+                                        <input class="form-control" type="text" name="modifiedBy" value="${shipper.modifiedBy}" placeholder="Enter create by ">
                                     </div>
                                     <button type="submit" name="update" class="btn btn-success">Update</button>
                                     <button type="reset"  name="reset" class="btn btn-default">Reset</button>

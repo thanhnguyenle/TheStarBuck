@@ -50,16 +50,16 @@
             </ul>
         </li>
         <li>
-            <a href="shippertable.html">Shipper management</a>
+            <a href="<%=request.getContextPath()%>/shipper">Shipper management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="shippertable.html">List Shipper</a>
+                    <a href="<%=request.getContextPath()%>/shipper">List Shipper</a>
                 </li>
                 <li>
-                    <a href="addshipper.html">Add Shipper</a>
+                    <a href="<%=request.getContextPath()%>/createShipper">Add Shipper</a>
                 </li>
                 <li>
-                    <a href="editshipper.html">Edit Shipper</a>
+                    <a href="<%=request.getContextPath()%>/updateShipper">Edit Shipper</a>
                 </li>
             </ul>
         </li>
