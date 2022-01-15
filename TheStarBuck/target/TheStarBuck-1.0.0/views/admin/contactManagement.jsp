@@ -61,24 +61,26 @@
                                 <thead>
                                 <tr>
                                     <th>id</th>
-                                    <th>id account</th>
+                                    <th>account</th>
                                     <th>email</th>
                                     <th>messages</th>
+                                    <th>phone</th>
                                     <th>Operation</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <jsp:useBean id="toppings" scope="request" type="java.util.List"/>
-                                <c:forEach items="${toppings}" var="item">
+                                <jsp:useBean id="contacts" scope="request" type="java.util.List"/>
+                                <c:forEach items="${contacts}" var="item">
                                 <tr class="odd gradeX">
                                     <td>${item.id}</td>
                                     <td>${item.idAccount}</td>
                                     <td>${item.email}</td>
                                     <td class="center">${item.message}</td>
+                                    <td>${item.phone}</td>
                                     <td class=" text-center">
-                                        <a href="<%=request.getContextPath()%>/deleteTopping?id=${item.id}" class="btn btn-danger" data-toggle="modal"
+                                        <a href="<%=request.getContextPath()%>/deleteContact?id=${item.id}" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
-                                        <a href="<%=request.getContextPath()%>/updateTopping?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
+                                        <a href="<%=request.getContextPath()%>/updateContact?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
                                 </c:forEach>
