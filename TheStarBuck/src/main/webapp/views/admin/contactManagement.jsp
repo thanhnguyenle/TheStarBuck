@@ -68,17 +68,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <jsp:useBean id="toppings" scope="request" type="java.util.List"/>
+                                <c:forEach items="${toppings}" var="item">
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>ac0001</td>
-                                    <td>191301@st.hcmuaf.edu.vn</td>
-                                    <td class="center">Hello</td>
+                                    <td>${item.id}</td>
+                                    <td>${item.idAccount}</td>
+                                    <td>${item.email}</td>
+                                    <td class="center">${item.message}</td>
                                     <td class=" text-center">
                                         <a href="<%=request.getContextPath()%>/deleteTopping?id=${item.id}" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
                                         <a href="<%=request.getContextPath()%>/updateTopping?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
