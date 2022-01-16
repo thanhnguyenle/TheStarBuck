@@ -7,6 +7,6 @@ import java.util.List;
 public interface IFeedbackService {
     List<FeedBack> findAll();
     Long save(FeedBack feedBack);
-    Long deleteItem(String id);
+    boolean deleteItem(String id);
     FeedBack getItem(String id);
 }

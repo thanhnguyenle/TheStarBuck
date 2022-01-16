@@ -17,7 +17,8 @@ public class LoginServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+
+        request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             byte[] digest = md.digest();
             password = DatatypeConverter.printHexBinary(digest).toUpperCase();
         } catch (NoSuchAlgorithmException e) {
-//            error = "Username is not exist";
+            error = "";
         }
         Account account = accountService.login(username, password);
 //        System.out.println(account.isActive());

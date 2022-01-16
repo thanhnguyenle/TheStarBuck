@@ -1,8 +1,12 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IFeedbackDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.FeedbackMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.FeedBack;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -17,12 +21,17 @@ public class FeedbackDAO extends  AbstractDAO<FeedBack> implements IFeedbackDAO 
     }
     @Override
     public List<FeedBack> findAll() {
-        return null;
+        List<FeedBack> output = query(QUERIES.FEEDBACK.GET_LIST, new FeedbackMapper());
+        return output;
     }
 
     @Override
     public Long save(FeedBack feedBack) {
-        return null;
+        if(feedBack.getId().equals("")){
+            return addItem(feedBack);
+        } else {
+            return updateItem(feedBack);
+        }
     }
 
     @Override
@@ -42,7 +51,8 @@ public class FeedbackDAO extends  AbstractDAO<FeedBack> implements IFeedbackDAO 
 
     @Override
     public Long addItem(FeedBack feedBack) {
-        return null;
+        long output = insert(QUERIES.FEEDBACK.CREATE, feedBack.getId(), feedBack.getIdAccount(), feedBack.getIdProduct(), feedBack.getContent(), feedBack.getRate(), feedBack.getStatus(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), feedBack.getCreatedBy(), feedBack.getCreatedBy());
+        return output;
     }
 
     @Override

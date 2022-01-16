@@ -114,16 +114,16 @@
             </ul>
         </li>
         <li>
-            <a href="feedbacktable.html">FeedBack management</a>
+            <a href="<%=request.getContextPath()%>/feedback">FeedBack management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="feedbacktable.html">List FeedBack</a>
+                    <a href="<%=request.getContextPath()%>/feedback">List FeedBack</a>
                 </li>
                 <li>
-                    <a href="addfeedback.html">Add FeedBack</a>
+                    <a href="<%=request.getContextPath()%>/createFeedback">Add FeedBack</a>
                 </li>
                 <li>
-                    <a href="editfeedback.html">Edit FeedBack</a>
+                    <a href="<%=request.getContextPath()%>/updateFeedback">Edit FeedBack</a>
                 </li>
             </ul>
         </li>

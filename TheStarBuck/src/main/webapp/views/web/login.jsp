@@ -37,7 +37,7 @@
                         <%
                             if(error != null) {
                         %>
-                        <p style="color: red; font-weight: bold"> <%= error %> <p>
+                        <p style="color: red; font-weight: bold" id="error"> <%= error %> <p>
                         <%
                             }
                         %>
@@ -74,6 +74,14 @@
         </div>
     </section>
     <script src="<c:url value="/template/web/js/login.js"/>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+     var error = document.querySelector('#error');
+
+
+</script>
+
 </body>
+
 
 </html>

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FeedbackService implements IFeedbackService {
     private static  FeedbackService instance;
-    private FeedbackDAO feedbackDAO;
+    private FeedbackDAO feedbackDAO = FeedbackDAO.getInstance();
     private FeedbackService(){}
     public static FeedbackService getInstance(){
         if(instance == null){
@@ -27,8 +27,8 @@ public class FeedbackService implements IFeedbackService {
     }
 
     @Override
-    public Long deleteItem(String id) {
-        return feedbackDAO.deleteItem(id);
+    public boolean deleteItem(String id) {
+        return feedbackDAO.deleteItem(id) == 1;
     }
 
     @Override

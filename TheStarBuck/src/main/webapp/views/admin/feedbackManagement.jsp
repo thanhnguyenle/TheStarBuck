@@ -68,58 +68,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <jsp:useBean id="feedbacks" scope="request" type="java.util.List"/>
+                                <c:forEach items="${feedbacks}" var="item">
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>ac0001</td>
-                                    <td>pr0001</td>
-                                    <td>wonderful!</td>
-                                    <td class="center">5</td>
-                                    <td class="center">sent</td>
+                                    <td>${item.id}</td>
+                                    <td>${item.idAccount}</td>
+                                    <td>${item.idProduct}</td>
+                                    <td>${item.content}</td>
+                                    <td class="center">${item.rate}</td>
+                                    <td class="center">${item.status}</td>
                                     <td class=" text-center">
                                         <a href="<%=request.getContextPath()%>/deleteFeedback?id=${item.id}" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
                                         <a href="<%=request.getContextPath()%>/updateFeedback?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>2</td>
-                                    <td>ac0002</td>
-                                    <td>pr0002</td>
-                                    <td>feeling!</td>
-                                    <td class="center">5</td>
-                                    <td class="center">sent</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editfeedback.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>3</td>
-                                    <td>ac0002</td>
-                                    <td>pr0003</td>
-                                    <td>wonderful!</td>
-                                    <td class="center">5</td>
-                                    <td class="center">sent</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editfeedback.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>4</td>
-                                    <td>ac0004</td>
-                                    <td>pr0004</td>
-                                    <td>wonderful!</td>
-                                    <td class="center">5</td>
-                                    <td class="center">sent</td>
-                                    <td class=" text-center">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                           data-target="#deleteObject">Delete</a>
-                                        <a href="editfeedback.html" target="_blank" class="btn btn-info">Edit</a>
-                                    </td>
-                                </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
