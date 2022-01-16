@@ -66,4 +66,12 @@ public static class SHIPPER{
         public static  final String UPDATE = "update Contact set co_active = ?, modifiedDate = ?, modifiedBy = ? where id_co = ?";
         public static  final String GET_ITEM_BYID = "select * from Contact where id_co = ?";
     }
+    //FEEDBACK
+    public static class FEEDBACK{
+        public static  final String GET_LIST = "select * from Feedback";
+        public static  final String CREATE = "insert into Feedback values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from Feedback where id_fe = ?";
+        public static  final String UPDATE = "update Feedback set fe_status = ?, modifiedDate = ?, modifiedBy = ? where id_fe = ?";
+        public static  final String GET_ITEM_BYID = "select * from Feedback where id_fe = ?";
+    }
 }

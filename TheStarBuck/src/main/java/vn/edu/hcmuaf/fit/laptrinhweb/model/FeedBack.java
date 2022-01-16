@@ -6,6 +6,7 @@ import java.sql.Date;
 public class FeedBack extends AbsModel  implements Serializable {
 	private String id;
 	private String idAccount;
+	private String idProduct;
 	private String content;
 	private int rate;
 	private String status;
@@ -28,6 +29,10 @@ public class FeedBack extends AbsModel  implements Serializable {
 	public void setIdAccount(String idAccount) {
 		this.idAccount = idAccount;
 	}
+
+	public String getIdProduct() { return idProduct;}
+
+	public void setIdProduct(String idProduct) { this.idProduct = idProduct;}
 
 	public String getContent() {
 		return content;
