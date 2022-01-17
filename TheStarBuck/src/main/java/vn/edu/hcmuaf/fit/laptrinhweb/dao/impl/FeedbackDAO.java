@@ -36,12 +36,15 @@ public class FeedbackDAO extends  AbstractDAO<FeedBack> implements IFeedbackDAO 
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        long output = delete(QUERIES.FEEDBACK.DELETE, id);
+        return output;
     }
 
     @Override
     public FeedBack getItem(String id) {
-        return null;
+        List<FeedBack> list = query(QUERIES.FEEDBACK.GET_ITEM_BYID, new FeedbackMapper(), id);
+        FeedBack output = list.get(0);
+        return output;
     }
 
     @Override
@@ -57,6 +60,7 @@ public class FeedbackDAO extends  AbstractDAO<FeedBack> implements IFeedbackDAO 
 
     @Override
     public Long updateItem(FeedBack feedBack) {
-        return null;
+        long output = update(QUERIES.FEEDBACK.UPDATE, feedBack.getStatus(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), feedBack.getModifiedBy(), feedBack.getId());
+        return output;
     }
 }

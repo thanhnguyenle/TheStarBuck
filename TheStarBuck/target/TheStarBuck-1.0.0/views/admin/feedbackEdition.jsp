@@ -62,31 +62,31 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label>Id feedback</label>
-                    <input class="form-control" name="idFeedback" value="${item.id}" placeholder="Enter id account">
+                    <input class="form-control" name="idFeedback" value="${feedback.id}" placeholder="Enter id account">
                   </div>
                   <div class="form-group">
                     <label>Id account</label>
-                    <input class="form-control" name="idAccount" value="${item.idAccount}" placeholder="Enter id account">
+                    <input class="form-control" name="idAccount" value="${feedback.idAccount}" placeholder="Enter id account">
                   </div>
                   <div class="form-group">
                     <label>Id product</label>
-                    <input class="form-control" name="idProduct" value="${item.idProduct}" placeholder="Enter id product">
+                    <input class="form-control" name="idProduct" value="${feedback.idProduct}" placeholder="Enter id product">
                   </div>
                   <div class="form-group">
                     <label>Content</label>
-                    <input class="form-control" name="contentAccount" value="${item.content}" placeholder="Enter phone">
+                    <input class="form-control" name="contentAccount" value="${feedback.content}" placeholder="Enter phone">
                   </div>
                   <div class="form-group">
                     <label>Rate</label>
-                    <input class="form-control" type="number" name="rate" min="1" max="5" placeholder="Enter rate">
+                    <input class="form-control" type="number" name="rate" min="1" max="5" placeholder="Enter rate" value="${feedback.rate}">
                   </div>
                   <div class="form-group">
                     <label>Status</label>
-                    <input class="form-control" type="text" name="status" placeholder="Enter date create">
+                    <input class="form-control" type="text" name="status" placeholder="Enter date create" value="${feedback.status}">
                   </div>
                   <div class="form-group">
                     <label>Modify By</label>
-                    <input class="form-control" type="text" name="modifiedBy" value="nhu" placeholder="Enter created">
+                    <input class="form-control" type="text" name="modifiedBy" value="${feedback.modifiedBy}" placeholder="Enter created">
                   </div>
                   <button type="submit" name="update" class="btn btn-success">Update</button>
                   <button type="reset"  name="reset" class="btn btn-default">Reset</button>
