@@ -77,10 +77,10 @@ public static class SHIPPER{
 
     //ORDER
     public static class ORDER{
-        public static  final String GET_LIST = "select * from Order";
-        public static  final String CREATE = "insert into Order values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        public static  final String DELETE = "delete from Order where id_or = ?";
-        public static  final String UPDATE = "update Feedback set fe_status = ?, modifiedDate = ?, modifiedBy = ? where id_or = ?";
-        public static  final String GET_ITEM_BYID = "select * from Order where id_or = ?";
+        public static  final String GET_LIST = "select * from Orders";
+        public static  final String CREATE = "insert into Orders values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from Orders where id_od = ?";
+        public static  final String UPDATE = "update Orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
+        public static  final String GET_ITEM_BYID = "select * from Orders where id_od = ?";
     }
 }

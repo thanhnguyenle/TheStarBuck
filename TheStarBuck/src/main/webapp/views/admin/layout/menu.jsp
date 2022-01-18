@@ -92,16 +92,16 @@
             </ul>
         </li>
         <li>
-            <a href="ordertable.html">Order management</a>
+            <a href="<%=request.getContextPath()%>/order">Order management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="ordertable.html">List Order</a>
+                    <a href="<%=request.getContextPath()%>/order">List Order</a>
                 </li>
                 <li>
-                    <a href="addorder.html">Add Order</a>
+                    <a href="<%=request.getContextPath()%>/createOrder">Add Order</a>
                 </li>
                 <li>
-                    <a href="editorder.html">Edit Order</a>
+                    <a href="<%=request.getContextPath()%>/updateOrder">Edit Order</a>
                 </li>
             </ul>
         </li>

@@ -28,7 +28,7 @@ public class ListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Orders> orders = orderService.findAll();
         request.setAttribute("orders", orders);
-        RequestDispatcher rd = request.getRequestDispatcher("/views/admin/toppingManagement.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/views/admin/orderManagement.jsp");
         rd.forward(request,response);
 //        response.sendRedirect(request.getContextPath() + request.getServletPath() +  "/list");
 
