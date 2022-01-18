@@ -19,17 +19,17 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-        Orders orders = orderService.getItem(id);
+        Orders order = orderService.getItem(id);
 
         HttpSession session = request.getSession();
-        session.setAttribute("orders", orders);
+        session.setAttribute("order", order);
         request.getRequestDispatcher("/views/admin/orderEdition.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String id = request.getParameter("idTopping");
+        String id = request.getParameter("idOrder");
 
 
         Orders orders = orderService.getItem(id);
