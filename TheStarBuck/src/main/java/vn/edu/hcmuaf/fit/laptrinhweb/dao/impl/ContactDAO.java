@@ -34,7 +34,8 @@ public class ContactDAO extends AbstractDAO<Contact> implements IContactDAO {
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        long output = delete(QUERIES.CONTACT.DELETE, id);
+        return output;
     }
 
     @Override
