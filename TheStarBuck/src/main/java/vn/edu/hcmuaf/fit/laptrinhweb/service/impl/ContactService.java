@@ -27,8 +27,8 @@ public class ContactService implements IContactService {
     }
 
     @Override
-    public Long deleteItem(String id) {
-        return null;
+    public boolean deleteItem(String id) {
+        return contactDAO.deleteItem(id) == 1;
     }
 
     @Override

@@ -7,6 +7,6 @@ import java.util.List;
 public interface IContactService {
     List<Contact> findAll();
     Long save(Contact contact);
-    Long deleteItem(String id);
+    boolean deleteItem(String id);
     Contact getItem(String id);
 }
