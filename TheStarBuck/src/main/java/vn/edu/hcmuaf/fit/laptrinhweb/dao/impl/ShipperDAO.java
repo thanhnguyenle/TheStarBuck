@@ -36,7 +36,7 @@ public class ShipperDAO extends  AbstractDAO<Shipper> implements IShipperDAO {
     @Override
     public Long deleteItem(String id) {
         long output = delete(QUERIES.SHIPPER.DELETE, id);
-        return null;
+        return output;
     }
 
     @Override
