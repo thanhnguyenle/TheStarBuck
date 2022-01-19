@@ -24,7 +24,6 @@ public class DeleteServlet extends HttpServlet {
         request.getRequestDispatcher(request.getContextPath() +"/shipper").forward(request, response);
         System.out.println("------------------");
         String id = request.getParameter("id");
-
         System.out.println(id);
         boolean check = shipperService.deleteItem(id) ;
         if(check){

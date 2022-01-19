@@ -8,6 +8,7 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,18 +32,9 @@
 <%--    <link href="css/sb-admin.css" rel="stylesheet">--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/admin/css/sb-admin.css")%>" />
     <%--    <script src="assets/js/tinymce.js"></script>--%>
-    <script type="text/javascript" src="<%= Asset.url("/template/admin/lib/ckeditor/ckeditor.js")%>"></script>
-    <script type="text/javascript" src="<%= Asset.url("/template/admin/lib/ckfinder/ckfinder.js")%>"></script>
-    <script type="text/javascript">
-        function BrowseServer() {
-            var finder = new CKFinder();
-            finder.selectActionFunction = SetFileField;
-            finder.popup();
-        }
-        function SetFileField(fileUrl) {
-            document.getElementById('Image').value = fileUrl;
-        }
-    </script>
+    <script type="text/javascript" src="<%= Asset.url("/template/lib/ckeditor/ckeditor.js")%>"></script>
+    <script type="text/javascript" src="<%= Asset.url("/template/lib/ckfinder/ckfinder.js")%>"></script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -98,7 +90,18 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>File Avatar</label>
-                                        <input type="file" name="avatar">
+                                        <input type="text" name="avatar" ,id ="txtImage">
+                                        <a href="#" id="btnSelectImage">File Image</a>
+                                        <script>
+                                            $('#btnSelectImage').on('click', function (e) {
+                                                e.preventDefault();
+                                                var finder = new CKFinder();
+                                                finder.selectActionFunction = function (fileUrl) {
+                                                    $('#txtImage').val(fileUrl);
+                                                };
+                                                finder.popup();
+                                            })
+                                        </script>
                                     </div>
                                     <div class="form-group">
                                         <label>Password Accounts</label>
@@ -122,10 +125,14 @@
 
                                     <div class="form-group">
                                         <label>Created Accounts</label>
-                                        <input class="form-control" type="text" name="createdBy" placeholder="Enter created">
+<%--                                        <input class="form-control" type="text" name="createdBy" placeholder="Enter created">--%>
+                                        <br/>
+                                        <textarea id="content" name="createdBy" cols="80" rows="10"></textarea>
+                                        <script>
+                                            var editor = CKEDITOR.replace( 'content' );
+                                            CKFinder.setupFCKeditor(editor,'lib/ckfinder/');
+                                        </script>
                                     </div>
-                                    <input type="text" name="Image" id="Image" />
-                                    <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer();"/>
                                 </div>
                             </div>
                             <button type="submit" name="insert" class="btn btn-success">Insert</button>
@@ -159,7 +166,7 @@
 <!-- Page-Level Plugin Scripts - Blank -->
 
 <!-- SB Admin Scripts - Include with every page -->
-<script src=""<%= Asset.url("/template/admin/js/sb-admin.js")%>""></script>
+<script src="<%= Asset.url("/template/js/sb-admin.js")%>"></script>
 <!-- Page-Level Demo Scripts - Blank - Use for reference -->
 
 </body>
