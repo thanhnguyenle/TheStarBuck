@@ -80,7 +80,6 @@
                                     <td class=" text-center">
                                         <a href="<%=request.getContextPath()%>/deleteContact?id=${item.id}" class="btn btn-danger" data-toggle="modal"
                                            data-target="#deleteObject">Delete</a>
-                                        <a href="<%=request.getContextPath()%>/updateContact?id=${item.id}" target="_blank" class="btn btn-info">Edit</a>
                                     </td>
                                 </tr>
                                 </c:forEach>

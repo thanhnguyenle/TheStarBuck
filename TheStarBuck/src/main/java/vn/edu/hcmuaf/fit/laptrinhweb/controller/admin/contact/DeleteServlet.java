@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 @WebServlet(name = "DeleteContactServlet",value = "/deleteContact")
 public class DeleteServlet extends HttpServlet {
+
     ContactService contactService = ContactService.getInstance();
     public void init() throws ServletException{
         super.init();

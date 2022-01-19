@@ -22,8 +22,8 @@ public class ContactService implements IContactService {
     }
 
     @Override
-    public Long save(Contact contact) {
-        return contactDAO.save(contact);
+    public boolean save(Contact contact) {
+        return contactDAO.save(contact) == 1;
     }
 
     @Override
