@@ -3,7 +3,9 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IContactDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ContactMapper;
+import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ShipperMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Contact;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Shipper;
 
 import java.util.List;
 import java.util.Map;
@@ -34,12 +36,15 @@ public class ContactDAO extends AbstractDAO<Contact> implements IContactDAO {
 
     @Override
     public Long deleteItem(String id) {
-        return null;
+        long output = delete(QUERIES.CONTACT.DELETE, id);
+        return output;
     }
 
     @Override
     public Contact getItem(String id) {
-        return null;
+        List<Contact> list = query(QUERIES.CONTACT.GET_ITEM_BYID, new ContactMapper(), id);
+        Contact contact = list.get(0);
+        return contact;
     }
 
     @Override
