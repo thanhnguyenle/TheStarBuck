@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="icons">
-                <a href="<c:url value='/views/web/cart.jsp'/>">
+                <a href="<%=request.getContextPath()%>/cart">
               <span>
                 <img src="<c:url value='/template/web/image/shoppingBag.svg'/>" alt="" />
                 <small class="count d-flex">0</small>

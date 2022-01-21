@@ -56,13 +56,19 @@ public class Cart extends AbsModel  implements Serializable {
 		return productList.remove(id);
 	}
 
-	//get total price of cart
-	public double getTotalPrice(){
+	//get sub total price of cart
+	public double getSubTotalPrice(){
 		double output = 0;
 		for (Product pro: productList.values()) {
 			output += pro.getTotalPrice();
 		}
 		return output;
+	}
+
+	//get total price of cart
+	public double getTotalPrice(){
+		double output = this.getSubTotalPrice() + this.getSubTotalPrice() * 0.01;
+		return output ;
 	}
 
 	//get total quantity of cart

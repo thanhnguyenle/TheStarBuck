@@ -5,7 +5,7 @@
 <%
   Account account = (Account) request.getAttribute("account");
 %>
-<%--<jsp:useBean id="cart" scope="request" type="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart"/>--%>
+<jsp:useBean id="cart" scope="session" type="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,17 +49,17 @@
           <td>
             <div class="cart-info">
               <input type="checkbox"class="check_product">
-              <img src="./images/product_1.png" alt="" />
+              <img src="${product.image}" alt="" />
               <div>
-                <p>Bambi Print Mini Backpack</p>
-                <span>Price: $500.00</span>
+                <p>${product.name}</p>
+                <span>Price: $${product.price}</span>
                 <br />
-                <a href="#">remove</a>
+                <a href="/cart-remove">remove</a>
               </div>
             </div>
           </td>
-          <td><input type="number" value="1" min="1" /></td>
-          <td>$50.00</td>
+          <td><input type="number" value="${product.quantitySold}" min="1"  max="${product.quantity}"/></td>
+          <td>$${product.totalPrice}</td>
         </tr>
       </c:forEach>
 
@@ -140,7 +140,7 @@
           <tr>
             <td>Subtotal</td>
             <td></td>
-            <td>$200</td>
+            <td>$${cart.subTotalPrice}</td>
           </tr>
           <tr>
             <td>Tax</td>
@@ -150,7 +150,7 @@
           <tr>
             <td>Total</td>
             <td></td>
-            <td>$250</td>
+            <td>$${cart.totalPrice}</td>
           </tr>
         </table>
         <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>
