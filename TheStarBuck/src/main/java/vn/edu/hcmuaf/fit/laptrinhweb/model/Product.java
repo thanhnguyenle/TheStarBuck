@@ -20,6 +20,7 @@ public class Product extends AbsModel  implements Serializable {
 	private String keywordSeo;
 	private String titleSeo;
 	private String note;
+	private int quantitySold;
 
 	public Product() {
 	}
@@ -151,4 +152,19 @@ public class Product extends AbsModel  implements Serializable {
 	public void setNote(String note) {
 		this.note = note;
 	}
+
+	public int getQuantitySold(){
+		return this.quantitySold;
+	}
+
+	public void setQuantitySold(int quantitySold){
+		this.quantitySold = quantitySold;
+	}
+
+	//get total price
+	public double getTotalPrice(){
+		return quantity * (price - (price * discount));
+	}
+
+
 }
