@@ -147,7 +147,7 @@
             <td>$250</td>
           </tr>
         </table>
-        <a href="payment.jsp" class="checkout btn">Proceed To Checkout</a>
+        <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>
       </div>
     <!-- </div> -->
   
