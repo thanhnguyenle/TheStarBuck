@@ -37,7 +37,14 @@ public class Cart extends AbsModel  implements Serializable {
 
 	//put product to cart
 	public void putProduct(Product product){
+		if(productList.containsKey(product.getId())){
+			upQuantity(product.getId());
+		} else
 		productList.put(product.getId(), product);
+	}
+	private void upQuantity(String id){
+		Product product = productList.get(id);
+		product.setQuantitySold(product.getQuantitySold() + 1);
 	}
 
 	//update quantity of product by id

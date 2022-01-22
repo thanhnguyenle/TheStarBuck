@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web.cart;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Cart;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ProductService;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,17 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //get product id from request
-
+        String id = request.getParameter("id");
+        Product product = productService.getItem(id);
+        if(product != null){
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+            if(cart == null){
+                cart = Cart.getInstance();
+            }
+            cart.putProduct(product);
+        }
+        response.sendRedirect(request.getContextPath() +"/cart");
 
     }
 

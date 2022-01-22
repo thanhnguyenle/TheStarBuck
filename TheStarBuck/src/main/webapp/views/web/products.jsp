@@ -224,7 +224,7 @@
             <div class="img-container">
               <img src="${item.image}" alt="" />
               <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
+                <a href="<%=request.getContextPath()%>/add-cart?id=${item.id}"><i class="fas fa-shopping-cart"></i></a>
               </div>
               <div class="sale-text">
                 <span class="section-sale">20% Off</span>

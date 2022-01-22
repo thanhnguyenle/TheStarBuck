@@ -163,7 +163,7 @@ public class Product extends AbsModel  implements Serializable {
 
 	//get total price
 	public double getTotalPrice(){
-		return quantity * (price - (price * discount));
+		return quantitySold * (price - (price * discount));
 	}
 
 
