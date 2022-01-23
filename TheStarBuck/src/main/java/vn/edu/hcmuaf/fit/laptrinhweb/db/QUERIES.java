@@ -83,4 +83,12 @@ public static class SHIPPER{
         public static  final String UPDATE = "update Orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
         public static  final String GET_ITEM_BYID = "select * from Orders where id_od = ?";
     }
+    //ARTICLE
+    public static  class ARTICLE{
+        public static  final String GET_LIST = "select * from article";
+        public static  final String CREATE = "insert into article values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from article where id_ar = ?";
+        public static  final String UPDATE = "update article set ar_status = ?, modifiedDate = ?, modifiedBy = ? where id_ar = ?";
+        public static  final String GET_ITEM_BYID = "select * from article where id_ar = ?";
+    }
 }

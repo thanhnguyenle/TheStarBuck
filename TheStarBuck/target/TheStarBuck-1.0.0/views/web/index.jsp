@@ -45,13 +45,13 @@
 
 <body>
  <jsp:include page="layout/header.jsp"/>
-  <div class="hero" id="hero1" >
+  <div class="hero" id="hero1" style="background: url('${slideTitle[1].image}')">
     <div class="row hero-layout">
       <!-- <div class="circle "></div> -->
       <div class="content">
         <div class="textBox">
-          <h2 class="animate__animated animate__fadeInTopLeft" id="title_hero1">${slideTitle[0].greetingH2}<br>It's <span>${slideTitle[0].greetingSpan}</span></h2>
-          <p class="animate__animated animate__backInLeft" id="text_hero1">${slideTitle[0].greetingP}</p>
+          <h2 class="animate__animated animate__fadeInTopLeft" id="title_hero1">${slideTitle[1].greetingH2}<br>It's <span>${slideTitle[1].greetingSpan}</span></h2>
+          <p class="animate__animated animate__backInLeft" id="text_hero1">${slideTitle[1].greetingP}</p>
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
@@ -979,25 +979,23 @@
 
   <!-- Banner Begin -->
   <section class="banner">
+    <c:forEach items="${slideBanner}" var="x">
     <div class="container">
       <div class="col">
         <img class="banner__decor" src="https://i.ibb.co/LNqqBR5/bell-xmas.png" alt="" srcset="">
         <div class="banner_box">
           <div class="banner_content ">
-            <h2>CELEBRATE TO X-MAS</h2>
-            <p>Come celebrate the season with our merry holiday drinks: Peppermint Mocha, Caramel Brulée Latte and
-              Toasted White Chocolate Mocha. Cheers!</p>
-            <a>find your favorite</a>
+            <h2>${x.greetingH2}</h2>
+            <p>${x.greetingP}</p>
+            <a>Find your favorite</a>
           </div>
           <div class="banner__pic">
-            <img src="images/banner__2.png" alt="">
+            <img src="${x.image}" alt="">
           </div>
         </div>
       </div>
-      <audio id="beep" preload="auto">
-        <source id="src__music" src="music/baner_decor.mp3"></source>
-      </audio>
     </div>
+    </c:forEach>
   </section>
   <!-- Banner End -->
 
@@ -1007,20 +1005,20 @@
     <div class="about-layout container">
       <div class="wrapper">
         <div class="one item">
-          <img src="images/about1.png" alt="">
-          <img src="images/about1_1.png" alt="" class="img-change">
+          <img src="https://i.ibb.co/S5kMGCR/about1.png" alt="">
+          <img src="https://i.ibb.co/X5XdrSv/about1-1.png" alt="" class="img-change">
         </div>
         <div class="two item">
-          <img src="images/about2.png" alt="">
-          <img src="images/about2_2.png" alt="" class="img-change">
+          <img src="https://i.ibb.co/hL020Hw/about2.png" alt="">
+          <img src="https://i.ibb.co/zS3pbKm/about2-2.png" alt="" class="img-change">
         </div>
         <div class="three item">
-          <img src="images/about3.png" alt="">
-          <img src="images/about3_3.png" alt="" class="img-change">
+          <img src="https://i.ibb.co/47ghyBM/about3.png" alt="">
+          <img src="https://i.ibb.co/xFb5ZKm/about3-3.png" alt="" class="img-change">
         </div>
         <div class="four item">
-          <img src="images/about4.png" alt="">
-          <img src="images/about4_4.png" alt="" class="img-change">
+          <img src="https://i.ibb.co/DW2vKHy/about4.png" alt="">
+          <img src="https://i.ibb.co/y4k8x4T/about4-4.png" alt="" class="img-change">
         </div>
         <div class="five">
           <div class="content">
@@ -1028,8 +1026,6 @@
             <h1>About us</h1>
             <p>Besides being proud of delicious - clean - fresh milk tea cups, we are always confident to bring
               customers the best experience in terms of service and space.</p>
-
-
           </div>
           <div class="btn-box">
             <a href="">
@@ -1094,34 +1090,34 @@
       <div class="ordering-stepss">
         <div class="item steps-one">
           <div class="criea">
-            <img src="images/step_1.png" alt="" width="40px" height="40px">
+            <img src="https://i.ibb.co/26NMb4z/step-1.png" alt="" width="40px" height="40px">
           </div>
           <h4>Contact</h4>
         </div>
         <div class="item min">
-          <img src="images/step.png" alt="" width="40px" height="40px">
+          <img src="https://i.ibb.co/g9Q8dQx/step.png" alt="" width="40px" height="40px">
         </div>
         <div class="item steps-two">
           <div class="criea">
-            <img src="images/step_2.png" alt="" width="40px" height="40px">
+            <img src="https://i.ibb.co/pn2FK9c/step-2.png" alt="" width="40px" height="40px">
           </div>
           <h4>Create order</h4>
         </div>
         <div class="item min">
-          <img src="images/step.png" alt="" width="40px" height="40px">
+          <img src="https://i.ibb.co/g9Q8dQx/step.png" alt="" width="40px" height="40px">
         </div>
         <div class="item steps-three">
           <div class="criea">
-            <img src="images/step_3.png" alt="" width="40px" height="40px">
+            <img src="https://i.ibb.co/gwN7d21/step-3.png" alt="" width="40px" height="40px">
           </div>
           <h4>Delivery</h4>
         </div>
         <div class="item min">
-          <img src="images/step.png" alt="" width="40px" height="40px">
+          <img src="https://i.ibb.co/g9Q8dQx/step.png" alt="" width="40px" height="40px">
         </div>
         <div class="item steps-four">
           <div class="criea">
-            <img src="images/step_4.png" alt="" width="40px" height="40px">
+            <img src="https://i.ibb.co/BKCdTFb/step-4.png" alt="" width="40px" height="40px">
           </div>
           <h4>Pay</h4>
         </div>
