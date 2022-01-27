@@ -28,6 +28,11 @@ public class ProductService implements IProductService {
         return productDAO.save(product);
     }
 
+    @Override
+    public List<Product> printTypeProductLatest(int num) {
+        return productDAO.printTypeProductLatest(num);
+    }
+
     public Map<String, Product> getAll(){
         return productDAO.getAll();
     }

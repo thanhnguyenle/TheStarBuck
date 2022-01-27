@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Slide;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAccountService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAddressService;
@@ -36,9 +37,11 @@ public class HomeController extends HttpServlet {
         List<Slide> slides = slideService.printTypeSlide("MINI",5);
         List<Slide> slides1 = slideService.printTypeSlide("TITLE",3);
         List<Slide> slides2 = slideService.printTypeSlide("BANNER",1);
+        List<Product> productLasest = productService.printTypeProductLatest(8);
         request.setAttribute("slideMini", slides);
         request.setAttribute("slideTitle", slides1);
         request.setAttribute("slideBanner", slides2);
+        request.setAttribute("listProductLasest", productLasest);
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
         rd.forward(request,response);
     }

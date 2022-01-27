@@ -17,6 +17,7 @@ public class QUERIES {
 //    PRODUCT
 public static class PRODUCT {
     public static final String GET_LIST = "select * from Product";
+    public static final String GET_LIST_LATEST = "SELECT * FROM `product` ORDER BY createdDate DESC  LIMIT ?";
     public static final String CREATE = "insert into Product values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String DELETE = "delete from Product where id_pr = ?";
     public static final String GET_ITEM_BYID = "select * from Product where id_pr = ?";

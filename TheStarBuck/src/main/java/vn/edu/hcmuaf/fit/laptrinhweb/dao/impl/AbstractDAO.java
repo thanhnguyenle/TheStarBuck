@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IGenericDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.impl.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.IRowMapper;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -216,4 +217,5 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
             e.printStackTrace();
         }
     }
+
 }

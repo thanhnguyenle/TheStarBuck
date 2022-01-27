@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IProductDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ProductMapper;
+import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.SlideMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 
 import java.text.SimpleDateFormat;
@@ -37,6 +38,11 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
             return addItem(product);
         }
         return updateItem(product);
+    }
+
+    @Override
+    public List<Product> printTypeProductLatest(int num) {
+        return query(QUERIES.PRODUCT.GET_LIST_LATEST,new ProductMapper(),num);
     }
 
     public Long addItem(Product product){
