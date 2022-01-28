@@ -388,7 +388,6 @@
 
       </div>
       <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
-
         <div class="product-layout">
           <c:forEach items="${listProductLasest}" var="x">
           <div class="product">
@@ -398,7 +397,7 @@
                 <i class="fas fa-shopping-cart"></i>
               </div>
               <div class="sale-text">
-                <span class="section-sale">20% Off</span>
+                <span class="section-sale">${x.sale}% Off</span>
               </div>
 
               <ul class="side-icons">

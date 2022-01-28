@@ -21,10 +21,16 @@ public class Product extends AbsModel  implements Serializable {
 	private String titleSeo;
 	private String note;
 	private int quantitySold;
+	private String sale;
 
 	public Product() {
 	}
-
+	public String getSale() {
+		return String.format("%,.1f", (this.discount / this.price) * 100);
+	}
+	public void setSale() {
+		this.sale = String.format("%,.0f",(this.discount / this.price) * 100);
+	}
 	public String getId() {
 		return id;
 	}
