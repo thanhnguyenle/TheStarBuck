@@ -81,7 +81,7 @@
           <tr>
             <td>Tax</td>
             <td></td>
-            <td>$50</td>
+            <td>$0.01</td>
           </tr>
           <tr>
             <td>Total</td>
