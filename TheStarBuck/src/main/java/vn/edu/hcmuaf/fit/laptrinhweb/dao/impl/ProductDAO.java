@@ -45,6 +45,16 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         return query(QUERIES.PRODUCT.GET_LIST_LATEST,new ProductMapper(),num);
     }
 
+    @Override
+    public List<Product> printTypeProductFeatured(int num) {
+        return query(QUERIES.PRODUCT.GET_LIST_FEATURED,new ProductMapper(),num);
+    }
+
+    @Override
+    public List<Product> printTypeProductHot(int num) {
+        return query(QUERIES.PRODUCT.GET_LIST_HOT,new ProductMapper(),num);
+    }
+
     public Long addItem(Product product){
         int active = product.isActive() ? 1 : 0;
         int hot = product.isHot() ? 1 : 0;

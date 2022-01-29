@@ -258,6 +258,9 @@ li {
   margin-bottom: 30px;
   background:var(--grey3);
   border: 1px solid var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .section.products .product:hover{
   -webkit-box-shadow: -1px 5px 9px 5px #C0C0C0; 

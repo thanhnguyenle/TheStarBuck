@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav id="header" class="nav">
     <div class="wrapper container">
-        <div class="logo"><a href="<c:url value='/views/web/index.jsp'/>">
+        <div class="logo"><a href="<c:url value='http://localhost:8080/TheStarBuck/user-home'/>">
             <img src="<c:url value='https://i.ibb.co/nMxcqW4/logo.png'/>" alt="">
         </a>
         </div>

@@ -33,6 +33,16 @@ public class ProductService implements IProductService {
         return productDAO.printTypeProductLatest(num);
     }
 
+    @Override
+    public List<Product> printTypeProductFeatured(int num) {
+        return productDAO.printTypeProductFeatured(num);
+    }
+
+    @Override
+    public List<Product> printTypeProductHot(int num) {
+        return productDAO.printTypeProductHot(num);
+    }
+
     public Map<String, Product> getAll(){
         return productDAO.getAll();
     }

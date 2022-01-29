@@ -733,6 +733,9 @@ a:hover {
   margin-bottom: 30px;
   background: var(--grey3);
   border: 1px solid var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .section.products .product:hover {

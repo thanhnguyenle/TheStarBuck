@@ -38,10 +38,14 @@ public class HomeController extends HttpServlet {
         List<Slide> slides1 = slideService.printTypeSlide("TITLE",3);
         List<Slide> slides2 = slideService.printTypeSlide("BANNER",1);
         List<Product> productLasest = productService.printTypeProductLatest(8);
+        List<Product> productFeatured = productService.printTypeProductFeatured(8);
+        List<Product> productHot = productService.printTypeProductHot(8);
         request.setAttribute("slideMini", slides);
         request.setAttribute("slideTitle", slides1);
         request.setAttribute("slideBanner", slides2);
         request.setAttribute("listProductLasest", productLasest);
+        request.setAttribute("listProductFeatured", productFeatured);
+        request.setAttribute("listProductHot", productHot);
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
         rd.forward(request,response);
     }

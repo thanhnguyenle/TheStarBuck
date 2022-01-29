@@ -9,4 +9,6 @@ public interface IProductService {
     List<Product> findAll();
     Long save(Product product);
     List<Product> printTypeProductLatest(int num);
+    List<Product> printTypeProductFeatured(int num);
+    List<Product> printTypeProductHot(int num);
 }
