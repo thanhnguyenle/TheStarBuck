@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
+<%@ page import="com.google.gson.Gson" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -26,6 +27,7 @@
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/cart.css")%>" />
     <!-- datatable -->
     <link rel="stylesheet" href="<%= Asset.url("/vendor/dt/datatables.min.css")%>" />
+  <link rel="stylesheet" href="/vendor/dt/datatables.min.css">
   <!--modal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>Cart</title>
@@ -115,9 +117,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <!-- datatable -->
   <script src="<%= Asset.url("/vendor/dt/datatables.min.js")%>"></script>
+  <script src="/vendor/dt/datatables.min.js"></script>
 <script>
+  var cart;
   $(document).ready( function () {
-    $('#cart').DataTable();
+    <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
+    cart = JSON.parse('<%=data%>');
+    $('#cart').DataTable({
+      paging: false,
+      searching: false,
+    });
   } );
 </script>
 </body>
