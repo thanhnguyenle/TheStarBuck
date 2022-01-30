@@ -27,6 +27,7 @@ public class ShowServlet extends HttpServlet {
             cart = Cart.getInstance();
         }
         session.setAttribute("cart", cart);
+        request.setAttribute("cart", cart);
         request.getRequestDispatcher("/views/web/cart.jsp").forward(request, response);
     }
 

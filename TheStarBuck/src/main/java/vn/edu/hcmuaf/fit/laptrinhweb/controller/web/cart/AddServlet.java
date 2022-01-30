@@ -29,6 +29,7 @@ public class AddServlet extends HttpServlet {
                 cart = Cart.getInstance();
             }
             cart.putProduct(product);
+            session.setAttribute("cart", cart);
         }
 //        Cookie cookie[] = request.getCookies();
 //        String txt = "";

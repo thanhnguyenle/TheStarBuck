@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/footer.css")%>" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/cart.css")%>" />
+    <!-- datatable -->
+    <link rel="stylesheet" href="<%= Asset.url("/vendor/dt/datatables.min.css")%>" />
   <!--modal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>Cart</title>
@@ -36,7 +38,7 @@
 
   <!-- Cart Items -->
   <div class="container cart">
-    <table>
+    <table id="cart">
       <tr id="titlecart">
         <th>Product</th>
         <th>Quantity</th>
@@ -111,6 +113,13 @@
   <script src="<%= Asset.url("/template/web/js/cart.js")%>"></script>
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!-- datatable -->
+  <script src="<%= Asset.url("/vendor/dt/datatables.min.js")%>"></script>
+<script>
+  $(document).ready( function () {
+    $('#cart').DataTable();
+  } );
+</script>
 </body>
 
 </html>
