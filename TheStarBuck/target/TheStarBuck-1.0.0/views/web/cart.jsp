@@ -110,15 +110,16 @@
   <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
   <!-- jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--%>
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/cart.js")%>"></script>
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <!-- datatable -->
   <script src="<%= Asset.url("/vendor/dt/datatables.min.js")%>"></script>
-  <script src="/vendor/dt/datatables.min.js"></script>
+<%--  <script src="/vendor/dt/datatables.min.js"></script>--%>
 <script>
+  // $(".sub-total-cart").html("123");
   var cart;
   $(document).ready( function () {
     <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
@@ -130,15 +131,16 @@
     loadCart(cart);
   } );
   function loadCart(cart){
-    sub_sum = 0;
+    var sub_sum = 0;
+    var sum = 0;
     for (const x in cart.productList) {
       sub_sum += cart.productList[x].quantitySold * (cart.productList[x].price - (cart.productList[x].price * cart.productList[x].discount));
 
     }
     console.log(sum);
     sum = sub_sum + sub_sum * 0.01;
-    $(".sub-total-cart").html(sub_sum);
-    $(".total-cart").html(sum);
+    $(".sub-total-cart").html("$" + sub_sum) ;
+    $(".total-cart").html("$" + sum);
   }
 </script>
 </body>
