@@ -80,7 +80,7 @@
           <tr>
             <td>Subtotal</td>
             <td></td>
-            <td>$${cart.subTotalPrice}</td>
+            <td class="sub-total-cart"></td>
           </tr>
           <tr>
             <td>Tax</td>
@@ -90,7 +90,7 @@
           <tr>
             <td>Total</td>
             <td></td>
-            <td>$${cart.totalPrice}</td>
+            <td class="total-cart"></td>
           </tr>
         </table>
         <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>
@@ -127,7 +127,19 @@
       paging: false,
       searching: false,
     });
+    loadCart(cart);
   } );
+  function loadCart(cart){
+    sub_sum = 0;
+    for (const x in cart.productList) {
+      sub_sum += cart.productList[x].quantitySold * (cart.productList[x].price - (cart.productList[x].price * cart.productList[x].discount));
+
+    }
+    console.log(sum);
+    sum = sub_sum + sub_sum * 0.01;
+    $(".sub-total-cart").html(sub_sum);
+    $(".total-cart").html(sum);
+  }
 </script>
 </body>
 
