@@ -50,7 +50,7 @@
         <c:set var="products" value="${cart.productList}" />
       <c:forEach items="${products}" var="product">
         <tr>
-          <td>
+          <td class="product">
             <div class="cart-info">
               <input type="checkbox"class="check_product">
               <img src="${product.image}" alt="" />
@@ -129,6 +129,9 @@
       searching: false,
     });
     loadCart(cart);
+    $('#cart').on('draw.dt', function (){
+
+    });
   } );
   function loadCart(cart){
     var sub_sum = 0;

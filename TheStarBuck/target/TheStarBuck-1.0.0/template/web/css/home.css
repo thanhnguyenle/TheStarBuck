@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
 
 :root {
   --primary: #017143;
@@ -18,7 +18,7 @@
   padding: 0;
   box-sizing: inherit;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 html {
   box-sizing: border-box;
   font-size: 62.5%;

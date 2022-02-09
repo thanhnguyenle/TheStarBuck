@@ -65,7 +65,6 @@
       </ul>
     </div>
   </div>
-
   <section class="image-slider">
     <c:forEach items="${slideMini}" var="x">
       <div class="image-item">
@@ -75,8 +74,6 @@
       </div>
     </c:forEach>
   </section>
-
-
   <!-- Products -->
   <section class="section products " id="products">
     <div class="section-title">
@@ -240,8 +237,6 @@
     </div>
     <!-- /.container -->
   </section>
-
-
   <!-- Banner Begin -->
   <section class="banner">
     <c:forEach items="${slideBanner}" var="x">
@@ -263,8 +258,6 @@
     </c:forEach>
   </section>
   <!-- Banner End -->
-
-
   <!-- about -->
   <section class="section about">
     <div class="about-layout container">
@@ -301,7 +294,6 @@
       </div>
     </div>
   </section>
-
   <!-- Blog Section Begin -->
   <section class="from-blog spad">
     <div class="container">
@@ -347,7 +339,6 @@
     </div>
   </section>
   <!-- Blog Section End -->
-
   <!-- ordering -->
   <section class="ordering steps">
     <div class="ordering-layout">
