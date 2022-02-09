@@ -25,12 +25,14 @@ public class DBConnection {
 
     public static Connection getConnection() {
         Connection connection=dbPool.getConnection();
-        System.out.println("GPPool status: " + dbPool);
+        System.out.println("Pool status: " + dbPool);
         return connection;
     }
 
     public static boolean releaseConnection(Connection connection) {
-        return dbPool.releaseConnection(connection);
+        boolean check = dbPool.releaseConnection(connection);
+        System.out.println("Pool status: " + dbPool);
+        return check;
     }
 
 }
