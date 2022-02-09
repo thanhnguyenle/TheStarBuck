@@ -124,11 +124,13 @@
   $(document).ready( function () {
     <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
     cart = JSON.parse('<%=data%>');
+      loadCart(cart);
     $('#cart').DataTable({
       paging: false,
       searching: false,
     });
-    loadCart(cart);
+    // loadCart(cart);
+      console.log('abc');
     $('#cart').on('draw.dt', function (){
 
     });
