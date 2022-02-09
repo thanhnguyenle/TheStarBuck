@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
+<%@ page import="com.google.gson.Gson" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -24,6 +25,9 @@
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/footer.css")%>" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/cart.css")%>" />
+    <!-- datatable -->
+    <link rel="stylesheet" href="<%= Asset.url("/vendor/dt/datatables.min.css")%>" />
+  <link rel="stylesheet" href="/vendor/dt/datatables.min.css">
   <!--modal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>Cart</title>
@@ -36,7 +40,7 @@
 
   <!-- Cart Items -->
   <div class="container cart">
-    <table>
+    <table id="cart">
       <tr id="titlecart">
         <th>Product</th>
         <th>Quantity</th>
@@ -46,7 +50,7 @@
         <c:set var="products" value="${cart.productList}" />
       <c:forEach items="${products}" var="product">
         <tr>
-          <td>
+          <td class="product">
             <div class="cart-info">
               <input type="checkbox"class="check_product">
               <img src="${product.image}" alt="" />
@@ -76,17 +80,17 @@
           <tr>
             <td>Subtotal</td>
             <td></td>
-            <td>$${cart.subTotalPrice}</td>
+            <td class="sub-total-cart"></td>
           </tr>
           <tr>
             <td>Tax</td>
             <td></td>
-            <td>$50</td>
+            <td>$0.01</td>
           </tr>
           <tr>
             <td>Total</td>
             <td></td>
-            <td>$${cart.totalPrice}</td>
+            <td class="total-cart"></td>
           </tr>
         </table>
         <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>
@@ -106,11 +110,42 @@
   <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
   <!-- jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--%>
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/cart.js")%>"></script>
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!-- datatable -->
+  <script src="<%= Asset.url("/vendor/dt/datatables.min.js")%>"></script>
+<%--  <script src="/vendor/dt/datatables.min.js"></script>--%>
+<script>
+  // $(".sub-total-cart").html("123");
+  var cart;
+  $(document).ready( function () {
+    <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
+    cart = JSON.parse('<%=data%>');
+    $('#cart').DataTable({
+      paging: false,
+      searching: false,
+    });
+    loadCart(cart);
+    $('#cart').on('draw.dt', function (){
+
+    });
+  } );
+  function loadCart(cart){
+    var sub_sum = 0;
+    var sum = 0;
+    for (const x in cart.productList) {
+      sub_sum += cart.productList[x].quantitySold * (cart.productList[x].price - (cart.productList[x].price * cart.productList[x].discount));
+
+    }
+    console.log(sum);
+    sum = sub_sum + sub_sum * 0.01;
+    $(".sub-total-cart").html("$" + sub_sum) ;
+    $(".total-cart").html("$" + sum);
+  }
+</script>
 </body>
 
 </html>

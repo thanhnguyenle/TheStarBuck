@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Cart extends AbsModel  implements Serializable {
-	private static  Cart instance;
+//	private static  Cart instance;
 	private String id;
 	private String idAccount;
 	private String idSession;
@@ -22,10 +22,8 @@ public class Cart extends AbsModel  implements Serializable {
 		productList = new HashMap<>();
 	}
 	public static  Cart getInstance(){
-		if(instance == null){
-			instance = new Cart();
-		}
-		return instance;
+
+		return new Cart();
 	}
 	public List<CartItem> getCartItemList() {
 		return cartItemList;

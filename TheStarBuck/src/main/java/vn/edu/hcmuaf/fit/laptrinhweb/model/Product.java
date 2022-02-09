@@ -20,7 +20,7 @@ public class Product extends AbsModel  implements Serializable {
 	private String keywordSeo;
 	private String titleSeo;
 	private String note;
-	private int quantitySold;
+	private int quantitySold = 1;
 	private String sale;
 
 	public Product() {
