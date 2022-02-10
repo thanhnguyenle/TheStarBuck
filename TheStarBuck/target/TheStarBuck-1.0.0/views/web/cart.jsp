@@ -128,13 +128,7 @@
                                   </figure>
                               </td>
                               <td>
-                                  <div class="input-group bootstrap-touchspin align-items-center "><span class="input-group-btn"><button
-                                          class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span><span
-                                          class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input
-                                          type="text" name="" value="1" class="input-qty form-control text-center"
-                                          style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix"
-                                                                        style="display: none;"></span><span class="input-group-btn"><button
-                                          class="btn btn-default bootstrap-touchspin-up" type="button">+</button></span></div>
+                              <input type="number" value="1" min="1"  max="10"/>
                               </td>
                               <td>
                               </td>
