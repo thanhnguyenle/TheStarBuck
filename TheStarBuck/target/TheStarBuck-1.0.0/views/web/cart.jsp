@@ -39,65 +39,152 @@
   <jsp:include page="layout/header.jsp"/>
 
   <!-- Cart Items -->
-  <div class="container cart">
-    <table id="cart">
-      <tr id="titlecart">
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-      </tr>
+<%--  <div class="container cart">--%>
+<%--    <table id="cart">--%>
+<%--      <tr id="titlecart">--%>
+<%--        <th>Product</th>--%>
+<%--        <th>Quantity</th>--%>
+<%--        <th>Subtotal</th>--%>
+<%--      </tr>--%>
 
-        <c:set var="products" value="${cart.productList}" />
-      <c:forEach items="${products}" var="product">
-        <tr>
-          <td class="product">
-            <div class="cart-info">
-              <input type="checkbox"class="check_product">
-              <img src="${product.image}" alt="" />
-              <div>
-                <p>${product.name}</p>
-                <span>Price: $${product.price}</span>
-                <br />
-                <a href="/cart-remove">remove</a>
+<%--        <c:set var="products" value="${cart.productList}" />--%>
+<%--      <c:forEach items="${products}" var="product">--%>
+<%--        <tr>--%>
+<%--          <td class="product">--%>
+<%--            <div class="cart-info">--%>
+<%--              <input type="checkbox"class="check_product">--%>
+<%--              <img src="${product.image}" alt="" />--%>
+<%--              <div>--%>
+<%--                <p>${product.name}</p>--%>
+<%--                <span>Price: $${product.price}</span>--%>
+<%--                <br />--%>
+<%--                <a href="/cart-remove">remove</a>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </td>--%>
+<%--          <td><input type="number" value="${product.quantitySold}" min="1"  max="${product.quantity}"/></td>--%>
+<%--          <td>$${product.totalPrice}</td>--%>
+<%--        </tr>--%>
+<%--      </c:forEach>--%>
+
+<%--    </table>--%>
+
+<%--    <!-- <div class="row min"> -->--%>
+<%--      <div class="total-price">--%>
+<%--        <table>--%>
+<%--          <tr>--%>
+<%--            <td>Code</td>--%>
+<%--            <td><input type="text" width="100%"></td>--%>
+<%--            <td><button id="enterCode">Enter</button></td>--%>
+<%--          </tr>--%>
+<%--          <tr>--%>
+<%--            <td>Subtotal</td>--%>
+<%--            <td></td>--%>
+<%--            <td class="sub-total-cart"></td>--%>
+<%--          </tr>--%>
+<%--          <tr>--%>
+<%--            <td>Tax</td>--%>
+<%--            <td></td>--%>
+<%--            <td>$0.01</td>--%>
+<%--          </tr>--%>
+<%--          <tr>--%>
+<%--            <td>Total</td>--%>
+<%--            <td></td>--%>
+<%--            <td class="total-cart"></td>--%>
+<%--          </tr>--%>
+<%--        </table>--%>
+<%--        <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>--%>
+<%--      </div>--%>
+<%--    <!-- </div> -->--%>
+<%--  --%>
+<%--  </div>--%>
+  <section class="container" style="margin-top:110px; margin-bottom:80px">
+      <div class="row">
+          <aside class="col-lg-9">
+              <div class="card">
+                  <div class="table-responsive">
+                      <table class="table table-borderless table-shopping-cart">
+                          <thead class="text-muted">
+                          <tr class="small text-uppercase">
+                              <th scope="col">Product</th>
+                              <th scope="col" width="120">Quantity</th>
+                              <th scope="col" width="20"></th>
+                              <th scope="col" width="120">Price</th>
+                              <th scope="col" class="text-right d-none d-md-block" width="120"></th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>
+                                  <figure class="itemside align-items-center">
+                                      <div class="aside"><img src="https://i.ibb.co/x7mgrpc/8.png" class="img-sm"></div>
+                                      <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt fdgsfgdfsfsdfsdwith round
+                                          nect</a>
+                                          <p class="text-muted small">SIZE: L</p>
+                                      </figcaption>
+                                  </figure>
+                              </td>
+                              <td>
+                                  <div class="input-group bootstrap-touchspin align-items-center "><span class="input-group-btn"><button
+                                          class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span><span
+                                          class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input
+                                          type="text" name="" value="1" class="input-qty form-control text-center"
+                                          style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix"
+                                                                        style="display: none;"></span><span class="input-group-btn"><button
+                                          class="btn btn-default bootstrap-touchspin-up" type="button">+</button></span></div>
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                  <div class="price-wrap align-items-center"> <var class="price">$10.00</var></div>
+                              </td>
+
+                              <td>
+                                  <div class="text-right d-none d-md-block">
+                                      <a data-original-title="Save to Wishlist" title="" href=""
+                                         class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a
+                                          href="" class="btn btn-light" data-abc="true"> Remove</a>
+                                  </div>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
               </div>
-            </div>
-          </td>
-          <td><input type="number" value="${product.quantitySold}" min="1"  max="${product.quantity}"/></td>
-          <td>$${product.totalPrice}</td>
-        </tr>
-      </c:forEach>
-
-    </table>
-
-    <!-- <div class="row min"> -->
-      <div class="total-price">
-        <table>
-          <tr>
-            <td>Code</td>
-            <td><input type="text" width="100%"></td>
-            <td><button id="enterCode">Enter</button></td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td></td>
-            <td class="sub-total-cart"></td>
-          </tr>
-          <tr>
-            <td>Tax</td>
-            <td></td>
-            <td>$0.01</td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td></td>
-            <td class="total-cart"></td>
-          </tr>
-        </table>
-        <a href="payment.jsp" class="checkout btn" >Proceed To Checkout</a>
+          </aside>
+          <aside class="col-lg-3">
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <form>
+                          <div class="form-group"> <label>Have coupon?</label>
+                              <div class="input-group"> <input type="text" class="form-control coupon" name=""
+                                                               placeholder="Coupon code" style="border: 2px solid #017143; font-size:1.5rem"> <span class="input-group-append"> <button
+                                      class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="card-body">
+                      <dl class="dlist-align">
+                          <dt>Total price:</dt>
+                          <dd class="text-right ml-3">$69.97</dd>
+                      </dl>
+                      <dl class="dlist-align">
+                          <dt>Discount:</dt>
+                          <dd class="text-right text-danger ml-3">- $10.00</dd>
+                      </dl>
+                      <dl class="dlist-align">
+                          <dt>Total:</dt>
+                          <dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+                      </dl>
+                      <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a
+                          href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                  </div>
+              </div>
+          </aside>
       </div>
-    <!-- </div> -->
-  
-  </div>
+  </section>
 <!-- messenger -->
 <div class="messenger">
   <a href=""><img src="images/mees.png" alt="" width="70px"></a>
