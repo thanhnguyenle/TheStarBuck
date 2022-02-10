@@ -171,7 +171,7 @@
                       </dl>
                       <dl class="dlist-align">
                           <dt>Tax:</dt>
-                          <dd class="text-right text-danger ml-3">- $0.01</dd>
+                          <dd class="text-right text-danger ml-3">$0.01</dd>
                       </dl>
                       <dl class="dlist-align">
                           <dt>Total:</dt>
