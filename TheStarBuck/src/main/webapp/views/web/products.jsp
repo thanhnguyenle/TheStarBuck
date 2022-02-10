@@ -282,12 +282,12 @@
   <script src="<%= Asset.url("/template/web/js/product.js")%>"></script>
 
   <!--paging lib-->
-  <!--script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script-->
+  <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
-              totalPages: 35,
-              visiblePages: 10,
+              totalPages: 19,
+              visiblePages: 9,
               onPageClick: function (event, page) {
                   console.info(page + ' (from options)');
               }
