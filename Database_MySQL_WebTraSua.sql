@@ -93,7 +93,7 @@ IF
 		`ar_avatar` VARCHAR ( 255 ) CHARACTER 
 		SET 'utf8mb4' NULL,
 		`ar_view` INT NULL,
-		`ar_hot` BOOL NOT NULL DEFAULT 0,
+		`ar_hot` INT NOT NULL DEFAULT 0,
 		`createdDate` DATETIME ( 6 ) NOT NULL,
 		`modifiedDate` DATETIME ( 6 ) NULL DEFAULT NULL,
 		`createdBy` VARCHAR ( 255 ) CHARACTER 
@@ -356,7 +356,7 @@ IF
 		`pr_discount` FLOAT ( 24, 0 ) NOT NULL DEFAULT 0.0,
 		`pr_quantity` INT NOT NULL DEFAULT 0,
 		`pr_active` BOOL NOT NULL DEFAULT 1,
-		`pr_hot` BOOL NOT NULL DEFAULT 0,
+		`pr_hot` INT NOT NULL DEFAULT 0,
 		`pr_view` INT NULL DEFAULT 0,
 		`pr_description` VARCHAR ( 500 ) CHARACTER 
 		SET 'utf8mb4' NULL,

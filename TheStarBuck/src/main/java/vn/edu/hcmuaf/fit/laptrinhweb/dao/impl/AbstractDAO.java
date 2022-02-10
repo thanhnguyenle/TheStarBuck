@@ -13,7 +13,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
    //private DBConnection dbConnection = DBConnection.getInstance();
 
     @Override
-    public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameter) {
+    public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameter)  {
         List<T> results = new ArrayList<>();
 
         // DECLARE
@@ -41,12 +41,15 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 }
                 return results;
             } catch (SQLException e) {
-                e.printStackTrace();
+                try {
+                    connection.rollback();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 return null;
             }finally {
                 DBConnection.releaseConnection(connection);
                 try {
-                    DBConnection.releaseConnection(connection);
                     if (statement != null) statement.close();
                     if (resultSet != null) resultSet.close();
                 }catch(SQLException e){
