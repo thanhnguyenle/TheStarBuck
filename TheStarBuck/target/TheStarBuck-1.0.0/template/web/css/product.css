@@ -1026,6 +1026,7 @@ a:hover {
 /*Paging css*/
 .page-item .page-link{
   width: 40px;
+  color: mediumseagreen;
 }
 
 .prev .page-link{
