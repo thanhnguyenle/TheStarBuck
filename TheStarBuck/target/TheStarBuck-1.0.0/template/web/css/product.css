@@ -103,12 +103,6 @@ section .container {
   text-align: center;
 }
 
-.product .bottom a {
-  margin-bottom: 1rem;
-  font-weight: inherit;
-  font-size: 1.5rem;
-}
-
 .product .bottom a:hover {
   color: var(--primary);
 }
@@ -762,10 +756,12 @@ a:hover {
 }
 
 .section.products .product .bottom a {
+  display: block;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   color: black;
   font-weight: 600;
+  height: 65px;
 }
 
 .section.products .product .bottom a:hover {
@@ -798,7 +794,7 @@ a:hover {
 
 .section.products .product .bottom .price-rating .rating i {
   font-size: 1rem;
-  padding: 5px;
+  /*padding: 5px;*/
   color: #ffb503;
 }
 
@@ -1020,4 +1016,17 @@ a:hover {
 
 .panel .sliders button{
   margin-top:12px;
+}
+
+/*Paging css*/
+.page-item .page-link{
+  width: 40px;
+}
+
+.prev .page-link{
+  width: 90px;
+}
+
+.first .page-link,.next .page-link,.last .page-link{
+  width: 55px;
 }
