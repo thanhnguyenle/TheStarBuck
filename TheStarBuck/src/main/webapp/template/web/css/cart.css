@@ -230,3 +230,7 @@ a {
   background-color: var(--white);
   color: var(--primary);
 }
+.text-uppercase{
+  background: var(--primary);
+  color: white;
+}
