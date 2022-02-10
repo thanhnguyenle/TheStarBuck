@@ -14,11 +14,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+  <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <!-- Boxicons -->
-  <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+ <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js' rel='stylesheet'>
+ <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+ <link href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' rel='stylesheet'>
   <!--custom navigation-->
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/navigation.css")%>" />
   <!--custom footer-->
@@ -27,7 +31,6 @@
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/cart.css")%>" />
     <!-- datatable -->
     <link rel="stylesheet" href="<%= Asset.url("/vendor/dt/datatables.min.css")%>" />
-  <link rel="stylesheet" href="/vendor/dt/datatables.min.css">
   <!--modal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <title>Cart</title>
@@ -125,13 +128,7 @@
                                   </figure>
                               </td>
                               <td>
-                                  <div class="input-group bootstrap-touchspin align-items-center "><span class="input-group-btn"><button
-                                          class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span><span
-                                          class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input
-                                          type="text" name="" value="1" class="input-qty form-control text-center"
-                                          style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix"
-                                                                        style="display: none;"></span><span class="input-group-btn"><button
-                                          class="btn btn-default bootstrap-touchspin-up" type="button">+</button></span></div>
+                              <input type="number" value="1" min="1"  max="10"/>
                               </td>
                               <td>
                               </td>
@@ -185,14 +182,6 @@
           </aside>
       </div>
   </section>
-<!-- messenger -->
-<div class="messenger">
-  <a href=""><img src="images/mees.png" alt="" width="70px"></a>
-</div>
-<div class="up">
-  <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-</div>
-
   <!-- Footer -->
   <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
