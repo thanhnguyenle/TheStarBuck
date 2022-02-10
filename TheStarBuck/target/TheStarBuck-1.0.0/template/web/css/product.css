@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
 :root {
   --primary: #017143;
   --white: #fff;
@@ -14,8 +16,6 @@
   padding: 0;
   box-sizing: inherit;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 html {
   box-sizing: border-box;
@@ -679,7 +679,7 @@ a:hover {
 .section.products .products-layout .category {
   margin: 5rem 0rem;
   height: auto;
-  box-shadow: 0 2px 7px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0 2px 7px 0 rgba(0 0 0 0.05);
   border-radius: 2px;
   padding-bottom: 12px;
   background-color: var(--grey3);
@@ -795,19 +795,14 @@ a:hover {
 
 .section.products .product .bottom .price-rating .rating i {
   font-size: 1rem;
-<<<<<<< HEAD
   /*padding: 5px;*/
-=======
-  padding: auto;
->>>>>>> origin/main
-  color: #ffb503;
+  color: #ffb503 !important;
 }
 
 .section.products .product .bottom .price-rating .rating .fa.fa-stack {
   padding: 0px;
   margin: 0px;
 }
-
 
 .section.products .product .addCart {
   position: absolute;
@@ -967,8 +962,8 @@ a:hover {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0 0 0 0.08);
+  box-shadow: inset 0 1px 1px rgba(0 0 0 0.08);
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
