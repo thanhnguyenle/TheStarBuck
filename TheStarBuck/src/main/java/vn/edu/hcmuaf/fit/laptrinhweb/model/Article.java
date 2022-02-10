@@ -14,7 +14,7 @@ public class Article extends AbsModel  implements Serializable {
 	private String titleSeo;
 	private String avatar;
 	private int view;
-	private boolean hot;
+	private int hot;
 
 	public Article() {
 	}
@@ -107,11 +107,11 @@ public class Article extends AbsModel  implements Serializable {
 		this.view = view;
 	}
 
-	public boolean isHot() {
+	public int isHot() {
 		return hot;
 	}
 
-	public void setHot(boolean hot) {
+	public void setHot(int hot) {
 		this.hot = hot;
 	}
 }

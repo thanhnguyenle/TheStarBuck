@@ -44,7 +44,6 @@ public class UpdateServlet extends HttpServlet {
         String view = request.getParameter("view");
         String description = request.getParameter("description");
         String image = request.getParameter("image");
-        System.out.println("-------------"+image);
         String descriptionSeo = request.getParameter("descriptionSeo");
         String keywordSeo = request.getParameter("keywordSeo");
         String titleSeo = request.getParameter("titleSeo");
@@ -64,11 +63,7 @@ public class UpdateServlet extends HttpServlet {
         } else {
             product.setActive(true);
         }
-        if(hot.equals("0")){
-            product.setHot(false);
-        } else {
-            product.setHot(true);
-        }
+        product.setHot(Integer.parseInt(hot));
         product.setView(Integer.parseInt(view));
         product.setDescription(description);
         product.setImage(image);

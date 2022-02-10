@@ -18,7 +18,7 @@ public class ProductMapper implements IRowMapper<Product> {
             product.setDiscount(resultSet.getFloat("pr_discount"));
             product.setQuantity(resultSet.getInt("pr_quantity"));
             product.setActive(resultSet.getBoolean("pr_active"));
-            product.setHot(resultSet.getBoolean("pr_hot"));
+            product.setHot(resultSet.getInt("pr_hot"));
             product.setView(resultSet.getInt("pr_view"));
             product.setDescription(resultSet.getString("pr_description"));
             product.setImage(resultSet.getString("pr_image"));

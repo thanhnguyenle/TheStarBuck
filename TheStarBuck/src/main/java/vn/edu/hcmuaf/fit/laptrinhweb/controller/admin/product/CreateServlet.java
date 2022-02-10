@@ -34,7 +34,7 @@ public class CreateServlet extends HttpServlet {
         String discount = request.getParameter("discount");
         String quantity = request.getParameter("quantity");
         String active = request.getParameter("active");
-        String isHot = request.getParameter("hot");
+        String hot = request.getParameter("hot");
         String view = request.getParameter("view");
         String description = request.getParameter("description");
         String image = request.getParameter("file");
@@ -57,10 +57,7 @@ public class CreateServlet extends HttpServlet {
             product.setActive(false);
         } else {
         product.setActive(true);}
-        if(isHot.equals("0")){
-            product.setHot(false);
-        } else {
-        product.setHot(true);}
+        product.setHot(Integer.parseInt(hot));
         product.setView(Integer.parseInt("0"));
         product.setDescription(description);
         product.setImage(image);

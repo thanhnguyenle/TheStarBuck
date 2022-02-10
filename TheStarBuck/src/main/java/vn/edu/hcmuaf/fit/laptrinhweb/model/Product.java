@@ -12,7 +12,7 @@ public class Product extends AbsModel  implements Serializable {
 	private double discount;
 	private int quantity;
 	private boolean active;
-	private boolean hot;
+	private int hot;
 	private int view;
 	private String description;
 	private String image;
@@ -95,11 +95,11 @@ public class Product extends AbsModel  implements Serializable {
 		this.active = active;
 	}
 
-	public boolean isHot() {
+	public int getHot() {
 		return hot;
 	}
 
-	public void setHot(boolean hot) {
+	public void setHot(int hot) {
 		this.hot = hot;
 	}
 
