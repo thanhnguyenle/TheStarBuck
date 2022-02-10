@@ -106,7 +106,7 @@
           <aside class="col-lg-9">
               <div class="card">
                   <div class="table-responsive">
-                      <table class="table table-borderless table-shopping-cart">
+                      <table class="table table-borderless table-shopping-cart" id="cart">
                           <thead class="text-muted">
                           <tr class="small text-uppercase">
                               <th scope="col">Product</th>
@@ -117,23 +117,24 @@
                           </tr>
                           </thead>
                           <tbody>
+                                  <c:set var="products" value="${cart.productList}" />
+                                <c:forEach items="${products}" var="product">
                           <tr>
                               <td>
                                   <figure class="itemside align-items-center">
-                                      <div class="aside"><img src="https://i.ibb.co/x7mgrpc/8.png" class="img-sm"></div>
-                                      <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt fdgsfgdfsfsdfsdwith round
-                                          nect</a>
+                                      <div class="aside"><img src="${product.image}" class="img-sm"></div>
+                                      <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">${product.name}</a>
                                           <p class="text-muted small">SIZE: L</p>
                                       </figcaption>
                                   </figure>
                               </td>
                               <td>
-                              <input type="number" value="1" min="1"  max="10"/>
+                              <input type="number" value="${product.quantitySold}" min="1"  max="${product.quantity}"/>
                               </td>
                               <td>
                               </td>
                               <td>
-                                  <div class="price-wrap align-items-center"> <var class="price">$10.00</var></div>
+                                  <div class="price-wrap align-items-center"> <var class="price">$${product.price}</var></div>
                               </td>
 
                               <td>
@@ -144,6 +145,7 @@
                                   </div>
                               </td>
                           </tr>
+                                </c:forEach>
                           </tbody>
                       </table>
                   </div>
@@ -164,16 +166,16 @@
               <div class="card">
                   <div class="card-body">
                       <dl class="dlist-align">
-                          <dt>Total price:</dt>
-                          <dd class="text-right ml-3">$69.97</dd>
+                          <dt>Sub Total price:</dt>
+                          <dd class="text-right ml-3 sub-total-cart"></dd>
                       </dl>
                       <dl class="dlist-align">
-                          <dt>Discount:</dt>
-                          <dd class="text-right text-danger ml-3">- $10.00</dd>
+                          <dt>Tax:</dt>
+                          <dd class="text-right text-danger ml-3">- $0.01</dd>
                       </dl>
                       <dl class="dlist-align">
                           <dt>Total:</dt>
-                          <dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+                          <dd class="text-right text-dark b ml-3"><strong class="total-cart"></strong></dd>
                       </dl>
                       <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a
                           href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
