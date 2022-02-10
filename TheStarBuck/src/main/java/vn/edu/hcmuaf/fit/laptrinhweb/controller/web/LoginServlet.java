@@ -14,17 +14,23 @@ import java.security.NoSuchAlgorithmException;
 
 @WebServlet(name = "LoginServlet", value = "/doLogin")
 public class LoginServlet extends HttpServlet {
-    AccountService accountService = AccountService.getInstance();
+    private final AccountService accountService ;
+    private Account account;
+    private String username;
+    private String password;
+    public LoginServlet(){
+        accountService = AccountService.getInstance();
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        username = request.getParameter("username");
+        password = request.getParameter("password");
         String error = "";
         //decode password
         if(password!=null)
@@ -36,8 +42,15 @@ public class LoginServlet extends HttpServlet {
         } catch (NoSuchAlgorithmException e) {
             error = "";
         }
-        Account account = accountService.login(username, password);
-//        System.out.println(account.isActive());
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                account = accountService.login(username, password);
+            }
+        });
+        thread.start();
+
         HttpSession session = request.getSession();
         if(account != null){
             if(!account.isActive()){

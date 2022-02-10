@@ -12,6 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "AddCartServlet", value = "/add-cart")
 public class AddServlet extends HttpServlet {
     private ProductService productService;
+    private Product product;
+    private String id;
 
     public AddServlet() {
         productService = ProductService.getInstance();
@@ -20,8 +22,15 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //get product id from request
-        String id = request.getParameter("id");
-        Product product = productService.getItem(id);
+        id = request.getParameter("id");
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                product = productService.getItem(id);
+            }
+        });
+        thread.start();
+
         if(product != null){
             HttpSession session = request.getSession();
             Cart cart = (Cart) session.getAttribute("cart");

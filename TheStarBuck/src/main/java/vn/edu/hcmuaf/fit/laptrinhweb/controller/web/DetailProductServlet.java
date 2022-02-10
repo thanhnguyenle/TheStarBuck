@@ -16,16 +16,24 @@ import java.io.IOException;
 @WebServlet(name = "DetailProductServlet", value = "/detailProduct")
 public class DetailProductServlet extends HttpServlet {
     private ProductService productService;
-
+    private Product product;
+    private String id;
     public DetailProductServlet() {
         productService = ProductService.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        Product product = productService.getItem(id);
-        System.out.println(product.getIngredients());
+        id = request.getParameter("id");
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                product = productService.getItem(id);
+            }
+        });
+        thread.start();
+
         HttpSession session = request.getSession();
         session.setAttribute("product", product);
         request.getRequestDispatcher("/views/web/productDetails.jsp").forward(request, response);

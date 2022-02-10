@@ -18,14 +18,21 @@ import java.util.Map;
 @WebServlet(name = "MenuServlet", value = "/menu")
 public class MenuServlet extends HttpServlet {
     private ProductService productService;
-
+    private Map<String, Product> mapPro;
     public MenuServlet() {
         productService = ProductService.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Map<String, Product> mapPro = productService.getAll();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mapPro = productService.getAll();
+            }
+        });
+        thread.start();
+
         List<Product> products = new ArrayList<Product>(mapPro.values());
         HttpSession session = request.getSession();
         session.setAttribute("products", products);

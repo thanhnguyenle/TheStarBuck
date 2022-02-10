@@ -19,11 +19,9 @@ public class LogoutServlet extends HttpServlet {
     AccountService accountService = AccountService.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("---------------");
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.removeAttribute("account");
-
             RequestDispatcher dispatcher = request.getRequestDispatcher("/views/web/login.jsp");
             dispatcher.forward(request, response);
         }
