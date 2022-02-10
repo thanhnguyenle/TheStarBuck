@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+  <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <!-- Boxicons -->
@@ -13,12 +14,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!--custom navigation-->
-  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="<%= Asset.url("/template/web/css/navigation.css")%>" />
   <!--custom footer-->
-  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="<%= Asset.url("/template/web/css/footer.css")%>" />
   <!-- animated -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="css/aboutUs.css" />
+  <link rel="stylesheet" href="<%= Asset.url("/template/web/css/aboutUs.css")%>" />
   <!--modal-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <!-- Custom StyleSheet -->
@@ -311,7 +312,7 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Custom Scripts -->
-  <script src="./js/aboutUs.js"></script>
+  <script src="<%= Asset.url("/template/web/js/aboutUs.js")%>"></script>
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>

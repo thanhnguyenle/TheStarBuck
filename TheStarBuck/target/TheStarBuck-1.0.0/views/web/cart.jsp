@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+  <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <!-- Boxicons -->
@@ -188,14 +188,6 @@
           </aside>
       </div>
   </section>
-<!-- messenger -->
-<div class="messenger">
-  <a href=""><img src="images/mees.png" alt="" width="70px"></a>
-</div>
-<div class="up">
-  <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-</div>
-
   <!-- Footer -->
   <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
