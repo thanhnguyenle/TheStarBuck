@@ -288,6 +288,7 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
+<<<<<<< HEAD
     var totalPages = ${totalPage};
     var currentPage = ${page};
     var limit = 9;
@@ -303,6 +304,22 @@
                 $('#page').val(page);
                 $('#formPagingProducts').submit();
                 }
+=======
+    var totalPages = ${products.totalPage};
+    var currentPage = ${products.page};
+    var visiblePages = ${products.maxPageItem};
+    var limit = 9;
+      $(function () {
+          window.pagObj = $('#pagination').twbsPagination({
+              totalPages: 19,
+              visiblePages: 19,
+              startPage: 1,
+              onPageClick: function (event, page) {
+                 // console.info(page + ' (from options)');
+                $('#maxPageItem').val(limit);
+                $('#page').val(page);
+                $('#formPagingProducts').submit();
+>>>>>>> origin/main
               }
           });
       });

@@ -102,7 +102,7 @@
             <div class="img-container">
               <img src="${x.image}" alt="" />
               <div class="addCart">
-                <a href="productDetails.jsp">
+                <a href="<%=request.getContextPath()%>/add-cart?id=${x.id}">
                   <i class="fas fa-shopping-cart"></i>
                 </a>
               </div>
