@@ -140,8 +140,8 @@
                               <td>
                                   <div class="text-right d-none d-md-block">
                                       <a data-original-title="Save to Wishlist" title="" href=""
-                                         class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a
-                                          href="" class="btn btn-light" data-abc="true"> Remove</a>
+                                         class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a>
+                                      <a href="/cart-remove" class="btn btn-light product-remove" data-abc="true"> Remove</a>
                                   </div>
                               </td>
                           </tr>
@@ -209,8 +209,8 @@
     });
     loadCart(cart);
       console.log('abc');
-    $('#cart').on('draw.dt', function (){
-
+    $('#cart tbody .product-remove').on('click', function (){
+        alert("abc");
     });
   } );
   function loadCart(cart){

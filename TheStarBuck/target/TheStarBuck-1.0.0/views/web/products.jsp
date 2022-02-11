@@ -38,7 +38,7 @@
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- PRODUCTS -->
-
+  <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">
   <section class="section products">
     <div class="products-layout container bootdey">
       <div class="col-1-of-5">
@@ -253,12 +253,16 @@
             </div>
           </div>
           </c:forEach>
+
         </div>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
+        <input type="hidden" value="" id="page" name="page">
+        <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
       </div>
     </div>
   </section>
+  </form>
   <!-- messenger -->
   <div class="messenger">
     <a href=""><img src="images/mees.png" alt="" width="70px"></a>
@@ -284,15 +288,21 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
+    var totalPages = ${products.totalPage};
+    var currentPage = ${products.page};
+    var visiblePages = ${products.maxPageItem};
+    var limit = 9;
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
               totalPages: 19,
-              visiblePages: 9,
+              visiblePages: 19,
+              startPage: 1,
               onPageClick: function (event, page) {
-                  console.info(page + ' (from options)');
+                 // console.info(page + ' (from options)');
+                $('#maxPageItem').val(limit);
+                $('#page').val(page);
+                $('#formPagingProducts').submit();
               }
-          }).on('page', function (event, page) {
-              console.info(page + ' (from event listening)');
           });
       });
   </script>
