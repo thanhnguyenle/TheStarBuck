@@ -38,7 +38,7 @@
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- PRODUCTS -->
-  <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">
+
   <section class="section products">
     <div class="products-layout container bootdey">
       <div class="col-1-of-5">
@@ -210,7 +210,7 @@
               <option value="DESC">DESC</option>
             </select>
           </div>
-          <input type="button">Apply</input>
+          <input type="button" id="apply" name="apply" value="Apply" >
         </form>
 
         <div class="categoryTitle">
@@ -253,16 +253,18 @@
             </div>
           </div>
           </c:forEach>
-
         </div>
+<%--        <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">--%>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
         <input type="hidden" value="" id="page" name="page">
         <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
+<%--      </form>--%>
+
       </div>
     </div>
   </section>
-  </form>
+
   <!-- messenger -->
   <div class="messenger">
     <a href=""><img src="images/mees.png" alt="" width="70px"></a>
@@ -288,7 +290,6 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
-<<<<<<< HEAD
     var totalPages = ${totalPage};
     var currentPage = ${page};
     var limit = 9;
@@ -304,22 +305,6 @@
                 $('#page').val(page);
                 $('#formPagingProducts').submit();
                 }
-=======
-    var totalPages = ${products.totalPage};
-    var currentPage = ${products.page};
-    var visiblePages = ${products.maxPageItem};
-    var limit = 9;
-      $(function () {
-          window.pagObj = $('#pagination').twbsPagination({
-              totalPages: 19,
-              visiblePages: 19,
-              startPage: 1,
-              onPageClick: function (event, page) {
-                 // console.info(page + ' (from options)');
-                $('#maxPageItem').val(limit);
-                $('#page').val(page);
-                $('#formPagingProducts').submit();
->>>>>>> origin/main
               }
           });
       });

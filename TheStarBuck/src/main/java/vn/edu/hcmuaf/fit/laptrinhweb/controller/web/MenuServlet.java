@@ -47,7 +47,7 @@ public class MenuServlet extends HttpServlet {
         if(maxPageItemStr!=null){
             maxPageItem = Integer.parseInt(maxPageItemStr);
         }
-
+        pageable = new PageRequest(page,maxPageItem);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {

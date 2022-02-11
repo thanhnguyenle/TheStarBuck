@@ -38,7 +38,7 @@
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- PRODUCTS -->
-  <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">
+
   <section class="section products">
     <div class="products-layout container bootdey">
       <div class="col-1-of-5">
@@ -210,7 +210,7 @@
               <option value="DESC">DESC</option>
             </select>
           </div>
-          <input type="button" id="apply" name="apply">Apply</input>
+          <input type="button" id="apply" name="apply" value="Apply" >
         </form>
 
         <div class="categoryTitle">
@@ -253,16 +253,16 @@
             </div>
           </div>
           </c:forEach>
-
         </div>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
         <input type="hidden" value="" id="page" name="page">
         <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
+
       </div>
     </div>
   </section>
-  </form>
+
   <!-- messenger -->
   <div class="messenger">
     <a href=""><img src="images/mees.png" alt="" width="70px"></a>
