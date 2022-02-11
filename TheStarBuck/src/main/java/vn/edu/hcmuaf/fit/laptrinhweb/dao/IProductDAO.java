@@ -13,4 +13,5 @@ public interface IProductDAO extends IGenericDAO<Product> {
     List<Product> printTypeProductLatest(int num);
     List<Product> printTypeProductFeatured(int num);
     List<Product> printTypeProductHot(int num);
+    int totalItem();
 }

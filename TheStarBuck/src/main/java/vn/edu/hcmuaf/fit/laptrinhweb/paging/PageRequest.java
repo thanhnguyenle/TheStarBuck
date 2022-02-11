@@ -24,6 +24,6 @@ public class PageRequest implements IPageAble{
 
     @Override
     public Integer getLimit() {
-        return null;
+        return this.maxPageItem;
     }
 }

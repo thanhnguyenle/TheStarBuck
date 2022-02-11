@@ -38,7 +38,7 @@
   <!-- serchBar -->
   <section class="ipSearchBox"></section>
   <!-- PRODUCTS -->
-
+  <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">
   <section class="section products">
     <div class="products-layout container bootdey">
       <div class="col-1-of-5">
@@ -142,7 +142,7 @@
               </div>
             </div>
             <div id="slider-3"></div>
-            <button type="submit" name="range" id="range" class="filterbtn">Range</button>
+            <button type="button" name="range" id="range" class="filterbtn">Range</button>
           </div>
         </section>
         <section class="panel">
@@ -210,7 +210,7 @@
               <option value="DESC">DESC</option>
             </select>
           </div>
-          <a href="">Apply</a>
+          <input type="button">Apply</input>
         </form>
 
         <div class="categoryTitle">
@@ -253,12 +253,16 @@
             </div>
           </div>
           </c:forEach>
+
         </div>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
+        <input type="hidden" value="" id="page" name="page">
+        <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
       </div>
     </div>
   </section>
+  </form>
   <!-- messenger -->
   <div class="messenger">
     <a href=""><img src="images/mees.png" alt="" width="70px"></a>
@@ -284,15 +288,22 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
+    var totalPages = ${totalPage};
+    var currentPage = ${page};
+    var limit = 9;
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
-              totalPages: 19,
-              visiblePages: 9,
+              totalPages: totalPages,
+              visiblePages: 5,
+              startPage: currentPage,
               onPageClick: function (event, page) {
-                  console.info(page + ' (from options)');
+                 // console.info(page + ' (from options)');
+                if(currentPage!=page){
+                $('#maxPageItem').val(limit);
+                $('#page').val(page);
+                $('#formPagingProducts').submit();
+                }
               }
-          }).on('page', function (event, page) {
-              console.info(page + ' (from event listening)');
           });
       });
   </script>

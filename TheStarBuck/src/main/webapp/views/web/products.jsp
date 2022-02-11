@@ -142,7 +142,7 @@
               </div>
             </div>
             <div id="slider-3"></div>
-            <button type="submit" name="range" id="range" class="filterbtn">Range</button>
+            <button type="button" name="range" id="range" class="filterbtn">Range</button>
           </div>
         </section>
         <section class="panel">
@@ -210,7 +210,7 @@
               <option value="DESC">DESC</option>
             </select>
           </div>
-          <a href="">Apply</a>
+          <input type="button" id="apply" name="apply">Apply</input>
         </form>
 
         <div class="categoryTitle">
@@ -288,20 +288,21 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
-    var totalPages = ${products.totalPage};
-    var currentPage = ${products.page};
-    var visiblePages = ${products.maxPageItem};
+    var totalPages = ${totalPage};
+    var currentPage = ${page};
     var limit = 9;
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
-              totalPages: 19,
-              visiblePages: 19,
-              startPage: 1,
+              totalPages: totalPages,
+              visiblePages: 5,
+              startPage: currentPage,
               onPageClick: function (event, page) {
                  // console.info(page + ' (from options)');
+                if(currentPage!=page){
                 $('#maxPageItem').val(limit);
                 $('#page').val(page);
                 $('#formPagingProducts').submit();
+                }
               }
           });
       });

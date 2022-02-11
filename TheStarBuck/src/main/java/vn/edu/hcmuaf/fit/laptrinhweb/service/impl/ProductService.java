@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.laptrinhweb.service.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.ProductDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
+import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IProductService;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class ProductService implements IProductService {
         return instance;
     }
     @Override
-    public List<Product> findAll() {
-        return productDAO.findAll();
+    public List<Product> findAll(IPageAble pageAble) {
+        return productDAO.findAll(pageAble);
     }
 
     @Override
@@ -41,6 +42,11 @@ public class ProductService implements IProductService {
     @Override
     public List<Product> printTypeProductHot(int num) {
         return productDAO.printTypeProductHot(num);
+    }
+
+    @Override
+    public int totalItem() {
+        return productDAO.totalItem();
     }
 
     public Map<String, Product> getAll(){

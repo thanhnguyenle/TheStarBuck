@@ -5,6 +5,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ProductMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.SlideMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
+import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,11 +26,18 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         return instance;
     }
 
+    public List<Product> findAll(IPageAble pageAble) {
+        StringBuilder sql = new StringBuilder(QUERIES.PRODUCT.GET_LIST);
+        if(pageAble.getOffset()!=null && pageAble.getLimit() !=null){
+            sql.append(" LIMIT "+pageAble.getOffset()+", "+pageAble.getLimit());
+        }
+        return query(sql.toString(),new ProductMapper());
+    }
 
     @Override
     public List<Product> findAll() {
-        String sql = "";
-        return query(sql,new ProductMapper());
+        List<Product> list = query(QUERIES.PRODUCT.GET_LIST, new ProductMapper());
+        return list;
     }
 
     @Override
@@ -53,6 +61,11 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     @Override
     public List<Product> printTypeProductHot(int num) {
         return query(QUERIES.PRODUCT.GET_LIST_HOT,new ProductMapper(),num);
+    }
+
+    @Override
+    public int totalItem() {
+        return count(QUERIES.PRODUCT.TOTAL_ITEM);
     }
 
     public Long addItem(Product product){
@@ -88,4 +101,5 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         long output = delete(QUERIES.PRODUCT.DELETE, id);
         return output;
     }
+
 }

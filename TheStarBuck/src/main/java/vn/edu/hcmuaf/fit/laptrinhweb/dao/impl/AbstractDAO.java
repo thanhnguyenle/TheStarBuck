@@ -13,6 +13,40 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
    //private DBConnection dbConnection = DBConnection.getInstance();
 
     @Override
+    public int count(String sql, Object... parameter) {
+        // DECLARE
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            int count = 0;
+            connection = DBConnection.getConnection();
+            statement = connection.prepareStatement(sql);
+            setParameter(statement,parameter);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+            return count;
+        }catch (SQLException e){
+            try {
+                connection.rollback();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+           return 0;
+        }finally {
+                DBConnection.releaseConnection(connection);
+                try {
+                    if (statement != null) statement.close();
+                    if (resultSet != null) resultSet.close();
+                }catch(SQLException e){
+                    e.printStackTrace();
+                }
+        }
+    }
+
+    @Override
     public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameter)  {
         List<T> results = new ArrayList<>();
 
