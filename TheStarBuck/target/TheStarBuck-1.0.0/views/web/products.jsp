@@ -254,12 +254,10 @@
           </div>
           </c:forEach>
         </div>
-<%--        <form action="<c:url value='/menu'/>" id="formPagingProducts" method="get">--%>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
         <input type="hidden" value="" id="page" name="page">
         <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
-<%--      </form>--%>
 
       </div>
     </div>
