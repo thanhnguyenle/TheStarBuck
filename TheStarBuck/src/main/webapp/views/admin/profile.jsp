@@ -112,7 +112,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 form-group">
-                                                    <label for="employee_role" class="form-label">Service</label>
+                                                    <label for="employee_role"  class="form-label">Service</label>
                                                     <select class="col-12 form-control form-select">
                                                         <option value="0">Member</option>
                                                         <option value="1">Admin</option>

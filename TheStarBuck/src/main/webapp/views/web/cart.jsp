@@ -129,7 +129,7 @@
                                   </figure>
                               </td>
                               <td>
-                              <input type="number" value="${product.quantitySold}" min="1"  max="${product.quantity}"/>
+                              <input class="changeQuantity" type="number" pid="${product.id}" value="${product.quantitySold}" min="1"  max="${product.quantity}"/>
                               </td>
                               <td>
                               </td>
@@ -141,7 +141,7 @@
                                   <div class="text-right d-none d-md-block">
                                       <a data-original-title="Save to Wishlist" title="" href=""
                                          class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a>
-                                      <a href="/cart-remove" class="btn btn-light product-remove" data-abc="true"> Remove</a>
+                                      <a href="" pid="${product.id}" class="btn btn-light product-remove" data-abc="true"> Remove</a>
                                   </div>
                               </td>
                           </tr>
@@ -200,19 +200,60 @@
   // $(".sub-total-cart").html("123");
   var cart;
   var sumItem = 0;
+  var dt;
   $(document).ready( function () {
     <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
     cart = JSON.parse('<%=data%>');
       // loadCart(cart);
-    $('#cart').DataTable({
+    dt = $('#cart').DataTable({
       paging: false,
       searching: false,
     });
     loadCart(cart);
       console.log('abc');
     $('#cart tbody .product-remove').on('click', function (){
-        alert("abc");
+        // send ajax to remove product in cart
+        var id=$(this).attr('pid');
+        thisRow = $(this);
+        $.ajax({
+            url: '<%=request.getContextPath()%>/cart-remove',
+            type: 'POST',
+            data: {
+                id: id
+            },
+            success: function (data) {
+                delete cart.productList[id];
+                dt.row(thisRow.parents('tr')).remove().draw();
+                loadCart(cart);
+            },
+            error: function (data) {
+                alert('Product is not in cart');
+            }
+        });
     });
+      $('#cart tbody .changeQuantity').on('blur', function (){
+          // send ajax to remove product in cart
+          var id=$(this).attr('pid');
+          var quantity=$(this).val();
+          thisRow = $(this);
+          $.ajax({
+              url: '<%=request.getContextPath()%>/cart-updateQuantity',
+              type: 'POST',
+              data: {
+                  id: id,
+                  quantity: quantity
+              },
+              success: function (data) {
+                  JSQuantity = JSON.parse(data);
+                  thisRow.val(JSQuantity.quantity);
+                  updateQuantity(cart, id, JSQuantity.quantity);
+                  loadCart(cart);
+              },
+              error: function (data) {
+                  alert('Product is not in cart');
+              }
+          });
+      });
   } );
   function loadCart(cart){
     var sub_sum = 0;
@@ -227,6 +268,9 @@
     $(".sub-total-cart").html("$" + sub_sum) ;
     $(".total-cart").html("$" + sum);
     $("#itemcart").html(sumItem);
+  }
+  function updateQuantity(cart, id, quantity){
+      cart.productList[id].quantitySold =quantity;
   }
 </script>
 </body>
