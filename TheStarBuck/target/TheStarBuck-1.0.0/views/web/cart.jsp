@@ -199,6 +199,7 @@
 <script>
   // $(".sub-total-cart").html("123");
   var cart;
+  var sumItem = 0;
   $(document).ready( function () {
     <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
     cart = JSON.parse('<%=data%>');
@@ -216,14 +217,16 @@
   function loadCart(cart){
     var sub_sum = 0;
     var sum = 0;
+
     for (const x in cart.productList) {
       sub_sum += cart.productList[x].quantitySold * (cart.productList[x].price - (cart.productList[x].price * cart.productList[x].discount));
-
+      sumItem += 1;
     }
     console.log(sum);
     sum = sub_sum + sub_sum * 0.01;
     $(".sub-total-cart").html("$" + sub_sum) ;
     $(".total-cart").html("$" + sum);
+    $("#itemcart").html(sumItem);
   }
 </script>
 </body>

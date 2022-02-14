@@ -23,13 +23,13 @@ public class AddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //get product id from request
         id = request.getParameter("id");
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
+//        Thread thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
                 product = productService.getItem(id);
-            }
-        });
-        thread.start();
+//            }
+//        });
+//        thread.start();
 
         if(product != null){
             HttpSession session = request.getSession();
