@@ -1,4 +1,4 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart" %><%--
   Created by IntelliJ IDEA.
   User: DUONGMINHNHU
   Date: 11/12/2021
@@ -7,6 +7,7 @@
 --%>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% Cart cart = (Cart) session.getAttribute("cart"); %>
 <nav id="header" class="nav">
     <div class="wrapper container">
         <div class="logo"><a href="<c:url value='http://localhost:8080/TheStarBuck/user-home'/>">
@@ -43,7 +44,7 @@
                 <a href="<%=request.getContextPath()%>/cart">
               <span>
                 <img src="<c:url value='/template/web/image/shoppingBag.svg'/>" alt="" />
-                <small class="count d-flex">0</small>
+                <small class="count d-flex" id="itemcart">${cart.productList.size()}</small>
               </span>
                 </a>
             </li>
@@ -73,3 +74,8 @@
 <!-- serchBar -->
 <section class="ipSearchBox"></section>
 <!-- thumbnail -->
+
+<script>
+
+
+</script>
