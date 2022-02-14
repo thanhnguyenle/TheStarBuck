@@ -46,10 +46,10 @@ public class UpdateServlet extends HttpServlet {
             return;
         }
 
-        cart.updateQuantity(id, quantity);
+        int quantityAfterUpdate = cart.updateQuantitySold(id, quantity);
         session.setAttribute("cart", cart);
         response.getWriter().println(
-                new Gson().toJson(Map.of("quantity",quantity))
+                new Gson().toJson(Map.of("quantity",quantityAfterUpdate))
         );
     }
 

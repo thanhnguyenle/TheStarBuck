@@ -82,4 +82,5 @@ public abstract class AbsModel {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+
 }

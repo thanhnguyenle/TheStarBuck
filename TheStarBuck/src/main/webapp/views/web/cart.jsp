@@ -177,8 +177,8 @@
                           <dt>Total:</dt>
                           <dd class="text-right text-dark b ml-3"><strong class="total-cart"></strong></dd>
                       </dl>
-                      <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a
-                          href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                      <hr> <a href="<%=request.getContextPath()%>/cart-checkout" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a
+                          href="<%=request.getContextPath()%>/menu" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
                   </div>
               </div>
           </aside>
@@ -199,7 +199,7 @@
 <script>
   // $(".sub-total-cart").html("123");
   var cart;
-  var sumItem = 0;
+  // var sumItem = 0;
   var dt;
   $(document).ready( function () {
     <% String data = session.getAttribute("cart")==null?"{}":new Gson().toJson(session.getAttribute("cart")); %>
@@ -261,13 +261,13 @@
 
     for (const x in cart.productList) {
       sub_sum += cart.productList[x].quantitySold * (cart.productList[x].price - (cart.productList[x].price * cart.productList[x].discount));
-      sumItem += 1;
+      // sumItem += 1;
     }
     console.log(sum);
     sum = sub_sum + sub_sum * 0.01;
     $(".sub-total-cart").html("$" + sub_sum) ;
     $(".total-cart").html("$" + sum);
-    $("#itemcart").html(sumItem);
+    // $("#itemcart").html(sumItem);
   }
   function updateQuantity(cart, id, quantity){
       cart.productList[id].quantitySold =quantity;

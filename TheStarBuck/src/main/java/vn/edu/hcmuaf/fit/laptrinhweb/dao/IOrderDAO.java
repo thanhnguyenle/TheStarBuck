@@ -1,5 +1,7 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.dao;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Cart;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Orders;
 
 import java.util.List;
@@ -13,4 +15,5 @@ public interface IOrderDAO extends IGenericDAO<Orders> {
     Map<String, Orders> getAll();
     Long addItem(Orders orders);
     Long updateItem(Orders orders);
+    boolean createOrder(Account account, Cart cart);
 }

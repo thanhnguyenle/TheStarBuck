@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.service.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.OrderDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Cart;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Orders;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IOrderService;
 
@@ -34,5 +36,10 @@ public class OrderService implements IOrderService {
     @Override
     public Orders getItem(String id) {
         return orderDAO.getItem(id);
+    }
+
+    @Override
+    public boolean createOrder(Account account, Cart cart) {
+        return orderDAO.createOrder(account, cart);
     }
 }

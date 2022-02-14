@@ -145,4 +145,13 @@ public class Cart extends AbsModel  implements Serializable {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
+	public int updateQuantitySold(String id, int quantity) {
+		Product product = productList.get(id);
+		if(quantity < 1 || quantity > product.getQuantity()){
+			return product.getQuantitySold();
+		}
+		product.setQuantitySold(quantity);
+		return product.getQuantitySold();
+	}
 }
