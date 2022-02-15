@@ -10,7 +10,7 @@
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    Account acc = (Account) request.getAttribute("account");
+    Account account = (Account) session.getAttribute("account");
 %>
 <!DOCTYPE html>
 <html>
@@ -60,15 +60,15 @@
                     </div>
                 </div> <!--  col.// -->
                 <div class="col-xl col-lg">
-                    <h3>${acc.fullname}</h3>
+                    <h3>${account.fullname}</h3>
                     <p style="font-size:20px"><span>Address description</span>
                     </p>
 
                 </div> <!--  col.// -->
                 <div class="col-xl-4 text-md-end">
-                    <select class="form-select w-auto d-inline-block" style="padding:10px">
-                        <option>Active</option>
-                        <option>Not</option>
+                    <select class="form-select w-auto d-inline-block" style="padding:10px" name="active">
+                        <option value="1" <c:if test="${acc.active == true}"> selected </c:if>>Active</option>
+                        <option value="0" <c:if test="${acc.active == false}"> selected </c:if>>Not</option>
                     </select>
                     <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-edit" data-whatever="@mdo" style="font-size:20px;color: white; background-color:rgb(7, 124, 22)"> Edit</i> </a>
                     <a href="changepassword.html" class="btn btn-outline-primary"  style="font-size:20px;color: white; background-color:rgb(7, 124, 22)"> ChangePassword</i> </a>
@@ -83,40 +83,41 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form action="${pageContext.request.contextPath}/admin-profile" method="post">
                                         <div class="card-body1">
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-12 form-group">
                                                     <label for="employee_name" class="form-label">Name</label>
-                                                    <input type="text" placeholder="Enter your name" class="form-control" id="employee_name">
+                                                    <input type="text" placeholder="Enter your name" value="${account.fullname}" class="form-control" id="employee_name" name="fullNameAccount">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-12 form-group">
                                                     <label for="employee_email" class="form-label">Email</label>
-                                                    <input type="email" placeholder="Enter your email" class="form-control" id="employee_email">
+                                                    <input type="email" placeholder="Enter your email" value="${account.email}" class="form-control" id="employee_email" name="emailAccount">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-12 form-group">
                                                     <label for="employee_telephone" class="form-label">SĐT</label>
-                                                    <input type="tel" pattern="^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$"
-                                                           placeholder="Enter phone number" class="form-control" id="employee_telephone" required>
+                                                    <input type="tel"
+<%--                                                           pattern="^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$"--%>
+                                                           placeholder="Enter phone number" value="${account.phoneNumber}" class="form-control" id="employee_telephone" required name="phoneAccount">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6 mb-4 form-group">
                                                     <label for="employee_date-work" class="form-label"> Date to doing</label>
                                                     <div class="col-12">
-                                                        <input type="date" class="form-control" id="employee_date-work">
+                                                        <input type="date"  class="form-control" id="employee_date-work" name="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 form-group">
                                                     <label for="employee_role"  class="form-label">Service</label>
-                                                    <select class="col-12 form-control form-select">
-                                                        <option value="0">Member</option>
-                                                        <option value="1">Admin</option>
-                                                        <option value="2">Manager</option>
+                                                    <select class="col-12 form-control form-select" name="groupId">
+                                                        <option value="0" <c:if test="${acc.groupId.equals('MOD')}"> selected </c:if>>Manager</option>
+                                                        <option value="1" <c:if test="${acc.groupId.equals('ADMIN')}"> selected </c:if>>Admin</option>
+                                                        <option value="2" <c:if test="${acc.groupId.equals('MEMBER')}"> selected </c:if>>Member</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -153,12 +154,13 @@
                                                 </div>
                                             </div> <!-- card end// -->
                                         </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
                                     </form>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
