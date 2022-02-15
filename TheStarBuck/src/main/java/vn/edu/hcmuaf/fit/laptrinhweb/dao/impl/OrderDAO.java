@@ -3,6 +3,8 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IOrderDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.OrderMapper;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Cart;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Orders;
 
 import java.text.SimpleDateFormat;
@@ -59,5 +61,10 @@ public class OrderDAO extends AbstractDAO<Orders> implements IOrderDAO {
     public Long updateItem(Orders orders) {
         long output = update(QUERIES.ORDER.UPDATE, orders.getStatus(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), orders.getModifiedBy(), orders.getId());
         return output;
+    }
+
+    @Override
+    public boolean createOrder(Account account, Cart cart) {
+        return false;
     }
 }
