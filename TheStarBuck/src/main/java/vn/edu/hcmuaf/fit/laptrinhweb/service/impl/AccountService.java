@@ -42,6 +42,9 @@ public class AccountService implements IAccountService {
     public boolean checkUsername(String username){
         return accountDAO.checkUsername(username);
     }
+    public boolean checkUserEmail(String email){
+        return accountDAO.checkUserEmail(email);
+    }
 
     public Map<String, Object> register(String username, String email, String password,String retypepassword) throws NoSuchAlgorithmException {
         Map<String, Object> output = new HashMap<>();

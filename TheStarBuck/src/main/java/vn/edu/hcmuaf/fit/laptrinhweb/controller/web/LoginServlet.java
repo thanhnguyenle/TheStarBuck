@@ -72,4 +72,9 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
         }
     }
+    public static void deleteAvailableSession(HttpServletRequest request) {
+        if (request.getSession(false) != null) {
+            request.getSession(false).invalidate();
+        }
+    }
 }
