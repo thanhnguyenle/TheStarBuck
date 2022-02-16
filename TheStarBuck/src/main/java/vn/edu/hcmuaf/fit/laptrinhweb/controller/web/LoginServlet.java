@@ -72,9 +72,11 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
         }
     }
+    // lam vo hieu hoa người dung
     public static void deleteAvailableSession(HttpServletRequest request) {
         if (request.getSession(false) != null) {
             request.getSession(false).invalidate();
         }
     }
+
 }
