@@ -49,7 +49,7 @@ public class Profile extends HttpServlet {
             e.printStackTrace();
         }
 
-        System.out.println(account.isActive());
+        System.out.println(account.getLastLogin());
         account.setFullname(fullname);
         account.setEmail(email);
         account.setPhoneNumber(phoneNumber);
