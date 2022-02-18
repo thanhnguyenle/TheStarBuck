@@ -44,7 +44,7 @@
                 <a href="<%=request.getContextPath()%>/cart">
               <span>
                 <img src="<c:url value='/template/web/image/shoppingBag.svg'/>" alt="" />
-                <small class="count d-flex" id="itemcart">${cart.productList.size()}</small>
+                <small class="count d-flex" id="itemcart"><c:if test="${cart == null}"> 0 </c:if>${cart.productList.size()}</small>
               </span>
                 </a>
             </li>
