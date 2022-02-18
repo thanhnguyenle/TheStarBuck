@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5668ede9-fc52-49b4-bbc6-d03f986ba796" name="Changes" comment="" />
+    <list default="true" id="5668ede9-fc52-49b4-bbc6-d03f986ba796" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +21,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/TheStarBuck" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -32,6 +35,7 @@
       <updated>1641197293401</updated>
       <workItem from="1641197295716" duration="61000" />
       <workItem from="1643118307271" duration="602000" />
+      <workItem from="1645151314810" duration="90000" />
     </task>
     <servers />
   </component>
