@@ -26,7 +26,9 @@ public class MenuServlet extends HttpServlet {
     private IPageAble pageable;
     private int page =1;
     private int maxPageItem = 9;
-    private int totalItem =0;
+    private int totalItem =-1;
+    private HttpSession session;
+    private RequestDispatcher rd;
     public MenuServlet() {
         productService = ProductService.getInstance();
         pageable = new PageRequest(page,maxPageItem);
@@ -34,6 +36,8 @@ public class MenuServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session = request.getSession();
+
         String pageStr = request.getParameter("page");
         String maxPageItemStr = request.getParameter("maxPageItem");
         Integer offset = (page - 1) * maxPageItem;
@@ -52,6 +56,7 @@ public class MenuServlet extends HttpServlet {
             @Override
             public void run() {
                 products = productService.findAll(pageable);
+                session.setAttribute("products", products);
             }
         });
         thread.start();
@@ -60,17 +65,26 @@ public class MenuServlet extends HttpServlet {
             @Override
             public void run() {
                 totalItem = productService.totalItem();
+                session.setAttribute("page", page);
+                session.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
             }
         });
         thread1.start();
 
-        HttpSession session = request.getSession();
-        session.setAttribute("products", products);
-        //paging attribute setup
-        session.setAttribute("page", page);
-        session.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
-        RequestDispatcher rd = request.getRequestDispatcher("/views/web/products.jsp");
-        rd.forward(request,response);
+        loop:while(true){
+                    if(products!=null&&totalItem!=-1) {
+                        //paging attribute setup
+                         rd = request.getRequestDispatcher("/views/web/products.jsp");
+                        try {
+                            rd.forward(request, response);
+                        } catch (ServletException | IOException e) {
+                            e.printStackTrace();
+                            break loop;
+                        }
+                        break loop;
+                    }
+                }
+
     }
 
     @Override
