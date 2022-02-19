@@ -35,12 +35,12 @@ public class Profile extends HttpServlet {
         String email = request.getParameter("emailAccount");
         String phoneNumber = request.getParameter("phoneAccount");
 
-
-
         System.out.println(account.getId());
         account.setFullname(fullname);
         account.setEmail(email);
         account.setPhoneNumber(phoneNumber);
+        account.setAvatar("");
+        account.setAddressId("");
 
         accountService.updateAuth(account);
 
