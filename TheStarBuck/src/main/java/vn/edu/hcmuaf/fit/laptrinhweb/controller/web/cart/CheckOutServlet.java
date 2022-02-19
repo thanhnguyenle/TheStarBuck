@@ -29,11 +29,12 @@ public class CheckOutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
         if(session.getAttribute("account") == null){
             response.sendRedirect(request.getContextPath() + "/doLogin");
             return;
         } else
-        if(session.getAttribute("cart") == null){
+        if(cart.getProductList().isEmpty()){
             response.sendRedirect(request.getContextPath() + "/cart");
             return;
         } else

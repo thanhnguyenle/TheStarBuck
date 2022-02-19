@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 form-group">
-                                                    <label for="employee_role"  class="form-label">Service</label>
+                                                    <label  class="form-label">Service</label>
                                                     <select class="col-12 form-control form-select" name="groupId">
                                                         <option value="0" <c:if test="${acc.groupId.equals('MOD')}"> selected </c:if>>Manager</option>
                                                         <option value="1" <c:if test="${acc.groupId.equals('ADMIN')}"> selected </c:if>>Admin</option>

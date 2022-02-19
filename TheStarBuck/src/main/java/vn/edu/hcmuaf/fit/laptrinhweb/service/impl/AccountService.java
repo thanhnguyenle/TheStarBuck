@@ -70,4 +70,8 @@ public class AccountService implements IAccountService {
         return accountDAO.deleteItem(id) == 1;
     }
 
+    public boolean updateAuth(Account account){
+        return accountDAO.editAuth(account);
+    }
+
 }

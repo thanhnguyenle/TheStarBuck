@@ -62,6 +62,12 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         return number;
     }
 
+    public boolean editAuth(Account account){
+        long output =
+                update(QUERIES.ACCOUNT.UPDATE_PROFILE, account.getFullname(), account.getPhoneNumber(), account.getEmail(), account.getAvatar(), account.getAddressId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getUsername(), account.getId());
+        return output == 1;
+    }
+
     public Map<String, Account> getAll(){
         List<Account> list =  query(QUERIES.ACCOUNT.GET_LIST, new AccountMapper());
         Map<String, Account> output = new HashMap<>();
