@@ -12,9 +12,11 @@ import java.util.Map;
 @WebServlet(name = "RegisterServlet", value = "/doRegister")
 public class RegisterServlet extends HttpServlet {
     private AccountService accountService = AccountService.getInstance();
+    private Map<String, Object> mapCheck;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    doPost(request,response);
+        doPost(request, response);
     }
 
     @Override
@@ -23,23 +25,28 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String retypepassword = request.getParameter("retypepassword");
-        Map<String, Object> mapCheck = null;
+        mapCheck = null;
         try {
             mapCheck = accountService.register(username, email, password, retypepassword);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        HttpSession session = request.getSession();
-        if(mapCheck.isEmpty()){
-            session.removeAttribute("error");
-            RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
-            rd.forward(request,response);
-        } else {
-            for (String error : mapCheck.keySet()) {
-                session.setAttribute(error, mapCheck.get(error));
+        loop:
+        while (true) {
+            if (mapCheck != null) {
+                HttpSession session = request.getSession();
+                if (mapCheck.isEmpty()) {
+                    session.removeAttribute("error");
+                    RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
+                    rd.forward(request, response);
+                } else {
+                    for (String error : mapCheck.keySet()) {
+                        session.setAttribute(error, mapCheck.get(error));
+                    }
+                    request.getRequestDispatcher("/views/web/createAcc.jsp").forward(request, response);
+                }
+                break loop;
             }
-            request.getRequestDispatcher("/views/web/createAcc.jsp").forward(request, response);
         }
-
     }
 }

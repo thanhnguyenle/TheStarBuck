@@ -33,15 +33,15 @@ public class LoginServlet extends HttpServlet {
         password = request.getParameter("password");
         String error = "";
         //decode password
-        if(password!=null)
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(password.getBytes());
-            byte[] digest = md.digest();
-            password = DatatypeConverter.printHexBinary(digest).toUpperCase();
-        } catch (NoSuchAlgorithmException e) {
-            error = "";
-        }
+        if (password != null)
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(password.getBytes());
+                byte[] digest = md.digest();
+                password = DatatypeConverter.printHexBinary(digest).toUpperCase();
+            } catch (NoSuchAlgorithmException e) {
+                error = "";
+            }
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -51,25 +51,33 @@ public class LoginServlet extends HttpServlet {
         });
         thread.start();
 
-        HttpSession session = request.getSession();
-        if(account != null){
-            if(!account.isActive()){
-                error = "Account is blocked";
+       loop:while (true) {
+            if (account != null) {
+            HttpSession session = request.getSession();
+            if (account != null) {
+                if (!account.isActive()) {
+                    error = "Account is blocked";
+                    session.setAttribute("error", error);
+                    request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+                } else {
+                    session.setAttribute("account", account);
+                    if (account.getGroupId().equals("MOD")) {
+                        response.sendRedirect(request.getContextPath() + "/admin-home");
+                    } else {
+                        request.getRequestDispatcher("/user-home").forward(request, response);
+                    }
+                }
+            } else {
+                if (!accountService.checkUsername(username)) {
+                    error = "Username is not exist";
+                } else {
+                    error = "Password is incorrect";
+                }
                 session.setAttribute("error", error);
                 request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
-            } else {
-            session.setAttribute("account", account);
-            if(account.getGroupId().equals("MOD")){
-            response.sendRedirect(request.getContextPath() +"/admin-home");} else {
-                request.getRequestDispatcher("/user-home").forward(request, response);}
             }
-        }else {
-            if(!accountService.checkUsername(username)){
-                error = "Username is not exist";
-            } else  {
-            error = "Password is incorrect";}
-            session.setAttribute("error", error);
-            request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+            break loop;
+        }
         }
     }
     // lam vo hieu hoa người dung

@@ -91,7 +91,8 @@ public class HomeController extends HttpServlet {
         thread3.start();
         thread4.start();
         thread5.start();
-
+ loop:while(true){
+    if(slides!=null&&slides1!=null&&slides2!=null&&productLasest!=null&&productFeatured!=null&&productHot!=null){
         request.setAttribute("slideMini", slides);
         request.setAttribute("slideTitle", slides1);
         request.setAttribute("slideBanner", slides2);
@@ -100,6 +101,10 @@ public class HomeController extends HttpServlet {
         request.setAttribute("listProductHot", productHot);
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
         rd.forward(request,response);
+        break loop;
+    }
+}
+
     }
 
     @Override

@@ -23,14 +23,15 @@ public class AddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //get product id from request
         id = request.getParameter("id");
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
                 product = productService.getItem(id);
-//            }
-//        });
-//        thread.start();
+            }
+        });
+        thread.start();
 
+        while(true){
         if(product != null){
             HttpSession session = request.getSession();
             Cart cart = (Cart) session.getAttribute("cart");
@@ -60,7 +61,7 @@ public class AddServlet extends HttpServlet {
 //        response.addCookie(cookie1);
 
         response.sendRedirect(request.getContextPath() +"/cart");
-
+        }
     }
 
     @Override

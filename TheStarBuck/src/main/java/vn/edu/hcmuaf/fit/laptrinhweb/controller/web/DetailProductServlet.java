@@ -34,9 +34,15 @@ public class DetailProductServlet extends HttpServlet {
         });
         thread.start();
 
-        HttpSession session = request.getSession();
-        session.setAttribute("product", product);
-        request.getRequestDispatcher("/views/web/productDetails.jsp").forward(request, response);
+        loop:while (true){
+            if(product!=null){
+                HttpSession session = request.getSession();
+                session.setAttribute("product", product);
+                request.getRequestDispatcher("/views/web/productDetails.jsp").forward(request, response);
+                break loop;
+            }
+        }
+
     }
 
     @Override
