@@ -20,7 +20,7 @@
         <inject.version>1</inject.version>
         <mysql.connector.version>8.0.18</mysql.connector.version>
         <weldservlet.api.version>2.4.8.Final</weldservlet.api.version>
-        <ojdbc.api.version>12.2.0.1</ojdbc.api.version>
+        <ojdbc.api.version>8</ojdbc.api.version>
     </properties>
 
     <dependencies>
@@ -58,9 +58,11 @@
         <!--JDBC 8 maven-->
         <!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
         <dependency>
-            <groupId>com.oracle.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>${ojdbc.api.version}</version>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}\src\main\webapp\WEB-INF\lib\ojdbc8-19.3.0.0.jar</systemPath>
         </dependency>
 
 

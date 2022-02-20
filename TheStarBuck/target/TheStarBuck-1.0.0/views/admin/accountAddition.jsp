@@ -31,10 +31,10 @@
     <!-- SB Admin CSS - Include with every page -->
 <%--    <link href="css/sb-admin.css" rel="stylesheet">--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/admin/css/sb-admin.css")%>" />
+    <!-- Page-Level Demo Scripts - Blank - Use for reference -->
     <%--    <script src="assets/js/tinymce.js"></script>--%>
     <script type="text/javascript" src="<%= Asset.url("/template/lib/ckeditor/ckeditor.js")%>"></script>
     <script type="text/javascript" src="<%= Asset.url("/template/lib/ckfinder/ckfinder.js")%>"></script>
-
 </head>
 <body>
 <div id="wrapper">
@@ -130,7 +130,7 @@
                                         <textarea id="content" name="createdBy" cols="80" rows="10"></textarea>
                                         <script>
                                             var editor = CKEDITOR.replace( 'content' );
-                                            CKFinder.setupFCKeditor(editor,'/template/lib/ckfinder/');
+                                            CKFinder.setupFCKeditor(editor);
                                         </script>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
 
 <!-- SB Admin Scripts - Include with every page -->
 <script src="<%= Asset.url("/template/js/sb-admin.js")%>"></script>
-<!-- Page-Level Demo Scripts - Blank - Use for reference -->
+
 
 </body>
 
