@@ -32,31 +32,18 @@ public class Profile extends HttpServlet {
         HttpSession session = request.getSession();
         Account account = (Account) session.getAttribute("account");
         String fullname = request.getParameter("fullNameAccount");
-//        String active = request.getParameter("active"); // how to get?
         String email = request.getParameter("emailAccount");
         String phoneNumber = request.getParameter("phoneAccount");
 
-
-//        if(active.equals("0")){
-//            account.setActive(false);
-//        } else {
-//            account.setActive(true);}
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        try {
-            date = df.parse(account.getCreatedDate() + "");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(account.getLastLogin());
+        System.out.println(account.getId());
         account.setFullname(fullname);
         account.setEmail(email);
         account.setPhoneNumber(phoneNumber);
+        account.setAvatar("");
+        account.setAddressId("");
 
-        accountService.save(account);
+        accountService.updateAuth(account);
 
-        session.setAttribute("account", account);
         response.sendRedirect(request.getContextPath() +"/admin-profile");
     }
 }
