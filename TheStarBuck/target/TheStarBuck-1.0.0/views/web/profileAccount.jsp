@@ -1,6 +1,13 @@
 <!--modal duoc goi ra o lop khac nen ko can nam trong the html body, ko can co header-->
 <!--goi modal o lop khac su dung thu vien AJAX JQUERY-->
 <!-- content -->
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
+<%@include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	Account account = (Account) request.getAttribute("account");
+%>
 <div class="modal" id="modalId">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Custom StyleSheet -->
@@ -9,7 +16,8 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 	<!--custom profile  -->
-	<link rel="stylesheet" type="text/css" href="/css/profileAccount.css">
+<%--	<link rel="stylesheet" type="text/css" href="/css/profileAccount.css">--%>
+	<link rel="stylesheet" href="<%= Asset.url("/template/web/css/profileAccount.css")%>" />
 
 	<section class="py-5 md-5">
 		<div class="container">
@@ -24,7 +32,7 @@
 							</label>
 							<input type="file" accept="image/*" id="avatar-input">
 						</div>
-						<h4 class="text-center">lethanh</h4>
+						<h4 class="text-center">${account.fullname}</h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab"
@@ -43,13 +51,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>User name</label>
-									<input type="text" class="form-control" value="lethanh">
+									<input type="text" class="form-control" value="${account.username}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>Full name</label>
-									<input type="text" class="form-control" value="Thanh">
+									<input type="text" class="form-control" value="${account.fullname}">
 								</div>
 							</div>
 
@@ -66,13 +74,13 @@
 											onclick="confirmSendMail()"></i>
 										<span class="tooltiptext">Please! Click to verify your gmail</span>
 									</div>
-									<input type="text" class="form-control" value="19130206@hcmuaf.edu.vn">
+									<input type="text" class="form-control" value="${account.email}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>Phone number</label>
-									<input type="text" class="form-control" value="0931182688">
+									<input type="text" class="form-control" value="${account.phoneNumber}">
 								</div>
 							</div>
 
@@ -145,7 +153,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label for="description">Description</label>
-										<textarea class="form-control" name="description"
+										<textarea class="form-control" name="description" id="description"
 											rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vero enim error similique quia numquam ullam corporis officia odio repellendus aperiam consequatur laudantium porro voluptatibus, itaque laboriosam veritatis voluptatum distinctio!</textarea>
 									</div>
 								</div>
@@ -153,15 +161,16 @@
 						</div>
 						</div>
 						<div>
-							<button class="btn btn-primary">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button class="btn btn-primary" type="submit">Update</button>
+							<button class="btn btn-light" type="reset">Reset</button>
 						</div>
 					</div>
 				</div>
 
 			</div>
 	</section>
-	<script src="/js/profileAccount.js"></script>
+<%--	<script src="/js/profileAccount.js"></script>--%>
+	<script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
 	</script>
