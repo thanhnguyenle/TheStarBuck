@@ -9,6 +9,12 @@
     <session-config>
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
+
+    <!--first page run-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!--Connection CKFinder with CKEditor-->
     <servlet>
         <servlet-name>ConnectorServlet</servlet-name>
         <servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
@@ -22,18 +28,14 @@
         </init-param>
         <init-param>
             <param-name>debug</param-name>
-            <param-value>false</param-value>
+            <param-value>true</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnectorServlet</servlet-name>
         <url-pattern>
-            /lib/ckfinder/core/connector/java/connector.java
+            /template/lib/ckfinder/core/connector/java/connector.java
         </url-pattern>
     </servlet-mapping>
-    <!--first page run-->
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
 </web-app>

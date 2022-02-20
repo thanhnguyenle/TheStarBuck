@@ -130,7 +130,7 @@
                                         <textarea id="content" name="createdBy" cols="80" rows="10"></textarea>
                                         <script>
                                             var editor = CKEDITOR.replace( 'content' );
-                                            CKFinder.setupFCKeditor(editor,'lib/ckfinder/');
+                                            CKFinder.setupFCKeditor(editor,'/template/lib/ckfinder/');
                                         </script>
                                     </div>
                                 </div>
