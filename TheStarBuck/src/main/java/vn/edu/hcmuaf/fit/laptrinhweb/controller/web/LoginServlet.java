@@ -43,16 +43,8 @@ public class LoginServlet extends HttpServlet {
                 error = "";
             }
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                account = accountService.login(username, password);
-            }
-        });
-        thread.start();
+       account = accountService.login(username, password);
 
-       loop:while (true) {
-            if (account != null) {
             HttpSession session = request.getSession();
             if (account != null) {
                 if (!account.isActive()) {
@@ -75,9 +67,6 @@ public class LoginServlet extends HttpServlet {
                 }
                 session.setAttribute("error", error);
                 request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
-            }
-            break loop;
-        }
         }
     }
     // lam vo hieu hoa người dung

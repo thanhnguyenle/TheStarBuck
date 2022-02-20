@@ -25,25 +25,12 @@ public class DetailProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         id = request.getParameter("id");
-
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                product = productService.getItem(id);
-            }
-        });
-        thread.start();
-
-        loop:while (true){
-            if(product!=null){
+        product = productService.getItem(id);
                 HttpSession session = request.getSession();
                 session.setAttribute("product", product);
                 request.getRequestDispatcher("/views/web/productDetails.jsp").forward(request, response);
-                break loop;
-            }
         }
 
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

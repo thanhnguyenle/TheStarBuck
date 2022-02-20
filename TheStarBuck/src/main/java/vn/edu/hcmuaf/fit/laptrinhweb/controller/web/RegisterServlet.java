@@ -25,16 +25,14 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String retypepassword = request.getParameter("retypepassword");
-        mapCheck = null;
+
         try {
             mapCheck = accountService.register(username, email, password, retypepassword);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        loop:
-        while (true) {
-            if (mapCheck != null) {
-                HttpSession session = request.getSession();
+
+        HttpSession session = request.getSession();
                 if (mapCheck.isEmpty()) {
                     session.removeAttribute("error");
                     RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
@@ -44,9 +42,6 @@ public class RegisterServlet extends HttpServlet {
                         session.setAttribute(error, mapCheck.get(error));
                     }
                     request.getRequestDispatcher("/views/web/createAcc.jsp").forward(request, response);
-                }
-                break loop;
-            }
         }
     }
 }
