@@ -13,7 +13,6 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -129,8 +128,18 @@
                                         <br/>
                                         <textarea id="content" name="createdBy" cols="80" rows="10"></textarea>
                                         <script>
-                                            var editor = CKEDITOR.replace( 'content' );
-                                            CKFinder.setupFCKeditor(editor);
+                                            var editor = CKEDITOR.replace( 'content',
+                                                {
+                                                    filebrowserBrowseUrl : '<%= Asset.url("/template/lib/ckfinder/ckfinder.html")%>',
+                                                    filebrowserImageBrowseUrl : '<%= Asset.url("/template/lib/ckfinder/ckfinder.html?type=Images")%>',
+                                                    filebrowserFlashBrowseUrl : '<%= Asset.url("/template/lib/ckfinder/ckfinder.html?type=Flash")%>',
+                                                    filebrowserUploadUrl :
+                                                        '<%= Asset.url("/template/lib/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Files&currentFolder=/archive/")%>',
+                                                    filebrowserImageUploadUrl :
+                                                        '<%= Asset.url("/template/lib/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images&currentFolder=/cars/")%>',
+                                                    filebrowserFlashUploadUrl : '<%= Asset.url("/template/lib/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash")%>'
+                                                });
+                                            CKFinder.setupFCKeditor(editor ,"<%= Asset.url("/template/lib/ckfinder/")%>");
                                         </script>
                                     </div>
                                 </div>
