@@ -41,6 +41,7 @@
     <orderEntry type="library" name="jquery-modal" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
     <orderEntry type="library" name="mysql:mysql-connector-java:5.1.40" level="project" />
+    <orderEntry type="library" name="ckeditor" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:jsp-api:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
@@ -76,6 +77,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="ckeditor" level="application" />
   </component>
 </module>

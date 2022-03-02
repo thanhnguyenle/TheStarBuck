@@ -23,7 +23,8 @@
 		<div class="container">
 
 			<br />
-			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+			<form class="bg-white shadow rounded-lg d-block d-sm-flex">
+
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3 file-upload">
@@ -165,9 +166,10 @@
 							<button class="btn btn-light" type="reset">Reset</button>
 						</div>
 					</div>
-				</div>
+                
+            </form>
 
-			</div>
+        </div>
 	</section>
 <%--	<script src="/js/profileAccount.js"></script>--%>
 	<script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
