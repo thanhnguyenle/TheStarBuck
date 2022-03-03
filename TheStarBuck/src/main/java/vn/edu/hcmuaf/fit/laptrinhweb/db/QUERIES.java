@@ -27,6 +27,7 @@ public static class PRODUCT {
     public static final String GET_ITEM_BYNAME = "select * from Product where pr_name = ?";
     public static final String UPDATE = "update Product set pr_name = ?, pr_csId = ?, pr_ingredients = ?, pr_price = ?, pr_discount = ?, pr_quantity = ?, pr_active = ?, pr_hot = ?, pr_view = ?, pr_description = ?, pr_image = ?, pr_descriptionSeo = ?, pr_keywordSeo = ?, pr_titleSeo = ?, pr_note = ?, modifiedDate = ?, modifiedBy = ? where id_pr = ?";
     public static final String TOTAL_ITEM = "select count(*) from Product";
+    public static  final String SEARCH_BY_NAME = "select * from product where pr_name like ?";
     }
 
 //CATEGORY

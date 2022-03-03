@@ -7,10 +7,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     private static ProductDAO instance;
@@ -98,6 +95,12 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
 
     public Long deleteItem(String id){
         long output = delete(QUERIES.PRODUCT.DELETE, id);
+        return output;
+    }
+
+    public List<Product> searchByName(String txt){
+        List<Product> output = new ArrayList<>();
+        output = query(QUERIES.PRODUCT.SEARCH_BY_NAME, new ProductMapper(), txt);
         return output;
     }
 
