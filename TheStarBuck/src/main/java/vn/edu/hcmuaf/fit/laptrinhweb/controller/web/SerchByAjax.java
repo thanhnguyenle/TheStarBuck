@@ -1,5 +1,7 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ProductService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,10 +11,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class SerchByAjax {
-}
+
 @WebServlet(name = "SerchByAjax", value = "/searchAjax")
-public class ProfileServlet extends HttpServlet {
+public class SerchByAjax extends HttpServlet {
     ProductService productService = ProductService.getInstance();
 
     @Override
