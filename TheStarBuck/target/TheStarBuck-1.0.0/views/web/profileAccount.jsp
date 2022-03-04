@@ -23,7 +23,7 @@
 		<div class="container">
 
 			<br />
-			<form class="bg-white shadow rounded-lg d-block d-sm-flex">
+			<form class="bg-white shadow rounded-lg d-block d-sm-flex" method="post" action="${pageContext.request.contextPath}/user-profile">
 
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
@@ -166,7 +166,7 @@
 							<button class="btn btn-light" type="reset">Reset</button>
 						</div>
 					</div>
-                
+
             </form>
 
         </div>

@@ -95,7 +95,7 @@ $(window).scroll(function () {
 //search
 var countSe = 0;
 function add() {
-  ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino'> ";
+  ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino' name='search'> ";
 }
 function remove() {
   ipSearchBox.innerHTML = "";

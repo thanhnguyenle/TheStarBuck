@@ -61,4 +61,8 @@ public class ProductService implements IProductService {
         return productDAO.deleteItem(id) == 1;
     }
 
+    public List<Product> searchByName(String txt){
+        return productDAO.searchByName(txt);
+    }
+
 }
