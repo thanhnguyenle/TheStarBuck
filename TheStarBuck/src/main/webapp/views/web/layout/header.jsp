@@ -76,6 +76,8 @@
 <!-- thumbnail -->
 
 <script>
+    $(document).ready( function () {
 
+    };
 
 </script>
