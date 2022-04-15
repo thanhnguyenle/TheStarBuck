@@ -77,7 +77,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
      var error = document.querySelector('#error');
-
+     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        error.remove();
+     } else {
+         console.info( "This page is not reloaded");
+     }
 
 </script>
 
