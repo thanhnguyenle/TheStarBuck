@@ -214,45 +214,11 @@
         </form>
 
         <div class="categoryTitle">
-          <h2>Món đặt biệt</h2>
+          <h2>List Products</h2>
         </div>
         <div class="product-layout">
           <!-- hien thi nhieu nhat 9 san pham -->
-          <c:forEach items="${products}" var="item">
-          <div class="product">
-            <div class="img-container">
-              <img src="${item.image}" alt="" />
-              <div class="addCart">
-                <a href="<%=request.getContextPath()%>/add-cart?id=${item.id}"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-              <div class="sale-text">
-                <span class="section-sale">20% Off</span>
-              </div>
 
-              <ul class="side-icons">
-                <span><i class="fas fa-search"></i></span>
-                <span><i class="far fa-heart"></i></span>
-                <span> <a href="<%=request.getContextPath()%>/detailProduct?id=${item.id}"><i class="fas fa-sliders-h"> </i></a></span>
-              </ul>
-            </div>
-            <div class="bottom">
-              <div class="price-rating">
-                <div class="rating">
-                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
-                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
-                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
-                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
-                  <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
-                </div>
-              </div>
-              <a href="<%=request.getContextPath()%>/detailProduct?id=${item.id}">${item.name}</a>
-              <div class="price">
-                <span>$${item.price}</span>
-                <span class="cancel">$${item.discount}</span>
-              </div>
-            </div>
-          </div>
-          </c:forEach>
         </div>
         <!-- PAGINATION -->
         <ul class="pagination" id="pagination"></ul>
@@ -288,8 +254,9 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
+    $(document).ready(function() {
     var totalPages = ${totalPage};
-    var currentPage = ${page};
+    var currentPage = 1;
     var limit = 9;
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
@@ -299,13 +266,67 @@
               onPageClick: function (event, page) {
                  // console.info(page + ' (from options)');
                 if(currentPage!=page){
-                $('#maxPageItem').val(limit);
-                $('#page').val(page);
-                $('#formPagingProducts').submit();
+                  currentPage = page;
+                // $('#maxPageItem').val(limit);
+                // $('#page').val(page);
+                // $('#formPagingProducts').submit();
+                  ajaxRun();
+                  console.log("hello");
                 }
               }
           });
       });
+
+      function ajaxRun() {
+        $.ajax({
+          type: "Post",
+          url: "/TheStarBuck/products?page-index=" + currentPage + "&per-page=" + limit,
+          ContentType: 'json',
+          headers: {Accept: "application/json;charset=utf-8"},
+          success: function (json) {
+            let data = "";
+            let obj = JSON.parse(json);
+            for (let i = 0; i < obj.length; i++) {
+              let val = obj[i];
+              data += "<div class=\"product\">"
+                      + "<div class=\"img-container\">"
+                      + "<img src=\"" + val.image + "\" />"
+                      + "<div class=\"addCart\">"
+                      + "<a href=\"<%=request.getContextPath()%>/add-cart?id=" + val.id + "\"><i class=\"fas fa-shopping-cart\"></i></a>"
+                      + "</div>"
+                      + "<div class=\"sale-text\">"
+                      + "<span class=\"section-sale\">20% Off</span>"
+                      + "</div>"
+                      + "<ul class=\"side-icons\">"
+                      + "<span><i class=\"fas fa-search\"></i></span>"
+                      + "<span><i class=\"far fa-heart\"></i></span>"
+                      + "<span><a href=\"<%=request.getContextPath()%>/detailProduct?id=" + val.id + "\"><i class=\"fas fa-sliders-h\"></i></a></span>"
+                      + "</ul>"
+                      + "</div>"
+                      + "<div class=\"bottom\">"
+                      + "<div class=\"price-rating\">"
+                      + "<div class=\"rating\">"
+                      + "<span class=\"fa fa-stack\"><i class=\"fa fa-star-o\"></i><i class=\"fa fa-star\"></i></span>"
+                      + "<span class=\"fa fa-stack\"><i class=\"fa fa-star-o\"></i><i class=\"fa fa-star\"></i></span>"
+                      + "<span class=\"fa fa-stack\"><i class=\"fa fa-star-o\"></i><i class=\"fa fa-star\"></i></span>"
+                      + "<span class=\"fa fa-stack\"><i class=\"fa fa-star-o\"></i><i class=\"fa fa-star\"></i></span>"
+                      + "<span class=\"fa fa-stack\"><i class=\"fa fa-star-o\"></i><i class=\"fa fa-star\"></i></span>"
+                      + "</div>"
+                      + "</div>"
+                      + "<a href=\"<%=request.getContextPath()%>/detailProduct?id=" + val.id + "\">" + val.name + "</a>"
+                      + "<div class=\"price\">"
+                      + "<span>$" + val.price + "</span>"
+                      + "<span class=\"cancel\">$" + val.discount + "</span>"
+                      + "</div>"
+                      + "</div>"
+                      + "</div>";
+            }
+            $("div.products-layout div.product-layout").html(data);
+          }
+        });
+      }
+      ajaxRun();
+    });
   </script>
 </body>
 
