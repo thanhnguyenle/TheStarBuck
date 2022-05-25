@@ -95,7 +95,9 @@ $(window).scroll(function () {
 //search
 var countSe = 0;
 function add() {
-  ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino' name='search'> ";
+  ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino' name='search' autocomplete='off'> ";
+  searchBar();
+  ipSearchBox.append("<div class=\"search_container\">fgsfhdrjfg</div>");
 }
 function remove() {
   ipSearchBox.innerHTML = "";
@@ -247,3 +249,27 @@ btn.onclick = function() {
 }
 
 });
+
+$(document).ready( () => {
+
+});
+
+const  searchBar = () => {
+  // alert('bchdsbjsd');
+  $('#ipSearch').change(() => {
+    // alert("jcdsndsnj");
+    console.log($('#ipSearch').val());
+    $.ajax({
+      method: "POST",
+      url: "searchAjax?product_search="+$('#ipSearch').val(),
+      // data: { name: "John", location: "Boston" }
+      success: function (data) {
+        $('.search_container').append(JSON.parse(data));
+        console.log(JSON.parse(data))
+      }
+    })
+        // .done(function( msg ) {
+        //   alert( "Data Saved: " + msg );
+        // });
+  });
+}

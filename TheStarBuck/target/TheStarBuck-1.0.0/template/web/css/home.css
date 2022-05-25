@@ -1087,5 +1087,10 @@ html {
   cursor: url('../images/cursor_custom.png'), auto;
 }
 
+.search_container {
+  width: 100%;
+  background-color: pink;
+}
+
 
 

@@ -83,6 +83,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                 return null;
             }finally {
                 DBConnection.releaseConnection(connection);
+                System.out.println(sql);
                 try {
                     if (statement != null) statement.close();
                     if (resultSet != null) resultSet.close();
