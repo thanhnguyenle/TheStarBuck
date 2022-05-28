@@ -17,7 +17,6 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-
 @WebServlet(name = "user-home", value = "/user-home")
 public class HomeController extends HttpServlet {
     private IProductService productService ;
