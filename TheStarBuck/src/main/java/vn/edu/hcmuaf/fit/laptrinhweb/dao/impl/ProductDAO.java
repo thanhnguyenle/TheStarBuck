@@ -99,7 +99,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     public List<Product> searchByName(String txt){
-        List<Product> output = new ArrayList<>();
+        List<Product> output = new ArrayList<Product>();
         output = query(QUERIES.PRODUCT.SEARCH_BY_NAME, new ProductMapper(), txt);
         return output;
     }

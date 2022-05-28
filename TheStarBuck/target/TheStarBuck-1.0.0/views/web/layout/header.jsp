@@ -7,7 +7,9 @@
 --%>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% Cart cart = (Cart) session.getAttribute("cart"); %>
+<%
+    Cart cart = (Cart) session.getAttribute("cart");
+%>
 <nav id="header" class="nav">
     <div class="wrapper container">
         <div class="logo"><a href="<c:url value='http://localhost:8080/TheStarBuck/user-home'/>">
@@ -62,7 +64,7 @@
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
                 <ul class="drop-menu1 <c:if test="${account != null}"> d-none </c:if>" >
-                    <li><a href="<c:url value='http://localhost:8080/TheStarBuck/doLogin'/>" >Login</a></li>
+                    <li><a href="<c:url value='/views/web/login.jsp'/>" >Login</a></li>
 
                 </ul>
 
@@ -72,12 +74,18 @@
     </div>
 </nav>
 <!-- serchBar -->
-<section class="ipSearchBox"></section>
+<section class="ipSearchBox">
+
+</section>
 <!-- thumbnail -->
 
 <script>
-    $(document).ready( function () {
 
-    };
+    // $(document).ready( () => {
+    //     $('#ipSearch').change(() => {
+    //         alert("jcdsndsnj");
+    //         console.log('bdsd');
+    //     })
+    // });
 
 </script>

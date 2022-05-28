@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @WebServlet(name = "SerchByAjax", value = "/searchAjax")
-public class SerchByAjax extends HttpServlet {
+public class SearchByAjax extends HttpServlet {
     ProductService productService = ProductService.getInstance();
 
     @Override
@@ -27,12 +27,19 @@ public class SerchByAjax extends HttpServlet {
         pw.println(new Gson().toJson(products));
         pw.close();
 
-        request.getRequestDispatcher("/views/web/menu.jsp").forward(request, response);
+//        request.getRequestDispatcher("/views/web/menu.jsp").forward(request, response);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String txtSearch = request.getParameter("product_search");
+        System.out.println(txtSearch);
+        List<Product> products = productService.searchByName('%' + txtSearch.trim() + '%');
+        PrintWriter pw = response.getWriter();
+//        pw.write(products);
+        pw.println(new Gson().toJson(products));
+        System.out.println(products);
+        pw.close();
     }
 }

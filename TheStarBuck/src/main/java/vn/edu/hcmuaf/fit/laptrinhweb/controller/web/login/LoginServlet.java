@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.fit.laptrinhweb.controller.web.login;
+package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.AccountService;
@@ -24,18 +24,16 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
-        rd.forward(request,response);
+        request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
         username = request.getParameter("username");
         password = request.getParameter("password");
         String error = "";
         //decode password
-        if (password != null)
+        if (password != null) {
             try {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 md.update(password.getBytes());
@@ -45,14 +43,15 @@ public class LoginServlet extends HttpServlet {
                 error = "";
             }
 
-       account = accountService.login(username, password);
+            account = accountService.login(username, password);
 
             HttpSession session = request.getSession();
             if (account != null) {
                 if (!account.isActive()) {
                     error = "Account is blocked";
                     session.setAttribute("error", error);
-                    request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+//                    request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+                    response.sendRedirect("doLogin");
                 } else {
                     session.setAttribute("account", account);
                     if (account.getGroupId().equals("MOD")) {
@@ -68,8 +67,9 @@ public class LoginServlet extends HttpServlet {
                     error = "Password is incorrect";
                 }
                 session.setAttribute("error", error);
-                RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
-                rd.forward(request,response);
+//                request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+                response.sendRedirect("doLogin");
+            }
         }
     }
     // lam vo hieu hoa người dung

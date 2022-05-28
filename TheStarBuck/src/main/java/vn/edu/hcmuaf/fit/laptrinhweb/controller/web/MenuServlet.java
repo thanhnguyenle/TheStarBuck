@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
+import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.PageRequest;
@@ -27,8 +28,7 @@ public class MenuServlet extends HttpServlet {
     private int page =1;
     private int maxPageItem = 9;
     private int totalItem =-1;
-    private HttpSession session;
-    private RequestDispatcher rd;
+
     public MenuServlet() {
         productService = ProductService.getInstance();
         pageable = new PageRequest(page,maxPageItem);
@@ -36,56 +36,36 @@ public class MenuServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        session = request.getSession();
+        //setup response
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
 
-        String pageStr = request.getParameter("page");
-        String maxPageItemStr = request.getParameter("maxPageItem");
-        Integer offset = (page - 1) * maxPageItem;
-
-        if(pageStr!=null){
-            page = Integer.parseInt(pageStr);
-        }else{
-            page = 1;
-        }
-
-        if(maxPageItemStr!=null){
-            maxPageItem = Integer.parseInt(maxPageItemStr);
-        }
-        pageable = new PageRequest(page,maxPageItem);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                products = productService.findAll(pageable);
-                session.setAttribute("products", products);
+                totalItem = productService.totalItem();
             }
         });
         thread.start();
-
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                totalItem = productService.totalItem();
-                session.setAttribute("page", page);
-                session.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
-            }
-        });
-        thread1.start();
-
-        loop:while(true){
-                    if(products!=null&&totalItem!=-1) {
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+                    if(totalItem!=-1) {
                         //paging attribute setup
-                         rd = request.getRequestDispatcher("/views/web/products.jsp");
+                        HttpSession session = request.getSession();
+                        session.setAttribute("page", page);
+                        session.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
+                        RequestDispatcher rd = request.getRequestDispatcher("/views/web/products.jsp");
                         try {
                             rd.forward(request, response);
-                        } catch (ServletException | IOException e) {
+                        } catch (ServletException|IOException e) {
                             e.printStackTrace();
-                            break loop;
                         }
-                        break loop;
-                    }
-                }
 
-    }
+                }
+            }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
