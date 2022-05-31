@@ -125,12 +125,4 @@ input::-ms-reveal,
 input::-ms-clear {
     display: none;
 }
-.login_with{
-    margin: auto;
-}
-.login_with .g-signin2{
-    width: 18%;
-    margin: auto;
-}
-
   

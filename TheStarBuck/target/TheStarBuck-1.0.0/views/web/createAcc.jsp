@@ -27,7 +27,7 @@
         <div class="">
             <div class="row g-0">
                 <div class="col-lg-5 thumb-box">
-                    <img src="<c:url value="/template/web/image/createAcc.svg"/>" class="img-fluid" alt="" srcset="">
+                    <img src="images/createAcc.svg" class="img-fluid" alt="" srcset="">
                 </div>
                 <div class="col-lg-7 text-center py-4 loginContent">
                     <h1>CREATE ACCOUNT</h1>
@@ -85,10 +85,7 @@
                                 <button type="submit" class="btn1">Create</button>
                             </div>
                         </div>
-                    </form>
-                    <p>Or Login With</p>
-                    <span><i class="fab fa-facebook"></i></span>
-                    <span><i class="fab fa-google-plus"></i></span>
+                    </form>                    
                         <a class="my-3 creatAcc" href="login.html">You Have An Account?</a>
                     </div>
                 </div>

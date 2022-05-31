@@ -285,9 +285,7 @@
           headers: {Accept: "application/json;charset=utf-8"},
           success: function (json) {
             let data = "";
-            console.log(json.length);
             let obj = JSON.parse(json);
-            console.log(obj.length);
             for (let i = 0; i < obj.length; i++) {
               let val = obj[i];
               data += "<div class=\"product\">"
@@ -323,7 +321,6 @@
                       + "</div>"
                       + "</div>";
             }
-            // console.log(data);
             $("div.products-layout div.product-layout").html(data);
           }
         });

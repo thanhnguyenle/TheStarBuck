@@ -9,6 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Cart cart = (Cart) session.getAttribute("cart");
+
 %>
 <nav id="header" class="nav">
     <div class="wrapper container">
@@ -81,11 +82,13 @@
 
 <script>
 
+
     // $(document).ready( () => {
     //     $('#ipSearch').change(() => {
     //         alert("jcdsndsnj");
     //         console.log('bdsd');
     //     })
+
     // });
 
 </script>
