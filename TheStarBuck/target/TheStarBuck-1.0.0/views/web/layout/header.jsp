@@ -81,17 +81,11 @@
 <!-- thumbnail -->
 
 <script>
-<<<<<<< Updated upstream
-    $(document).ready( function () {
-
-    };
-=======
     // $(document).ready( () => {
     //     $('#ipSearch').change(() => {
     //         alert("jcdsndsnj");
     //         console.log('bdsd');
     //     })
     // });
->>>>>>> Stashed changes
 
 </script>

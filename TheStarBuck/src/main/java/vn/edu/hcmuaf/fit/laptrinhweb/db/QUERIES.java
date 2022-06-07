@@ -97,4 +97,9 @@ public static class SHIPPER{
         public static  final String UPDATE = "update article set ar_status = ?, modifiedDate = ?, modifiedBy = ? where id_ar = ?";
         public static  final String GET_ITEM_BYID = "select * from article where id_ar = ?";
     }
+
+    // ADDRESS
+    public static class ADDRESS{
+        public static  final String GET_LIST = "select * from address";
+    }
 }

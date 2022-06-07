@@ -39,7 +39,7 @@
                     <a href="<c:url value='/views/admin/accountEdition.jsp'/>">Edit User</a>
                 </li>
                 <li>
-                    <a href="address.html">List Address</a>
+                    <a href="<%=request.getContextPath()%>/address">List Adress</a>
                 </li>
                 <li>
                     <a href="addaddress.html">Add Address</a>
