@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @WebServlet(name = "SerchByAjax", value = "/searchAjax")
-public class SerchByAjax extends HttpServlet {
+public class SearchByAjax extends HttpServlet {
     ProductService productService = ProductService.getInstance();
 
     @Override
