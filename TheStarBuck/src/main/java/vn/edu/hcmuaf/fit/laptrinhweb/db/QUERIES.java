@@ -44,6 +44,7 @@ public static class SLIDER {
     public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String DELETE = "delete from Product where id_sl = ?";
     public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
+    public static final String GET_LIST = "SELECT * FROM slide";
 }
 
 //TOPPING
@@ -101,5 +102,10 @@ public static class SHIPPER{
     // ADDRESS
     public static class ADDRESS{
         public static  final String GET_LIST = "select * from address";
+    }
+
+    // NAVIGATION
+    public static class NAVIGATION{
+        public static  final String GET_LIST = "select * from navigation";
     }
 }

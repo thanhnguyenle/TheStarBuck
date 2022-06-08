@@ -81,11 +81,14 @@
 <!-- thumbnail -->
 
 <script>
+
+
     // $(document).ready( () => {
     //     $('#ipSearch').change(() => {
     //         alert("jcdsndsnj");
     //         console.log('bdsd');
     //     })
+
     // });
 
 </script>
