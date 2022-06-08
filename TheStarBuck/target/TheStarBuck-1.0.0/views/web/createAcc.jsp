@@ -17,7 +17,7 @@
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="shortcut icon" type="images/logo.png" href="images/logo.png">
+    <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">
 <%--    <link rel="stylesheet" href="css/createAcc.css">--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/createAcc.css")%>">
 </head>
@@ -27,13 +27,13 @@
         <div class="">
             <div class="row g-0">
                 <div class="col-lg-5 thumb-box">
-                    <img src="images/createAcc.svg" class="img-fluid" alt="" srcset="">
+                    <img src="<c:url value="/template/web/image/loginTitle2.svg"/>" class="img-fluid" alt="" srcset="">
                 </div>
                 <div class="col-lg-7 text-center py-4 loginContent">
                     <h1>CREATE ACCOUNT</h1>
                     <form action="${pageContext.request.contextPath}/doRegister" method="post">
 
-                            <div class="offset-1 col-lg-10">
+                        <div class="offset-1 col-lg-10">
                                 <div class="form-row py-3 pt-5">
                                     <%
                                         if(errorUsername != null) {
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </form>                    
-                        <a class="my-3 creatAcc" href="login.html">You Have An Account?</a>
+                        <a class="my-3 creatAcc" href="<c:url value="/views/web/login.jsp"/>">You Have An Account?</a>
                     </div>
                 </div>
             </div>

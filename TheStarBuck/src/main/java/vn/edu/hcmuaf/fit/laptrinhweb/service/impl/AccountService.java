@@ -5,6 +5,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IAccountService;
 
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,4 +75,24 @@ public class AccountService implements IAccountService {
         return accountDAO.editAuth(account);
     }
 
+    public Map<String, Object> saveUserLoginbyFb_GG(String email,String name) throws NoSuchAlgorithmException {
+        Map<String, Object> output = new HashMap<>();
+        boolean isSaved = false;
+        boolean register  =  accountDAO.register(email,name,name);
+          if(!register) {
+             if(accountDAO.checkUserEmail(email)){
+                output.put("errorEmail", "Email is used");
+             }
+          }
+          else{
+              output.put("addAccount","Add successful");
+          }
+         return output;
+    }
+    public String loadAUserByEmailGG_FB(String email){
+        if(accountDAO.checkUserEmail(email)){
+            return email;
+        }
+        return null;
+    }
 }

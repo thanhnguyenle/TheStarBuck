@@ -17,6 +17,8 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">
 <%--    <link rel="stylesheet" href="<c:url value="/template/web/css/login.css"/>">--%>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com">
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/login.css")%>">
 </head>
 
@@ -61,13 +63,20 @@
                         </div>
                     </form>                    
                     <p>Or Login With</p>
-                    <span><i class="fab fa-facebook"></i></span>
-                    <span><i class="fab fa-google-plus"></i></span>
-                    <div class="pt-3">
-                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp" />">Create Account</a>
+                    <div class="login_with">
+<%--                        <span><i class="fab fa-facebook"></i></span>--%>
+<%--                        <span><i class="fab fa-google-plus"></i></span>--%>
+<%--                        <span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></span>--%>
+                        <a id="customBtn" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/TheStarBuck/doLoginGoogle&response_type=code
+                        &client_id=427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
+
                     </div>
+
+                    <br/>
+                        <a class="creatAcc" href="<c:url value="/views/web/sendMail.jsp"/>">Create Account</a>
+<%--                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp"/>">Create Account</a>--%>
                     <div class="pt-3">
-                        <a class="forgotPass" href="forgotpass.jsp">Forget Password</a>
+                        <a class="forgotPass" href=href="<c:url value="/views/web/forgotpass.jsp"/>">Forget Password</a>
                     </div>
                 </div>
             </div>
@@ -82,10 +91,35 @@
      } else {
          console.info( "This page is not reloaded");
      }
+     var googleUser = {};
+     var startApp = function() {
+         gapi.load('auth2', function(){
+             // Retrieve the singleton for the GoogleAuth library and set up the client.
+             auth2 = gapi.auth2.init({
+                 client_id: '427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com',
+                 cookiepolicy: 'single_host_origin',
+                 // Request scopes in addition to 'profile' and 'email'
+                 scope: 'profile email'
+             });
+             attachSignin(document.getElementById('customBtn'));
+         });
+     };
+
+     function attachSignin(element) {
+         // console.log(element.id);
+         console.log("Co vao attachSignIn");
+         auth2.attachClickHandler(element, {},
+             function(googleUser) {
+                 var profile = googleUser.getBasicProfile();
+                 $('#name-form').val(profile.getName());
+                 $('#email-form').val(profile.getEmail());
+                 $('#form').submit();
+             }, function(error) {
+                 // alert(JSON.stringify(error, undefined, 2));
+             });
+     }
+
 
 </script>
-
 </body>
-
-
 </html>
