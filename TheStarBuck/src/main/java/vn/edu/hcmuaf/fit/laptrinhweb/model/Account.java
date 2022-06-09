@@ -19,7 +19,6 @@ public class Account extends AbsModel implements Serializable {
 	private boolean active;
 	private String rememberToken;
 	private String addressId;
-
 	public String getAddressId() {
 		return addressId;
 	}
