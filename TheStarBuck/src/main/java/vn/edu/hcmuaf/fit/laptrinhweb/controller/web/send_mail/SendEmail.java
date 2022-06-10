@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web.send_mail;
 
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 
 import javax.mail.*;
 import javax.mail.internet.AddressException;
@@ -16,7 +15,7 @@ public class SendEmail {
         return String.format("%06d",number);
     }
 
-    public boolean sendEmail(String email) {
+    public boolean sendEmail(String email,String code) {
         boolean test = false;
         String toEmail = email;
         String fromEmail = "19130163@st.hcmuaf.edu.vn";
@@ -42,7 +41,7 @@ public class SendEmail {
                     InternetAddress.parse(toEmail)
             );
             message.setSubject("Dear The StarBuck");
-            message.setText("Your code is " + getRandom());
+            message.setText("Your code is " + code);
             Transport.send(message);
             test = true;
         } catch (MessagingException e) {

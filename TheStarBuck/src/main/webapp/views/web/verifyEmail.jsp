@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-7 text-center py-4 loginContent">
                 <h1>Confirm</h1>
-                <form action="${pageContext.request.contextPath}/Verifycode" method="post">
+                <form action="${pageContext.request.contextPath}/verifyCode" method="post">
                     <div class="form-row py-3">
                         <div class="offset-1 col-lg-10">
                             <input type="text" class="inp px-3" placeholder="code" name="authcode">

@@ -47,21 +47,24 @@ public class AccountService implements IAccountService {
         return accountDAO.checkUserEmail(email);
     }
 
-    public Map<String, Object> register(String username, String email, String password,String retypepassword) throws NoSuchAlgorithmException {
-        Map<String, Object> output = new HashMap<>();
-        if(!accountDAO.register(username, email, password)){
-            if(checkUsername(username)){
-                output.put("errorUsername", "Username is exist");
-            }
-            if(accountDAO.checkUserEmail(email)){
-                output.put("errorEmail", "Email is used");
-            }
-            if(!retypepassword.equals(password)){
-                output.put("errorPassword", "Retyped password is wrong");
-            }
-
-        }
-        return output;
+//    public Map<String, Object> register(String username, String email, String password,String retypepassword) throws NoSuchAlgorithmException {
+//        Map<String, Object> output = new HashMap<>();
+//        if(!accountDAO.register(username, email, password)){
+//            if(checkUsername(username)){
+//                output.put("errorUsername", "Username is exist");
+//            }
+//            if(accountDAO.checkUserEmail(email)){
+//                output.put("errorEmail", "Email is used");
+//            }
+//            if(!retypepassword.equals(password)){
+//                output.put("errorPassword", "Retyped password is wrong");
+//            }
+//
+//        }
+//        return output;
+//    }
+    public boolean isRegister(String name, String email,String password,String retypassword) throws NoSuchAlgorithmException {
+        return accountDAO.register(name,email,password);
     }
     public Account getAcc(String id){
         return AccountDAO.getInstance().getItem(id);

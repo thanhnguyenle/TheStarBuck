@@ -35,7 +35,8 @@
                         <a href="index.jsp"><img src="<c:url value="/template/web/image/logo.png"/>" alt=""> </a>
                     </div>
 
-                    <form action="${pageContext.request.contextPath}/doLogin" method="post" class="pt-5">
+<%--                    <form action="${pageContext.request.contextPath}/doLogin" method="post" class="pt-5">--%>
+                    <form action="${pageContext.request.contextPath}/handle-login" method="post" class="pt-5">
                         <%
                             if(error != null) {
                         %>
@@ -58,7 +59,7 @@
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <button type="submit" class="btn1">Sign Up</button>
+                                <button href="${pageContext.request.contextPath}/handle-login?login=user" class="btn1">Sign Up</button>
                             </div>
                         </div>
                     </form>                    
@@ -73,8 +74,8 @@
                     </div>
 
                     <br/>
-                        <a class="creatAcc" href="<c:url value="/views/web/sendMail.jsp"/>">Create Account</a>
-<%--                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp"/>">Create Account</a>--%>
+<%--                        <a class="creatAcc" href="${pageContext.request.contextPath}/handle-sign-up">Create Account</a>--%>
+                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp"/>">Create Account</a>
                     <div class="pt-3">
                         <a class="forgotPass" href=href="<c:url value="/views/web/forgotpass.jsp"/>">Forget Password</a>
                     </div>

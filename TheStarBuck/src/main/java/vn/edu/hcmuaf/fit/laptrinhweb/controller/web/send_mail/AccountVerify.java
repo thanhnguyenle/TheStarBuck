@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-@WebServlet("/SendMailServlet")
+@WebServlet("/sendMailServlet")
 public class AccountVerify extends HttpServlet {
     protected void doGet(HttpServletRequest  request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/web/sendMail.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/views/web/createAcc.jsp");
         rd.forward(request,response);
     }
     protected void porcessRequest (HttpServletRequest  request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,10 +20,10 @@ public class AccountVerify extends HttpServlet {
         String nameTo = request.getParameter("name");
         SendEmail se = new SendEmail();
         String code = se.getRandom();
-        boolean test = se.sendEmail(emailTo);
+        boolean test = se.sendEmail(emailTo,code);
         if(test){
             HttpSession session = request.getSession();
-            session.setAttribute("authcode",emailTo);
+            session.setAttribute("authcode",code);
             RequestDispatcher rd = request.getRequestDispatcher("/views/web/verifyEmail.jsp");
             rd.forward(request,response);
         }

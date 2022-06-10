@@ -65,7 +65,7 @@
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
                 <ul class="drop-menu1 <c:if test="${account != null}"> d-none </c:if>" >
-                    <li><a href="<c:url value='/views/web/login.jsp'/>" >Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/handle-login" >Login</a></li>
 
                 </ul>
 
