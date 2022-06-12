@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @WebServlet(name = "UpdateCartServlet", value = "/cart-updateQuantity")
 public class UpdateServlet extends HttpServlet {
@@ -43,20 +40,16 @@ public class UpdateServlet extends HttpServlet {
         try {
             quantity =  Integer.parseInt(request.getParameter("quantity"));
         } catch (NumberFormatException e){
-            Map<Object,Object> map = new HashMap<>();
-            map.put("quantity",quantity);
             response.getWriter().println(
-                    new Gson().toJson(Collections.unmodifiableMap(map))
+                    new Gson().toJson(Map.of("quantity",quantity))
             );
             return;
         }
 
         int quantityAfterUpdate = cart.updateQuantitySold(id, quantity);
         session.setAttribute("cart", cart);
-        Map<Object,Object> map = new HashMap<>();
-        map.put("quantity",quantityAfterUpdate);
         response.getWriter().println(
-                new Gson().toJson(Collections.unmodifiableMap(map))
+                new Gson().toJson(Map.of("quantity",quantityAfterUpdate))
         );
     }
 

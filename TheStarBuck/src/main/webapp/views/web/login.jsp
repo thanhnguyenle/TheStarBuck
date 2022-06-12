@@ -8,17 +8,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%--    <meta charset="UTF-8">--%>
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <title>LOGIN</title>
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">
+    <jsp:include page="layout/css.jsp"/>
+  t>
+<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">--%>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"--%>
+<%--        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--%>
+<%--    <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">--%>
 <%--    <link rel="stylesheet" href="<c:url value="/template/web/css/login.css"/>">--%>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com">
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/login.css")%>">
 </head>
 
@@ -35,8 +34,7 @@
                         <a href="index.jsp"><img src="<c:url value="/template/web/image/logo.png"/>" alt=""> </a>
                     </div>
 
-<%--                    <form action="${pageContext.request.contextPath}/doLogin" method="post" class="pt-5">--%>
-                    <form action="${pageContext.request.contextPath}/handle-login" method="post" class="pt-5">
+                    <form action="${pageContext.request.contextPath}/doLogin" method="post" class="pt-5">
                         <%
                             if(error != null) {
                         %>
@@ -59,32 +57,27 @@
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <button href="${pageContext.request.contextPath}/handle-login?login=user" class="btn1">Sign Up</button>
+                                <button type="submit" class="btn1">Sign Up</button>
                             </div>
                         </div>
                     </form>                    
                     <p>Or Login With</p>
-                    <div class="login_with">
-<%--                        <span><i class="fab fa-facebook"></i></span>--%>
-<%--                        <span><i class="fab fa-google-plus"></i></span>--%>
-<%--                        <span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></span>--%>
-                        <a id="customBtn" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/TheStarBuck/doLoginGoogle&response_type=code
-                        &client_id=427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
-
-                    </div>
-
-                    <br/>
-<%--                        <a class="creatAcc" href="${pageContext.request.contextPath}/handle-sign-up">Create Account</a>--%>
-                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp"/>">Create Account</a>
+                    <span><i class="fab fa-facebook"></i></span>
+                    <span><i class="fab fa-google-plus"></i></span>
                     <div class="pt-3">
-                        <a class="forgotPass" href=href="<c:url value="/views/web/forgotpass.jsp"/>">Forget Password</a>
+                        <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp" />">Create Account</a>
+                    </div>
+                    <div class="pt-3">
+                        <a class="forgotPass" href="forgotpass.jsp">Forget Password</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="<c:url value="/template/web/js/login.js"/>"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jquery -->
+    <jsp:include page="layout/script.jsp"/>
+<%--    <script src="<c:url value="/template/web/js/login.js"/>"></script>--%>
+    <script src="<%= Asset.url("/template/web/js/login.js")%>"></script>
 <script>
      var error = document.querySelector('#error');
      if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
@@ -92,35 +85,10 @@
      } else {
          console.info( "This page is not reloaded");
      }
-     var googleUser = {};
-     var startApp = function() {
-         gapi.load('auth2', function(){
-             // Retrieve the singleton for the GoogleAuth library and set up the client.
-             auth2 = gapi.auth2.init({
-                 client_id: '427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com',
-                 cookiepolicy: 'single_host_origin',
-                 // Request scopes in addition to 'profile' and 'email'
-                 scope: 'profile email'
-             });
-             attachSignin(document.getElementById('customBtn'));
-         });
-     };
-
-     function attachSignin(element) {
-         // console.log(element.id);
-         console.log("Co vao attachSignIn");
-         auth2.attachClickHandler(element, {},
-             function(googleUser) {
-                 var profile = googleUser.getBasicProfile();
-                 $('#name-form').val(profile.getName());
-                 $('#email-form').val(profile.getEmail());
-                 $('#form').submit();
-             }, function(error) {
-                 // alert(JSON.stringify(error, undefined, 2));
-             });
-     }
-
 
 </script>
+
 </body>
+
+
 </html>
