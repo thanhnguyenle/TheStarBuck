@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@WebServlet(urlPatterns = "/handle-login")
+@WebServlet(name = "LoginServlet", value = "/doLogin")
 public class LoginServlet extends HttpServlet {
     private final AccountService accountService ;
     private Account account;
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                     error = "Account is blocked";
                     session.setAttribute("error", error);
 //                    request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
-                    response.sendRedirect("handle-login");
+                    response.sendRedirect("doLogin");
                 } else {
                     session.setAttribute("account", account);
                     if (account.getGroupId().equals("MOD")) {
@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
                 }
                 session.setAttribute("error", error);
 //                request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
-                response.sendRedirect("handle-login");
+                response.sendRedirect("doLogin");
             }
         }
     }

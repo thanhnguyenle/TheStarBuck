@@ -5,28 +5,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />
+  <jsp:include page="layout/css.jsp"/>
   <!--jquery-ui css-->
   <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <!-- Boxicons -->
-  <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!--custom navigation-->
-<%--  <link rel="stylesheet" href="css/navigation.css" />--%>
-  <link rel="stylesheet" href="<%= Asset.url("/template/web/css/navigation.css")%>" />
-  <!--custom footer-->
-<%--  <link rel="stylesheet" href="css/footer.css" />--%>
-  <link rel="stylesheet" href="<%= Asset.url("/template/web/css/footer.css")%>" />
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/product.css")%>" />
-  <!--modal-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
   <title>Menu</title>
 </head>
 
@@ -240,14 +223,12 @@
   <!-- Footer -->
   <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- <!-- jquery -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- jquery -->
+  <jsp:include page="layout/script.jsp"/>
+ <!-- jquery UI -->
+<%--  jQuery UI là một thư viện miễn phí, xây dựng dựa trên jQuery, giúp bạn tạo các thành phần giao diện trong trang như datepicker, accordion, autocomplete, tab, menu, select…--%>
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <!-- jQuery Modal -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/product.js")%>"></script>
 
@@ -264,14 +245,9 @@
               visiblePages: 5,
               startPage: currentPage,
               onPageClick: function (event, page) {
-                 // console.info(page + ' (from options)');
                 if(currentPage!=page){
                   currentPage = page;
-                // $('#maxPageItem').val(limit);
-                // $('#page').val(page);
-                // $('#formPagingProducts').submit();
                   ajaxRun();
-                  console.log("hello");
                 }
               }
           });

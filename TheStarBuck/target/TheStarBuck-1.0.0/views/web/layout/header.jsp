@@ -56,16 +56,15 @@
               <span>
                 <img src="<c:url value='/template/web/image/user.svg'/>" alt="" />
               </span>
-                </a>
                 <input type="checkbox" id="showdrop1" />
                 <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu1 <c:if test="${account == null}"> d-none </c:if>" >
-                    <li><a href="<c:url value='/user-profile'/>" id="manual-ajax">Profile</a></li>
+                    <li><a id="manual-ajax">Profile</a></li>
                     <li><a href="changePass.html">Change password</a></li>
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
                 <ul class="drop-menu1 <c:if test="${account != null}"> d-none </c:if>" >
-                    <li><a href="${pageContext.request.contextPath}/handle-login" >Login</a></li>
+                    <li><a href="<c:url value='/views/web/login.jsp'/>" >Login</a></li>
 
                 </ul>
 

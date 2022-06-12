@@ -35,18 +35,14 @@
 <%--                    <a href="<c:url value='/views/admin/accountAddition.jsp'/>">Add User</a>--%>
                     <a href="<%=request.getContextPath()%>/createAccount">Add User</a>
                 </li>
+
                 <li>
-                    <a href="<c:url value='/views/admin/accountEdition.jsp'/>">Edit User</a>
-                </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/address">List Adress</a>
+                    <a href="address.html">List Address</a>
                 </li>
                 <li>
                     <a href="addaddress.html">Add Address</a>
                 </li>
-                <li>
-                    <a href="editaddress.html">Edit Address</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -58,9 +54,7 @@
                 <li>
                     <a href="<%=request.getContextPath()%>/createShipper">Add Shipper</a>
                 </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/updateShipper">Edit Shipper</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -72,9 +66,7 @@
                 <li>
                     <a href="<%=request.getContextPath()%>/createCategory">Add Category</a>
                 </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/updateCategory">Edit Category</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -86,9 +78,7 @@
                 <li>
                     <a href="<%=request.getContextPath()%>/createProduct">Add product</a>
                 </li>
-                <li>
-                    <a href="editproduct.html">Edit product</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -100,9 +90,7 @@
                 <li>
                     <a href="<%=request.getContextPath()%>/createOrder">Add Order</a>
                 </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/updateOrder">Edit Order</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -122,9 +110,7 @@
                 <li>
                     <a href="<%=request.getContextPath()%>/createFeedback">Add FeedBack</a>
                 </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/updateFeedback">Edit FeedBack</a>
-                </li>
+
             </ul>
         </li>
         <li>
@@ -134,7 +120,7 @@
                     <a href="navigationtable.html">Navigation</a>
                 </li>
                 <li>
-                    <a href="<%=request.getContextPath()%>/slide">List Slide</a>
+                    <a href="slide.html">Slides</a>
                 </li>
                 <li>
                     <a href="footer.html">Footer</a>
@@ -153,9 +139,7 @@
                 <li>
                     <a href="addblog.html">Add Blog</a>
                 </li>
-                <li>
-                    <a href="editblog.html">Edit Blog</a>
-                </li>
+
 
             </ul>
         </li>
@@ -167,9 +151,6 @@
                 </li>
                 <li>
                     <a href="<%=request.getContextPath()%>/createTopping">Add Topping</a>
-                </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/updateTopping">Edit Topping</a>
                 </li>
 
             </ul>

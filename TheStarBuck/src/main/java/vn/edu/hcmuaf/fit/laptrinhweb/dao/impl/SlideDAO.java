@@ -19,8 +19,7 @@ public class SlideDAO extends  AbstractDAO<Slide> implements ISlideDAO {
 
     @Override
     public List<Slide> findAll() {
-        List<Slide> output = query(QUERIES.SLIDER.GET_LIST, new SlideMapper());
-        return output;
+        return null;
     }
 
     @Override
