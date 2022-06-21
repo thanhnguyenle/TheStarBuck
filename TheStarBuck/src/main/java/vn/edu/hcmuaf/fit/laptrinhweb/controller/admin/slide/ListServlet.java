@@ -1,7 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.slide;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Slide;
-import vn.edu.hcmuaf.fit.laptrinhweb.model.Topping;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.SlideService;
 
 import javax.servlet.RequestDispatcher;

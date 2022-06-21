@@ -8,4 +8,5 @@ public interface ISlideService {
     List<Slide> findAll();
     Long save(Slide slide);
     List<Slide> printTypeSlide(String type,int num);
+    Long deleteItem(String id);
 }

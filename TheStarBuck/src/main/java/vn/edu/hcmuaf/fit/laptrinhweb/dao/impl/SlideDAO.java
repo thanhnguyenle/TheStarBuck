@@ -31,4 +31,10 @@ public class SlideDAO extends  AbstractDAO<Slide> implements ISlideDAO {
     public List<Slide> printTypeSlide(String type,int num) {
         return query(QUERIES.SLIDER.GETBANNER,new SlideMapper(),type,num);
     }
+
+    @Override
+    public Long deleteItem(String id) {
+        long output = delete(QUERIES.SLIDER.DELETE, id);
+        return output;
+    }
 }

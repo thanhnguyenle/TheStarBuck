@@ -34,4 +34,9 @@ public class SlideService implements ISlideService {
     public List<Slide> printTypeSlide(String type,int num) {
         return slideDAO.printTypeSlide(type,num);
     }
+
+    @Override
+    public Long deleteItem(String id) {
+        return slideDAO.delete(id);
+    }
 }

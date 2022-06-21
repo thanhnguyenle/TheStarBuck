@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="unnamed" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5668ede9-fc52-49b4-bbc6-d03f986ba796" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck/.idea/artifacts/TheStarBuck_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck/.idea/artifacts/TheStarBuck_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck/.idea/artifacts/TheStarBuck_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck/.idea/artifacts/TheStarBuck_war_exploded.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +46,13 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\TheStarBuck\TheStarBuck\src\main\java\vn\edu\hcmuaf\fit\laptrinhweb\controller\admin\slide" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -227,7 +235,9 @@
       <workItem from="1645151314810" duration="90000" />
       <workItem from="1649943608735" duration="59000" />
       <workItem from="1653978751421" duration="25000" />
-      <workItem from="1655802894042" duration="2319000" />
+      <workItem from="1655802894042" duration="2577000" />
+      <workItem from="1655818258327" duration="3143000" />
+      <workItem from="1655822161144" duration="367000" />
     </task>
     <servers />
   </component>
