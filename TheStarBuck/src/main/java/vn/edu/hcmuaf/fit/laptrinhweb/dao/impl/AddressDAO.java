@@ -23,6 +23,19 @@ public class AddressDAO extends AbstractDAO<Address> implements IAddressDAO {
 
     @Override
     public Long save(Address address) {
+        if(address.getId().equals("")){
+            return addItem(address);
+        } else
+            return updateItem(address);
+    }
+
+    @Override
+    public Long addItem(Address address) {
+        return null;
+    }
+
+    @Override
+    public Long updateItem(Address address) {
         return null;
     }
 }

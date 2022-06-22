@@ -37,10 +37,10 @@
                 </li>
 
                 <li>
-                    <a href="address.html">List Address</a>
+                    <a href="<%=request.getContextPath()%>/address">List Address</a>
                 </li>
                 <li>
-                    <a href="addaddress.html">Add Address</a>
+                    <a href="<%=request.getContextPath()%>/createAddress">Add Address</a>
                 </li>
 
             </ul>

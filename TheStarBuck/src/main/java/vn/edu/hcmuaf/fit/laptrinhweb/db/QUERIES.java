@@ -97,4 +97,13 @@ public static class SHIPPER{
         public static  final String UPDATE = "update article set ar_status = ?, modifiedDate = ?, modifiedBy = ? where id_ar = ?";
         public static  final String GET_ITEM_BYID = "select * from article where id_ar = ?";
     }
+
+    //ADDRESS
+    public static  class  ADDRESS {
+        public static final String GET_LIST = "select * from address";
+        public static final String CREATE = "insert into address values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static final String DELETE = "delete from address where id_ad = ?";
+        public static final String UPDATE = "update address set modifiedDate = ?, modifiedBy = ? where id_ar = ?";
+        public static  final String GET_ITEM_BYID = "select * from address where id_ar = ?";
+    }
 }
