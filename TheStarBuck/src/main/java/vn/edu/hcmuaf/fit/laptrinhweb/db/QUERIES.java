@@ -104,6 +104,6 @@ public static class SHIPPER{
         public static final String CREATE = "insert into address values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         public static final String DELETE = "delete from address where id_ad = ?";
         public static final String UPDATE = "update address set modifiedDate = ?, modifiedBy = ? where id_ar = ?";
-        public static  final String GET_ITEM_BYID = "select * from address where id_ar = ?";
+        public static final String GET_ITEM_BYID = "select * from address where id_ar = ?";
     }
 }

@@ -11,6 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JQUERY LIB--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <%--Navigation script--%>
 <script>
     let openNav = document.querySelector(".open-btn");
@@ -93,6 +94,7 @@
             $("#header").removeClass("active");
         }
     });
+
     if (typeof(searchBt) != 'undefined' && searchBt != null
         &&typeof(ipSearchBox) != 'undefined' && ipSearchBox != null) {
 
@@ -100,7 +102,7 @@
         let countSe = 0;
 
         function add() {
-            ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino'> ";
+            ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino' />";
         }
 
         function remove() {
@@ -119,9 +121,27 @@
         }
         searchBt.addEventListener("click",function (e){
             clickRun();
-            console.log(searchBt);
+            console.log(ipSearchBox);
         });
     }
+    $(document).ready(function() {
+        $("#ipSearch").change(function () {
+            alert("jcdsndsnj");
+            console.log($('#ipSearch').val());
+            $.ajax({
+                method: "POST",
+                url: "searchAjax?product_search=" + $('#ipSearch').val(),
+                // data: { name: "John", location: "Boston" }
+                success: function (data) {
+                    $('.search_container').append(JSON.parse(data));
+                    console.log(JSON.parse(data))
+                }
+            })
+            // .done(function( msg ) {
+            //   alert( "Data Saved: " + msg );
+            // });
+        });
+    });
     if (typeof(iconUp) != 'undefined' && iconUp != null) {
         window.onscroll = function () {
             scrollFunction();
