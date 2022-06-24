@@ -396,6 +396,7 @@ nav {
     /* search */
 .ipSearchBox {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
@@ -412,6 +413,10 @@ nav {
     padding: 10px;
 }
 
+.search_container {
+  width: 50%;
+  background-color: pink;
+}
 /* PROMOTION */
 .section {
   padding: 10rem 0 1rem 0;
