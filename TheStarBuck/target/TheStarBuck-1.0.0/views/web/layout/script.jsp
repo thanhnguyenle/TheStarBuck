@@ -103,7 +103,7 @@
 
         function add() {
             ipSearchBox.innerHTML = "<input type='text' id='ipSearch' placeholder='Eg: capuchino' />";
-            $(ipSearchBox).append('<div class="search_container">huknkbhj</div>');
+            $(ipSearchBox).append('<div class="search_container">coffee</div>');
             $(document).ready(function() {
                 $("#ipSearch").keyup(function () {
                     // alert("jcdsndsnj");
@@ -113,9 +113,10 @@
                         url: "searchAjax?product_search=" + $('#ipSearch').val(),
                         // data: { name: "John", location: "Boston" }
                         success: function (data) {
-                            $('.search_container').innerHTML = "";
+                            $('.search_container').empty();
                             let parsedObj =JSON.parse(data);
-                            $('.search_container').append(parsedObj.forEach((elements) => elements['id']));
+                            parsedObj.forEach((elements) => $('.search_container').append(
+                                "<a class='search_item' href=\"<%=request.getContextPath()%>/detailProduct?id=" + elements['id'] + "\">" + elements['name'] + "</a>"));
                             parsedObj.forEach((elements) => console.log(elements['id']));
                         }
                     })
