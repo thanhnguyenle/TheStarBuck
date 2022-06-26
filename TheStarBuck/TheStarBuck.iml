@@ -65,5 +65,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:fluent-hc:4.5.10" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.7" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="jquery-modal" level="application" />
+    <orderEntry type="library" name="bootstrap.bundle" level="application" />
   </component>
 </module>

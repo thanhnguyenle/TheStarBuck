@@ -18,10 +18,10 @@
 	http://docs.cksource.com/CKFinder_2.x/Developers_Guide/Java/Configuration/baseURL_and_baseDir
 	-->
 	<baseDir></baseDir>
-	<baseURL>/CKFinderJava/userfiles/</baseURL>
+	<baseURL>http://localhost:8080/TheStarBuck/template/web/image/</baseURL>
 	<licenseKey></licenseKey>
 	<licenseName></licenseName>
-	<!--
+	<!-- 
 	Set the maximum size of uploaded images. If an uploaded image is larger, it
 	gets scaled down proportionally. Set to 0 to disable this feature.
 	-->
