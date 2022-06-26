@@ -396,6 +396,7 @@ nav {
     /* search */
 .ipSearchBox {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
@@ -412,6 +413,24 @@ nav {
     padding: 10px;
 }
 
+.search_container {
+  width: 50%;
+  background-color: white;
+  position: absolute;
+  top: 170px;
+  z-index: 3;
+  max-height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  overflow: auto;
+  padding: 10px;
+}
+.search_item {
+  font-weight: bold;
+}
+.search_item:hover{
+  color: #017143;
+}
 /* PROMOTION */
 .section {
   padding: 10rem 0 1rem 0;

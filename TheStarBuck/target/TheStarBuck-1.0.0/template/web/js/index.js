@@ -98,28 +98,7 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 1200,
   });
-});
 
-$(document).ready( () => {
 
 });
 
-const  searchBar = () => {
-  // alert('bchdsbjsd');
-  $('#ipSearch').change(() => {
-    // alert("jcdsndsnj");
-    console.log($('#ipSearch').val());
-    $.ajax({
-      method: "POST",
-      url: "searchAjax?product_search="+$('#ipSearch').val(),
-      // data: { name: "John", location: "Boston" }
-      success: function (data) {
-        $('.search_container').append(JSON.parse(data));
-        console.log(JSON.parse(data))
-      }
-    })
-        // .done(function( msg ) {
-        //   alert( "Data Saved: " + msg );
-        // });
-  });
-}
