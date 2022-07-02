@@ -62,11 +62,9 @@
                         </div>
                     </form>                    
                     <p>Or Login With</p>
-<%--                    <span><i class="fab fa-facebook"></i></span>--%>
-<%--                    <span><i class="fab fa-google-plus"></i></span>--%>
-                    <a href="https://www.facebook.com/dialog/oauth?client_id=1106802269902043&redirect_uri=http://localhost:8080/TheStarBuck/doLoginFacebook">Login With Facebook</a>
+                    <a href="https://www.facebook.com/dialog/oauth?client_id=1106802269902043&redirect_uri=http://localhost:8080/TheStarBuck/doLoginFacebook"><span><i class="fab fa-facebook"></i></span></a>
                     <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/TheStarBuck/doLoginGoogle&response_type=code
-    &client_id=427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
+    &client_id=427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com&approval_prompt=force"><span><i class="fab fa-google-plus"></i></span></a>
                     <div class="pt-3">
                         <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp" />">Create Account</a>
                     </div>
