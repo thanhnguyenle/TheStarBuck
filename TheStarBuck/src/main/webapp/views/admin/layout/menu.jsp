@@ -120,7 +120,7 @@
                     <a href="navigationtable.html">Navigation</a>
                 </li>
                 <li>
-                    <a href="slide.html">Slides</a>
+                    <a href="<%=request.getContextPath()%>/slide">Slides</a>
                 </li>
                 <li>
                     <a href="footer.html">Footer</a>

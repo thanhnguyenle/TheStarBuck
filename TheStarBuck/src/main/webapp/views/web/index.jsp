@@ -1,3 +1,4 @@
+<jsp:useBean id="slideTitle" scope="request" type="java.util.List"/>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
@@ -54,13 +55,19 @@
         </div>
       </div>
       <ul class="thumb ">
-        <li><img id="thumb1" src="https://i.ibb.co/j4YxX6j/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
-        <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
-        <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
+          <c:set var="count" value="0" scope="page" />
+          <jsp:useBean id="slideThumb" scope="request" type="java.util.List"/>
+          <c:forEach items="${slideThumb}" var="item">
+              <c:set var="count" value="${count + 1}" scope="page"/>
+        <li><img id="thumb${count}" src="${item.image}" class="animate__animated animate__backInUp animate__delay-${count}s"></li>
+<%--        <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>--%>
+<%--        <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>--%>
+          </c:forEach>
       </ul>
     </div>
   </div>
   <section class="image-slider">
+    <jsp:useBean id="slideMini" scope="request" type="java.util.List"/>
     <c:forEach items="${slideMini}" var="x">
       <div class="image-item">
         <div class="image">
@@ -92,6 +99,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab">
           <div class=" product-layout">
+            <jsp:useBean id="listProductFeatured" scope="request" type="java.util.List"/>
             <c:forEach items="${listProductFeatured}" var="x">
           <div class="product" >
             <div class="img-container">
@@ -139,6 +147,7 @@
       </div>
       <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
         <div class="product-layout">
+          <jsp:useBean id="listProductLasest" scope="request" type="java.util.List"/>
           <c:forEach items="${listProductLasest}" var="x">
           <div class="product">
             <div class="img-container">
@@ -184,6 +193,7 @@
       <div class="tab-pane fade" id="bestsellers" role="tabpanel" aria-labelledby="bestsellers-tab">
 
         <div class="product-layout">
+          <jsp:useBean id="listProductHot" scope="request" type="java.util.List"/>
           <c:forEach items="${listProductHot}" var="x">
             <div class="product">
               <div class="img-container">
@@ -234,6 +244,7 @@
   </section>
   <!-- Banner Begin -->
   <section class="banner">
+    <jsp:useBean id="slideBanner" scope="request" type="java.util.List"/>
     <c:forEach items="${slideBanner}" var="x">
     <div class="container">
       <div class="col">
@@ -403,7 +414,8 @@
   
   <!-- jQuery Modal -->
 <%--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>--%>
-  <script src="<%= Asset.url("/template/web/js/index.js")%>"></script>
+  <script type="text/javascript" src="<%= Asset.url("/template/web/js/index.js")%>"></script>
 <%-- <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
+
 </body>
 </html>

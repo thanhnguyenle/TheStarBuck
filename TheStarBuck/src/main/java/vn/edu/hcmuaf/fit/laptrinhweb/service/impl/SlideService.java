@@ -25,6 +25,9 @@ public class SlideService implements ISlideService {
         return slideDAO.findAll();
     }
 
+    public Slide getItem(String id){
+        return slideDAO.getItem(id);
+    }
     @Override
     public Long save(Slide slide) {
         return slideDAO.save(slide);
@@ -38,5 +41,15 @@ public class SlideService implements ISlideService {
     @Override
     public Long deleteItem(String id) {
         return slideDAO.delete(id);
+    }
+
+    @Override
+    public Long update(String greetingH2, String greetingSpan, String greetingP, boolean active, String type) {
+        return slideDAO.update(greetingH2,greetingSpan,greetingP,active,type);
+    }
+
+    @Override
+    public Long updateImageByID(String id, String image, String type) {
+        return slideDAO.updateImageByID(id,image,type);
     }
 }

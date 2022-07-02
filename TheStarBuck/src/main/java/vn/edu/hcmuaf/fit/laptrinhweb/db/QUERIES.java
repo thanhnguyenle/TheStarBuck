@@ -41,7 +41,11 @@ public static class CATEGORY{
 
 // Slider
 public static class SLIDER {
+    public static  final String GET_LIST = "select * from Slide";
+    public static  final String GET_ITEM_BYID = "select * from Slide where id_sl = ?";
     public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public static final String UPDATE = "update Slide set sl_greeting_h2 = ?, sl_greeting_span = ?, sl_greeting_p = ?, sl_active = ?,modifiedDate = ?, modifiedBy = ? where sl_note = ?";
+    public static final String UPDATE_IMAGE_TITLE_BYID = "update  Slide set sl_image = ?,modifiedDate = ?, modifiedBy = ? where sl_note = ? and id_sl = ?";
     public static final String DELETE = "delete from Product where id_sl = ?";
     public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
 }
