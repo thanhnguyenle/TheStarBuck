@@ -69,5 +69,7 @@
     <orderEntry type="library" name="bootstrap.bundle" level="application" />
     <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="flickity" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="all" level="application" />
   </component>
 </module>
