@@ -10,23 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/slide/UpdateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/navigationManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/slide/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/slide/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/ISlideDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/ISlideDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/ISlideService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/ISlideService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/SlideService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/SlideService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/slideManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slideManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/asset.properties" beforeDir="false" />
@@ -1646,12 +1632,14 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/feedbackAddition.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/feedbackEdition.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/feedbackManagement.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/footerManagement.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/home.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/css.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/footerManagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/footer.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/header.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/menu.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/layout/script.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/navigationManagement.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/orderEdition.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/orderManagement.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/admin/productAddition.jsp" beforeDir="false" />
@@ -1946,7 +1934,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TheStarBuck:war">
@@ -2063,6 +2051,7 @@
       <workItem from="1656678805909" duration="16277000" />
       <workItem from="1656719870033" duration="7104000" />
       <workItem from="1656731782481" duration="7910000" />
+      <workItem from="1656750005254" duration="332000" />
     </task>
     <servers />
   </component>
