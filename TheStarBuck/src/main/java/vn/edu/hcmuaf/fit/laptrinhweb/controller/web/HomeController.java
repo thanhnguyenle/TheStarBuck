@@ -116,7 +116,7 @@ public class HomeController extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        if (minis != null && titles != null && banners != null && productLasest != null && productFeatured != null && productHot != null) {
+        if (minis != null && titles != null && banners != null && productLasest != null && productFeatured != null && productHot != null&&thumbs!=null) {
                 request.setAttribute("slideMini", minis);
                 request.setAttribute("slideTitle", titles);
                 request.setAttribute("slideBanner", banners);
