@@ -1,6 +1,13 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    Account account = (Account) request.getAttribute("account");
+    Cart cart = (Cart) request.getAttribute("cart");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -43,19 +50,19 @@
                         <!--Name-->
                         <div class="form-group"><label class="" for="name">Name</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="text"
-                                    id="name" name="name" placeholder="Nguyen Van A" required> <span
+                                    id="name" name="name" value="${account.fullname}" required> <span
                                     class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <!--phone number-->
                         <div class="form-group"><label class="" for="phone">Phone number</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="tel"
-                                    id="phone" name="phone" placeholder="0123456789" required> <span
+                                    id="phone" name="phone"  required> <span
                                     class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <!--mail-->
                         <div class="form-group"><label class="" for="email">Email</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="email"
-                                    id="email" name="email" placeholder="david.343@gmail.com">
+                                    id="email" name="email">
                                 <span class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <div class="row">
@@ -154,7 +161,7 @@
                         </label></div>
                     <div class="d-flex align-items-center">
                         <div class="display-5">Subtotal</div>
-                        <div class="ml-auto font-weight-bold">$80.9</div>
+                        <div class="ml-auto font-weight-bold">$</div>
                     </div>
                     <div class="d-flex align-items-center py-2 border-bottom">
                         <div class="display-5">Shipping</div>
@@ -164,7 +171,7 @@
                         <div class="display-5">Total</div>
                         <div class="ml-auto d-flex">
                             <div class="text-primary text-uppercase px-3">usd</div>
-                            <div class="font-weight-bold">$92.98</div>
+                            <div class="font-weight-bold">$</div>
                         </div>
                     </div>
                 </div>
@@ -218,7 +225,7 @@
     </div>
     <!-- messenger -->
     <div class="messenger">
-        <a href=""><img src=" <jsp:include page="layout/mees.png"/>" alt="" width="70px"></a>
+<%--        <a href=""><img src=" <jsp:include page="layout/mees.png"/>" alt="" width="70px"></a>--%>
     </div>
     <div class="up">
         <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>

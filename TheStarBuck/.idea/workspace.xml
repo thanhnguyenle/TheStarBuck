@@ -10,15 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/createAcc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/createAcc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/ShowServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/ShowServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/payment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TheStarBuck:war">
@@ -224,6 +220,8 @@
       <workItem from="1656731782481" duration="7910000" />
       <workItem from="1656750005254" duration="1153000" />
       <workItem from="1656772920377" duration="2277000" />
+      <workItem from="1656990959691" duration="650000" />
+      <workItem from="1656992132646" duration="3683000" />
     </task>
     <servers />
   </component>
@@ -240,5 +238,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
