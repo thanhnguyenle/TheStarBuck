@@ -11,7 +11,7 @@ public class QUERIES {
         public static final String LOGIN = "select * from Account where ac_username = ? and ac_password = ?";
         public static final String GET_ITEM_BYUSERNAME = "select * from Account where ac_username = ?";
         public static final String GET_ITEM_BYEMAIL = "select * from Account where ac_email = ?";
-        public static final String UPDATE = "update Account set ac_active = ?, ac_lastLogin = ?, ac_groupId = ?, modifiedDate = ?, modifiedBy = ?  where id_ac = ?";
+        public static final String UPDATE = "update Account set ac_active = ?, ac_lastLogin = ?, ac_groupId = ?, ac_avatar = ?,modifiedDate = ?, modifiedBy = ?  where id_ac = ?";
         public static final String UPDATE_PROFILE = "update Account set ac_fullname = ?, ac_mobile = ?, ac_email = ?, ac_avatar = ?, ac_addressId = ?, ac_lastLogin = ?, modifiedDate = ?, modifiedBy = ? where id_ac = ?";
     }
 

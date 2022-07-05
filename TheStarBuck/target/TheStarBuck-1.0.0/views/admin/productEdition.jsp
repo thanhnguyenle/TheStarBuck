@@ -1,7 +1,6 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ include file="/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Product product = (Product) request.getAttribute("product");
+%>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -9,11 +8,11 @@
   Time: 11:09 PM
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    Product product = (Product) request.getAttribute("product");
-%>
+
 <!DOCTYPE html>
 <html>
 
@@ -90,8 +89,8 @@
                                     <div class="form-group">
                                         <label>Hot</label>
                                         <select class="form-control" name="hot">
-                                            <option value="0" <c:if test="${product.hot == false}"> selected </c:if>>NO</option>
-                                            <option value="1" <c:if test="${product.hot == true}"> selected </c:if>>YES</option>
+                                            <option value="0" <c:if test="${product.hot == 0}"> selected </c:if>>NO</option>
+                                            <option value="1" <c:if test="${product.hot == 1}"> selected </c:if>>YES</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

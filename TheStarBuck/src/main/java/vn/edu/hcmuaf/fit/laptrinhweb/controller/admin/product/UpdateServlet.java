@@ -27,6 +27,7 @@ public class UpdateServlet extends HttpServlet {
         System.out.println(product.getImage());
         HttpSession session = request.getSession();
         session.setAttribute("product", product);
+        System.out.println(product.toString());
         request.getRequestDispatcher("/views/admin/productEdition.jsp").forward(request, response);
     }
 

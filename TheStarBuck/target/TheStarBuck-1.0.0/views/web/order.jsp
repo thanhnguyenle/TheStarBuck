@@ -38,7 +38,7 @@
       </div>
       <ul class="nav-list">
         <div class="top">
-          <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <label  class="btn close-btn"><i class="fas fa-times"></i></label>
         </div>
         <li><a href="index.jsp">Home</a></li>
         <li><a href="products.jsp">Menu</a></li>
@@ -98,7 +98,7 @@
           
         <!-- </li> -->
       </ul>
-      <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
+      <label  class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>
   </nav>
   <!-- Navigation -->
