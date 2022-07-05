@@ -153,7 +153,6 @@
             success: function (data) {
                 delete cart.productList[id];
                 dt.row(thisRow.parents('tr')).remove().draw();
-                loadCart(cart);
             },
             error: function (data) {
                 alert('Product is not in cart');

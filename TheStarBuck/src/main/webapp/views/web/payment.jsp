@@ -8,6 +8,7 @@
     Account account = (Account) request.getAttribute("account");
     Cart cart = (Cart) request.getAttribute("cart");
 %>
+
 <!DOCTYPE html>
 <html>
 
@@ -56,13 +57,13 @@
                         <!--phone number-->
                         <div class="form-group"><label class="" for="phone">Phone number</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="tel"
-                                    id="phone" name="phone"  required> <span
+                                    id="phone" name="phone" value="${account.phoneNumber}"  required> <span
                                     class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <!--mail-->
                         <div class="form-group"><label class="" for="email">Email</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="email"
-                                    id="email" name="email">
+                                    id="email" name="email" value="${account.email}">
                                 <span class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <div class="row">
@@ -161,7 +162,7 @@
                         </label></div>
                     <div class="d-flex align-items-center">
                         <div class="display-5">Subtotal</div>
-                        <div class="ml-auto font-weight-bold">$</div>
+                        <div class="ml-auto font-weight-bold">$${cart.getSubTotalPrice()}</div>
                     </div>
                     <div class="d-flex align-items-center py-2 border-bottom">
                         <div class="display-5">Shipping</div>
@@ -171,7 +172,7 @@
                         <div class="display-5">Total</div>
                         <div class="ml-auto d-flex">
                             <div class="text-primary text-uppercase px-3">usd</div>
-                            <div class="font-weight-bold">$</div>
+                            <div class="font-weight-bold total-cart">$${cart.getTotalPrice()}</div>
                         </div>
                     </div>
                 </div>
@@ -197,7 +198,7 @@
                                     <td>:</td>
                                     <td>
                                         <div class="d-flex align-items-center"> <span
-                                                class="fas fa-minus btn text-muted"></span> <span>2</span> <span
+                                                class="fas fa-minus btn text-muted"></span> <span>${cart.getTotalQuantity()}</span> <span
                                                 class="fas fa-plus btn text-muted"></span></div>
                                     </td>
                                 </tr>
@@ -207,7 +208,7 @@
                     <div class="border-top py-2 d-flex align-items-center ml-2 font-weight-bold">
                         <div>Total</div>
                         <div class="ml-auto text-primary">USD</div>
-                        <div class="px-2">$92.98</div>
+                        <div class="px-2">$${cart.getTotalPrice()}</div>
                     </div>
                 </div>
                 <div class="row pt-lg-3 pt-2 buttons mb-sm-0 mb-2">
@@ -238,6 +239,9 @@
     <!-- Custom Scripts -->
 <%--    <script src="./js/payment.js"></script>--%>
   <script src="<%= Asset.url("/template/web/js/payment.js")%>"></script>
+<script>
+
+</script>
 </body>
 
 </html>

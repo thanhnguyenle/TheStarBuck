@@ -110,4 +110,13 @@ public static class SHIPPER{
         public static final String UPDATE = "update address set modifiedDate = ?, modifiedBy = ? where id_ar = ?";
         public static final String GET_ITEM_BYID = "select * from address where id_ar = ?";
     }
+
+    //ORDERITEM
+    public static class ORDERITEM{
+        public static  final String GET_LIST = "select * from Orderitem";
+        public static  final String CREATE = "insert into Orderitem values (?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from Orderitem where oi_prId = ? and oi_orId = ?";
+        public static  final String UPDATE = "update Orderitem set od_status = ?, modifiedDate = ?, modifiedBy = ? where oi_prId = ? and oi_orId = ?";
+        public static  final String GET_ITEM_BYID = "select * from Orderitem where oi_prId = ? and oi_orId = ?";
+    }
 }
