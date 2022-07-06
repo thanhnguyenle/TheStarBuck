@@ -72,17 +72,22 @@ public class OrderDAO extends AbstractDAO<Orders> implements IOrderDAO {
     @Override
     public boolean createOrder(Account account, Cart cart, Orders orders) {
         long checkTotalProduct = 0;
-        long output = insert(QUERIES.ORDER.CREATE, orders.getId(), orders.getIdAccount(), orders.getIdSession(), orders.getToken(),
-                orders.getStatus(), orders.getAddress(), orders.getSubTotal(), orders.getItemDiscount(), orders.getTax(),
-                orders.getShipping(), orders.getGrandTotal(), orders.getPromo(), orders.getNote(),
+        long checkProItem = 0;
+        long output = insert(QUERIES.ORDER.CREATE, "od0005", orders.getIdAccount(),
+               "session", "token",
+                "status", orders.getAddress(), orders.getSubTotal(), 1,
+                1,
+                1, orders.getGrandTotal(), orders.getPromo(), orders.getNote(),
                 new SimpleDateFormat("yyyy-MM-dd").format(new Date()),new SimpleDateFormat("yyyy-MM-dd").format(new Date()),
                 orders.getIdAccount(), orders.getIdAccount());
         for (Product pro: cart.getProductList()
              ) {
-            long checkProItem = insert(QUERIES.ORDERITEM.CREATE, pro.getId(), orders.getId(), pro.getQuantitySold(), pro.getNote(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()),new SimpleDateFormat("yyyy-MM-dd").format(new Date()),
+            checkProItem = insert(QUERIES.ORDERITEM.CREATE, pro.getId(), "od0001", pro.getQuantitySold(), pro.getNote(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()),new SimpleDateFormat("yyyy-MM-dd").format(new Date()),
                     orders.getIdAccount(), orders.getIdAccount());
+            System.out.println(checkProItem);
             checkTotalProduct+= checkProItem;
         }
-        return output == 1 && checkTotalProduct == cart.getProductList().toArray().length;
+        System.out.println("check : " + (output  ) + " check2: " + ( checkTotalProduct + " " + cart.getProductList().size()));
+        return output == 1 && checkTotalProduct == cart.getProductList().size();
     }
 }

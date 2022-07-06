@@ -87,11 +87,11 @@ public static class SHIPPER{
 
     //ORDER
     public static class ORDER{
-        public static  final String GET_LIST = "select * from Orders";
-        public static  final String CREATE = "insert into Orders values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        public static  final String DELETE = "delete from Orders where id_od = ?";
-        public static  final String UPDATE = "update Orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
-        public static  final String GET_ITEM_BYID = "select * from Orders where id_od = ?";
+        public static  final String GET_LIST = "select * from orders";
+        public static  final String CREATE = "insert into orders values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from orders where id_od = ?";
+        public static  final String UPDATE = "update orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
+        public static  final String GET_ITEM_BYID = "select * from orders where id_od = ?";
     }
     //ARTICLE
     public static  class ARTICLE{
@@ -113,10 +113,10 @@ public static class SHIPPER{
 
     //ORDERITEM
     public static class ORDERITEM{
-        public static  final String GET_LIST = "select * from Orderitem";
-        public static  final String CREATE = "insert into Orderitem values (?, ?, ?, ?, ?, ?, ?, ?)";
-        public static  final String DELETE = "delete from Orderitem where oi_prId = ? and oi_orId = ?";
-        public static  final String UPDATE = "update Orderitem set od_status = ?, modifiedDate = ?, modifiedBy = ? where oi_prId = ? and oi_orId = ?";
-        public static  final String GET_ITEM_BYID = "select * from Orderitem where oi_prId = ? and oi_orId = ?";
+        public static  final String GET_LIST = "select * from orderitem";
+        public static  final String CREATE = "insert into orderitem values (?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from orderitem where oi_prId = ? and oi_orId = ?";
+        public static  final String UPDATE = "update orderitem set od_status = ?, modifiedDate = ?, modifiedBy = ? where oi_prId = ? and oi_orId = ?";
+        public static  final String GET_ITEM_BYID = "select * from orderitem where oi_prId = ? and oi_orId = ?";
     }
 }

@@ -47,7 +47,7 @@
             <div class="col-lg-6 col-md-8 col-sm-10 offset-lg-0 offset-md-2 offset-sm-1 blockInfo">
                 <div class="mobile h5">Billing Address</div>
                 <div id="details" class="bg-white rounded pb-5">
-                    <form>
+                    <form role="form" action="${pageContext.request.contextPath}/payment-checkout" method="post">
                         <!--Name-->
                         <div class="form-group"><label class="" for="name">Name</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="text"
@@ -116,6 +116,7 @@
                                 </div>
                             </div>
                         </div>
+                        <button type="submit">check out</button>
                     </form>
                 </div>
                 <div style="display:flex;font-size:0.5rem">
@@ -217,7 +218,7 @@
                     </div>
                     <div class="col-md-6 pt-md-0 pt-3">
                         <div class="btnNav ml-auto text-uppercase btnContinue"><span class="fas fa-lock"></span>
-                           <a href="order.jsp">Continue</a>
+                           <a href="<%=request.getContextPath()%>/payment-checkout">Continue</a>
                         </div>
                     </div>
                 </div>

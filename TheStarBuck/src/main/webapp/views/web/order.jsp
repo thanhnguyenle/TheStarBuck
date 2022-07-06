@@ -28,7 +28,6 @@
 
 <body>
 
-  
   <!-- Navigation -->
   <nav id="header" class="nav">
     <div class="wrapper container">

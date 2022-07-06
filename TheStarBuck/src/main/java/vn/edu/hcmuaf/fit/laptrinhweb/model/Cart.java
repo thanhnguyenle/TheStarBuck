@@ -25,6 +25,22 @@ public class Cart extends AbsModel  implements Serializable {
 
 		return new Cart();
 	}
+
+	@Override
+	public String toString() {
+		return "Cart{" +
+				"id='" + id + '\'' +
+				", idAccount='" + idAccount + '\'' +
+				", idSession='" + idSession + '\'' +
+				", token='" + token + '\'' +
+				", status='" + status + '\'' +
+				", note='" + note + '\'' +
+				", active=" + active +
+				", cartItemList=" + cartItemList +
+				", productList=" + productList +
+				'}';
+	}
+
 	public List<CartItem> getCartItemList() {
 		return cartItemList;
 	}

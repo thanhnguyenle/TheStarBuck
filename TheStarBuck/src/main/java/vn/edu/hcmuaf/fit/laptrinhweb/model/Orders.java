@@ -23,6 +23,26 @@ public class Orders extends AbsModel  implements Serializable {
 	public Orders() {
 	}
 
+	@Override
+	public String toString() {
+		return "Orders{" +
+				"id='" + id + '\'' +
+				", idAccount='" + idAccount + '\'' +
+				", idSession='" + idSession + '\'' +
+				", token='" + token + '\'' +
+				", status='" + status + '\'' +
+				", address='" + address + '\'' +
+				", subTotal=" + subTotal +
+				", itemDiscount=" + itemDiscount +
+				", tax=" + tax +
+				", shipping=" + shipping +
+				", grandTotal=" + grandTotal +
+				", promo='" + promo + '\'' +
+				", note='" + note + '\'' +
+				", orderItemList=" + orderItemList +
+				'}';
+	}
+
 	public String getId() {
 		return id;
 	}

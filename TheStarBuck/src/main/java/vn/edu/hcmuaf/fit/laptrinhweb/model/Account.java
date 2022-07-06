@@ -33,6 +33,27 @@ public class Account extends AbsModel implements Serializable {
 	public Account() {
 	}
 
+	@Override
+	public String toString() {
+		return "Account{" +
+				"id='" + id + '\'' +
+				", username='" + username + '\'' +
+				", fullname='" + fullname + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				", email='" + email + '\'' +
+				", emailVerifiedAt=" + emailVerifiedAt +
+				", password='" + password + '\'' +
+				", avatar='" + avatar + '\'' +
+				", aboutMe='" + aboutMe + '\'' +
+				", lastLogin=" + lastLogin +
+				", groupId='" + groupId + '\'' +
+				", active=" + active +
+				", rememberToken='" + rememberToken + '\'' +
+				", addressId='" + addressId + '\'' +
+				", listAddressId=" + listAddressId +
+				'}';
+	}
+
 	public String getId() {
 		return id;
 	}
