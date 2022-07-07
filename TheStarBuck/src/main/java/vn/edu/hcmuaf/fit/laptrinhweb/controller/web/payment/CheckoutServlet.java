@@ -50,6 +50,15 @@ public class CheckoutServlet extends HttpServlet {
         orders.setGrandTotal(cart.getTotalPrice());
         orders.setNote(note);
         orders.setAddress(address);
+        orders.setIdSession("session");
+        orders.setToken("token");
+        orders.setStatus("stutus");
+        orders.setItemDiscount(1);
+        orders.setTax(1);
+        orders.setShipping(1);
+        orders.setId("");
+        orders.setPromo("");
+        System.out.println(orders.toString());
         boolean checkFlag = orderService.createOrder(account, cart, orders);
         System.out.println("------ " + checkFlag);
         if(checkFlag){
