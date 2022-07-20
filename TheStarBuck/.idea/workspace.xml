@@ -21,14 +21,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/TheStarBuck_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TheStarBuck_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheStarBuck.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/IOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/IOrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/mapper/IRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/mapper/IRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/model/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/model/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/APIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/APIController.class" afterDir="false" />
@@ -438,7 +438,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Mobile_AppReviewFood_Flutter_2022/giaodien" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -462,14 +462,7 @@
       <recent name="vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.address" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.63">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.json.CrawlPostToJson" />
-      <module name="TheStarBuck" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -481,7 +474,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TheStarBuck:war">
@@ -611,12 +604,7 @@
       <workItem from="1657096105403" duration="1174000" />
       <workItem from="1657114779529" duration="11489000" />
       <workItem from="1657159155637" duration="3108000" />
-      <workItem from="1657242643988" duration="2149000" />
-      <workItem from="1657349391454" duration="864000" />
-      <workItem from="1657360542281" duration="2094000" />
-      <workItem from="1657374502858" duration="8301000" />
-      <workItem from="1657851277123" duration="265000" />
-      <workItem from="1657890560266" duration="385000" />
+      <workItem from="1658303201653" duration="6593000" />
     </task>
     <servers />
   </component>

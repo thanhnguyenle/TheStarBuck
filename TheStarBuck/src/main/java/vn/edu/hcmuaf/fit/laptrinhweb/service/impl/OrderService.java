@@ -42,4 +42,9 @@ public class OrderService implements IOrderService {
     public boolean createOrder(Account account, Cart cart, Orders orders) {
         return orderDAO.createOrder(account, cart, orders);
     }
+
+    @Override
+    public Orders getItemByIdAc(String accId) {
+        return orderDAO.getItemByIdAc(accId);
+    }
 }

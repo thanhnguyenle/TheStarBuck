@@ -92,6 +92,7 @@ public static class SHIPPER{
         public static  final String DELETE = "delete from orders where id_od = ?";
         public static  final String UPDATE = "update orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
         public static  final String GET_ITEM_BYID = "select * from orders where id_od = ?";
+        public static  final String GET_LAST_BYACCID = "select * from orders where od_acId = ? order by id_od DESC";
     }
     //ARTICLE
     public static  class ARTICLE{
