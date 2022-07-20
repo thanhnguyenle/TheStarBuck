@@ -44,7 +44,7 @@ public static class SLIDER {
     public static  final String GET_LIST = "select * from Slide";
     public static  final String GET_ITEM_BYID = "select * from Slide where id_sl = ?";
     public static final String CREATE = "insert into Slide values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    public static final String UPDATE = "update Slide set sl_greeting_h2 = ?, sl_greeting_span = ?, sl_greeting_p = ?, sl_active = ?,modifiedDate = ?, modifiedBy = ? where sl_note = ?";
+    public static final String UPDATE = "update Slide set sl_greeting_h2 = ?, sl_greeting1_span = ?, sl_greeting2_p = ?, sl_active = ?,modifiedDate = ?, modifiedBy = ? where sl_note = ?";
     public static final String UPDATE_IMAGE_TITLE_BYID = "update  Slide set sl_image = ?,modifiedDate = ?, modifiedBy = ? where sl_note = ? and id_sl = ?";
     public static final String DELETE = "delete from Product where id_sl = ?";
     public static final String GETBANNER = "SELECT * FROM slide WHERE sl_note=? ORDER BY createdDate DESC  LIMIT ?";
@@ -119,4 +119,13 @@ public static class SHIPPER{
         public static  final String UPDATE = "update orderitem set od_status = ?, modifiedDate = ?, modifiedBy = ? where oi_prId = ? and oi_orId = ?";
         public static  final String GET_ITEM_BYID = "select * from orderitem where oi_prId = ? and oi_orId = ?";
     }
+
+    public static class POST{
+        public static  final String GET_LIST = "select * from post";
+        public static  final String CREATE = "insert into post values (?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String DELETE = "delete from post where id_po = ?";
+        public static  final String UPDATE = "update post set po_title=?, po_description=?, po_content=?, po_author=?,	po_url_image=?,	po_url_post=?,date=? where id_po=?";
+        public static  final String GET_POST_BYID = "select * from Post where id_po=?";
+    }
+
 }

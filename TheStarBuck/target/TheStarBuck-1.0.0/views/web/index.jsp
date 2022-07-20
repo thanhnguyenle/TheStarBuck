@@ -1,4 +1,5 @@
 <jsp:useBean id="slideTitle" scope="request" type="java.util.List"/>
+<jsp:useBean id="slideThumbBig" scope="request" type="java.util.List"/>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
@@ -51,7 +52,7 @@
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
-          <img id="starbuckAv" src="https://i.ibb.co/2FjC2zg/img1.png" class="starbucks" />
+          <img id="starbuckAv" src="${slideThumbBig[1].image}" class="starbucks" />
         </div>
       </div>
       <ul class="thumb ">
@@ -416,6 +417,20 @@
 <%--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>--%>
   <script type="text/javascript" src="<%= Asset.url("/template/web/js/index.js")%>"></script>
 <%-- <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
-
+<script  type="text/javascript">
+  const starbuckAv = document.querySelector("#starbuckAv");
+  const title_banner = document.querySelector("#hero1");
+  function actionThumb(){
+    <c:set var="count3" value="0" scope="page" />
+    <c:forEach items="${slideTitle}" var="item">
+    <c:set var="count3" value="${count3 + 1}" scope="page"/>
+      $("#thumb${count3}").click(function () {
+        title_banner.style.background = "#fff url('${item.image}') repeat-x bottom left";
+        starbuckAv.src = "${slideThumbBig[count3-1].image}";
+      });
+    </c:forEach>
+  }
+  actionThumb();
+</script>
 </body>
 </html>

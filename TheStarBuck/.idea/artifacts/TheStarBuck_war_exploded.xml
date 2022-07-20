@@ -30,6 +30,7 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:fluent-hc:4.5.10" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.14.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
