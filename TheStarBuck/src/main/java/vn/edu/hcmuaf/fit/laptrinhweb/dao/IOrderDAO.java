@@ -16,4 +16,5 @@ public interface IOrderDAO extends IGenericDAO<Orders> {
     Long addItem(Orders orders);
     Long updateItem(Orders orders);
     boolean createOrder(Account account, Cart cart, Orders orders);
+    Orders getItemByIdAc(String accId);
 }
