@@ -4,6 +4,7 @@ import vn.edu.hcmuaf.fit.laptrinhweb.dao.IPostDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.OrderDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.PostDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Post;
+import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IPostService;
 
 import java.util.List;
@@ -40,5 +41,20 @@ public class PostService implements IPostService {
     @Override
     public Long update(String id, Post post) {
         return postDAO.update(id,post);
+    }
+
+    @Override
+    public List<Post> findAll(IPageAble pageAble) {
+        return postDAO.findAll(pageAble);
+    }
+
+    @Override
+    public Post findById(String id) {
+        return postDAO.findById(id);
+    }
+
+    @Override
+    public int total() {
+        return postDAO.total();
     }
 }

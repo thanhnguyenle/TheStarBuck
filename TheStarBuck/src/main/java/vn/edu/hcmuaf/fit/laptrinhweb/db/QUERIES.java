@@ -123,10 +123,11 @@ public static class SHIPPER{
 
     public static class POST{
         public static  final String GET_LIST = "select * from post";
-        public static  final String CREATE = "insert into post values (?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String CREATE = "insert into post(id_po,po_title, po_description, po_content, po_author,po_url_image,po_url_post,date) values (?, ?, ?, ?, ?, ?, ?,?)";
         public static  final String DELETE = "delete from post where id_po = ?";
         public static  final String UPDATE = "update post set po_title=?, po_description=?, po_content=?, po_author=?,	po_url_image=?,	po_url_post=?,date=? where id_po=?";
         public static  final String GET_POST_BYID = "select * from Post where id_po=?";
+        public static final String TOTAL = "select COUNT(*) from post";
     }
 
 }

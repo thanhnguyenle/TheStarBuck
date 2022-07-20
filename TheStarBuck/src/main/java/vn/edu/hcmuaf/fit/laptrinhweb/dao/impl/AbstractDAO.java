@@ -176,6 +176,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                         e1.printStackTrace();
                     }
                 }
+                e.printStackTrace();
             }finally {
                 DBConnection.releaseConnection(connection);
                 try {
@@ -209,6 +210,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
 
                 //insert
                 long output = statement.executeUpdate();
+                System.out.println("------- " +output+"  --------");
                 //save to database
                 connection.commit();
                 return output;
@@ -220,6 +222,7 @@ public abstract class AbstractDAO<T> implements IGenericDAO<T> {
                         e1.printStackTrace();
                     }
                 }
+                e.printStackTrace();
             }finally {
                 DBConnection.releaseConnection(connection);
                 try {
