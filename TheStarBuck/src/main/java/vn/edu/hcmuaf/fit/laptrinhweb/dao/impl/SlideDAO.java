@@ -46,11 +46,11 @@ public class SlideDAO extends  AbstractDAO<Slide> implements ISlideDAO {
 
     @Override
     public Long update(String greetingH2, String greetingSpan, String greetingP, boolean active, String type) {
-        return update(QUERIES.SLIDER.UPDATE, greetingH2,greetingSpan,greetingP,active, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()),type);
+        return update(QUERIES.SLIDER.UPDATE, greetingH2,greetingSpan,greetingP,active, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "hello",type);
     }
 
     @Override
     public Long updateImageByID(String id, String image, String type) {
-        return update(QUERIES.SLIDER.UPDATE_IMAGE_TITLE_BYID,image,new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()),type,id);
+        return update(QUERIES.SLIDER.UPDATE_IMAGE_TITLE_BYID,image,new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "hello",type,id);
     }
 }

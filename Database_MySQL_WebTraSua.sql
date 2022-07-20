@@ -495,6 +495,21 @@ CREATE TABLE `Navigation`(
 	`cart` VARCHAR(100) NOT NULL,
 	`login` VARCHAR(100) NOT NULL
 );
+CREATE TABLE
+IF
+	NOT EXISTS `WebTraSua`.`Post` (
+		`id_po` VARCHAR ( 6 ) NOT NULL,
+		`po_title` TEXT NULL,
+		`po_description` MEDIUMTEXT NULL,
+		`po_content` LONGTEXT CHARACTER 
+		SET 'utf8mb4' NULL,
+		`po_author` VARCHAR( 100 ) CHARACTER 
+		SET 'utf8mb4' NULL,
+		`po_url_image` VARCHAR ( 255 ) NOT NULL,
+		`po_url_post` VARCHAR ( 255 ) NOT NULL,
+		`date` DATETIME ( 6 ) NULL DEFAULT NULL,
+		PRIMARY KEY ( `id_po` )
+	);
 --  -- FUNCTION -- 
 DROP FUNCTION IF EXISTS func_autoid; 
  DELIMITER $$
@@ -546,7 +561,23 @@ DELIMITER ;
 				END IF;
  END$$;
  DELIMITER ;
-
+ -- Tao id_po for Post
+ DROP TRIGGER IF EXISTS tr_NextPostID;
+ DELIMITER $$
+ CREATE TRIGGER tr_NextPostID
+ BEFORE INSERT ON `Post`
+ FOR EACH ROW
+ BEGIN
+				DECLARE lastAccID VARCHAR(6);
+				SET lastAccID = (SELECT `id_po` FROM `Post` ORDER BY `id_po` DESC LIMIT 1);
+				IF lastAccID IS NULL THEN
+						SET lastAccID = '';
+				END IF;
+				IF NEW.`id_po` = '' OR NEW.`id_po` IS NULL	THEN
+						SET NEW.`id_po`= func_autoid(lastAccID, 'po', 6);
+				END IF;
+ END$$;
+ DELIMITER ;
 -- -- Tao id_ad for Address
  DROP TRIGGER IF EXISTS tr_NextAddressID;
  DELIMITER $$
@@ -1190,6 +1221,12 @@ INSERT INTO `slide` VALUES ('sl0006', 'https://i.ibb.co/vHkpc5T/banner-2.png', '
 INSERT INTO `slide` VALUES ('sl0007', 'https://i.ibb.co/L0myK85/title1.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-03 22:27:49.000', '2022-01-18 22:27:53.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0008', 'https://i.ibb.co/LP8dSrR/title2.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-04 22:28:46.000', '2022-01-04 22:28:49.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0009', 'https://i.ibb.co/jGdks8G/title3.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-18 22:29:48.000', '2022-01-04 22:29:52.000', 'nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0010', 'http://localhost:8080/TheStarBuck/template/web/image/thumb1.png', 'THUMB', NULL, NULL, NULL, '1', '2021-11-29 23:32:38.000', '2021-11-29 23:32:45.000', 'Nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0011', 'http://localhost:8080/TheStarBuck/template/web/image/thumb2.png', 'THUMB', NULL, NULL, NULL, '1', '2021-10-25 23:34:00.000', '2021-11-29 23:34:11.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0012', 'http://localhost:8080/TheStarBuck/template/web/image/thumb3.png', 'THUMB', NULL, NULL, NULL, '1', '2021-11-29 23:36:03.000', '2021-11-29 23:36:07.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0013', 'http://localhost:8080/TheStarBuck/template/web/image/img1.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-11-29 23:32:38.000', '2021-11-29 23:32:45.000', 'Nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0014', 'http://localhost:8080/TheStarBuck/template/web/image/img2.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-10-25 23:34:00.000', '2021-11-29 23:34:11.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0015', 'http://localhost:8080/TheStarBuck/template/web/image/img3.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-11-29 23:36:03.000', '2021-11-29 23:36:07.000', 'Nhu', 'Nhu');
 
 INSERT INTO`topping` VALUES ('tp0001', 'Black Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0002', 'White Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');

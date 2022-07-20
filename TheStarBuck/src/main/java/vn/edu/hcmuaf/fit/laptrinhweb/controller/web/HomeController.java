@@ -29,6 +29,7 @@ public class HomeController extends HttpServlet {
     private List<Slide> titles;
     private List<Slide> banners;
     private List<Slide> thumbs;
+    private List<Slide> thumbs_big;
     private List<Product> productLasest;
     private List<Product> productFeatured;
     private List<Product> productHot;
@@ -100,6 +101,13 @@ public class HomeController extends HttpServlet {
             }
         });
         threads.add(thread6);
+        Thread thread7 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                thumbs_big = slideService.printTypeSlide("THUMB_BIG", 3);
+            }
+        });
+        threads.add(thread7);
         //start thread
         thread0.start();
         thread1.start();
@@ -108,6 +116,8 @@ public class HomeController extends HttpServlet {
         thread4.start();
         thread5.start();
         thread6.start();
+        thread7.start();
+
     // Now everything's running - join all the threads
         for (Thread thread : threads) {
             try {
@@ -116,11 +126,12 @@ public class HomeController extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        if (minis != null && titles != null && banners != null && productLasest != null && productFeatured != null && productHot != null&&thumbs!=null) {
+        if (minis != null && titles != null && banners != null && productLasest != null && productFeatured != null && productHot != null&&thumbs!=null&&thumbs_big!=null) {
                 request.setAttribute("slideMini", minis);
                 request.setAttribute("slideTitle", titles);
                 request.setAttribute("slideBanner", banners);
                 request.setAttribute("slideThumb",thumbs);
+                request.setAttribute("slideThumbBig",thumbs_big);
                 request.setAttribute("listProductLasest", productLasest);
                 request.setAttribute("listProductFeatured", productFeatured);
                 request.setAttribute("listProductHot", productHot);
