@@ -63,11 +63,7 @@
             <div class="order-item">${item.name}</div>
         </div>
         </c:forEach>
-        <div class="d-flex justify-content-start align-items-center list py-1">
-            <div><b>1</b></div>
-            <div class="mx-3"> <img src="https://i.ibb.co/r2mqvTg/3.png" alt="apple" class="rounded-circle" width="30" height="30"> </div>
-            <div class="order-item">Starbucks</div>
-        </div>
+
         <div class="pt-2 border-bottom mb-3"></div>
         <div class="d-flex justify-content-start align-items-center pl-3">
             <div class="text-muted">Payment Method</div>

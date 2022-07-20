@@ -16,8 +16,8 @@ public class PostMapper implements IRowMapper<Post> {
             post.setDescription(resultSet.getString("po_description"));
             post.setPost_content(resultSet.getString("po_content"));
             post.setAuthor(resultSet.getString("po_author"));
-            post.setPost_url(resultSet.getString("po_url_post"));
             post.setImage_url(resultSet.getString("po_url_image"));
+            post.setPost_url(resultSet.getString("po_url_post"));
             post.setDate(resultSet.getString("date"));
             return post;
         } catch (SQLException e) {

@@ -13,19 +13,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CrawlPostToJson {
+    private IPostService iPostService ;
+    private static CrawlPostToJson instance = null;
+    private CrawlPostToJson(){
+        iPostService = PostService.getInstance();
+    }
+    public static CrawlPostToJson getInstance(){
+        if(instance==null) instance = new CrawlPostToJson();
+        return instance;
+    }
     public static void main(String[] args) {
-        CrawlPostToJson crawlObj = new CrawlPostToJson();
-//        String str = crawlObj.crawlPostAt("https://punchdrink.com/articles/most-popular-best-cocktail-recipes/");
-//        System.out.println(str);
-        IPostService iPostService = PostService.getInstance();
-        for(int i = 1;i<235;i++){
-            List<Post> list = crawlObj.crawlDataAt(i);
-            for(Post pos:list){
-               //pos.setPost_content(crawlObj.crawlPostAt(pos.getPost_url()));
-                System.out.println(pos);
-                iPostService.add(pos);
-            }
-        }
+        CrawlPostToJson crawlObj = CrawlPostToJson.getInstance();
+        String str = crawlObj.crawlPostAt("https://punchdrink.com/articles/most-popular-best-cocktail-recipes/");
+        System.out.println(str);
+
+//        for(int i = 1;i<50;i++){
+//            List<Post> list = crawlObj.crawlDataAt(i);
+//            for(Post pos:list){
+//               //pos.setPost_content(crawlObj.crawlPostAt(pos.getPost_url()));
+//                System.out.println(pos);
+//                crawlObj.iPostService.add(pos);
+//            }
+//        }
     }
 
     public List<Post> crawlDataAt(int page) {
@@ -40,7 +49,7 @@ public class CrawlPostToJson {
             for (Element element : nodes) {
                 // new post
                 Post post = new Post();
-
+                post.setId("");
                 post.setPost_url(element.getElementsByClass("tease__figure").first()
                         .getElementsByClass("tease__image-link").first().attr("href"));
                 post.setImage_url(element.getElementsByClass("tease__figure").first().getElementsByTag("img").first()
@@ -72,6 +81,7 @@ public class CrawlPostToJson {
             for (Element element : contentBlock) {
                 if(element.hasClass("tags")) break;
                 result+=element.html();
+                System.out.println(result);
             }
         }
         return result;
