@@ -20,8 +20,8 @@ public class ProductService implements IProductService {
         return instance;
     }
     @Override
-    public List<Product> findAll(IPageAble pageAble) {
-        return productDAO.findAll(pageAble);
+    public List<Product> findAll(IPageAble pageAble,double fromPrice, double toPrice,String categoryID,String sortBy,String orderBy,String text)  {
+        return productDAO.findAll(pageAble,fromPrice,toPrice,categoryID,sortBy,orderBy,text);
     }
 
     @Override

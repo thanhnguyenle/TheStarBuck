@@ -1,6 +1,8 @@
+<jsp:useBean id="totalPage" scope="request" type="java.lang.Integer"/>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +29,7 @@
       <div class="col-1-of-5">
         <section class="panel">
           <div class="panel-body">
-            <input type="text" placeholder="Keyword Search" class="form-control" />
+            <input type="text" placeholder="Keyword Search" class="form-control" value="" id="search-text" />
           </div>
         </section>
         <section class="panel">
@@ -36,76 +38,14 @@
           </header>
           <div class="panel-body">
             <ul class="nav prod-cat">
-              <li >
-                <a href="#"><i class="fa fa-angle-right"></i> Espresso</a>
+             <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+             <c:forEach items="${categories}" var="item">
+              <li  onclick="ajaxRun('${item.id}','','','','','')">
+                <a href="#">${item.name}</a>
                 <ul class="nav" style="display:none;">
-                  <li><a href="#">- Ristretto</a></li>
-                  <li><a href="#">- Normal</a></li>
-                  <li><a href="#">- Lungo</a></li>
                 </ul>
               </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Latte</a>
-                <ul class="nav" style="display:none;">
-                  <li><a href="#">- Caffe Latte</a></li>
-                  <li><a href="#">- Cinnamon Dolce Latte</a></li>
-                  <li><a href="#">- Reserve Latte</a></li>
-                  <li><a href="#">- Bianco Latte</a></li>
-                  <li><a href="#">- Blonde Vanilla Latte</a></li>
-                  <li><a href="#">- Caramel Macchiato</a></li>
-                  <li><a href="#">- Caffe Mocha</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Cappuccino</a>
-                <ul class="nav" style="display:none;">
-                  <li><a href="#">- Caffe Latte</a></li>
-                  <li><a href="#">- Cinnamon Dolce Latte</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Americano</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Milk Tea</a>
-                <ul class="nav" style="display:none;">
-                  <li><a href="#">- Green milk tea</a></li>
-                  <li><a href="#">- Bubble milk tea</a></li>
-                  <li><a href="#">- Blueberry milk tea</a></li>
-                  <li><a href="#">- Mint milk tea</a></li>
-                  <li><a href="#">- Mango milk tea</a></li>
-                  <li><a href="#">- Peach milk tea</a></li>
-                  <li><a href="#">- Thai green tea</a></li>
-                  <li><a href="#">- Jasmine milk tea</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Beverage</a>
-                <ul class="nav" style="display:none;">
-                <li><a href="#">- Soda</a></li>
-                <li><a href="#">- Non-soda</a></li>
-              </ul>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Cake</a>
-                <ul class="nav" style="display:none;">
-                <li><a href="#">- Pancake</a></li>
-                <li><a href="#">- Dorayaki</a></li>
-                <li><a href="#">- Cupcake</a></li>
-                <li><a href="#">- Donut</a></li>
-                <li><a href="#">- Cheesecake</a></li>
-              </li>
-            </ul>
-              <li>
-                <a href="#"><i class="fa fa-angle-right"></i> Candy</a>
-                <ul class="nav" style="display:none;">
-                <li><a href="#">- Minty candy</a></li>
-                <li><a href="#">- Fruit drops</a></li>
-                <li><a href="#">- Sherbet</a></li>
-                <li><a href="#">- Lolipop</a></li>
-                <li><a href="#">- Beans</a></li>
-              </li>
-                </ul>
+             </c:forEach>
             </ul>
           </div>
         </section>
@@ -125,53 +65,7 @@
               </div>
             </div>
             <div id="slider-3"></div>
-            <button type="button" name="range" id="range" class="filterbtn">Range</button>
-          </div>
-        </section>
-        <section class="panel">
-          <header class="panel-heading">
-            Filter
-          </header>
-          <div class="panel-body">
-            <form class="form product-form">
-              <div class="form-group">
-                <label>Brand</label>
-                <select class="form-control hasCustomSelect" id="selectBrand"
-                  style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                  <option>StarBuck</option>
-                  <option>Lays</option>
-                  <option>Fritos</option>
-                  <option>Lipton</option>
-                </select>
-                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner"
-                    style="width: 209px; display: inline-block;">Wallmart</span></span>
-              </div>
-              <div class="form-group">
-                <label>Color</label>
-                <select class="form-control hasCustomSelect" id="selectColor"
-                  style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                  <option>White</option>
-                  <option>Black</option>
-                  <option>Red</option>
-                  <option>Green</option>
-                </select>
-                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner"
-                    style="width: 209px; display: inline-block;">White</span></span>
-              </div>
-              <div class="form-group">
-                <label>Type</label>
-                <select class="form-control hasCustomSelect" id="selectType"
-                  style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                  <option>Extra Large</option>
-                </select>
-                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner"
-                    style="width: 209px; display: inline-block;">Small</span></span>
-              </div>
-              <button class="filterbtn" type="submit">Filter</button>
-            </form>
+            <button type="button" name="range" id="range" class="filterbtn" >Range</button>
           </div>
         </section>
       </div>
@@ -182,8 +76,6 @@
             <select name="sort-by" id="sort-by">
               <option value="title" selected="selected">Name</option>
               <option value="number">Price</option>
-              <option value="search_api_relevance">Relevance</option>
-              <option value="created">Newness</option>
             </select>
           </div>
           <div class="item">
@@ -193,7 +85,7 @@
               <option value="DESC">DESC</option>
             </select>
           </div>
-          <input type="button" id="apply" name="apply" value="Apply" >
+          <input type="button" id="apply" name="apply" value="Apply" class="filterbtn" >
         </form>
 
         <div class="categoryTitle">
@@ -235,10 +127,16 @@
   <!--paging lib-->
   <script src="<%= Asset.url("/template/lib/paging/jquery.twbsPagination.js")%>" type="text/javascript"></script>
   <script type="text/javascript">
-    $(document).ready(function() {
-    var totalPages = ${totalPage};
-    var currentPage = 1;
-    var limit = 9;
+
+    let totalPages = ${totalPage};
+      let currentPage = 1;
+      const limit = 9;
+      let category_id = "";
+      let sort_by = "";
+      let from_price = 0;
+      let to_price = 100;
+      let order_by = "ASC";
+      let text = "";
       $(function () {
           window.pagObj = $('#pagination').twbsPagination({
               totalPages: totalPages,
@@ -247,21 +145,53 @@
               onPageClick: function (event, page) {
                 if(currentPage!=page){
                   currentPage = page;
-                  ajaxRun();
+                  ajaxRun(category_id,sort_by,from_price,to_price,order_by,text);
                 }
               }
           });
       });
+      $("#search-text").on('keyup',function (){
+        text = $(this).val();
+        ajaxRun('','','','','',text);
+      });
+      $("#range").click(function (){
+          from_price=$("#from").val();
+          to_price=$("#to").val();
+          ajaxRun('','',from_price,to_price,'','');
+      });
+    $("#apply").click(function (){
+        sort_by = $('#sort-by :selected').text();
+        if(sort_by=="Name"){
+          sort_by = "pr_name";
+        }else if(sort_by=="Price"){
+          sort_by = "pr_price";
+        }
+        order_by =$('#order-by :selected').val();
 
-      function ajaxRun() {
+      ajaxRun('',sort_by,'','',order_by,'','');
+    });
+
+      function ajaxRun(categoryID,sortBy,fromPrice,toPrice,orderBy,textSearch) {
+        if(categoryID!=''&&categoryID!=undefined)
+        category_id = categoryID;
+        if(sortBy!=''&&sortBy!=undefined)
+        sort_by = sortBy;
+        if(fromPrice!=''&&fromPrice!=undefined)
+        from_price = fromPrice;
+        if(toPrice!=''&&toPrice!=undefined)
+        to_price = toPrice;
+        if(orderBy!=''&&orderBy!=undefined)
+          order_by = orderBy;
+        if(textSearch!=''&&textSearch!=undefined)
+          text = textSearch;
         $.ajax({
           type: "Post",
-          url: "/TheStarBuck/products?page-index=" + currentPage + "&per-page=" + limit,
+          url: "/TheStarBuck/products?page-index=" + currentPage + "&per-page=" + limit+"&category_id="+category_id+"&sort_by="+sort_by+"&from_price="+from_price+"&to_price="+to_price+"&order_by="+order_by+"&text_search="+text,
           ContentType: 'json',
           headers: {Accept: "application/json;charset=utf-8"},
           success: function (json) {
             let data = "";
-            let obj = JSON.parse(json);
+            let obj = json;
             for (let i = 0; i < obj.length; i++) {
               let val = obj[i];
               data += "<div class=\"product\">"
@@ -301,8 +231,8 @@
           }
         });
       }
-      ajaxRun();
-    });
+      ajaxRun(category_id,sort_by,from_price,to_price,order_by,text);
+
   </script>
 </body>
 

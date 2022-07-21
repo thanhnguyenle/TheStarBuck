@@ -26,14 +26,17 @@ public class ListProductsJson extends HttpServlet{
     private ProductService productService;
     private List<Product> products;
     private IPageAble pageable;
-    private String json;
+    private String json,categoryID,sortBy;
+    private double fromPrice = 0,toPrice = 100;
     public ListProductsJson() {
         productService = ProductService.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //receive request
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        //receive request page-index and per-page
         String pageIndex = request.getParameter("page-index");
         String perPage = request.getParameter("per-page");
         int pageIndexNum = 1;
@@ -44,12 +47,26 @@ public class ListProductsJson extends HttpServlet{
         }catch (NumberFormatException e){
             e.printStackTrace();
         }
+        //receive request categoryID
+        categoryID = request.getParameter("category_id");
+        sortBy = request.getParameter("sort_by");
+        String fromPriceStr = request.getParameter("from_price");
+        String orderBy = request.getParameter("order_by");
+        String toPriceStr = request.getParameter("to_price");
+        String text = request.getParameter("text_search");
+        if(!fromPriceStr.isEmpty()&&!toPriceStr.isEmpty())
+        try {
+            fromPrice = Double.parseDouble(fromPriceStr);
+            toPrice = Double.parseDouble(toPriceStr);
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
 
         pageable = new PageRequest(pageIndexNum,perPageNum);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                products = productService.findAll(pageable);
+                products = productService.findAll(pageable,fromPrice,toPrice,categoryID,sortBy,orderBy,text);
             }
         });
         thread.start();
