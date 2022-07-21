@@ -1232,3 +1232,39 @@ INSERT INTO`topping` VALUES ('tp0001', 'Black Bubble', '1', '50', '2021-01-10 00
 INSERT INTO `topping` VALUES ('tp0002', 'White Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0003', 'Yarns Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0004', 'Cheese Jelly', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
+
+INSERT INTO post VALUES ('po0001','It\'s not drink, It\'s feeling','There are many chains of coffee shops around the world, but Starbucks remains the most famous one.',' <p> There are many chains of coffee shops around the world, but Starbucks remains the most famous one. The
+                company was founded in 1971 by three young men, Jerry Baldwin, Zev Siegl and Gordon Bowker. At the time
+                they were all recently out of college and working at a Seattle coffee roastery called Starbucks. The
+                name
+                is taken from Herman Melville\'s first novel “Moby Dick”, where it symbolizes "a great white whale". </p>
+              <p>Starbucks is a popular coffee shop in the United States. It has many branches and is also popular
+                worldwide. Starbucks serves a variety of hot and cold drinks, pastries, and food items. It has been
+                around for over four decades! In 2009, Starbucks had overseas revenue of $4.8 billion from its 12,592
+                locations in 37 countries outside the U.S., making it the largest coffeehouse company in the world. <br>
+                With success, We want to grow it up online to serve our guess order the products easily. To make an
+                important mark, we’re going to introduce some new products in speacial events like: Halloween, Chrismas,
+                New Year, Lunar New Year,… <br>
+                One of the new products is Halloween Feeling.
+              </p>
+              <div class="img_blog_shop">
+                <img src="/TheStarBuck/template/web/image/img_blog_pro1.jpg" alt="" srcset="">
+                <p>Halloween Feeling</p>
+              </div>
+              <p>This one is a great product. Because you can taste different of spices by mixing a little bit of sour,
+                a little bit of spice and can’t be without sweet like “Trick or treat” game. In this Halloween,
+                Halloween Feeling’ll be shown. Let’s waiting for it. <br>
+                To celebrate for Chrismas, we can’t forget appearance of Strawberry Sweety X.
+              </p>
+              <div class="img_blog_shop">
+                <img src="/TheStarBuck/template/web/image/img_blog_pro2.jpg" alt="" srcset="">
+                <p>Strawberry Sweety X</p>
+              </div>
+              <p>You always think strawberry should be sour and sweet, but into this drink we’ll make it better and you
+                guys can feel warmer when drink, even though Strawberry Sweety X belong to cool category. This X-mas,
+                your sence is not alone anymore. <br>
+                Not only introducing our new products, but also we’ll have a lot of gifts when ordering online and our
+                coffee shop’ll discount lots of products. You and we getting the special things together.<br>
+                Thank you for reading this blog. Have a nice day!
+
+              </p>','Minh Nhu','/TheStarBuck/template/web/image/img_bolg_shop.jpg','','01/09/2021');

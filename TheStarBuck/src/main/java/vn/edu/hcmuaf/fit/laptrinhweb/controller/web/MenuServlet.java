@@ -1,9 +1,14 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web;
 
 import com.google.gson.Gson;
+import vn.edu.hcmuaf.fit.laptrinhweb.dao.ICategoryDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.CategoryDAO;
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Category;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.PageRequest;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.ICategoryService;
+import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.CategoryService;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ProductService;
 
 import javax.servlet.RequestDispatcher;
@@ -21,21 +26,17 @@ import java.util.Map;
 
 @WebServlet(name = "MenuServlet", value = "/menu")
 public class MenuServlet extends HttpServlet {
-    private ProductService productService;
+    private final ProductService productService = ProductService.getInstance();;
 //    private Map<String, Product> mapPro;
     private List<Product> products;
-    private IPageAble pageable;
     private int page =1;
     private int maxPageItem = 9;
     private int totalItem =-1;
-
-    public MenuServlet() {
-        productService = ProductService.getInstance();
-        pageable = new PageRequest(page,maxPageItem);
-    }
-
+    private final ICategoryService categoryService = CategoryService.getInstance();
+    private List<Category> categories;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        IPageAble pageable = new PageRequest(page, maxPageItem);
         //setup response
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
@@ -47,16 +48,24 @@ public class MenuServlet extends HttpServlet {
             }
         });
         thread.start();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                categories = categoryService.findAll();
+            }
+        });
+        thread1.start();
         try {
             thread.join();
+            thread1.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-                    if(totalItem!=-1) {
+                    if(totalItem!=-1&&categories!=null) {
                         //paging attribute setup
-                        HttpSession session = request.getSession();
-                        session.setAttribute("page", page);
-                        session.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
+                        request.setAttribute("categories",categories);
+                        request.setAttribute("page", page);
+                        request.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
                         RequestDispatcher rd = request.getRequestDispatcher("/views/web/products.jsp");
                         try {
                             rd.forward(request, response);
