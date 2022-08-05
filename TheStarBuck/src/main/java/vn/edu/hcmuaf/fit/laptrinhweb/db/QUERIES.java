@@ -71,7 +71,7 @@ public static class SHIPPER{
     //CONTACT
     public static class CONTACT{
         public static  final String GET_LIST = "select * from Contact";
-        public static  final String CREATE = "insert into Contact values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String CREATE = "insert into contact values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         public static  final String DELETE = "delete from Contact where id_co = ?";
         public static  final String UPDATE = "update Contact set co_active = ?, modifiedDate = ?, modifiedBy = ? where id_co = ?";
         public static  final String GET_ITEM_BYID = "select * from Contact where id_co = ?";

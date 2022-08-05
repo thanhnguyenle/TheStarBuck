@@ -4,7 +4,9 @@ import vn.edu.hcmuaf.fit.laptrinhweb.dao.impl.ContactDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Contact;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.IContactService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ContactService implements IContactService {
     private ContactDAO contactDAO = ContactDAO.getInstance();
@@ -34,5 +36,9 @@ public class ContactService implements IContactService {
     @Override
     public Contact getItem(String id) {
         return null;
+    }
+
+    public boolean addContact(String name,String email,String message){
+        return contactDAO.addContact(name, email, message);
     }
 }

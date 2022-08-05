@@ -32,7 +32,7 @@
                 <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu2">
                     <li><a href="<c:url value='/views/web/aboutUs.jsp'/>">About Us</a></li>
-                    <li><a href="<c:url value='/views/web/contact.jsp'/>">Contact</a></li>
+                    <li><a href="<c:url value='http://localhost:8080/TheStarBuck/contact'/>">Contact</a></li>
                 </ul>
             </li>
 

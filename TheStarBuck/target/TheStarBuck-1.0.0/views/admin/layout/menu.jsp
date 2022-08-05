@@ -94,10 +94,10 @@
             </ul>
         </li>
         <li>
-            <a href="<%=request.getContextPath()%>/contact">Contact management</a>
+            <a href="<%=request.getContextPath()%>/admin-contact">Contact management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="<%=request.getContextPath()%>/contact">List contact</a>
+                    <a href="<%=request.getContextPath()%>/admin-contact">List contact</a>
                 </li>
             </ul>
         </li>

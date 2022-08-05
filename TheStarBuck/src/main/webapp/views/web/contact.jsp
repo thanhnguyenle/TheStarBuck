@@ -19,10 +19,15 @@
     </div>
     <div class="contact-form">
       <h1>Contact Us</h1>
-      <form>
-        <input type="text" placeholder="Name" class="contact-form-txt" />
-        <input type="text" placeholder="Email" class="contact-form-txt" />
-        <textarea placeholder="Message" class="contact-form-textarea"></textarea>
+      <form action="${pageContext.request.contextPath}/contact" method="POST">
+          <div class="modal-body forget-body">
+              <div>
+                  <p>${status_content==null?"":status_content}</p>
+              </div>
+          </div>
+        <input type="text" placeholder="Name" name = "name" class="contact-form-txt" />
+        <input type="text" placeholder="Email" name = "email" class="contact-form-txt" />
+        <textarea placeholder="Message" name = "message" class="contact-form-textarea"></textarea>
         <button type="submit" class="contact-form-btn">Submit</button>
       </form>
     </div>
