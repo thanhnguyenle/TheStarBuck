@@ -7,6 +7,8 @@ import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ShipperMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Contact;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Shipper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -60,5 +62,11 @@ public class ContactDAO extends AbstractDAO<Contact> implements IContactDAO {
     @Override
     public Long updateItem(Contact contact) {
         return null;
+    }
+
+    public boolean addContact(String name,String email,String messges){
+        System.out.println(name+" - "+email+" - "+messges);
+        long number = insert(QUERIES.CONTACT.CREATE,"","ac0001",name,email,"",messges,1, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()),"NONE","NONE");
+   return number == 1;
     }
 }
