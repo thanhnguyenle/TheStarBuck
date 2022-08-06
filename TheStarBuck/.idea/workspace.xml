@@ -10,17 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/contact/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/contact/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ContactDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ContactDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ContactService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/AccountVerify.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/SendEmail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/SendMailServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/VerifyCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/contact.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/contact.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/sendMail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/sendMail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/asset.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/db.properties" beforeDir="false" />
@@ -64,6 +65,9 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/topping/ListServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/topping/UpdateServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/BlogServlet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/BlogServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/DetailProductServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$2.class" beforeDir="false" />
@@ -72,10 +76,12 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$6.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$8.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/LoginServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/LogoutServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/RegisterServlet.class" beforeDir="false" />
@@ -85,6 +91,10 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/RemoveServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/ShowServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/UpdateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/CrawlPostToJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/GetPostJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListPostJson$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListPostJson.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListProductsJson$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListProductsJson.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_facebook/Constants.class" beforeDir="false" />
@@ -94,6 +104,7 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/GooglePojo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/GoogleUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/LoginGoogleServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/CheckoutServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/ShowServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/AccountVerify.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/SendEmail$1.class" beforeDir="false" />
@@ -108,6 +119,8 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IFeedbackDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IGenericDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/INavigationDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IOrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IPostDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IProductDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IShipperDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/ISlideDAO.class" beforeDir="false" />
@@ -118,6 +131,8 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/CategoryDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ContactDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/FeedbackDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/OrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/PostDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ProductDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ShipperDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.class" beforeDir="false" />
@@ -125,9 +140,13 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/DBProperties.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/IDBConnectionPool.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ACCOUNT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ADDRESS.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$CATEGORY.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$CONTACT.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$FEEDBACK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ORDER.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ORDERITEM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$POST.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$PRODUCT.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$SHIPPER.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$SLIDER.class" beforeDir="false" />
@@ -145,6 +164,7 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ContactMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/FeedbackMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/OrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/PostMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ProductMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ShipperMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/SlideMapper.class" beforeDir="false" />
@@ -163,6 +183,8 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Icon.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Images.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/OrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Orders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Post.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Product.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Shipper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Slide.class" beforeDir="false" />
@@ -171,22 +193,24 @@
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/paging/IPageAble.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/paging/PageRequest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/properties/AssetProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IAccountService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IAddressService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/ICategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IContactService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IFeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IPostService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IShipperService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/ISlideService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IToppingService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/AccountService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/AddressService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/CategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ContactService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/FeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/PostService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ShipperService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/SlideService.class" beforeDir="false" />
@@ -1722,6 +1746,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/topping/ListServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/topping/UpdateServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/BlogServlet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/BlogServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/DetailProductServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$2.class" beforeDir="false" />
@@ -1730,10 +1757,12 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$6.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController$8.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/HomeController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/LoginServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/LogoutServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/MenuServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/RegisterServlet.class" beforeDir="false" />
@@ -1743,6 +1772,10 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/RemoveServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/ShowServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/cart/UpdateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/CrawlPostToJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/GetPostJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListPostJson$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListPostJson.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListProductsJson$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/json/ListProductsJson.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_facebook/Constants.class" beforeDir="false" />
@@ -1752,6 +1785,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/GooglePojo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/GoogleUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/login_google/LoginGoogleServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/CheckoutServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/payment/ShowServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/AccountVerify.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/send_mail/SendEmail$1.class" beforeDir="false" />
@@ -1766,6 +1800,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IFeedbackDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IGenericDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/INavigationDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IOrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IPostDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IProductDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/IShipperDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/ISlideDAO.class" beforeDir="false" />
@@ -1776,6 +1812,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/CategoryDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ContactDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/FeedbackDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/OrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/PostDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ProductDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/ShipperDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/SlideDAO.class" beforeDir="false" />
@@ -1783,9 +1821,13 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/DBProperties.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/IDBConnectionPool.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ACCOUNT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ADDRESS.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$CATEGORY.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$CONTACT.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$FEEDBACK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ORDER.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$ORDERITEM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$POST.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$PRODUCT.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$SHIPPER.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/db/QUERIES$SLIDER.class" beforeDir="false" />
@@ -1803,6 +1845,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ContactMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/FeedbackMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/OrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/PostMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ProductMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/ShipperMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/SlideMapper.class" beforeDir="false" />
@@ -1821,6 +1864,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Icon.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Images.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/OrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Orders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Post.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Product.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Shipper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/model/Slide.class" beforeDir="false" />
@@ -1834,6 +1879,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/ICategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IContactService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IFeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IPostService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/IShipperService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/ISlideService.class" beforeDir="false" />
@@ -1843,6 +1890,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/CategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ContactService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/FeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/PostService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/ShipperService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/service/impl/SlideService.class" beforeDir="false" />
@@ -2089,7 +2138,9 @@
       <workItem from="1658303201653" duration="6593000" />
       <workItem from="1658321560079" duration="15755000" />
       <workItem from="1659697817914" duration="1626000" />
-      <workItem from="1659707554272" duration="9282000" />
+      <workItem from="1659707554272" duration="10086000" />
+      <workItem from="1659765128127" duration="6490000" />
+      <workItem from="1659794537820" duration="6546000" />
     </task>
     <servers />
   </component>

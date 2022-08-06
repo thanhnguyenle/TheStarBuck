@@ -17,25 +17,24 @@ public class ContactServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd = req.getRequestDispatcher("/views/web/contact.jsp");
-        req.setAttribute("status_content","");
+        req.setAttribute("status","0");
         rd.forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("hello tui nè");
+        req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String message = req.getParameter("message");
         boolean isSaved= contactService.addContact(name,email,message);
         if(isSaved){
-            req.setAttribute("status_content","Submitted successfully");
+            req.setAttribute("status","1");
             RequestDispatcher rd = req.getRequestDispatcher("/views/web/contact.jsp");
             rd.forward(req,resp);
         }else{
-            req.setAttribute("status_content","An error occurred, please try again");
+            req.setAttribute("status","2");
             req.getRequestDispatcher("/views/web/contact.jsp").forward(req,resp);
-
         }
     }
 }

@@ -1,4 +1,9 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@include file="/common/taglib.jsp"%>
+<%
+    String status = (String) session.getAttribute("status");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +12,11 @@
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/contact.css")%>" />
   <title>Contact Us</title>
+    <style>
+        #status_css{
+            display:none;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,13 +32,21 @@
       <form action="${pageContext.request.contextPath}/contact" method="POST">
           <div class="modal-body forget-body">
               <div>
-                  <p>${status_content==null?"":status_content}</p>
+                  <c:if test="${status == '0'}">
+                  <p id="status_css"><p>
+                  </c:if>
+                  <c:if test="${status == '1'}">
+                  <p id="status_css" style="color: #00bb6d">Successful<p>
+                  </c:if>
+                  <c:if test="${status == '2'}">
+                  <p id="status_css" style="color: red">An error occurred<p>
+                  </c:if>
               </div>
           </div>
         <input type="text" placeholder="Name" name = "name" class="contact-form-txt" />
         <input type="text" placeholder="Email" name = "email" class="contact-form-txt" />
         <textarea placeholder="Message" name = "message" class="contact-form-textarea"></textarea>
-        <button type="submit" class="contact-form-btn">Submit</button>
+        <button type="submit" class="contact-form-btn" id="btn_sub" >Submit</button>
       </form>
     </div>
   </div>
@@ -41,5 +59,4 @@
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/product.js")%>"></script>
 </body>
-
 </html>
