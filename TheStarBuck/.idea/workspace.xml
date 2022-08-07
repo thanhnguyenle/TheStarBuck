@@ -10,14 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/mapper/impl/AccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheStarBuck.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheStarBuck.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/productDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/productDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/profileAccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/profileAccount.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/profileAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/profileAccount.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/productDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/productDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/profileAccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/profileAccount.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/profileAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/profileAccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ContactServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ProfileServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +274,10 @@
       <workItem from="1659707554272" duration="10086000" />
       <workItem from="1659765128127" duration="6490000" />
       <workItem from="1659794537820" duration="6546000" />
-      <workItem from="1659833632560" duration="5488000" />
+      <workItem from="1659833632560" duration="9701000" />
+      <workItem from="1659863281772" duration="1360000" />
+      <workItem from="1659864678543" duration="1458000" />
+      <workItem from="1659866236427" duration="7000" />
     </task>
     <servers />
   </component>

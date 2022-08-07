@@ -29,7 +29,6 @@ public class ContactServlet extends HttpServlet {
         String message = req.getParameter("message");
         boolean isSaved= contactService.addContact(name,email,message);
         if(isSaved){
-            req.setAttribute("status","1");
             RequestDispatcher rd = req.getRequestDispatcher("/views/web/contact.jsp");
             rd.forward(req,resp);
         }else{
