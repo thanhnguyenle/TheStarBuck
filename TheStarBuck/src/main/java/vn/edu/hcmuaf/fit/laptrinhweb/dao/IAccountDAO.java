@@ -7,4 +7,5 @@ import java.util.List;
 public interface IAccountDAO extends IGenericDAO<Account>{
     List<Account> findAll();
     Long save(Account account);
+    int getAmountItem();
 }

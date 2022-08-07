@@ -13,4 +13,6 @@ public interface IOrderService {
     Orders getItem(String id);
     boolean createOrder(Account account, Cart cart, Orders orders);
     Orders getItemByIdAc(String accId);
+    int getAmountItem();
+    double getSumMoney();
 }

@@ -138,4 +138,9 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         long output = delete(QUERIES.ACCOUNT.DELETE, id);
         return output;
     }
+
+    public int getAmountItem(){
+        int output = count(QUERIES.ACCOUNT.COUNT_ITEM);
+        return output;
+    }
 }

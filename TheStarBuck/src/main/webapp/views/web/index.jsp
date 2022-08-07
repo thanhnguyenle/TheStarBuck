@@ -130,7 +130,7 @@
                   <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
                 </div>
               </div>
-              <a href="productDetails.jsp">${x.name}</a>
+              <a href="<%=request.getContextPath()%>/detailProduct?id=${x.id}">${x.name}</a>
               <div class="price">
                 <span>$${x.price - x.discount}</span>
                 <span class="cancel">$${x.price}</span>
