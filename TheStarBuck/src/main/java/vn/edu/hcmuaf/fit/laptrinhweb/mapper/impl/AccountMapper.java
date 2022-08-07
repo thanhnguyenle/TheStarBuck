@@ -16,7 +16,7 @@ public class AccountMapper implements IRowMapper<Account> {
            account.setActive(resultSet.getBoolean("ac_active"));
            account.setPhoneNumber(resultSet.getString("ac_mobile"));
            account.setEmail(resultSet.getString("ac_email"));
-           account.setEmailVerifiedAt(resultSet.getDate("ac_emailVerifiedAt"));
+           account.setEmailVerifiedAt(resultSet.getLong("ac_emailVerifiedAt"));
            account.setPassword(resultSet.getString("ac_password"));
            account.setAvatar(resultSet.getString("ac_avatar"));
            account.setAddressId(resultSet.getString("ac_addressId"));
@@ -30,6 +30,7 @@ public class AccountMapper implements IRowMapper<Account> {
            account.setModifiedBy(resultSet.getString("modifiedBy"));
       return account;
        }catch(SQLException e){
+           e.printStackTrace();
         return null;
        }
     }
