@@ -119,7 +119,7 @@
       </div>
       <div class="item">
         <div class="avt_profile">
-          <img src="images/Nhu.png" alt="" width="300" height="300">
+          <img src="<%=Asset.url("/template/web/image/Nhu.png")%>" alt="" width="300" height="300">
           <h1 class="titleName" id="clickNhu">Nhu</h1>
         </div>
         <div class="context_profile">

@@ -39,8 +39,6 @@ public class Profile extends HttpServlet {
         account.setFullname(fullname);
         account.setEmail(email);
         account.setPhoneNumber(phoneNumber);
-        account.setAvatar("");
-        account.setAddressId("");
 
         accountService.updateAuth(account);
 

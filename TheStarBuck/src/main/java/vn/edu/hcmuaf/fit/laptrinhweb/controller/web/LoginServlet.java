@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 
 @WebServlet(name = "LoginServlet", value = "/doLogin")
 public class LoginServlet extends HttpServlet {
-    private final AccountService accountService ;
+    private AccountService accountService ;
     private Account account;
     private String username;
     private String password;

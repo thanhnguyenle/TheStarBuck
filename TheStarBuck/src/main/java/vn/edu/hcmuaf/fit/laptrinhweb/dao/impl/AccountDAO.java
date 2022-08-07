@@ -14,10 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     private static AccountDAO instance;
@@ -79,7 +76,10 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     }
 
     public Account login(String username, String password){
-        List<Account> accountList = query(QUERIES.ACCOUNT.LOGIN,new AccountMapper(),username,password);
+        List<Account> accountList = query(QUERIES.ACCOUNT.LOGIN,new AccountMapper(),username,password.toLowerCase());
+        System.out.println(username+" - "+password);
+        System.out.println(accountList.size());
+        System.out.println(accountList);
         if(accountList!=null&&accountList.size()==1) {
             return accountList.get(0);
         }
