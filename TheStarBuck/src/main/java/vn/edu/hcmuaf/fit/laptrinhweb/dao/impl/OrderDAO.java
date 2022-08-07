@@ -99,4 +99,14 @@ public class OrderDAO extends AbstractDAO<Orders> implements IOrderDAO {
         Orders output = list.get(0);
         return output;
     }
+
+    @Override
+    public int getAmountOrder() {
+        return count(QUERIES.ORDER.COUNT_ITEM);
+    }
+
+    @Override
+    public double getSumMoney() {
+        return count(QUERIES.ORDER.SUM_MONEY);
+    }
 }

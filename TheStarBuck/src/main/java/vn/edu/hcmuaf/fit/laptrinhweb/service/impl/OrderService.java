@@ -47,4 +47,14 @@ public class OrderService implements IOrderService {
     public Orders getItemByIdAc(String accId) {
         return orderDAO.getItemByIdAc(accId);
     }
+
+    @Override
+    public int getAmountItem() {
+        return orderDAO.getAmountOrder();
+    }
+
+    @Override
+    public double getSumMoney() {
+        return orderDAO.getSumMoney();
+    }
 }
