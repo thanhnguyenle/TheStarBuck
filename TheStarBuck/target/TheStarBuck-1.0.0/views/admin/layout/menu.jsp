@@ -22,7 +22,7 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="<c:url value='/views/admin/home.jsp'/>"> Dashboard</a>
+            <a href="<%=request.getContextPath()%>/admin-home"> Dashboard</a>
         </li>
         <li>
             <a href="<c:url value='/views/admin/accountManagement.jsp'/>">User management</a>

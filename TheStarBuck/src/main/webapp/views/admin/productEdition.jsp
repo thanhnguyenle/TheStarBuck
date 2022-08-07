@@ -106,7 +106,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>File Image</label>
-                                        <input type="file" name="image" value="${product.image}">
+                                        <input type="button" name="btn_avatar" value="upload" onclick="BrowseServer('${product.id}')">
+                                        <input type="text" name="avatar" id="avatar" value="${product.image}">
+                                        <img id="img_avatar"  src="${product.image}" style="width: 50px">
                                     </div>
                                     <div class="form-group">
                                         <label>DescriptionSeo</label>
@@ -154,6 +156,22 @@
 </div>
 <%--SCRIPT--%>
 <jsp:include page="layout/script.jsp"/>
+<script type="text/javascript" src="<%= Asset.url("/template/lib/ckfinder/ckfinder.js")%>"></script>
+<script type="text/javascript">
+    function BrowseServer(id)
+    {
+        var finder = new CKFinder();
+        // finder.basePath = '../';
+        finder.selectActionFunction = function (fileUrl){
+            console.log(document.getElementById(id));
+            $("#avatar").val(fileUrl);
+            $("#img_avatar").prop('src', fileUrl);
+            console.log(fileUrl);
+        };
+        finder.popup();
+    }
+
+</script>
 
 </body>
 
