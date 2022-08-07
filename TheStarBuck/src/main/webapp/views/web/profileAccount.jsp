@@ -23,7 +23,7 @@
 					<div class="p-4">
 						<div class="img-circle text-center mb-3 file-upload">
 							<label for="avatar-input">
-								<img src="images/user.svg" alt="Image" class="shadow" />
+								<img src=${account.avatar} alt="Image" class="shadow" />
 							</label>
 							<input type="file" accept="image/*" id="avatar-input">
 						</div>
