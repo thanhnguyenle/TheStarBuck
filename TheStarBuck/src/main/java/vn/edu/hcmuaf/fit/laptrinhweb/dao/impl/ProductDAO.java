@@ -2,10 +2,15 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IProductDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.impl.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ProductMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -42,6 +47,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         }
         return query(sql.toString(),new ProductMapper(),fromPrice,toPrice);
     }
+
 
     @Override
     public List<Product> findAll() {

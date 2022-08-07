@@ -13,6 +13,7 @@ public class QUERIES {
         public static final String GET_ITEM_BYEMAIL = "select * from Account where ac_email = ?";
         public static final String UPDATE = "update Account set ac_active = ?, ac_lastLogin = ?, ac_groupId = ?, ac_avatar = ?,modifiedDate = ?, modifiedBy = ?  where id_ac = ?";
         public static final String UPDATE_PROFILE = "update Account set ac_fullname = ?, ac_mobile = ?, ac_email = ?, ac_avatar = ?, ac_addressId = ?, ac_lastLogin = ?, modifiedDate = ?, modifiedBy = ? where id_ac = ?";
+        public static final String COUNT_ITEM = "select COUNT(*) from account";
     }
 
 //    PRODUCT
@@ -27,7 +28,7 @@ public static class PRODUCT {
     public static final String GET_ITEM_BYNAME = "select * from Product where pr_name = ?";
     public static final String UPDATE = "update Product set pr_name = ?, pr_csId = ?, pr_ingredients = ?, pr_price = ?, pr_discount = ?, pr_quantity = ?, pr_active = ?, pr_hot = ?, pr_view = ?, pr_description = ?, pr_image = ?, pr_descriptionSeo = ?, pr_keywordSeo = ?, pr_titleSeo = ?, pr_note = ?, modifiedDate = ?, modifiedBy = ? where id_pr = ?";
     public static final String TOTAL_ITEM = "select count(*) from Product";
-    public static  final String SEARCH_BY_NAME = "select * from product where pr_name like ?";
+    public static final String SEARCH_BY_NAME = "select * from product where pr_name like ?";
     }
 
 //CATEGORY
@@ -71,7 +72,7 @@ public static class SHIPPER{
     //CONTACT
     public static class CONTACT{
         public static  final String GET_LIST = "select * from Contact";
-        public static  final String CREATE = "insert into Contact values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        public static  final String CREATE = "insert into contact values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         public static  final String DELETE = "delete from Contact where id_co = ?";
         public static  final String UPDATE = "update Contact set co_active = ?, modifiedDate = ?, modifiedBy = ? where id_co = ?";
         public static  final String GET_ITEM_BYID = "select * from Contact where id_co = ?";
@@ -93,6 +94,8 @@ public static class SHIPPER{
         public static  final String UPDATE = "update orders set od_status = ?, modifiedDate = ?, modifiedBy = ? where id_od = ?";
         public static  final String GET_ITEM_BYID = "select * from orders where id_od = ?";
         public static  final String GET_LAST_BYACCID = "select * from orders where od_acId = ? order by id_od DESC";
+        public static  final String COUNT_ITEM = "select COUNT(*) from orders";
+        public static  final String SUM_MONEY = "select sum(od_grandTotal) from orders";
     }
 
     //ADDRESS

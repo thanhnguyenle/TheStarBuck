@@ -22,7 +22,7 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="<c:url value='/views/admin/home.jsp'/>"> Dashboard</a>
+            <a href="<%=request.getContextPath()%>/admin-home"> Dashboard</a>
         </li>
         <li>
             <a href="<c:url value='/views/admin/accountManagement.jsp'/>">User management</a>
@@ -94,10 +94,10 @@
             </ul>
         </li>
         <li>
-            <a href="<%=request.getContextPath()%>/contact">Contact management</a>
+            <a href="<%=request.getContextPath()%>/admin-contact">Contact management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="<%=request.getContextPath()%>/contact">List contact</a>
+                    <a href="<%=request.getContextPath()%>/admin-contact">List contact</a>
                 </li>
             </ul>
         </li>

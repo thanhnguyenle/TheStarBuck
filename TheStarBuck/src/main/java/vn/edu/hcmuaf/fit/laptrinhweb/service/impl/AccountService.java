@@ -31,6 +31,11 @@ public class AccountService implements IAccountService {
         return accountDAO.save(account);
     }
 
+    @Override
+    public int getAmountItem() {
+        return accountDAO.getAmountItem();
+    }
+
     public Map<String, Account> getAll(){
         return  AccountDAO.getInstance().getAll();
     }
