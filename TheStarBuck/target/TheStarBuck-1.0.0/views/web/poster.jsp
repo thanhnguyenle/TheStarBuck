@@ -1,3 +1,4 @@
+<jsp:useBean id="blogid" scope="request" type="java.lang.String"/>
 <jsp:useBean id="totalPage" scope="request" type="java.lang.Integer"/>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
         <div class="right">
           <div class="input-group rounded">
             <input type="search" class="form-control rounded" placeholder="Search poster" aria-label="Search"
-              aria-describedby="search-addon" />
+              aria-describedby="search-addon" id="search-text" />
             <span class="input-group-text border-0" id="search-addon">
               <i class="fas fa-search"></i>
             </span>
@@ -75,6 +76,7 @@
       let totalPages = ${totalPage};
       let currentPage = 1;
       let limit = 5;
+      let textSearch = '';
     $(function () {
       if (totalPages > 0) {
         window.pagObj = $('#pagination').twbsPagination({
@@ -90,11 +92,16 @@
         });
       }
     });
-
-    function ajaxRun() {
+    $("#search-text").on('keyup',function (){
+      textSearch = $(this).val();
+      ajaxRun(textSearch);
+    });
+    function ajaxRun(mytext) {
+      if(mytext!=''&&mytext!=undefined)
+        textSearch = mytext;
       $.ajax({
         type: "Get",
-        url: "/TheStarBuck/posts?page-index=" + currentPage + "&per-page=" + limit,
+        url: "/TheStarBuck/posts?page-index=" + currentPage + "&per-page=" + limit+"&text-search="+textSearch,
         ContentType: 'json',
         headers: { Accept: "application/json;charset=utf-8" },
         success: function (json) {
@@ -119,8 +126,7 @@
         }
       });
     }
-    ajaxRun();
-    //https://localhost:44316/api/Blogs/do-crawl-blogdetail?id=bg0002
+    ajaxRun("");
   });
 
   function ajaxBlog(id) {
@@ -155,7 +161,13 @@
       }
     });
   }
-  ajaxBlog("po0001");
+  let idOfBlog = "${blogid}";
+  if(idOfBlog !=""&&idOfBlog!=undefined){
+    ajaxBlog(idOfBlog);
+  }else{
+    ajaxBlog("po0001");
+  }
+
 </script>
 </body>
 

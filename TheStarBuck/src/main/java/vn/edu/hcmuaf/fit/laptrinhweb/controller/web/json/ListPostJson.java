@@ -31,6 +31,8 @@ public class ListPostJson extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pageIndex = req.getParameter("page-index");
         String perPage = req.getParameter("per-page");
+        String text = req.getParameter("text-search");
+
         int pageIndexNum = 1;
         int perPageNum = 9;
         try {
@@ -44,7 +46,7 @@ public class ListPostJson extends HttpServlet {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                posts = postService.findAll(pageable);
+                posts = postService.findAll(pageable,text);
             }
         });
         thread.start();
@@ -61,7 +63,6 @@ public class ListPostJson extends HttpServlet {
                 out.println(json);
             } finally {
                 out.close();
-
             }
         }
     }

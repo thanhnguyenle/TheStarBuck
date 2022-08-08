@@ -38,8 +38,11 @@ public class PostDAO extends AbstractDAO<Post> implements IPostDAO {
     public Long add(Post post) {
         return insert(QUERIES.POST.CREATE,post.getId(),post.getTitle(),post.getDescription(),post.getPost_content(),post.getAuthor(),post.getImage_url(),post.getPost_url(),post.getDate() );
     }
-    public List<Post> findAll(IPageAble pageAble) {
+    public List<Post> findAll(IPageAble pageAble,String text) {
         StringBuilder sql = new StringBuilder(QUERIES.POST.GET_LIST);
+        if(text!=null&&!text.equals("")){
+            sql.append(" WHERE LOWER(po_title) LIKE LOWER('%"+text+"%')");
+        }
         if(pageAble.getOffset()!=null && pageAble.getLimit() !=null){
             sql.append(" LIMIT "+pageAble.getOffset()+", "+pageAble.getLimit());
         }
