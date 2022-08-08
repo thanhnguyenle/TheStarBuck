@@ -44,8 +44,8 @@ public class PostService implements IPostService {
     }
 
     @Override
-    public List<Post> findAll(IPageAble pageAble) {
-        return postDAO.findAll(pageAble);
+    public List<Post> findAll(IPageAble pageAble,String text) {
+        return postDAO.findAll(pageAble,text);
     }
 
     @Override
