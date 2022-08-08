@@ -28,6 +28,15 @@ public class ProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      HttpSession session = request.getSession();
      Account account =(Account) session.getAttribute("account");
-//     String
+        String fullname = request.getParameter("full-name");
+        String email = request.getParameter("email");
+        String phoneNumber = request.getParameter("phoneNumber");
+
+        account.setFullname(fullname);
+        account.setEmail(email);
+        account.setPhoneNumber(phoneNumber);
+
+        accountService.updateAuth(account);
+        response.sendRedirect(request.getContextPath() +"/user-profile");
     }
 }
