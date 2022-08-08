@@ -9,16 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="">
+    <list default="true" id="006cbca4-38dc-4c63-972b-60edd9a4b1be" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/web/ChangePasswordServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/profileChangePass.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/product/CreateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/product/CreateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/product/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/product/UpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/accountAddition.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/accountAddition.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/layout/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/productAddition.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/productAddition.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/productEdition.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/productEdition.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/aboutUs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/aboutUs.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/profileAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/profileAccount.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/WEB-INF/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/aboutUs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/aboutUs.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/profileAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/profileAccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/controller/admin/profile/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/edu/hcmuaf/fit/laptrinhweb/dao/impl/AccountDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +78,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/views/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -87,6 +94,9 @@
     <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\TheStarBuck1\TheStarBuck\src\main\webapp\views\web" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\NLTHANH\Documents\GitHub\TheStarBuck\TheStarBuck\src\main\webapp\views\admin" />
     </key>
@@ -97,7 +107,7 @@
       <recent name="vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.address" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.52">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.62">
     <configuration name="CrawlPostToJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.json.CrawlPostToJson" />
       <module name="TheStarBuck" />
@@ -122,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TheStarBuck:war">
@@ -211,7 +221,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.CrawlPostToJson" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.52" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.62" />
     </list>
     <recent_temporary>
       <list>
@@ -222,7 +232,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b3f90052-31fc-4f4c-8baf-afabef724c6c" name="Changes" comment="" />
+      <changelist id="006cbca4-38dc-4c63-972b-60edd9a4b1be" name="Changes" comment="" />
       <created>1655278010118</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -265,6 +275,7 @@
       <workItem from="1659794537820" duration="6546000" />
       <workItem from="1659835679887" duration="7752000" />
       <workItem from="1659857082815" duration="4773000" />
+      <workItem from="1659964243745" duration="784000" />
     </task>
     <servers />
   </component>
@@ -281,6 +292,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

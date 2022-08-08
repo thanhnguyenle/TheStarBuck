@@ -60,7 +60,7 @@
                 <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu1 <c:if test="${account == null}"> d-none </c:if>" >
                     <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-profile'/>">Profile</a></li>
-                    <li><a href="changePass.html">Change password</a></li>
+                    <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-profile-pass'/>">Change password</a></li>
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
                 <ul class="drop-menu1 <c:if test="${account != null}"> d-none </c:if>" >

@@ -102,9 +102,7 @@
 					<button class="btn btn-light" type="reset">Reset</button>
 				</div>
 			</div>
-
 		</form>
-
 	</div>
 <%--</div>--%>
 <jsp:include page="layout/footer.jsp"/>
