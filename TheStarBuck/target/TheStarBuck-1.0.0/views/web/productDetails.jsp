@@ -233,7 +233,7 @@
                         <input type="text" name="quantity" value="1" class="qty">
                         <div class="qtyplus">+</div>
                     </form>
-                    <a href="cart.html" class="round-black-btn">Add to Cart</a>
+                    <a href="<%=request.getContextPath()%>/add-cart?id=${product.id}" class="round-black-btn">Add to Cart</a>
                     <h3>About It</h3>
                     <p>
                         ${product.ingredients}

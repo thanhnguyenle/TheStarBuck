@@ -10,7 +10,7 @@ public class Account extends AbsModel implements Serializable {
 	private String fullname;
 	private String phoneNumber;
 	private String email;
-	private Long emailVerifiedAt;
+	private Date emailVerifiedAt;
 	private String password;
 	private String avatar;
 	private String aboutMe;
@@ -94,11 +94,11 @@ public class Account extends AbsModel implements Serializable {
 		this.email = email;
 	}
 
-	public Long getEmailVerifiedAt() {
+	public Date getEmailVerifiedAt() {
 		return emailVerifiedAt;
 	}
 
-	public void setEmailVerifiedAt(Long emailVerifiedAt) {
+	public void setEmailVerifiedAt(Date emailVerifiedAt) {
 		this.emailVerifiedAt = emailVerifiedAt;
 	}
 
