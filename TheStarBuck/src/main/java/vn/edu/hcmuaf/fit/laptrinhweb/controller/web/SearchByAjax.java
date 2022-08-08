@@ -19,7 +19,8 @@ public class SearchByAjax extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
         String txtSearch = request.getParameter("search");
         List<Product> products = productService.searchByName(txtSearch);
         PrintWriter pw = response.getWriter();

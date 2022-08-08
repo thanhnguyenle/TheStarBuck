@@ -305,3 +305,11 @@ a:hover {
 .gallery-block-slide img{
   width: 95%;
 }
+
+.list-item-picture .bg-center{
+  text-align: center;
+  margin: 10px 0;
+}
+.list-item-picture .bg-center img{
+  width: 95%;
+}

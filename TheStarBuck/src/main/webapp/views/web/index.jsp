@@ -311,37 +311,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="blog__item">
-            <div class="blog__item__pic">
-              <img src="" alt="">
-            </div>
-            <div class="blog__item__text">
-              <ul>
-                <li><i class="far fa-calendar"></i> May 4,2019</li>
-                <li><i class="far fa-comment"></i> 5</li>
-              </ul>
-              <h5><a href="#">Cooking tips make cooking simple</a></h5>
-              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="blog__item">
-            <div class="blog__item__pic">
-              <img src="images/blog_2_title.jpg" alt="">
-            </div>
-            <div class="blog__item__text">
-              <ul>
-                <li><i class="far fa-calendar"></i> May 4,2019</li>
-                <li><i class="far fa-comment"></i> 5</li>
-              </ul>
-              <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-            </div>
-          </div>
-        </div>
+      <div class="row" id="post-demo">
       </div>
     </div>
   </section>
@@ -431,6 +401,42 @@
     </c:forEach>
   }
   actionThumb();
+  function ajaxRunPost(_randomNum) {
+    $.ajax({
+      type: "Get",
+      url: "/TheStarBuck/posts?page-index=" + _randomNum + "&per-page=" + 2,
+      ContentType: 'json',
+      headers: { Accept: "application/json;charset=utf-8" },
+      success: function (json) {
+        if (json !== undefined && json != null) {
+          let data = "";
+          let obj = JSON.parse(json);
+          for (let i = 0; i < obj.length; i++) {
+            let val = obj[i];
+            data += "<div class=\"col-lg-6 col-md-6 col-sm-6\">"
+              +"<div class=\"blog__item\">"
+               +"<div class=\"blog__item__pic\">"
+                  +"<img src=\""+val.image_url+"\" alt=\"\">"
+               +"</div>"
+               +"<div class=\"blog__item__text\">"
+                 +"<ul>"
+                    +"<li><i class=\"far fa-calendar\"></i> May 4,2019</li>"
+                    +"<li><i class=\"far fa-comment\"></i> 5</li>"
+                  +"</ul>"
+                    +"<h5><a href=\"<%=request.getContextPath()%>/blog?blogid="+val.id+"\">"+val.title+"</a></h5>"
+                  +"<p>"+val.description+"</p>"
+               +"</div>"
+             +"</div>"
+           +"</div>"
+          }
+          $("#post-demo").html(data);
+        }
+      }
+    });
+  }
+
+  let randomNum = Math.floor(Math.random() * 50);
+  ajaxRunPost(randomNum);
 </script>
 </body>
 </html>
