@@ -29,7 +29,7 @@
         <div class="row mrCheckout">
             <div class="checkout-wrap col-xcol-md-6 col-sm-11 s-11 pull-right">
                 <ul class="checkout-bar">
-                    <li class="visited checkout-title"><span>TOTAL BILL</span>
+                    <li class="visited checkout-title"><span>CART</span>
                     </li>
                     <li class="active checkout-title"><span>CHECKOUT</span>
                     </li>
