@@ -2,10 +2,15 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IProductDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.db.impl.DBConnection;
 import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.ProductMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Product;
 import vn.edu.hcmuaf.fit.laptrinhweb.paging.IPageAble;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -22,13 +27,27 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         return instance;
     }
 
-    public List<Product> findAll(IPageAble pageAble) {
+    public List<Product> findAll(IPageAble pageAble,double fromPrice, double toPrice,String categoryID,String sortBy,String orderBy,String text) {
         StringBuilder sql = new StringBuilder(QUERIES.PRODUCT.GET_LIST);
         if(pageAble.getOffset()!=null && pageAble.getLimit() !=null){
+//            WHERE pr_price >=5 AND pr_price <=8 AND pr_csId = "cs0004" ORDER BY pr_price
+            if(categoryID!=null&&!categoryID.equals("")){
+                sql.append(" WHERE pr_price >=? AND pr_price <=? AND pr_csId ='" +categoryID+ "'");
+            }else{
+                sql.append(" WHERE pr_price >=? AND pr_price <=?");
+            }
+//            AND LOWER(pr_name) LIKE LOWER("%w%")
+            if(text!=null&&!text.equals("")){
+                sql.append(" AND LOWER(pr_name) LIKE LOWER('%"+text+"%')");
+            }
+            if(sortBy!=null&&!sortBy.equals("")){
+                sql.append(" ORDER BY "+sortBy +" "+orderBy);
+            }
             sql.append(" LIMIT "+pageAble.getOffset()+", "+pageAble.getLimit());
         }
-        return query(sql.toString(),new ProductMapper());
+        return query(sql.toString(),new ProductMapper(),fromPrice,toPrice);
     }
+
 
     @Override
     public List<Product> findAll() {

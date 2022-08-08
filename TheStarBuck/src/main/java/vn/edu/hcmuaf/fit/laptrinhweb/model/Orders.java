@@ -2,128 +2,159 @@ package vn.edu.hcmuaf.fit.laptrinhweb.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Orders extends AbsModel  implements Serializable {
-	private String id;
-	private String idAccount;
-	private String idSession;
-	private String token;
-	private String status;
-	private String address;
-	private double subTotal;
-	private double itemDiscount;
-	private double tax;
-	private double shipping;
-	private double grandTotal;
-	private String promo;
-	private String note;
-	private List<OrderItem> orderItemList;
+public class Orders extends AbsModel implements Serializable {
+    private String id;
+    private String idAccount;
+    private String idSession;
+    private String token;
+    private String status;
+    private String address;
+    private double subTotal;
+    private double itemDiscount;
+    private double tax;
+    private double shipping;
+    private double grandTotal;
+    private String promo;
+    private String note;
+    private List<OrderItem> orderItemList;
+    private Map<String, Product> productList = new HashMap<>();
 
-	public Orders() {
-	}
+    public Orders() {
+    }
 
-	public String getId() {
-		return id;
-	}
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id='" + id + '\'' +
+                ", idAccount='" + idAccount + '\'' +
+                ", idSession='" + idSession + '\'' +
+                ", token='" + token + '\'' +
+                ", status='" + status + '\'' +
+                ", address='" + address + '\'' +
+                ", subTotal=" + subTotal +
+                ", itemDiscount=" + itemDiscount +
+                ", tax=" + tax +
+                ", shipping=" + shipping +
+                ", grandTotal=" + grandTotal +
+                ", promo='" + promo + '\'' +
+                ", note='" + note + '\'' +
+                ", orderItemList=" + orderItemList +
+                '}';
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getIdAccount() {
-		return idAccount;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setIdAccount(String idAccount) {
-		this.idAccount = idAccount;
-	}
+    public String getIdAccount() {
+        return idAccount;
+    }
 
-	public String getIdSession() {
-		return idSession;
-	}
+    public void setIdAccount(String idAccount) {
+        this.idAccount = idAccount;
+    }
 
-	public void setIdSession(String idSession) {
-		this.idSession = idSession;
-	}
+    public String getIdSession() {
+        return idSession;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public void setIdSession(String idSession) {
+        this.idSession = idSession;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public String getToken() {
+        return token;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public double getSubTotal() {
-		return subTotal;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setSubTotal(double subTotal) {
-		this.subTotal = subTotal;
-	}
+    public double getSubTotal() {
+        return subTotal;
+    }
 
-	public double getItemDiscount() {
-		return itemDiscount;
-	}
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
 
-	public void setItemDiscount(double itemDiscount) {
-		this.itemDiscount = itemDiscount;
-	}
+    public double getItemDiscount() {
+        return itemDiscount;
+    }
 
-	public double getTax() {
-		return tax;
-	}
+    public void setItemDiscount(double itemDiscount) {
+        this.itemDiscount = itemDiscount;
+    }
 
-	public void setTax(double tax) {
-		this.tax = tax;
-	}
+    public double getTax() {
+        return tax;
+    }
 
-	public double getShipping() {
-		return shipping;
-	}
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
 
-	public void setShipping(double shipping) {
-		this.shipping = shipping;
-	}
+    public double getShipping() {
+        return shipping;
+    }
 
-	public double getGrandTotal() {
-		return grandTotal;
-	}
+    public void setShipping(double shipping) {
+        this.shipping = shipping;
+    }
 
-	public void setGrandTotal(double grandTotal) {
-		this.grandTotal = grandTotal;
-	}
+    public double getGrandTotal() {
+        return grandTotal;
+    }
 
-	public String getPromo() {
-		return promo;
-	}
+    public void setGrandTotal(double grandTotal) {
+        this.grandTotal = grandTotal;
+    }
 
-	public void setPromo(String promo) {
-		this.promo = promo;
-	}
+    public String getPromo() {
+        return promo;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public void setPromo(String promo) {
+        this.promo = promo;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public void setProductList(Map<String, Product> productList) {
+        this.productList = productList;
+    }
+
+    public Map<String, Product> getProductList() {
+        return productList;
+    }
 }

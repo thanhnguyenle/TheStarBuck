@@ -27,6 +27,7 @@ public class UpdateServlet extends HttpServlet {
         System.out.println(product.getImage());
         HttpSession session = request.getSession();
         session.setAttribute("product", product);
+        System.out.println(product.toString());
         request.getRequestDispatcher("/views/admin/productEdition.jsp").forward(request, response);
     }
 
@@ -43,7 +44,7 @@ public class UpdateServlet extends HttpServlet {
         String hot = request.getParameter("hot");
         String view = request.getParameter("view");
         String description = request.getParameter("description");
-        String image = request.getParameter("image");
+        String image = request.getParameter("avatar");
         String descriptionSeo = request.getParameter("descriptionSeo");
         String keywordSeo = request.getParameter("keywordSeo");
         String titleSeo = request.getParameter("titleSeo");

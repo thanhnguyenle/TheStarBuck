@@ -25,9 +25,11 @@ public class HomeController extends HttpServlet {
     private IAccountService accountService;
     private IAddressService addressService;
     private ISlideService slideService;
-    private List<Slide> slides;
-    private List<Slide> slides1;
-    private List<Slide> slides2;
+    private List<Slide> minis;
+    private List<Slide> titles;
+    private List<Slide> banners;
+    private List<Slide> thumbs;
+    private List<Slide> thumbs_big;
     private List<Product> productLasest;
     private List<Product> productFeatured;
     private List<Product> productHot;
@@ -48,7 +50,7 @@ public class HomeController extends HttpServlet {
         Thread thread0 = new Thread(new Runnable() {
             @Override
             public void run() {
-                slides = slideService.printTypeSlide("MINI", 5);
+                minis = slideService.printTypeSlide("MINI", 5);
             }
         });
         threads.add(thread0);
@@ -56,7 +58,7 @@ public class HomeController extends HttpServlet {
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                slides1 = slideService.printTypeSlide("TITLE", 3);
+                titles = slideService.printTypeSlide("TITLE", 3);
             }
         });
         threads.add(thread1);
@@ -64,7 +66,7 @@ public class HomeController extends HttpServlet {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                slides2 = slideService.printTypeSlide("BANNER", 1);
+                banners = slideService.printTypeSlide("BANNER", 1);
             }
         });
         threads.add(thread2);
@@ -92,14 +94,30 @@ public class HomeController extends HttpServlet {
             }
         });
         threads.add(thread5);
-
+        Thread thread6 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+               thumbs = slideService.printTypeSlide("THUMB", 3);
+            }
+        });
+        threads.add(thread6);
+        Thread thread7 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                thumbs_big = slideService.printTypeSlide("THUMB_BIG", 3);
+            }
+        });
+        threads.add(thread7);
         //start thread
-       thread0.start();
+        thread0.start();
         thread1.start();
         thread2.start();
         thread3.start();
         thread4.start();
         thread5.start();
+        thread6.start();
+        thread7.start();
+
     // Now everything's running - join all the threads
         for (Thread thread : threads) {
             try {
@@ -108,10 +126,12 @@ public class HomeController extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        if (slides != null && slides1 != null && slides2 != null && productLasest != null && productFeatured != null && productHot != null) {
-                request.setAttribute("slideMini", slides);
-                request.setAttribute("slideTitle", slides1);
-                request.setAttribute("slideBanner", slides2);
+        if (minis != null && titles != null && banners != null && productLasest != null && productFeatured != null && productHot != null&&thumbs!=null&&thumbs_big!=null) {
+                request.setAttribute("slideMini", minis);
+                request.setAttribute("slideTitle", titles);
+                request.setAttribute("slideBanner", banners);
+                request.setAttribute("slideThumb",thumbs);
+                request.setAttribute("slideThumbBig",thumbs_big);
                 request.setAttribute("listProductLasest", productLasest);
                 request.setAttribute("listProductFeatured", productFeatured);
                 request.setAttribute("listProductHot", productHot);

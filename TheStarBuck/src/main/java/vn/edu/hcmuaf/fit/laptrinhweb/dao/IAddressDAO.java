@@ -8,4 +8,6 @@ import java.util.List;
 public interface IAddressDAO extends IGenericDAO<Address>{
     List<Address> findAll();
     Long save(Address address);
+    Long addItem(Address address);
+    Long updateItem(Address address);
 }

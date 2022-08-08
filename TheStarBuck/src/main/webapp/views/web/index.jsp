@@ -1,3 +1,5 @@
+<jsp:useBean id="slideTitle" scope="request" type="java.util.List"/>
+<jsp:useBean id="slideThumbBig" scope="request" type="java.util.List"/>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
@@ -50,17 +52,23 @@
           <a class="animate__animated animate__backInLeft" href="#products">Order Now</a>
         </div>
         <div class="imgBox animate__animated animate__backInRight">
-          <img id="starbuckAv" src="https://i.ibb.co/2FjC2zg/img1.png" class="starbucks" />
+          <img id="starbuckAv" src="${slideThumbBig[1].image}" class="starbucks" />
         </div>
       </div>
       <ul class="thumb ">
-        <li><img id="thumb1" src="https://i.ibb.co/j4YxX6j/thumb1.png" class="animate__animated animate__backInUp animate__delay-1s"></li>
-        <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>
-        <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>
+          <c:set var="count" value="0" scope="page" />
+          <jsp:useBean id="slideThumb" scope="request" type="java.util.List"/>
+          <c:forEach items="${slideThumb}" var="item">
+              <c:set var="count" value="${count + 1}" scope="page"/>
+        <li><img id="thumb${count}" src="${item.image}" class="animate__animated animate__backInUp animate__delay-${count}s"></li>
+<%--        <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>--%>
+<%--        <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>--%>
+          </c:forEach>
       </ul>
     </div>
   </div>
   <section class="image-slider">
+    <jsp:useBean id="slideMini" scope="request" type="java.util.List"/>
     <c:forEach items="${slideMini}" var="x">
       <div class="image-item">
         <div class="image">
@@ -92,6 +100,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured_tab">
           <div class=" product-layout">
+            <jsp:useBean id="listProductFeatured" scope="request" type="java.util.List"/>
             <c:forEach items="${listProductFeatured}" var="x">
           <div class="product" >
             <div class="img-container">
@@ -121,7 +130,7 @@
                   <span class="fa fa-stack"><i class="fa fa-star-o"></i><i class="fa fa-star"></i></span>
                 </div>
               </div>
-              <a href="productDetails.jsp">${x.name}</a>
+              <a href="<%=request.getContextPath()%>/detailProduct?id=${x.id}">${x.name}</a>
               <div class="price">
                 <span>$${x.price - x.discount}</span>
                 <span class="cancel">$${x.price}</span>
@@ -139,6 +148,7 @@
       </div>
       <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
         <div class="product-layout">
+          <jsp:useBean id="listProductLasest" scope="request" type="java.util.List"/>
           <c:forEach items="${listProductLasest}" var="x">
           <div class="product">
             <div class="img-container">
@@ -184,6 +194,7 @@
       <div class="tab-pane fade" id="bestsellers" role="tabpanel" aria-labelledby="bestsellers-tab">
 
         <div class="product-layout">
+          <jsp:useBean id="listProductHot" scope="request" type="java.util.List"/>
           <c:forEach items="${listProductHot}" var="x">
             <div class="product">
               <div class="img-container">
@@ -234,6 +245,7 @@
   </section>
   <!-- Banner Begin -->
   <section class="banner">
+    <jsp:useBean id="slideBanner" scope="request" type="java.util.List"/>
     <c:forEach items="${slideBanner}" var="x">
     <div class="container">
       <div class="col">
@@ -299,37 +311,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="blog__item">
-            <div class="blog__item__pic">
-              <img src="" alt="">
-            </div>
-            <div class="blog__item__text">
-              <ul>
-                <li><i class="far fa-calendar"></i> May 4,2019</li>
-                <li><i class="far fa-comment"></i> 5</li>
-              </ul>
-              <h5><a href="#">Cooking tips make cooking simple</a></h5>
-              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="blog__item">
-            <div class="blog__item__pic">
-              <img src="images/blog_2_title.jpg" alt="">
-            </div>
-            <div class="blog__item__text">
-              <ul>
-                <li><i class="far fa-calendar"></i> May 4,2019</li>
-                <li><i class="far fa-comment"></i> 5</li>
-              </ul>
-              <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-              <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-            </div>
-          </div>
-        </div>
+      <div class="row" id="post-demo">
       </div>
     </div>
   </section>
@@ -403,7 +385,58 @@
   
   <!-- jQuery Modal -->
 <%--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>--%>
-  <script src="<%= Asset.url("/template/web/js/index.js")%>"></script>
+  <script type="text/javascript" src="<%= Asset.url("/template/web/js/index.js")%>"></script>
 <%-- <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
+<script  type="text/javascript">
+  const starbuckAv = document.querySelector("#starbuckAv");
+  const title_banner = document.querySelector("#hero1");
+  function actionThumb(){
+    <c:set var="count3" value="0" scope="page" />
+    <c:forEach items="${slideTitle}" var="item">
+    <c:set var="count3" value="${count3 + 1}" scope="page"/>
+      $("#thumb${count3}").click(function () {
+        title_banner.style.background = "#fff url('${item.image}') repeat-x bottom left";
+        starbuckAv.src = "${slideThumbBig[count3-1].image}";
+      });
+    </c:forEach>
+  }
+  actionThumb();
+  function ajaxRunPost(_randomNum) {
+    $.ajax({
+      type: "Get",
+      url: "/TheStarBuck/posts?page-index=" + _randomNum + "&per-page=" + 2,
+      ContentType: 'json',
+      headers: { Accept: "application/json;charset=utf-8" },
+      success: function (json) {
+        if (json !== undefined && json != null) {
+          let data = "";
+          let obj = JSON.parse(json);
+          for (let i = 0; i < obj.length; i++) {
+            let val = obj[i];
+            data += "<div class=\"col-lg-6 col-md-6 col-sm-6\">"
+              +"<div class=\"blog__item\">"
+               +"<div class=\"blog__item__pic\">"
+                  +"<img src=\""+val.image_url+"\" alt=\"\">"
+               +"</div>"
+               +"<div class=\"blog__item__text\">"
+                 +"<ul>"
+                    +"<li><i class=\"far fa-calendar\"></i> May 4,2019</li>"
+                    +"<li><i class=\"far fa-comment\"></i> 5</li>"
+                  +"</ul>"
+                    +"<h5><a href=\"<%=request.getContextPath()%>/blog?blogid="+val.id+"\">"+val.title+"</a></h5>"
+                  +"<p>"+val.description+"</p>"
+               +"</div>"
+             +"</div>"
+           +"</div>"
+          }
+          $("#post-demo").html(data);
+        }
+      }
+    });
+  }
+
+  let randomNum = Math.floor(Math.random() * 50);
+  ajaxRunPost(randomNum);
+</script>
 </body>
 </html>

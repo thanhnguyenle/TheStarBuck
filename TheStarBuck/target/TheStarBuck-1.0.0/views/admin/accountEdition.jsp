@@ -75,7 +75,9 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>File Avatar</label>
-                                        <input type="file" name="avatar" value="${acc.avatar}">
+                                        <input type="button" name="btn_avatar" value="upload" onclick="BrowseServer('${acc.id}')">
+                                        <input type="text" name="avatar" id="avatar" value="${acc.avatar}">
+                                        <img id="img_avatar"  src="${acc.avatar}" style="width: 50px">
                                     </div>
                                     <div class="form-group">
                                         <label>Password Accounts</label>
@@ -117,6 +119,22 @@
 </div>
 <%--SCRIPT--%>
 <jsp:include page="layout/script.jsp"/>
+<script type="text/javascript" src="<%= Asset.url("/template/lib/ckfinder/ckfinder.js")%>"></script>
+<script type="text/javascript">
+    function BrowseServer(id)
+    {
+        var finder = new CKFinder();
+        // finder.basePath = '../';
+        finder.selectActionFunction = function (fileUrl){
+            console.log(document.getElementById(id));
+            $("#avatar").val(fileUrl);
+            $("#img_avatar").prop('src', fileUrl);
+            console.log(fileUrl);
+        };
+        finder.popup();
+    }
+
+</script>
 </body>
 
 </html>

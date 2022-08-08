@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{OwlCarousel2, animate.css, bootstrap.bundle, boxicons, ckeditor, flickity, ionicons, jquery-1.11.0, jquery-3.2.1.slim, jquery-migrate-1.2.1, jquery-modal, jquery-ui, popper.js, slick-carousel, swiper}" />
+    <file url="file://$PROJECT_DIR$" libraries="{all, flickity, font-awesome, swiper}" />
   </component>
 </project>

@@ -8,17 +8,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%--    <meta charset="UTF-8">--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
-    <title>LOGIN</title>
-    <jsp:include page="layout/css.jsp"/>
-  t>
-<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"--%>
-<%--        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--%>
-<%--    <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">--%>
-<%--    <link rel="stylesheet" href="<c:url value="/template/web/css/login.css"/>">--%>
-    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/login.css")%>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="shortcut icon" type="images/logo.png" href="https://i.ibb.co/nMxcqW4/logo.png">
+    <link rel="stylesheet" href="<c:url value="/template/web/css/login.css"/>">
 </head>
 
 <body>
@@ -62,8 +59,9 @@
                         </div>
                     </form>                    
                     <p>Or Login With</p>
-                    <span><i class="fab fa-facebook"></i></span>
-                    <span><i class="fab fa-google-plus"></i></span>
+                    <a href="https://www.facebook.com/dialog/oauth?client_id=1106802269902043&redirect_uri=http://localhost:8080/TheStarBuck/doLoginFacebook"><span><i class="fab fa-facebook"></i></span></a>
+                    <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/TheStarBuck/doLoginGoogle&response_type=code
+    &client_id=427422137099-7af2n9dkd4k6ejnoajc609mtjnlhnoau.apps.googleusercontent.com&approval_prompt=force"><span><i class="fab fa-google-plus"></i></span></a>
                     <div class="pt-3">
                         <a class="creatAcc" href="<c:url value="/views/web/createAcc.jsp" />">Create Account</a>
                     </div>

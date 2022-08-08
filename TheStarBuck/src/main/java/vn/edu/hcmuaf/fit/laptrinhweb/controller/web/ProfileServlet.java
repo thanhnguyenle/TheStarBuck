@@ -18,13 +18,25 @@ public class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        Account account = (Account) session.getAttribute("account");
+        session.setAttribute("account",account);
         request.getRequestDispatcher("/views/web/profileAccount.jsp").forward(request, response);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     HttpSession session = request.getSession();
+     Account account =(Account) session.getAttribute("account");
+        String fullname = request.getParameter("full-name");
+        String email = request.getParameter("email");
+        String phoneNumber = request.getParameter("phoneNumber");
 
+        account.setFullname(fullname);
+        account.setEmail(email);
+        account.setPhoneNumber(phoneNumber);
+
+        accountService.updateAuth(account);
+        response.sendRedirect(request.getContextPath() +"/user-profile");
     }
 }

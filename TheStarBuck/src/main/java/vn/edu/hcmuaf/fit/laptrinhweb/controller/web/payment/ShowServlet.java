@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web.payment;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Cart;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.ProductService;
 
@@ -24,9 +25,14 @@ public class ShowServlet extends HttpServlet {
         //get cart from session
         HttpSession session = request.getSession();
         Cart cart = (Cart) session.getAttribute("cart");
+        Account account = (Account) session.getAttribute("account");
 
         session.setAttribute("cart", cart);
         request.setAttribute("cart", cart);
+
+        session.setAttribute("account", account);
+        request.setAttribute("account", account);
+
         request.getRequestDispatcher("/views/web/payment.jsp").forward(request, response);
     }
 

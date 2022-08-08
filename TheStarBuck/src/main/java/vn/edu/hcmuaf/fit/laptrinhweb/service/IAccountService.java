@@ -7,4 +7,5 @@ import java.util.List;
 public interface IAccountService {
     List<Account> findAll();
     Long save(Account account);
+    int getAmountItem();
 }

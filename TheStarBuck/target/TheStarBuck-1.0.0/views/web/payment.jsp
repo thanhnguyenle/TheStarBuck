@@ -1,6 +1,14 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    Account account = (Account) request.getAttribute("account");
+    Cart cart = (Cart) request.getAttribute("cart");
+%>
+
 <!DOCTYPE html>
 <html>
 
@@ -39,23 +47,23 @@
             <div class="col-lg-6 col-md-8 col-sm-10 offset-lg-0 offset-md-2 offset-sm-1 blockInfo">
                 <div class="mobile h5">Billing Address</div>
                 <div id="details" class="bg-white rounded pb-5">
-                    <form>
+                    <form role="form" action="${pageContext.request.contextPath}/payment-checkout" method="post">
                         <!--Name-->
                         <div class="form-group"><label class="" for="name">Name</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="text"
-                                    id="name" name="name" placeholder="Nguyen Van A" required> <span
+                                    id="name" name="name" value="${account.fullname}" required> <span
                                     class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <!--phone number-->
                         <div class="form-group"><label class="" for="phone">Phone number</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="tel"
-                                    id="phone" name="phone" placeholder="0123456789" required> <span
+                                    id="phone" name="phone" value="${account.phoneNumber}"  required> <span
                                     class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <!--mail-->
                         <div class="form-group"><label class="" for="email">Email</label>
                             <div class="d-flex jusify-content-start align-items-center rounded p-2"><input type="email"
-                                    id="email" name="email" placeholder="david.343@gmail.com">
+                                    id="email" name="email" value="${account.email}">
                                 <span class="fas fa-check text-success pr-sm-2 pr-0"></span></div>
                         </div>
                         <div class="row">
@@ -108,6 +116,7 @@
                                 </div>
                             </div>
                         </div>
+                        <button type="submit">check out</button>
                     </form>
                 </div>
                 <div style="display:flex;font-size:0.5rem">
@@ -154,7 +163,7 @@
                         </label></div>
                     <div class="d-flex align-items-center">
                         <div class="display-5">Subtotal</div>
-                        <div class="ml-auto font-weight-bold">$80.9</div>
+                        <div class="ml-auto font-weight-bold">$${cart.getSubTotalPrice()}</div>
                     </div>
                     <div class="d-flex align-items-center py-2 border-bottom">
                         <div class="display-5">Shipping</div>
@@ -164,7 +173,7 @@
                         <div class="display-5">Total</div>
                         <div class="ml-auto d-flex">
                             <div class="text-primary text-uppercase px-3">usd</div>
-                            <div class="font-weight-bold">$92.98</div>
+                            <div class="font-weight-bold total-cart">$${cart.getTotalPrice()}</div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +199,7 @@
                                     <td>:</td>
                                     <td>
                                         <div class="d-flex align-items-center"> <span
-                                                class="fas fa-minus btn text-muted"></span> <span>2</span> <span
+                                                class="fas fa-minus btn text-muted"></span> <span>${cart.getTotalQuantity()}</span> <span
                                                 class="fas fa-plus btn text-muted"></span></div>
                                     </td>
                                 </tr>
@@ -200,7 +209,7 @@
                     <div class="border-top py-2 d-flex align-items-center ml-2 font-weight-bold">
                         <div>Total</div>
                         <div class="ml-auto text-primary">USD</div>
-                        <div class="px-2">$92.98</div>
+                        <div class="px-2">$${cart.getTotalPrice()}</div>
                     </div>
                 </div>
                 <div class="row pt-lg-3 pt-2 buttons mb-sm-0 mb-2">
@@ -209,7 +218,7 @@
                     </div>
                     <div class="col-md-6 pt-md-0 pt-3">
                         <div class="btnNav ml-auto text-uppercase btnContinue"><span class="fas fa-lock"></span>
-                           <a href="order.jsp">Continue</a>
+                           <a href="<%=request.getContextPath()%>/payment-checkout">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +227,7 @@
     </div>
     <!-- messenger -->
     <div class="messenger">
-        <a href=""><img src=" <jsp:include page="layout/mees.png"/>" alt="" width="70px"></a>
+<%--        <a href=""><img src=" <jsp:include page="layout/mees.png"/>" alt="" width="70px"></a>--%>
     </div>
     <div class="up">
         <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
@@ -231,6 +240,9 @@
     <!-- Custom Scripts -->
 <%--    <script src="./js/payment.js"></script>--%>
   <script src="<%= Asset.url("/template/web/js/payment.js")%>"></script>
+<script>
+
+</script>
 </body>
 
 </html>

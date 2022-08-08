@@ -37,7 +37,7 @@ public class CreateServlet extends HttpServlet {
         String hot = request.getParameter("hot");
         String view = request.getParameter("view");
         String description = request.getParameter("description");
-        String image = request.getParameter("file");
+        String image = request.getParameter("avatar");
         String descriptionSeo = request.getParameter("descriptionSeo");
         String keywordSeo = request.getParameter("keywordSeo");
         String titleSeo = request.getParameter("titleSeo");

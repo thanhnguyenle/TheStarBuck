@@ -1,7 +1,6 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ include file="/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Product product = (Product) request.getAttribute("product");
+%>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -9,11 +8,11 @@
   Time: 11:09 PM
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    Product product = (Product) request.getAttribute("product");
-%>
+
 <!DOCTYPE html>
 <html>
 
@@ -90,8 +89,8 @@
                                     <div class="form-group">
                                         <label>Hot</label>
                                         <select class="form-control" name="hot">
-                                            <option value="0" <c:if test="${product.hot == false}"> selected </c:if>>NO</option>
-                                            <option value="1" <c:if test="${product.hot == true}"> selected </c:if>>YES</option>
+                                            <option value="0" <c:if test="${product.hot == 0}"> selected </c:if>>NO</option>
+                                            <option value="1" <c:if test="${product.hot == 1}"> selected </c:if>>YES</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -107,7 +106,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>File Image</label>
-                                        <input type="file" name="image" value="${product.image}">
+                                        <input type="button" name="btn_avatar" value="upload" onclick="BrowseServer('${product.id}')">
+                                        <input type="text" name="avatar" id="avatar" value="${product.image}">
+                                        <img id="img_avatar"  src="${product.image}" style="width: 50px">
                                     </div>
                                     <div class="form-group">
                                         <label>DescriptionSeo</label>
@@ -155,6 +156,22 @@
 </div>
 <%--SCRIPT--%>
 <jsp:include page="layout/script.jsp"/>
+<script type="text/javascript" src="<%= Asset.url("/template/lib/ckfinder/ckfinder.js")%>"></script>
+<script type="text/javascript">
+    function BrowseServer(id)
+    {
+        var finder = new CKFinder();
+        // finder.basePath = '../';
+        finder.selectActionFunction = function (fileUrl){
+            console.log(document.getElementById(id));
+            $("#avatar").val(fileUrl);
+            $("#img_avatar").prop('src', fileUrl);
+            console.log(fileUrl);
+        };
+        finder.popup();
+    }
+
+</script>
 
 </body>
 

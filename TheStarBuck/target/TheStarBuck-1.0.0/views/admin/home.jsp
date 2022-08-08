@@ -37,7 +37,7 @@
                         <div class="card card-body mb-4 revenue">
                             <article class="icontext">
                                 <div class="text">
-                                    <h3 class="mb-1">Total revenue</h3>  <span>19,626,058.20đ</span>
+                                    <h3 class="mb-1">Total revenue</h3>  <span><%=request.getAttribute("sumMoney")%>đ</span>
                                 </div>
                             </article>
 
@@ -47,7 +47,7 @@
                         <div class="card card-body mb-4 order">
                             <article class="icontext">
                                 <div class="text">
-                                    <h3 class="mb-1"> Total order</h3> <span>87790</span>
+                                    <h3 class="mb-1"> Total order</h3> <span><%=request.getAttribute("totalOrder")%></span>
                                 </div>
                             </article>
                         </div> <!-- card end// -->
@@ -57,7 +57,7 @@
                             <article class="icontext">
                                 <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-shopping_basket"></i></span>
                                 <div class="text">
-                                    <h3 class="mb-1">Total product  </h3>  <span>5678</span>
+                                    <h3 class="mb-1">Total product  </h3>  <span><%=request.getAttribute("totalPro")%></span>
 
                                 </div>
                             </article>
@@ -68,7 +68,7 @@
                             <article class="icontext">
                                 <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-danger material-icons md-supervised_user_circle"></i></span>
                                 <div class="text">
-                                    <h3 class="mb-1">Total customer  </h3>  <span>5678</span>
+                                    <h3 class="mb-1">Total customer  </h3>  <span><%=request.getAttribute("totalAcc")%> </span>
                                 </div>
                             </article>
                         </div> <!--  end// -->

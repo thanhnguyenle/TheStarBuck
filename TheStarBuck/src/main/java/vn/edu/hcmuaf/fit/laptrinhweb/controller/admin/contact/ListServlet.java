@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ContactServlet", value = "/contact")
+@WebServlet(name = "ListContactServlet", value = "/admin-contact")
+
 public class ListServlet extends HttpServlet {
     private ContactService contactService = ContactService.getInstance();
 

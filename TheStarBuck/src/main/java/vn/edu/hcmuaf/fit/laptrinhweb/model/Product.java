@@ -25,6 +25,31 @@ public class Product extends AbsModel  implements Serializable {
 
 	public Product() {
 	}
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				", idCategory='" + idCategory + '\'' +
+				", ingredients='" + ingredients + '\'' +
+				", price=" + price +
+				", discount=" + discount +
+				", quantity=" + quantity +
+				", active=" + active +
+				", hot=" + hot +
+				", view=" + view +
+				", description='" + description + '\'' +
+				", image='" + image + '\'' +
+				", descriptionSeo='" + descriptionSeo + '\'' +
+				", keywordSeo='" + keywordSeo + '\'' +
+				", titleSeo='" + titleSeo + '\'' +
+				", note='" + note + '\'' +
+				", quantitySold=" + quantitySold +
+				", sale='" + sale + '\'' +
+				'}';
+	}
+
 	public String getSale() {
 		return String.format("%,.1f", (this.discount / this.price) * 100);
 	}

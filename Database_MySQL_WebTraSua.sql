@@ -495,6 +495,21 @@ CREATE TABLE `Navigation`(
 	`cart` VARCHAR(100) NOT NULL,
 	`login` VARCHAR(100) NOT NULL
 );
+CREATE TABLE
+IF
+	NOT EXISTS `WebTraSua`.`Post` (
+		`id_po` VARCHAR ( 6 ) NOT NULL,
+		`po_title` TEXT NULL,
+		`po_description` MEDIUMTEXT NULL,
+		`po_content` LONGTEXT CHARACTER 
+		SET 'utf8mb4' NULL,
+		`po_author` VARCHAR( 100 ) CHARACTER 
+		SET 'utf8mb4' NULL,
+		`po_url_image` VARCHAR ( 255 ) NOT NULL,
+		`po_url_post` VARCHAR ( 255 ) NOT NULL,
+		`date` DATETIME ( 6 ) NULL DEFAULT NULL,
+		PRIMARY KEY ( `id_po` )
+	);
 --  -- FUNCTION -- 
 DROP FUNCTION IF EXISTS func_autoid; 
  DELIMITER $$
@@ -546,7 +561,23 @@ DELIMITER ;
 				END IF;
  END$$;
  DELIMITER ;
-
+ -- Tao id_po for Post
+ DROP TRIGGER IF EXISTS tr_NextPostID;
+ DELIMITER $$
+ CREATE TRIGGER tr_NextPostID
+ BEFORE INSERT ON `Post`
+ FOR EACH ROW
+ BEGIN
+				DECLARE lastAccID VARCHAR(6);
+				SET lastAccID = (SELECT `id_po` FROM `Post` ORDER BY `id_po` DESC LIMIT 1);
+				IF lastAccID IS NULL THEN
+						SET lastAccID = '';
+				END IF;
+				IF NEW.`id_po` = '' OR NEW.`id_po` IS NULL	THEN
+						SET NEW.`id_po`= func_autoid(lastAccID, 'po', 6);
+				END IF;
+ END$$;
+ DELIMITER ;
 -- -- Tao id_ad for Address
  DROP TRIGGER IF EXISTS tr_NextAddressID;
  DELIMITER $$
@@ -1190,8 +1221,50 @@ INSERT INTO `slide` VALUES ('sl0006', 'https://i.ibb.co/vHkpc5T/banner-2.png', '
 INSERT INTO `slide` VALUES ('sl0007', 'https://i.ibb.co/L0myK85/title1.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-03 22:27:49.000', '2022-01-18 22:27:53.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0008', 'https://i.ibb.co/LP8dSrR/title2.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-04 22:28:46.000', '2022-01-04 22:28:49.000', 'Nhu', 'Nhu');
 INSERT INTO `slide` VALUES ('sl0009', 'https://i.ibb.co/jGdks8G/title3.png', 'TITLE', 'It s not just Coffee', 'Starbucks', 'Let s check it out!', '0', '2022-01-18 22:29:48.000', '2022-01-04 22:29:52.000', 'nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0010', 'http://localhost:8080/TheStarBuck/template/web/image/thumb1.png', 'THUMB', NULL, NULL, NULL, '1', '2021-11-29 23:32:38.000', '2021-11-29 23:32:45.000', 'Nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0011', 'http://localhost:8080/TheStarBuck/template/web/image/thumb2.png', 'THUMB', NULL, NULL, NULL, '1', '2021-10-25 23:34:00.000', '2021-11-29 23:34:11.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0012', 'http://localhost:8080/TheStarBuck/template/web/image/thumb3.png', 'THUMB', NULL, NULL, NULL, '1', '2021-11-29 23:36:03.000', '2021-11-29 23:36:07.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0013', 'http://localhost:8080/TheStarBuck/template/web/image/img1.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-11-29 23:32:38.000', '2021-11-29 23:32:45.000', 'Nhu', 'nhu');
+INSERT INTO `slide` VALUES ('sl0014', 'http://localhost:8080/TheStarBuck/template/web/image/img2.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-10-25 23:34:00.000', '2021-11-29 23:34:11.000', 'Nhu', 'Nhu');
+INSERT INTO `slide` VALUES ('sl0015', 'http://localhost:8080/TheStarBuck/template/web/image/img3.png', 'THUMB_BIG', NULL, NULL, NULL, '1', '2021-11-29 23:36:03.000', '2021-11-29 23:36:07.000', 'Nhu', 'Nhu');
 
 INSERT INTO`topping` VALUES ('tp0001', 'Black Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0002', 'White Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0003', 'Yarns Bubble', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
 INSERT INTO `topping` VALUES ('tp0004', 'Cheese Jelly', '1', '50', '2021-01-10 00:00:00.000', '2021-01-10 00:00:00.000', 'KA', 'KA');
+
+INSERT INTO post VALUES ('po0001','It\'s not drink, It\'s feeling','There are many chains of coffee shops around the world, but Starbucks remains the most famous one.',' <p> There are many chains of coffee shops around the world, but Starbucks remains the most famous one. The
+                company was founded in 1971 by three young men, Jerry Baldwin, Zev Siegl and Gordon Bowker. At the time
+                they were all recently out of college and working at a Seattle coffee roastery called Starbucks. The
+                name
+                is taken from Herman Melville\'s first novel “Moby Dick”, where it symbolizes "a great white whale". </p>
+              <p>Starbucks is a popular coffee shop in the United States. It has many branches and is also popular
+                worldwide. Starbucks serves a variety of hot and cold drinks, pastries, and food items. It has been
+                around for over four decades! In 2009, Starbucks had overseas revenue of $4.8 billion from its 12,592
+                locations in 37 countries outside the U.S., making it the largest coffeehouse company in the world. <br>
+                With success, We want to grow it up online to serve our guess order the products easily. To make an
+                important mark, we’re going to introduce some new products in speacial events like: Halloween, Chrismas,
+                New Year, Lunar New Year,… <br>
+                One of the new products is Halloween Feeling.
+              </p>
+              <div class="img_blog_shop">
+                <img src="/TheStarBuck/template/web/image/img_blog_pro1.jpg" alt="" srcset="">
+                <p>Halloween Feeling</p>
+              </div>
+              <p>This one is a great product. Because you can taste different of spices by mixing a little bit of sour,
+                a little bit of spice and can’t be without sweet like “Trick or treat” game. In this Halloween,
+                Halloween Feeling’ll be shown. Let’s waiting for it. <br>
+                To celebrate for Chrismas, we can’t forget appearance of Strawberry Sweety X.
+              </p>
+              <div class="img_blog_shop">
+                <img src="/TheStarBuck/template/web/image/img_blog_pro2.jpg" alt="" srcset="">
+                <p>Strawberry Sweety X</p>
+              </div>
+              <p>You always think strawberry should be sour and sweet, but into this drink we’ll make it better and you
+                guys can feel warmer when drink, even though Strawberry Sweety X belong to cool category. This X-mas,
+                your sence is not alone anymore. <br>
+                Not only introducing our new products, but also we’ll have a lot of gifts when ordering online and our
+                coffee shop’ll discount lots of products. You and we getting the special things together.<br>
+                Thank you for reading this blog. Have a nice day!
+
+              </p>','Minh Nhu','/TheStarBuck/template/web/image/img_bolg_shop.jpg','','01/09/2021');

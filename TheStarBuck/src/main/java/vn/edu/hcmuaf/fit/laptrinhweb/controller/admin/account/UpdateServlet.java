@@ -32,6 +32,7 @@ public class UpdateServlet extends HttpServlet {
 
         String id = request.getParameter("idAccount");
         String active = request.getParameter("active"); // how to get?
+        String avatar = request.getParameter("avatar");
         String createdDate = request.getParameter("createData");
 
         Account account = accountService.getAcc(id);
@@ -41,6 +42,9 @@ public class UpdateServlet extends HttpServlet {
             account.setActive(false);
         } else {
             account.setActive(true);}
+
+        System.out.println(avatar);
+        account.setAvatar(avatar);
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
@@ -52,7 +56,8 @@ public class UpdateServlet extends HttpServlet {
 
         System.out.println(account.isActive());
 
-        accountService.save(account);
+//        accountService.save(account);
+        System.out.println(accountService.save(account));
 
         response.sendRedirect(request.getContextPath() +"/account");
     }

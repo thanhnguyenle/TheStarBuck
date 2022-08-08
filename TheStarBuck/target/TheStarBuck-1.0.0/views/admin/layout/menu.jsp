@@ -22,7 +22,7 @@
             <!-- /input-group -->
         </li>
         <li>
-            <a href="<c:url value='/views/admin/home.jsp'/>"> Dashboard</a>
+            <a href="<%=request.getContextPath()%>/admin-home"> Dashboard</a>
         </li>
         <li>
             <a href="<c:url value='/views/admin/accountManagement.jsp'/>">User management</a>
@@ -37,10 +37,10 @@
                 </li>
 
                 <li>
-                    <a href="address.html">List Address</a>
+                    <a href="<%=request.getContextPath()%>/address">List Address</a>
                 </li>
                 <li>
-                    <a href="addaddress.html">Add Address</a>
+                    <a href="<%=request.getContextPath()%>/createAddress">Add Address</a>
                 </li>
 
             </ul>
@@ -94,10 +94,10 @@
             </ul>
         </li>
         <li>
-            <a href="<%=request.getContextPath()%>/contact">Contact management</a>
+            <a href="<%=request.getContextPath()%>/admin-contact">Contact management</a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="<%=request.getContextPath()%>/contact">List contact</a>
+                    <a href="<%=request.getContextPath()%>/admin-contact">List contact</a>
                 </li>
             </ul>
         </li>
@@ -120,7 +120,7 @@
                     <a href="navigationtable.html">Navigation</a>
                 </li>
                 <li>
-                    <a href="slide.html">Slides</a>
+                    <a href="<%=request.getContextPath()%>/slide">Slides</a>
                 </li>
                 <li>
                     <a href="footer.html">Footer</a>

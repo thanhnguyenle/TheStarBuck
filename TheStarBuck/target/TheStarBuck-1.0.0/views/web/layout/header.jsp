@@ -23,7 +23,7 @@
             </div>
             <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-home'/>">Home</a></li>
             <li><a href="<c:url value='http://localhost:8080/TheStarBuck/menu'/>">Menu</a></li>
-            <li><a href="<c:url value='/views/web/poster.jsp'/>">Blog</a></li>
+            <li><a href="<c:url value='http://localhost:8080/TheStarBuck/blog'/>">Blog</a></li>
 
 
             <li>
@@ -32,7 +32,7 @@
                 <label for="showdrop2" class="mobile-item">Page <span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu2">
                     <li><a href="<c:url value='/views/web/aboutUs.jsp'/>">About Us</a></li>
-                    <li><a href="<c:url value='/views/web/contact.jsp'/>">Contact</a></li>
+                    <li><a href="<c:url value='http://localhost:8080/TheStarBuck/contact'/>">Contact</a></li>
                 </ul>
             </li>
 
@@ -59,7 +59,7 @@
                 <input type="checkbox" id="showdrop1" />
                 <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu1 <c:if test="${account == null}"> d-none </c:if>" >
-                    <li><a id="manual-ajax">Profile</a></li>
+                    <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-profile'/>">Profile</a></li>
                     <li><a href="changePass.html">Change password</a></li>
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
@@ -80,14 +80,5 @@
 <!-- thumbnail -->
 
 <script>
-
-
-    // $(document).ready( () => {
-    //     $('#ipSearch').change(() => {
-    //         alert("jcdsndsnj");
-    //         console.log('bdsd');
-    //     })
-
-    // });
 
 </script>

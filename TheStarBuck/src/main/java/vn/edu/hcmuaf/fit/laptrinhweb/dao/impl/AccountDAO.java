@@ -14,10 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     private static AccountDAO instance;
@@ -58,7 +55,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         int active = 0;
         active = account.isActive() ?  1 : 0;
         long number =
-                update(QUERIES.ACCOUNT.UPDATE, active, new SimpleDateFormat("yyyy-MM-dd").format(account.getLastLogin()) ,account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "ADMIN", account.getId());
+                update(QUERIES.ACCOUNT.UPDATE, active, new SimpleDateFormat("yyyy-MM-dd").format(account.getLastLogin()) ,account.getGroupId(), account.getAvatar(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "ADMIN", account.getId());
         return number;
     }
 
@@ -79,7 +76,10 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     }
 
     public Account login(String username, String password){
-        List<Account> accountList = query(QUERIES.ACCOUNT.LOGIN,new AccountMapper(),username,password);
+        List<Account> accountList = query(QUERIES.ACCOUNT.LOGIN,new AccountMapper(),username,password.toLowerCase());
+        System.out.println(username+" - "+password);
+        System.out.println(accountList.size());
+        System.out.println(accountList);
         if(accountList!=null&&accountList.size()==1) {
             return accountList.get(0);
         }
@@ -136,6 +136,11 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
 
     public Long deleteItem(String id){
         long output = delete(QUERIES.ACCOUNT.DELETE, id);
+        return output;
+    }
+
+    public int getAmountItem(){
+        int output = count(QUERIES.ACCOUNT.COUNT_ITEM);
         return output;
     }
 }
