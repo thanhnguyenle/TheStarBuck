@@ -478,3 +478,13 @@ font-size: 2rem;
 	background-color: rgba(0, 0, 0, 0.4);
 	z-index: 1050;
 }
+#topp{
+	border: 2px solid #017143;
+}
+#topp legend{
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--primary);
+	width: auto;
+	margin: 0rem 0.5rem;
+}
