@@ -8,4 +8,5 @@ public interface IAccountService {
     List<Account> findAll();
     Long save(Account account);
     int getAmountItem();
+    Account getAccount(String id);
 }

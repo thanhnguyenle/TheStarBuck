@@ -4,14 +4,15 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-  Account account = (Account) request.getAttribute("account");
-  %>
+
 <!DOCTYPE html>
 <html lang="en">
-
+<%
+  Account account = (Account) session.getAttribute("account");
+%>
 <head>
   <jsp:include page="layout/css.jsp"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <%--  <meta charset="UTF-8" />--%>
 <%--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
 <%-- <!-- Favicon -->--%>
@@ -140,7 +141,7 @@
             </c:forEach>
          </div>
         <div class="btn-box">
-          <a href="">
+          <a href="${pageContext.request.contextPath}/products">
             View More
           </a>
         </div>

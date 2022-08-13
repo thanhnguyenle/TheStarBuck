@@ -31,7 +31,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard ${account.fullname}</h1>
+                <h1 class="page-header">Dashboard ${sessionScope["account"].fullname}</h1>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="card card-body mb-4 revenue">

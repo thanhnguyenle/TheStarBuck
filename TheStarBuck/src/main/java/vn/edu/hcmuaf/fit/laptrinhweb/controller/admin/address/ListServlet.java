@@ -16,13 +16,6 @@ import java.util.List;
 public class ListServlet extends HttpServlet {
     private AddressService addressService = AddressService.getInstance();
 
-
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Address> addresses = addressService.findAll();
@@ -35,7 +28,7 @@ public class ListServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request,response);
     }
 }
 

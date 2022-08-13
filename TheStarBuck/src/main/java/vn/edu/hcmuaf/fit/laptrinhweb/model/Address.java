@@ -61,4 +61,16 @@ public class Address extends AbsModel  implements Serializable {
     public void setAddressDetails(String addressDetails) {
         this.addressDetails = addressDetails;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id='" + id + '\'' +
+                ", idAccount='" + idAccount + '\'' +
+                ", provinceCode='" + provinceCode + '\'' +
+                ", districtCode='" + districtCode + '\'' +
+                ", wardCode='" + wardCode + '\'' +
+                ", addressDetails='" + addressDetails + '\'' +
+                '}';
+    }
 }
