@@ -137,89 +137,10 @@
       <img src="<%=Asset.url("/template/web/image/about_poster_1.png")%>" alt="" srcset="">
     </div>
   </section>
-
-
-
-  <!-- messenger -->
-  <div class="messenger">
-    <a href=""><img src="<%=Asset.url("/template/web/image/mees.png")%>" alt="" width="70px"></a>
-  </div>
-  <div class="up">
-    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-  </div>
-
-  <!-- Footer -->
-  <footer id="footer" class="section footer">
-    <div class="container">
-      <div class="footer-container">
-
-        <div class="footer-center">
-          <h3>INFORMATION</h3>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Site Map</a>
-        </div>
-
-        <div class="footer-center">
-          <h3>Social Media</h3>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-facebook"></i>
-            </span>
-            <a href="#">Facebook</a>
-
-
-          </div>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-twitter"></i>
-            </span>
-            <a href="#">Twitter</a>
-
-          </div>
-          <div class="social_media">
-            <span>
-              <i class="fab fa-instagram"></i>
-            </span>
-            <a href="#">Instagram</a>
-
-          </div>
-
-
-        </div>
-        <div class="footer-center">
-          <h3>CONTACT US</h3>
-          <div>
-            <span>
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-            42 Dream House, Dreammy street, 7131 Dreamville, USA
-          </div>
-          <div>
-            <span>
-              <i class="far fa-envelope"></i>
-            </span>
-            company@gmail.com
-          </div>
-          <div>
-            <span>
-              <i class="fas fa-phone"></i>
-            </span>
-            456-456-4512
-          </div>
-          <div class="payment-methods">
-            <img src="<%=Asset.url("/template/web/image/payment.png")%>" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
+  <jsp:include page="layout/footer.jsp"/>
   <jsp:include page="layout/script.jsp"/>
-
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/aboutUs.js")%>"></script>
-
 </body>
 
 </html>

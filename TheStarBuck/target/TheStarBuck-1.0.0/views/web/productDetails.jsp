@@ -42,7 +42,7 @@
     <!--lib support zoom-->
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="preload" href="https://source.unsplash.com/ILi48MzhxZA/900x1200" as="image">
-
+    <link rel="stylesheet" href="<c:url value="/template/web/css/productDetails.css"/>">
     <title>Product Details</title>
     </head>
 
@@ -159,8 +159,9 @@
                                                 <div class=" container addTopping">
                                                     <form class="formCustom">
                                                         <div class="selectBox">
-                                                            <select class="item sugar">
-                                                                <option value="Select Quantity" selected disabled>
+                                                            <select class="item sugar" id="sugar"  onchange="showValueSugar()
+">
+                                                                <option value="50" selected disabled>
                                                                     Choose measure of sugar (%)
                                                                 </option>
                                                                 <option value="10">10</option>
@@ -168,8 +169,8 @@
                                                                 <option value="30">30</option>
                                                                 <option value="40">40</option>
                                                             </select>
-                                                            <select class="item ice">
-                                                                <option value="Select Quantity" selected disabled>
+                                                            <select class="item ice" id="ice" onchange="showValueIce()">
+                                                                <option value="50" selected disabled>
                                                                     Choose measure of ice (%)
                                                                 </option>
                                                                 <option value="10">10</option>
@@ -177,15 +178,25 @@
                                                                 <option value="30">30</option>
                                                                 <option value="40">40</option>
                                                             </select>
-                                                            <select class="item toppings-">
-                                                                <option value="Select Quantity" selected disabled>
-                                                                    Choose toppings (package)
-                                                                </option>
-                                                                <option value="black bubble">Black Bubble</option>
-                                                                <option value="white bubble">White Bubble</option>
-                                                                <option value="yarns bubble">Yarns Bubble</option>
-                                                                <option value="cheese jelly">Cheese Jelly</option>
-                                                            </select>
+                                                            <fieldset id="topp">
+                                                                <legend style="font-size: 20px">Choose your toppings</legend>
+                                                                <div style="margin-left: 20px">
+                                                                    <input type="checkbox" id="black" name="interest" value="Black" onchange="myShowToppings()">
+                                                                    <label for="black" style="font-size: 17px">Black bubble</label>
+                                                                </div>
+                                                                <div style="margin-left: 20px">
+                                                                    <input type="checkbox" id="white" name="interest" value="White" onchange="myShowToppings()">
+                                                                    <label for="white" style="font-size: 17px">White bubble</label>
+                                                                </div>
+                                                                <div style="margin-left: 20px">
+                                                                    <input type="checkbox" id="yarns" name="interest" value="Yarns" onchange="myShowToppings()">
+                                                                    <label for="yarns" style="font-size: 17px">Yarns bubble</label>
+                                                                </div>
+                                                                <div style="margin-left: 20px">
+                                                                    <input type="checkbox" id="cheese" name="interest" value="CheeseJelly" onchange="myShowToppings()">
+                                                                    <label for="cheese" style="font-size: 17px">Yarns bubble</label>
+                                                                </div>
+                                                            </fieldset>
                                                         </div>
                                                     </form>
                                                     <form class="formBill">
@@ -194,22 +205,19 @@
                                                             <div class="billContentBox">
                                                                 <div class="nameDrinkBox colSpaceBet">
                                                                     <h4>Name drink:</h4>
-                                                                    <span>Star fruit</span>
+                                                                    <span>${product.name}</span>
                                                                 </div>
                                                                 <div class="colSpaceBet">
                                                                     <h4>Sugar(%):</h4>
-                                                                    <span>10</span>
+                                                                    <span id="resultSugar">10</span>
                                                                 </div>
                                                                 <div class="colSpaceBet">
                                                                     <h4>Ice(%):</h4>
-                                                                    <span>10</span>
+                                                                    <span id="resultIce">10</span>
                                                                 </div>
                                                                 <div class="colSpaceBet">
                                                                     <h4>Toppings:</h4>
-                                                                    <ul class="listTopping">
-                                                                        <li>Bubble <span>1</span></li>
-                                                                        <li>Cheese<span>1</span></li>
-                                                                    </ul>
+                                                                    <span id="resultToppings">Full</span>
                                                                 </div>
                                                             </div>
                                                         </fieldset>
@@ -309,8 +317,26 @@
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
 
-
-
+<script>
+    function showValueSugar(){
+        var ele = document.getElementById('sugar').value;
+        document.getElementById('resultSugar').innerHTML = ele;
+    }
+    showValueSugar();
+    function showValueIce(){
+        var ele1 = document.getElementById('ice').value;
+        document.getElementById('resultIce').innerHTML = ele1;
+    }
+    showValueIce();
+    function myShowToppings(){
+        var toppings= [];
+        $.each($("input[name='interest']:checked"),function() {
+            toppings.push($(this).val());
+        });
+        document.getElementById('resultToppings').innerHTML = toppings;
+    }
+    myShowToppings();
+</script>
 
 <!-- Footer -->
 <jsp:include page="layout/footer.jsp"/>
