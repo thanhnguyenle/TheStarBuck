@@ -157,6 +157,7 @@
             $(".tags").remove();
             $(".lead-capture__article-footer__row").remove();
             $(".related-article").remove();
+            $("#rc-anchor-container").remove();
         }
       }
     });

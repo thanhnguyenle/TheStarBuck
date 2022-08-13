@@ -29,7 +29,23 @@
 
   <!-- Navigation -->
   <jsp:include page="layout/header.jsp"/>
+  <header>
+      <!--Check-out bar-->
+      <div class="row mrCheckout">
+          <div class="checkout-wrap col-xcol-md-6 col-sm-11 s-11 pull-right">
+              <ul class="checkout-bar">
+                  <li class="active checkout-title"><span>CART</span>
+                  </li>
+                  <li class="checkout-title"><span>CHECKOUT</span>
+                  </li>
+                  <li class="checkout-title"><span>FINISH</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
 
+      <!--End Check-out bar-->
+  </header>
   <section class="container" style="margin-top:110px; margin-bottom:80px">
       <div class="row">
           <aside class="col-lg-9">

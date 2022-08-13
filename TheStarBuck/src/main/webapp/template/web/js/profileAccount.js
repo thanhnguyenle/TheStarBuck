@@ -53,94 +53,135 @@ $(document).ready(function(){
   $('.addButtonBtn').click(function(){
       // $('.addButtonSlide').slideToggle(500);
 
-  var $t = $('.addButtonSlide');
-
-  if ($t.is(':visible')) {
+      const $t = $('.addButtonSlide');
+      console.log("hello"+$t.is(':visible'));
+      if ($t.is(':visible')) {
       $t.slideUp(500);
       // Other stuff to do on slideUp
-      $('.addButtonBtn').html('Add Address')
+          saveAddress("http://localhost:8080/TheStarBuck/createAddress")
+      $('.addButtonBtn').val('Add Address')
   } else {
       $t.slideDown(500);
       // Other stuff to down on slideDown
-      $('.addButtonBtn').html('Save')
+      $('.addButtonBtn').val('Save')
   }
 });
 });
-
 //AJAX read file json -> generate list province, district, ward
 $(document).ready(function () {
-  const xmlhttp = new XMLHttpRequest();
-  const url = "https://provinces.open-api.vn/api/?depth=3";
-  var myArrProvince;
-  var myArrDistrict;
-  var myArrWard;
+    const xmlhttp = new XMLHttpRequest();
+    const url = "https://provinces.open-api.vn/api/?depth=3";
+    var myArrProvince;
+    var myArrDistrict;
+    var myArrWard;
 
-  xmlhttp.onreadystatechange = function () {
-      //4 DONE : thao tac hoan tat
-      //200 OK, 403 Forbidden, 404 Page not found
-      if (this.readyState == 4 && this.status == 200) {
-          myArrProvince = JSON.parse(this.responseText);
-          addOption(myArrProvince,'#province');
-      }
-  };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
+    xmlhttp.onreadystatechange = function () {
+        //4 DONE : thao tac hoan tat
+        //200 OK, 403 Forbidden, 404 Page not found
+        if (this.readyState == 4 && this.status == 200) {
+            myArrProvince = JSON.parse(this.responseText);
+            addOption(myArrProvince,'#province');
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 
-  function addOption(arr,id) {
-      for (let i = 0; i < arr.length; i++) {
-          let optionValue = arr[i].code;
-          let optionText = arr[i].name;
-          $(id).append(`<option value="${optionValue}"> 
-                                             ${optionText}
-                                 </option>`);
+    function addOption(arr,id) {
+        for (let i = 0; i < arr.length; i++) {
+            let optionText = arr[i].name;
+            $(id).append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
 
-      }
-  }
+        }
+    }
 
-  $('#province').on('change',function (e){
-      //delete all selected of select
-  }).on('change',function (e){
-      let optionSelected = $("option:selected", this);
-      let valueSelected = optionSelected.val();
-      for(let i = 0;i<myArrProvince.length;i++){
-          let optionValue = myArrProvince[i].code;
-          //use "==" is exactly, dont change plz
-          if(optionValue==valueSelected){
-              myArrDistrict = myArrProvince[i].districts;
-              break;
-          }
-      }
-      let listdistrict = myArrDistrict;
-      $('#district').empty();
-      for (let j = 0; j < listdistrict.length; j++) {
-          let optionValue = listdistrict[j].code;
-          let optionText = listdistrict[j].name;
-          $('#district').append(`<option value="${optionValue}">
-                                         ${optionText}
-                             </option>`);
-      }
-  });
+    $('#province').on('change',function (e){
+        //delete all selected of select
+    }).on('change',function (e){
+        let optionSelected = $("option:selected", this);
+        let valueSelected = optionSelected.val();
+        for(let i = 0;i<myArrProvince.length;i++){
+            let optionValue = myArrProvince[i].name;
+            //use "==" is exactly, dont change plz
+            if(optionValue==valueSelected){
+                myArrDistrict = myArrProvince[i].districts;
+                break;
+            }
+        }
+        let listdistrict = myArrDistrict;
+        $('#district').empty();
+        for (let j = 0; j < listdistrict.length; j++) {
+            let optionText = listdistrict[j].name;
+            $('#district').append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
+        }
+    });
 
-  $('#district').on('change',function (e) {
-  }).on('change',function (e){
-      let optionSelected = $("option:selected", this);
-      let valueSelected = optionSelected.val();
-      for(let i = 0;i<myArrDistrict.length;i++){
-          let optionValue = myArrDistrict[i].code;
-          if(optionValue==valueSelected){
-              myArrWard = myArrDistrict[i].wards;
-              break;
-          }
-      }
+    $('#district').on('change',function (e) {
+    }).on('change',function (e){
+        let optionSelected = $("option:selected", this);
+        let valueSelected = optionSelected.val();
+        for(let i = 0;i<myArrDistrict.length;i++){
+            let optionText = myArrDistrict[i].name;
+            if(optionText==valueSelected){
+                myArrWard = myArrDistrict[i].wards;
+                break;
+            }
+        }
 
-      let listwards = myArrWard;
-      $('#ward').empty();
-      for (let j = 0; j < listwards.length; j++) {
-          let optionValue = listwards[j].code;
-          let optionText = listwards[j].name;
-          $('#ward').append(`<option value="${optionValue}">
-                                         ${optionText}
-                             </option>`);
-      }
-  });
+        let listwards = myArrWard;
+        $('#ward').empty();
+        for (let j = 0; j < listwards.length; j++) {
+            let optionText = listwards[j].name;
+            $('#ward').append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
+        }
+    });
 });
+$("#btn-cancel").click(function (){
+    clickClose();
+});
+
+function saveAccount(){
+    $( "#form-profile" ).submit(function( event ) {
+        event.preventDefault();
+        let $form = $( this ),
+            url = $form.attr( "action" ),
+            username = $("#account_username").val(),
+            fullname = $("#account_fullname2").val(),
+            avatar = $("#account_avatar").val(),
+            email = $("#account_email").val(),
+            phonenumber = $("#account_phonenumber").val(),
+            addressList = $("option:selected","#addressList").val();
+        var posting = $.post( url, { username: username,fullname:fullname,avatar:avatar,email:email,phonenumber:phonenumber,addressId:addressList});
+        posting.done(function( data ) {
+            alert("update account success!");
+        });
+    });
+}
+
+function saveAddress(url){
+    let province = $("option:selected","#province").val(),
+        district = $("option:selected","#district").val(),
+        ward = $("option:selected","#ward").val(),
+        addressDetail = $("#addressDetail").val(),
+        createdBy = $("#account_username").val();
+        var posting = $.post( url, { province: province,district:district,ward:ward,addressDetail:addressDetail,createdBy:createdBy});
+        posting.done(function( data ) {
+            alert("update address success!");
+        });
+}
+
+function ajaxAddressList(id) {
+    $.ajax({
+        type: "Get",
+        url: "/TheStarBuck/getAddressJson?id=" + id,
+        ContentType: 'json',
+        headers: { Accept: "application/json;charset=utf-8" },
+        success: function (json) {
+            if (json !== undefined && json != null) {
+                let data = JSON.parse(json);
+                for(let i = 0;i<data.length;i++){
+                    $("#addressList").append("<option value=\""+data[i].id+"\">"+data[i].provinceCode+" - "+data[i].districtCode+" - "+data[i].wardCode+"</option>")
+                }
+            }
+        }
+    });
+}

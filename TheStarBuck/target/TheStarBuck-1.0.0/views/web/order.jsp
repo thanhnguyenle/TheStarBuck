@@ -26,7 +26,19 @@
   <!-- Navigation -->
   <!-- serchBar -->
 <%--  <section class="ipSearchBox"></section>--%>
- 
+  <!--Check-out bar-->
+  <div class="row mrCheckout">
+      <div class="checkout-wrap col-xcol-md-6 col-sm-11 s-11 pull-right">
+          <ul class="checkout-bar">
+              <li class="visited checkout-title"><span>CART</span>
+              </li>
+              <li class="visited checkout-title"><span>CHECKOUT</span>
+              </li>
+              <li class="active checkout-title"><span>FINISH</span>
+              </li>
+          </ul>
+      </div>
+  </div>
 <!-- Content -->
 <section class="section order" >
     <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">

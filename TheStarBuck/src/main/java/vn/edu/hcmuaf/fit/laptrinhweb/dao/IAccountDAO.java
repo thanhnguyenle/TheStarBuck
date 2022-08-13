@@ -8,4 +8,5 @@ public interface IAccountDAO extends IGenericDAO<Account>{
     List<Account> findAll();
     Long save(Account account);
     int getAmountItem();
+    Account getItem(String id);
 }
