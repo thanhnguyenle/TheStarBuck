@@ -145,4 +145,6 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         int output = count(QUERIES.ACCOUNT.COUNT_ITEM);
         return output;
     }
+
+
 }
