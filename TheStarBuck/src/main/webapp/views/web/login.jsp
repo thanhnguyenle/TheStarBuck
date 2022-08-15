@@ -86,7 +86,7 @@
                         Account</a>
                 </div>
                 <div class="pt-3">
-                    <a class="forgotPass" href="forgotpass.jsp">Forget Password</a>
+                    <a class="forgotPass" href="forgetPassword.jsp">Forget Password</a>
                 </div>
             </div>
         </div>

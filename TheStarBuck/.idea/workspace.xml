@@ -10,12 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="006cbca4-38dc-4c63-972b-60edd9a4b1be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/forgetPassword.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/forgotpass.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/forgotpass.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/forgotpass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/doi.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/forgotpass.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/forgotpass.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/template/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/forgotpass.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +60,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/views/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\TheStarBuck1\TheStarBuck\src\main\webapp\views\web" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">

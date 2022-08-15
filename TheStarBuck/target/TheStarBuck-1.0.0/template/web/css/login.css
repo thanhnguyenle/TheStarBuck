@@ -212,13 +212,13 @@ body{
     color:  rgb(192, 38, 38);
 }
 
-.creatAcc {
+.creatAcc,.forgotPass {
     font-size: 1.25rem;
     text-decoration: none;
     color: #5a6d65;
 }
 
-.creatAcc:hover{
+.creatAcc,.forgotPass:hover{
     color:#017143;
 }
 @media (max-width: 998px) {
@@ -261,8 +261,7 @@ input::-ms-clear {
     position: relative;
     height: 35px;
     width: 120px;
-    background: #4561B0;
-    box-shadow: #0d70b7;
+    background: #3F5AA6;
     text-align: center;
     align-items: center;
 }
