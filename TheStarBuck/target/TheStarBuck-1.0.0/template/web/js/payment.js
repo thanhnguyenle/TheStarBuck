@@ -12,6 +12,7 @@ $(document).ready(function () {
 });
 
 //AJAX read file json -> generate list province, district, ward
+//AJAX read file json -> generate list province, district, ward
 $(document).ready(function () {
     const xmlhttp = new XMLHttpRequest();
     const url = "https://provinces.open-api.vn/api/?depth=3";
@@ -32,25 +33,19 @@ $(document).ready(function () {
 
     function addOption(arr,id) {
         for (let i = 0; i < arr.length; i++) {
-            let optionValue = arr[i].code;
             let optionText = arr[i].name;
-            $(id).append(`<option value="${optionValue}"> 
-                                               ${optionText}
-                                   </option>`);
+            $(id).append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
 
         }
     }
 
     $('#province').on('change',function (e){
         //delete all selected of select
-        $("#province option").attr("selected", false);
-        let optionSelected = $("option:selected", this);
-        optionSelected.attr("selected",true);
     }).on('change',function (e){
         let optionSelected = $("option:selected", this);
         let valueSelected = optionSelected.val();
         for(let i = 0;i<myArrProvince.length;i++){
-            let optionValue = myArrProvince[i].code;
+            let optionValue = myArrProvince[i].name;
             //use "==" is exactly, dont change plz
             if(optionValue==valueSelected){
                 myArrDistrict = myArrProvince[i].districts;
@@ -60,24 +55,18 @@ $(document).ready(function () {
         let listdistrict = myArrDistrict;
         $('#district').empty();
         for (let j = 0; j < listdistrict.length; j++) {
-            let optionValue = listdistrict[j].code;
             let optionText = listdistrict[j].name;
-            $('#district').append(`<option value="${optionValue}">
-                                           ${optionText}
-                               </option>`);
+            $('#district').append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
         }
     });
 
     $('#district').on('change',function (e) {
-        $("#district option").attr("selected", false);
-        let optionSelected = $("option:selected", this);
-        optionSelected.attr("selected",true);
     }).on('change',function (e){
         let optionSelected = $("option:selected", this);
         let valueSelected = optionSelected.val();
         for(let i = 0;i<myArrDistrict.length;i++){
-            let optionValue = myArrDistrict[i].code;
-            if(optionValue==valueSelected){
+            let optionText = myArrDistrict[i].name;
+            if(optionText==valueSelected){
                 myArrWard = myArrDistrict[i].wards;
                 break;
             }
@@ -86,11 +75,8 @@ $(document).ready(function () {
         let listwards = myArrWard;
         $('#ward').empty();
         for (let j = 0; j < listwards.length; j++) {
-            let optionValue = listwards[j].code;
             let optionText = listwards[j].name;
-            $('#ward').append(`<option value="${optionValue}">
-                                           ${optionText}
-                               </option>`);
+            $('#ward').append('<option value=\"'+optionText+'\">'+ optionText+'</option>');
         }
     });
 });

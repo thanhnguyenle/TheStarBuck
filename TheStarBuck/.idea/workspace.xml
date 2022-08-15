@@ -11,7 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d0de1302-7b3f-4379-98fd-81e4300d7c74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/js/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/js/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/js/profileAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/js/profileAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/web/productDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/web/productDetails.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/productDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0/views/web/productDetails.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +155,10 @@
       <updated>1660464593924</updated>
       <workItem from="1660464607830" duration="3379000" />
       <workItem from="1660484448475" duration="1730000" />
+      <workItem from="1660535080582" duration="3255000" />
+      <workItem from="1660548845015" duration="5587000" />
+      <workItem from="1660567733088" duration="782000" />
+      <workItem from="1660570310141" duration="1848000" />
     </task>
     <servers />
   </component>
