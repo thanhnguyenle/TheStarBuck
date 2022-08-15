@@ -68,9 +68,14 @@ public class AccountService implements IAccountService {
             if(!retypepassword.equals(password)){
                 output.put("errorPassword", "Retyped password is wrong");
             }
-
         }
         return output;
+    }
+    public boolean checkChangePass(String passwordOld,String passwordNew) throws NoSuchAlgorithmException {
+       return accountDAO.checkChangePass(passwordOld,passwordNew);
+    }
+    public String mdbPassword(String password) throws NoSuchAlgorithmException {
+        return accountDAO.mdbPassword(password);
     }
     public Account getAcc(String id){
         return AccountDAO.getInstance().getItem(id);
@@ -83,5 +88,9 @@ public class AccountService implements IAccountService {
     public boolean updateAuth(Account account){
         return accountDAO.editAuth(account);
     }
+    public boolean updatePass(String pass,String id){
+        return accountDAO.editPassword(pass,id);
+    }
+
 
 }

@@ -81,9 +81,7 @@
             </div>
         </div>
 </form>
-
 </div>
-<%--</div>--%>
 <jsp:include page="layout/footer.jsp"/>
 <!-- End Footer -->
 <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
