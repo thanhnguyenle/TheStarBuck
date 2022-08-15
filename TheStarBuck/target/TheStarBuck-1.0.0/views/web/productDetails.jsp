@@ -1,9 +1,11 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Product" %>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Product product = (Product) request.getAttribute("product");
+    Account account = (Account) request.getAttribute("product");;
 %>
 
 <!DOCTYPE html>
@@ -43,7 +45,9 @@
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="preload" href="https://source.unsplash.com/ILi48MzhxZA/900x1200" as="image">
     <link rel="stylesheet" href="<c:url value="/template/web/css/productDetails.css"/>">
+
     <title>Product Details</title>
+
     </head>
 
 <body>
@@ -302,9 +306,13 @@
                     </div> -->
                     <button class="round-black-btn">Submit Review</button>
                 </form>
+<%--               cmt --%>
+
+
             </div>
         </div>
     </div>
+
 
 </section>
 
@@ -316,6 +324,7 @@
 <div class="up">
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
+
 
 <script>
     function showValueSugar(){
