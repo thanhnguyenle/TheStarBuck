@@ -37,6 +37,8 @@ public class CheckoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //get cart from session
         HttpSession session = request.getSession();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         Cart cart = (Cart) session.getAttribute("cart");
         Account account = (Account) session.getAttribute("account");
         Orders orders = new Orders();
