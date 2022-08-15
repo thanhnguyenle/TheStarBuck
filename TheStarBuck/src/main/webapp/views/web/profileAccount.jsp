@@ -1,3 +1,4 @@
+
 <!--modal duoc goi ra o lop khac nen ko can nam trong the html body, ko can co header-->
 <!--goi modal o lop khac su dung thu vien AJAX JQUERY-->
 <!-- content -->
@@ -5,6 +6,7 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,18 +24,18 @@
 <br />
 <br />
 <br />
-	<div class="container">
+	<div class="container modal">
 		<br />
-		<form class="bg-white shadow rounded-lg d-block d-sm-flex" method="post" action="${pageContext.request.contextPath}/user-profile">
+		<form class="bg-white shadow rounded-lg d-block d-sm-flex" method="post" action="${pageContext.request.contextPath}/user-profile" id="form-profile">
 			<div class="profile-tab-nav border-right">
 				<div class="p-4">
 					<div class="img-circle text-center mb-3 file-upload">
 						<label for="avatar-input">
-							<img src="${account.avatar}" alt="Image" class="shadow" />
+							<img src="" id="account_avatar" alt="Image" class="shadow" />
 						</label>
 						<input type="file" accept="image/*" id="avatar-input">
 					</div>
-					<h4 class="text-center">${account.fullname}</h4>
+					<h4 class="text-center" id="account_fullname1"></h4>
 				</div>
 			</div>
 			<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
@@ -44,13 +46,13 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>User name</label>
-								<input type="text" class="form-control" name="user-name" value="${account.username}" disabled>
+								<input type="text" class="form-control" name="user-name" value="" id="account_username" disabled>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Full name</label>
-								<input type="text" class="form-control" name="full-name" value="${account.fullname}">
+								<input type="text" class="form-control" name="full-name" id="account_fullname2" value="">
 							</div>
 						</div>
 
@@ -67,13 +69,13 @@
 									   onclick="confirmSendMail()"></i>
 									<span class="tooltiptext">Please! Click to verify your gmail</span>
 								</div>
-								<input type="text" class="form-control" name="email" value="${account.email}">
+								<input type="text" class="form-control" name="email" id="account_email" value="">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Phone number</label>
-								<input type="text" class="form-control" name = "phoneNumber" value="${account.phoneNumber}">
+								<input type="text" class="form-control" name = "phoneNumber" id="account_phonenumber" value="">
 							</div>
 						</div>
 
@@ -82,10 +84,62 @@
 							<div class="form-group">
 								<label for="addressList">Address</label>
 								<select class="form-control" name="addressList" id="addressList" style="height: 30px;font-size: 15px;">
-									<option value="ad0001">Thôn 10 - Đăk Hring - Đăk Hà - Kon Tum</option>
+
 								</select>
 							</div>
 						</div>
+						<div class="col-md-12">
+							<input class="btn btn-outline-success addButtonBtn" type="button" value="Add address"/>
+						</div>
+						<!--slide-->
+						<div class="addButtonSlide">
+							<div class="row tab-content p-12 p-md-5" style="margin-left:10px;">
+								<!--Country-->
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="country">Country</label>
+										<select class="form-control" name="country" id="country">
+											<option value="Vietnam">Vietnam</option>
+											<option value="China">China</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<!--Province-->
+									<div class="form-group">
+										<label for="province">Province</label>
+										<select class="form-control" name="province" id="province"></select>
+									</div>
+								</div>
+
+
+								<!--District-->
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="district">District</label>
+										<select class="form-control" name="district" id="district"></select>
+									</div>
+								</div>
+								<!--Ward-->
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="ward">Ward</label>
+										<select class="form-control" name="ward" id="ward"></select>
+									</div>
+								</div>
+
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="addressDetail">Address Detail</label>
+										<textarea style="width:100%;resize: none;" id="addressDetail"
+												  name="addressDetail" class="form-control"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--slide-->
 
 						<div class="col-md-12">
 							<div class="form-group">
@@ -100,6 +154,7 @@
 				<div>
 					<button class="btn btn-primary" type="submit">Update</button>
 					<button class="btn btn-light" type="reset">Reset</button>
+					<button class="btn btn-light" type="button" id="btn-cancel">Cancel</button>
 				</div>
 			</div>
 		</form>
@@ -108,5 +163,18 @@
 <jsp:include page="layout/footer.jsp"/>
 <!-- End Footer -->
 <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
+<script>
+	function ajaxGetAccount() {
+		$("#account_fullname1").text("${account.fullname}");
+		$("#account_fullname2").val("${account.fullname}");
+		$("#account_avatar").prop("src","${account.avatar}");
+		$("#account_email").val("${account.email}");
+		$("#account_phonenumber").val("${account.phoneNumber}");
+		$("#account_username").val("${account.username}");
+	}
+	ajaxAddressList("${account.id}")
+	ajaxGetAccount();
+	saveAccount();
+</script>
 </body>
 </html>

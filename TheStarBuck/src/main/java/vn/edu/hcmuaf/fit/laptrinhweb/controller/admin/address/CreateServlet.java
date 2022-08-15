@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.admin.address;
 
+import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Address;
 import vn.edu.hcmuaf.fit.laptrinhweb.service.impl.AddressService;
 
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "CreateAddressServlet", value = "/createAddress")
@@ -22,9 +24,8 @@ public class CreateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String id = request.getParameter("addressId");
-        String accountId = request.getParameter("accountId");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String province = request.getParameter("province");
         String district = request.getParameter("district");
         String ward = request.getParameter("ward");
@@ -32,13 +33,15 @@ public class CreateServlet extends HttpServlet {
         String createdBy = request.getParameter("createdBy");
 
         Address address = new Address();
-
-        address.setId(id);
-        address.setIdAccount(accountId);
+        HttpSession session = request.getSession();
+        Account account = (Account) session.getAttribute("account");
+        address.setId("");
+        address.setIdAccount(account.getId());
         address.setProvinceCode(province);
         address.setDistrictCode(district);
         address.setWardCode(ward);
         address.setAddressDetails(addressDetail);
+        address.setModifiedBy(createdBy);
         address.setCreatedBy(createdBy);
 
         addressService.save(address);

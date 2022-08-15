@@ -67,9 +67,11 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
     }
 
     public Map<String, Account> getAll(){
-        List<Account> list =  query(QUERIES.ACCOUNT.GET_LIST, new AccountMapper());
+        List<Account> list =  query(QUERIES.ACCOUNT.GET_LIST, new AccountMapper(), "");
         Map<String, Account> output = new HashMap<>();
+        System.out.println(list);
         for (Account acc: list) {
+
             output.put(acc.getId(), acc);
         }
         return output;

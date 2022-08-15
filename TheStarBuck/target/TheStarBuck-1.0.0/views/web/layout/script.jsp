@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JQUERY LIB--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <%--Navigation script--%>
 <script>
     let openNav = document.querySelector(".open-btn");
@@ -211,4 +211,5 @@
             document.querySelectorAll(".modal").forEach(a => a.style.display = "block");
         }
     });
+
 </script>

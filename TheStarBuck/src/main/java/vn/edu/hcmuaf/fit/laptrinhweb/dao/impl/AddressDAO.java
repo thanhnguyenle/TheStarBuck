@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.laptrinhweb.dao.impl;
 
 import vn.edu.hcmuaf.fit.laptrinhweb.dao.IAddressDAO;
 import vn.edu.hcmuaf.fit.laptrinhweb.db.QUERIES;
+import vn.edu.hcmuaf.fit.laptrinhweb.mapper.impl.AddressMapper;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Address;
 
 import java.text.SimpleDateFormat;
@@ -21,7 +22,7 @@ public class AddressDAO extends AbstractDAO<Address> implements IAddressDAO {
     }
     @Override
     public List<Address> findAll() {
-        return null;
+        return query(QUERIES.ADDRESS.GET_LIST,new AddressMapper());
     }
 
     @Override
@@ -34,7 +35,8 @@ public class AddressDAO extends AbstractDAO<Address> implements IAddressDAO {
 
     @Override
     public Long addItem(Address address) {
-        long output = insert(QUERIES.ADDRESS.CREATE, address.getId(), address.getIdAccount(), address.getProvinceCode(), address.getDistrictCode(), address.getWardCode(), address.getAddressDetails(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), address.getCreatedBy(), address.getCreatedBy());
+        System.out.println(address);
+        long output = insert(QUERIES.ADDRESS.CREATE, "", address.getIdAccount(), address.getProvinceCode(), address.getDistrictCode(), address.getWardCode(), address.getAddressDetails(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), address.getModifiedBy(), address.getCreatedBy());
         return output;
     }
 
@@ -42,5 +44,10 @@ public class AddressDAO extends AbstractDAO<Address> implements IAddressDAO {
     public Long updateItem(Address address) {
         long output = update(QUERIES.ADDRESS.UPDATE, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), address.getModifiedBy(), address.getId());
         return output;
+    }
+
+    @Override
+    public List<Address> getByAccountID(String id) {
+        return query(QUERIES.ADDRESS.GET_BY_ACCID,new AddressMapper(),id);
     }
 }

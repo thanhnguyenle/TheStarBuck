@@ -41,12 +41,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>AddressId</label>
-                                        <input class="form-control" name="addressId" placeholder="Enter address id">
-                                    </div>
-                                    <div class="form-group">
                                         <label>AccountId</label>
-                                        <input class="form-control" name="accountId" placeholder="Enter account id">
+                                        <input class="form-control" name="accountId" disabled value="${sessionScope["account"].id}">
                                     </div>
                                     <div class="form-group">
                                         <label for="province">ProvinceCode</label>

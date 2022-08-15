@@ -27,4 +27,9 @@ public class AddressService implements IAddressService {
     public Long save(Address address) {
         return addressDAO.save(address);
     }
+
+    @Override
+    public List<Address> getByAccountID(String id) {
+        return addressDAO.getByAccountID(id);
+    }
 }

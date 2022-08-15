@@ -25,6 +25,7 @@
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
+                <li><a href="<%=request.getContextPath()%>/user-home"><i class="fa fa-home fa-fw"></i> GO TO MY WEB</a>
                 <li><a href="<%=request.getContextPath()%>/admin-profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
                 </li>
                 <li>
