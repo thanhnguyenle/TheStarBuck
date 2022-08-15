@@ -10,11 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="006cbca4-38dc-4c63-972b-60edd9a4b1be" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/page404.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/web/page404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheStarBuck-1.0.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/web/css/page404.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/web/css/page404.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +167,7 @@
       <updated>1660464593924</updated>
       <workItem from="1660464607830" duration="3379000" />
       <workItem from="1660484448475" duration="1730000" />
-      <workItem from="1660571712492" duration="389000" />
+      <workItem from="1660571712492" duration="493000" />
     </task>
     <servers />
   </component>
