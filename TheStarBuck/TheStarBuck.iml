@@ -75,5 +75,6 @@
     <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="OwlCarousel2" level="application" />
     <orderEntry type="library" name="jquerysctipttop" level="application" />
+    <orderEntry type="library" name="platform" level="application" />
   </component>
 </module>
