@@ -250,10 +250,28 @@ input::-ms-reveal,
 input::-ms-clear {
     display: none;
 }
-.login_with{
+#buttonSo{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
     margin: auto;
 }
-.login_with .g-signin2{
-    width: 18%;
-    margin: auto;
+.fb_iframe_widget{
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    width: 120px;
+    background: #4561B0;
+    box-shadow: #0d70b7;
+    text-align: center;
+    align-items: center;
 }
+div#u_0_1_lN {
+    width: 120px !important;
+    height: 35px !important;
+    text-align: center !important;
+    align-items: center !important;
+    margin: auto!important;
+    float: left !important;
+}
+
