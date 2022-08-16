@@ -34,6 +34,7 @@ public class RegisterServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
                 if (mapCheck.isEmpty()) {
+
                     session.removeAttribute("error");
                     RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
                     rd.forward(request, response);

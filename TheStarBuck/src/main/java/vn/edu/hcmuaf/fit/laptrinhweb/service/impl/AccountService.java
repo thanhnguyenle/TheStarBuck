@@ -85,6 +85,9 @@ public class AccountService implements IAccountService {
     }
     public Map<String, Object> register(String username, String email, String password,String retypepassword) throws NoSuchAlgorithmException {
         Map<String, Object> output = new HashMap<>();
+        if(username.isEmpty() || email.isEmpty() || password.isEmpty() || retypepassword.isEmpty()){
+            output.put("pleaseFill", "Please fill");
+        }
         if(!accountDAO.register(username, email, password)){
             if(checkUsername(username)){
                 output.put("errorUsername", "Username is exist");
