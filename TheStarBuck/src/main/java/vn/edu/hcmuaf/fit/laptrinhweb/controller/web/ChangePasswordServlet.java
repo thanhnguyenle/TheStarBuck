@@ -35,7 +35,6 @@ public class ChangePasswordServlet extends HttpServlet {
         try {
             if(accountService.checkChangePass(pass,passwordOla) && passwordNew.equals(passwordOla)){
              String passwordNewMb5 = accountService.mdbPassword(passwordNew);
-             System.out.println(passwordNewMb5);
              account.setPassword(passwordNewMb5);
              accountService.updatePass(passwordNewMb5,account.getId());
             RequestDispatcher rd = request.getRequestDispatcher("/views/web/index.jsp");
