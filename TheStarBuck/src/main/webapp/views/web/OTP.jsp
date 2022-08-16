@@ -19,12 +19,12 @@
                     <form>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="inp px-3" placeholder="OTP code">
+                                <input type="text" class="inp px-3" name="authcode" placeholder="OTP code">
                             </div>
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" class="inp px-3 ipnPassword"  placeholder="password" id="pass" >
+                                <input type="password" class="inp px-3 ipnPassword" name="newpassword"  placeholder="password" id="pass" >
                                 <button class="btn btn-outline-secondary btnPassword" type="button" id="passeye">
                                     <span class="fas fa-eye"></span>
                                   </button>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" class="inp px-3 ipnPassword"  placeholder="retype password" id="retypepass" >
+                                <input type="password" class="inp px-3 ipnPassword" name="retypepassword"  placeholder="retype password" id="retypepass" >
                                 <button class="btn btn-outline-secondary btnPassword" type="button" id="retypeeye">
                                     <span class="fas fa-eye"></span>
                                   </button>
