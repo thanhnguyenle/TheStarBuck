@@ -7,7 +7,7 @@
     --black: #222;
     --grey1: #3a3b3c;
     --grey2: #828282;
-    --pink:#A6447A;
+    --pink: #A6447A;
 
 }
 
@@ -332,10 +332,10 @@ select {
     border-radius: 5px;
 }
 
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
     font-size: 1.5rem;
     font-weight: 600;
-    
+
 }
 
 #address,
@@ -382,12 +382,14 @@ input[type="checkbox"]+label {
 .item {
     position: relative;
 }
+
 .d-flex.jusify-content-start.align-items-center.rounded.p-2 {
     border: 1.5px solid var(--primary);
     border-radius: 20px !important;
 }
+
 .number {
-    position: absolute; 
+    position: absolute;
     font-weight: 800;
     color: #fff;
     background-color: #0033ff;
@@ -404,7 +406,7 @@ input[type="checkbox"]+label {
     font-size: 1.2rem;
 }
 
-#cart~p.text-muted {
+#cart ~ p.text-muted {
     margin: 0;
     font-size: 0.9rem;
 }
@@ -442,7 +444,7 @@ tr.text-muted td {
     background-color: #3cb371;
 }
 
-.wrapper .row+div.text-muted {
+.wrapper .row + div.text-muted {
     font-size: 0.9rem;
 }
 
@@ -469,7 +471,7 @@ tr.text-muted td {
     padding-left: 45px;
 }
 
-@media(min-width:768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .progress .progress-bar {
         width: 33%;
     }
@@ -480,7 +482,7 @@ tr.text-muted td {
     }
 
     .wrapper div.h5.large,
-    .wrapper .row+div.text-muted {
+    .wrapper .row + div.text-muted {
         display: none;
     }
 
@@ -496,7 +498,7 @@ tr.text-muted td {
 
 }
 
-@media(min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
     .progress .progress-bar {
         width: 29%;
     }
@@ -507,7 +509,7 @@ tr.text-muted td {
     }
 
     .wrapper div.h5.large,
-    .wrapper .row+div.text-muted {
+    .wrapper .row + div.text-muted {
         display: none;
     }
 
@@ -525,7 +527,7 @@ tr.text-muted td {
     margin: 80px 0 0 0 !important;
 }
 
-@media(max-width: 575px) {
+@media (max-width: 575px) {
     .progress .progress-bar {
         width: 38%
     }
@@ -545,13 +547,13 @@ tr.text-muted td {
     }
 }
 
-@media(max-width: 424px) {
+@media (max-width: 424px) {
     body {
         width: fit-content
     }
 }
 
-@media(max-width: 375px) {
+@media (max-width: 375px) {
     .progress .progress-bar {
         width: 35%
     }
@@ -582,7 +584,7 @@ tr.text-muted td {
     text-align: center;
     text-decoration: none;
     transition-duration: .2s;
-    transition-property: transform,box-shadow,width,height;
+    transition-property: transform, box-shadow, width, height;
     transition-timing-function: ease;
     z-index: 1;
     top: 80%;
@@ -593,7 +595,7 @@ tr.text-muted td {
     color: var(--white);
     border: 2px solid var(--primary);
     font-size: 1.8rem;
-   
+
 }
 
 .btnBack {
@@ -601,16 +603,20 @@ tr.text-muted td {
     color: var(--primary);
     border: 2px solid var(--primary);
     font-size: 1.8rem;
-  
+
 }
 
 .btnBack:hover {
     background-color: var(--primary);
     color: var(--white);
     font-size: 1.8rem;
-  
 }
-.messenger{
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.messenger {
     background: transparent;
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.28;
@@ -621,36 +627,60 @@ tr.text-muted td {
     right: 20px;
     animation: shimmy3 2s infinite;
     animation-direction: alternate;
-    
-  } 
-  .messenger img{
+
+}
+
+.messenger img {
     cursor: pointer;
-  }
-  @keyframes shimmy3 {
+}
+
+@keyframes shimmy3 {
     0% {
-      transform: translate(0,0);    
+        transform: translate(0, 0);
     }
     100% {
-      transform: translate(10px, -10px);
+        transform: translate(10px, -10px);
     }
-  }
-  .up{
+}
+
+.up {
     font-size: 50px;
     position: fixed;
     bottom: 30px;
     right: 20px;
     color: #788d84;
-  }
-  .up:hover{
-    color: #00a05d;
-  }
-  .iconUp{
-    display: none;
-  }
+}
 
-  #addressDetail:focus{
-        display: block;
-        outline: none;
-        text-align: left;
-        max-width: 100%;
-  }
+.up:hover {
+    color: #00a05d;
+}
+
+.iconUp {
+    display: none;
+}
+
+#addressDetail:focus {
+    display: block;
+    outline: none;
+    text-align: left;
+    max-width: 100%;
+}
+
+.payment {
+    margin-bottom: 4rem;
+}
+
+#check-out {
+    margin-top: 10px;
+    background: var(--primary);
+    border: var(--primary) solid 2px;
+    padding: 8px;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+#check-out:hover{
+    background: white;
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+}

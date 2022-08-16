@@ -10,7 +10,7 @@
 
 <head>
     <jsp:include page="layout/css.jsp"/>
-    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/profileAccount.css")%>"/>
+    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/profileChange.css")%>"/>
     <!-- Custom StyleSheet -->
     <title>ChangePassword</title>
 </head>
@@ -18,7 +18,6 @@
 <body>
 <!-- Navigation -->
 <jsp:include page="layout/header.jsp"/>
-<%--<div class="modal" id="modalId">--%>
 <br/>
 <br/>
 <br/>
@@ -82,6 +81,9 @@
         </div>
 </form>
 </div>
+<br/>
+<br/>
+<br/>
 <jsp:include page="layout/footer.jsp"/>
 <!-- End Footer -->
 <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
