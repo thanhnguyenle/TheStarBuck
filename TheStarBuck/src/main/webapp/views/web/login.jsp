@@ -102,7 +102,6 @@
     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
         error.remove();
     } else {
-
         console.info( "This page is not reloaded");
     }
     function onSignIn(googleUser) {
@@ -122,7 +121,7 @@
                 alert("login google success!");
                 window.location.replace("${pageContext.request.contextPath}/user-home");
             }
-        }
+        });
           //facebook
         // Get the modal
         var modal = document.getElementById('id01');
@@ -167,7 +166,6 @@
         });
         FB.api('/me', {fields: ' name, email'}, function (response) {
             console.log(response);
-            // window.location.href = 'Login?action=Face&name='+response.name+'&email='+response.email+'&id='+response.id;
         });
     }
 

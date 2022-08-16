@@ -1,12 +1,3 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: NLTHANH
-  Date: 6/6/2022
-  Time: 9:26 AM
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JQUERY LIB--%>
@@ -23,12 +14,8 @@
                 image.onload = () => image.classList.add('loaded')
             }
         })
-
-        // if all loaded removeEventListener
     }
-
     lazyLoad()
-
     window.addEventListener('scroll',_.throttle(lazyLoad,16))
     window.addEventListener('resize', _.throttle(lazyLoad,16))
 
@@ -141,9 +128,6 @@
                             parsedObj.forEach((elements) => console.log(elements['id']));
                         }
                     })
-                    // .done(function( msg ) {
-                    //   alert( "Data Saved: " + msg );
-                    // });
                 });
             });
         }
@@ -190,26 +174,9 @@
         iconUp.addEventListener("click", scrollFunction);
     }
 </script>
-
-<%--Slim là bản jquery nhưng không có thư viện AJAX--%>
-<%--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"--%>
-<%--        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"--%>
-<%--        crossorigin="anonymous"></script>--%>
-<%--Bootstrap bundle tích hợp cả popper và bootstrap.min.js trong nó--%>
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"--%>
-<%--        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"--%>
-<%--        crossorigin="anonymous"></script>--%>
-<%--&lt;%&ndash;Thư viện tạo các tooltip với tuỳ biến cao&ndash;%&gt;--%>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"--%>
-<%--        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"--%>
-<%--        crossorigin="anonymous"></script>--%>
-
-<%--<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>--%>
 <!-- jQuery Modal -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<!-- Custom Scripts -->
-<%--<script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
 <script>
     // Open modal in AJAX callback
     let onetime = false;

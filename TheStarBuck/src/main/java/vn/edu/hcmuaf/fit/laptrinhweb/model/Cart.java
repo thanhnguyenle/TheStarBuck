@@ -16,7 +16,6 @@ public class Cart extends AbsModel  implements Serializable {
 	private String status;
 	private String note;
 	private boolean active;
-	private List<CartItem> cartItemList;
 	private final Map<String, Product> productList;
 	private Cart() {
 		productList = new HashMap<>();
@@ -36,18 +35,10 @@ public class Cart extends AbsModel  implements Serializable {
 				", status='" + status + '\'' +
 				", note='" + note + '\'' +
 				", active=" + active +
-				", cartItemList=" + cartItemList +
 				", productList=" + productList +
 				'}';
 	}
 
-	public List<CartItem> getCartItemList() {
-		return cartItemList;
-	}
-
-	public void setCartItemList(List<CartItem> cartItemList) {
-		this.cartItemList = cartItemList;
-	}
 
 	//put product to cart
 	public void putProduct(Product product){

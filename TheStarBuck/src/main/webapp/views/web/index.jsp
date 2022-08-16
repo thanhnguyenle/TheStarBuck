@@ -13,26 +13,8 @@
 <head>
   <jsp:include page="layout/css.jsp"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-<%--  <meta charset="UTF-8" />--%>
-<%--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
-<%-- <!-- Favicon -->--%>
-<%-- <link rel="shortcut icon" href="https://i.ibb.co/nMxcqW4/logo.png" type="image/png" />--%>
-<%-- <!-- Font Awesome -->--%>
-<%-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />--%>
-<%-- <!-- Boxicons -->--%>
-<%-- <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>--%>
-<%-- <!-- Custom StyleSheet -->--%>
-<%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"--%>
-<%--   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--%>
-<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
- <!-- animated -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
- <!-- CSS -->
  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<%--  <!-- slier-image -->--%>
-<%--  <link rel="preconnect" href="https://fonts.gstatic.com" />--%>
-<%--  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />--%>
-
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- slier-image -->
@@ -62,8 +44,6 @@
           <c:forEach items="${slideThumb}" var="item">
               <c:set var="count" value="${count + 1}" scope="page"/>
         <li><img id="thumb${count}" src="${item.image}" class="animate__animated animate__backInUp animate__delay-${count}s"></li>
-<%--        <li><img id="thumb2" src="https://i.ibb.co/25ZcP5F/thumb2.png" class="animate__animated animate__backInUp animate__delay-2s"></li>--%>
-<%--        <li><img id="thumb3" src="https://i.ibb.co/cQb0DNS/thumb3.png" class="animate__animated animate__backInUp animate__delay-3s"></li>--%>
           </c:forEach>
       </ul>
     </div>
@@ -363,29 +343,10 @@
   <!-- End Footer -->
   <!-- jquery -->
  <jsp:include page="layout/script.jsp"/>
-<%--Thư viện UI--%>
-<%-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>--%>
-<%-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>--%>
-    <!-- Custom Scripts -->
-<%-- 1 Thư viện để làm slider cho web khá hay và đơn giản--%>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-  <!-- JavaScript -->
-<%-- Flickity là thư viện Javascript cho phép bạn tạo slideshow một cách hết sức đơn giản, hỗ trợ responsive và tuỳ biến rất mạnh mẽ.--%>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<%-- Owl Carousel là một plugin giúp xây dựng các slide show được sử dụng hàng đầu trong website bởi tính đa năng, tiện lợi của nó.--%>
-<%--  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>--%>
-
-  <!-- slier-image -->
-<%--  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>--%>
-<%-- jQuery migrate là các tập tin JavaScript để hỗ trợ cho những theme (giao diện) sử dụng các phiên bản cũ hơn của jQuery.--%>
-<%-- Việc sử dụng nó trong trang web sẽ gây làm chậm load trang--%>
-<%--  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>--%>
-<%-- Slick.js là một plugin jQuery nổi tiếng được tạo ra bởi Ken Wheeler cho phép bạn tạo ra những responsive carousel tuyệt đẹp--%>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  
   <!-- jQuery Modal -->
-<%--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>--%>
   <script type="text/javascript" src="<%= Asset.url("/template/web/js/index.js")%>"></script>
 <%-- <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
 <script  type="text/javascript">

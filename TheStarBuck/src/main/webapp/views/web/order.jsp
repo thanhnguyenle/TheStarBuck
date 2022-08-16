@@ -23,10 +23,7 @@
 
   <!-- Navigation -->
   <jsp:include page="layout/header.jsp"/>
-  <!-- Navigation -->
-  <!-- serchBar -->
-<%--  <section class="ipSearchBox"></section>--%>
-  <!--Check-out bar-->
+
   <div class="row mrCheckout">
       <div class="checkout-wrap col-xcol-md-6 col-sm-11 s-11 pull-right">
           <ul class="checkout-bar">

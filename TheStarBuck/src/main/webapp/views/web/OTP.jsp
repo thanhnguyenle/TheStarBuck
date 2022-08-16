@@ -1,16 +1,9 @@
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<%--    <meta charset="UTF-8">--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <title>OTP</title>
     <jsp:include page="layout/css.jsp"/>
-<%--    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"--%>
-<%--        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--%>
-<%--    <link rel="shortcut icon" type="images/logo.png" href="images/logo.png">--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/forgotpass.css")%>" />
 </head>
 
@@ -57,7 +50,6 @@
     </section>
 
 </body>
-<%--<script src="<c:url value="/template/web/js/login.js"/>"></script>--%>
 <script src="<%= Asset.url("/template/web/js/login.js")%>"></script>
 
 </html>
