@@ -4,9 +4,6 @@
 
 <head>
   <jsp:include page="layout/css.jsp"/>
-<%--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"--%>
-<%--    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--%>
-  <!-- animated -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="<%= Asset.url("/template/web/css/aboutUs.css")%>" />
   <!-- Custom StyleSheet -->

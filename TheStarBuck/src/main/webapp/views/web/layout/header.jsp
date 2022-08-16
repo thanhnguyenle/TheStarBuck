@@ -1,15 +1,8 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart" %><%--
-  Created by IntelliJ IDEA.
-  User: DUONGMINHNHU
-  Date: 11/12/2021
-  Time: 13:51
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Cart" %>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Cart cart = (Cart) session.getAttribute("cart");
-
 %>
 <nav id="header" class="nav">
     <div class="wrapper container">

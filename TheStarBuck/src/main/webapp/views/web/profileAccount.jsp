@@ -1,7 +1,3 @@
-
-<!--modal duoc goi ra o lop khac nen ko can nam trong the html body, ko can co header-->
-<!--goi modal o lop khac su dung thu vien AJAX JQUERY-->
-<!-- content -->
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.Account" %>
 <%@include file="/common/taglib.jsp"%>
@@ -166,7 +162,6 @@
 		$("#account_phonenumber").val("${account.phoneNumber}");
 		$("#account_username").val("${account.username}");
 		let x = "${account.emailVerifiedAt}";
-		console.log(x)
 		if(x!=null){
 			$("#verified").show();
 			$("#verify-qa").hide();

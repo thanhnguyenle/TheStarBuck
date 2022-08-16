@@ -2,10 +2,8 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>ForgetPassword</title>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
@@ -33,7 +31,6 @@
                             <div class="offset-1 col-lg-10">
                                 <button type="submit" class="btn1">Submit</button>
                             </div>
-                        </div>
                     </form>                    
                     </div>
                 </div>

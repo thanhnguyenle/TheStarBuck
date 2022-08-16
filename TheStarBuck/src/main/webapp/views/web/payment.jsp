@@ -154,7 +154,6 @@
 <!-- jquery -->
 <jsp:include page="layout/script.jsp"/>
 <!-- Custom Scripts -->
-<%--    <script src="./js/payment.js"></script>--%>
 <script src="<%= Asset.url("/template/web/js/payment.js")%>"></script>
 <script>
 

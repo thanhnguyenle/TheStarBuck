@@ -1,10 +1,5 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %><%--
-  Created by IntelliJ IDEA.
-  User: MinhNhu
-  Date: 8/15/2022
-  Time: 9:00 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
