@@ -102,24 +102,17 @@
             </div>
         </div>
 <%--        <div class="pl-3 font-weight-bold">Related Subsriptions</div>--%>
-<%--        <div class="d-sm-flex justify-content-between rounded my-3 subscriptions">--%>
-<%--            <div> <b>#9632</b> </div>--%>
-<%--            <div>May 22, 2017</div>--%>
-<%--            <div>Status: Processing</div>--%>
-<%--            <div> Total: <b> $68.8 for 10 items</b> </div>--%>
-<%--        </div>--%>
+    <%--        <div class="d-sm-flex justify-content-between rounded my-3 subscriptions">--%>
+    <%--            <div> <b>#9632</b> </div>--%>
+    <%--            <div>May 22, 2017</div>--%>
+    <%--            <div>Status: Processing</div>--%>
+    <%--            <div> Total: <b> $68.8 for 10 items</b> </div>--%>
+    <%--        </div>--%>
+        <div class="btnCon d-flex flex-column justify-content-center align-items-center">
+            <a href="#" id="btnContinue">Continue</a>
+        </div>
     </div>
 </section>
-
-
-
-  <!-- messenger -->
-  <div class="messenger">
-    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
-  </div>
-  <div class="up">
-    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-  </div>
 
   <!-- Footer -->
   <jsp:include page="layout/footer.jsp"/>
@@ -128,7 +121,5 @@
   <jsp:include page="layout/script.jsp"/>
   <!-- Custom Scripts -->
   <script src="<%= Asset.url("/template/web/js/product.js")%>"></script>
-
 </body>
-
 </html>

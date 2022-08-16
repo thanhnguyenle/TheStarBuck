@@ -359,10 +359,21 @@
     </div>
   </section>
   <!-- Footer -->
+
  <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
   <!-- jquery -->
  <jsp:include page="layout/script.jsp"/>
+
+
+ <!-- Messenger Plugin chat Code -->
+ <div id="fb-root"></div>
+
+ <!-- Your Plugin chat code -->
+ <div id="fb-customer-chat" class="fb-customerchat">
+ </div>
+
+
 <%--Thư viện UI--%>
 <%-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>--%>
 <%-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>--%>
