@@ -1,8 +1,6 @@
 package vn.edu.hcmuaf.fit.laptrinhweb.controller.web.login_facebook;
 
 import com.restfb.types.User;
-import vn.edu.hcmuaf.fit.laptrinhweb.controller.web.login_google.GooglePojo;
-import vn.edu.hcmuaf.fit.laptrinhweb.controller.web.login_google.GoogleUtils;
 import vn.edu.hcmuaf.fit.laptrinhweb.model.Account;
 
 import javax.servlet.RequestDispatcher;

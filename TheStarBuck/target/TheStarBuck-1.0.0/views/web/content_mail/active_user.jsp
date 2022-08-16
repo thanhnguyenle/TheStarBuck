@@ -1,5 +1,3 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.model.AbsModel" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 >
@@ -361,13 +359,19 @@
             </td>
         </tr><!-- end tr -->
         <tr>
+
             <td valign="middle" class="hero bg_white" style="padding: 2em 0 4em 0;">
                 <table>
                     <tr>
                         <td>
                             <div class="text" style="padding: 0 2.5em; text-align: center;">
                                 <h2>Please verify your email</h2>
-                                <p><a href="<%= Asset.url("baseUrl")%>" class="btn btn-primary">Active your account</a></p>
+<%--                                href="href="https://www.activecampaign.com"--%>
+                                <p>
+                                    <!--[if mso]>&nbsp;<![endif]-->
+                                    <a href="#baseurl#" target="_blank" class="btn btn-primary" >Active your account<br/>#baseurl#</a>
+                                    <!--[if mso]>&nbsp;<![endif]-->
+                                </p>
                             </div>
                         </td>
                     </tr>

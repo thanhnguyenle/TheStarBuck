@@ -18,9 +18,6 @@
 </head>
 
 <body>
-<!-- Navigation -->
-<jsp:include page="layout/header.jsp"/>
-<%--<div class="modal" id="modalId">--%>
 <br />
 <br />
 <br />
@@ -60,11 +57,11 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Email</label>
-								<div class="tooltip">
-									<i class="fas fa-check" hidden></i>
+								<div class="tooltip" id="verified">
+									<i class="fas fa-check" ></i>
 									<span class="tooltiptext">Verified</span>
 								</div>
-								<div class="tooltip">
+								<div class="tooltip" id="verify-qa">
 									<i class="fa fa-exclamation-triangle" aria-hidden="true"
 									   onclick="confirmSendMail()"></i>
 									<span class="tooltiptext">Please! Click to verify your gmail</span>
@@ -159,9 +156,6 @@
 			</div>
 		</form>
 	</div>
-<%--</div>--%>
-<jsp:include page="layout/footer.jsp"/>
-<!-- End Footer -->
 <script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>
 <script>
 	function ajaxGetAccount() {
@@ -171,10 +165,33 @@
 		$("#account_email").val("${account.email}");
 		$("#account_phonenumber").val("${account.phoneNumber}");
 		$("#account_username").val("${account.username}");
+		let x = "${account.emailVerifiedAt}";
+		console.log(x)
+		if(x!=null){
+			$("#verified").show();
+			$("#verify-qa").hide();
+		}else{
+			$("#verified").hide();
+			$("#verify-qa").show();
+		}
+
 	}
 	ajaxAddressList("${account.id}")
 	ajaxGetAccount();
 	saveAccount();
+
+	function confirmSendMail(){
+		if (confirm("You want verify your mail right now!") === true) {
+			//send mail to user
+			let email = "${account.email}";
+			let posting = $.post("http://localhost:8080/TheStarBuck/activeAccount",{email:email});
+			posting.done(function (data){
+				alert("Check email to active!");
+			});
+		} else {
+			//nothing
+		}
+	}
 </script>
 </body>
 </html>

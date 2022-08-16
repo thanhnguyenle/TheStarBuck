@@ -32,7 +32,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
 
     @Override
     public List<Account> findAll() {
-        return null;
+        return query(QUERIES.ACCOUNT.GET_LIST,new AccountMapper());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         int active = 0;
         active = account.isActive() ?  1 : 0;
         long number =
-                insert(QUERIES.ACCOUNT.CREATE, account.getId(),account.getUsername(), account.getFullname(), active, account.getPhoneNumber(), account.getEmail(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
+                insert(QUERIES.ACCOUNT.CREATE, account.getId(),account.getUsername(), account.getFullname(), active, account.getPhoneNumber(), account.getEmail(), null, account.getPassword(), account.getAvatar(), account.getAddressId(), account.getAboutMe(), "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getGroupId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), account.getCreatedBy(), account.getCreatedBy());
         return number;
     }
 
@@ -134,6 +134,16 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         List<Account> list = query(QUERIES.ACCOUNT.GET_ITEM_BYID, new AccountMapper(), id);
         Account output = list.get(0);
         return output;
+    }
+
+    @Override
+    public Account getAccountByEmail(String email) {
+        return query(QUERIES.ACCOUNT.GET_ITEM_BYEMAIL,new AccountMapper(),email).get(0);
+    }
+
+    @Override
+    public boolean verifyAccount(String email) {
+        return update(QUERIES.ACCOUNT.VERIFY_ACCOUNT,email)>0;
     }
 
     public Long deleteItem(String id){
