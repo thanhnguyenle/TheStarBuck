@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap" />
     <!-- animated: Tạo hiệu ứng chuyển động sử dụng @Keyframe mà không cần sử dụng Javascript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1" nonce="3Xb9o66S"></script>
 <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />--%>
     <!--custom navigation-->
 <%--    <link rel="stylesheet" href="css/navigation.css" />--%>
@@ -51,7 +51,8 @@
     </head>
 
 <body>
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1" nonce="3Xb9o66S"></script>
 <!-- Navigation -->
 <jsp:include page="layout/header.jsp"/>
 
@@ -260,71 +261,17 @@
                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                 ${product.description}
             </div>
-            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                <div class="review-heading">REVIEWS</div>
-                <p class="mb-20">There are no reviews yet.</p>
-                <form class="review-form">
-                    <div class="form-group">
-                        <label>Your rating</label>
-                        <div class="reviews-counter">
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Your message</label>
-                        <textarea class="form-control" rows="10"></textarea>
-                    </div>
-                    <!-- <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="" class="form-control" placeholder="Name*">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="" class="form-control" placeholder="Email Id*">
-                            </div>
-                        </div>
-                    </div> -->
-                    <button class="round-black-btn">Submit Review</button>
-                </form>
-<%--               cmt --%>
-
-
-            </div>
+            <div  class="tab-pane fade fb-comments" id="review" role="tabpanel" aria-labelledby="review-tab" data-href="https://app-thestarbuck-220816195917.azurewebsites.net/" data-width="" data-numposts="5"></div>
         </div>
     </div>
-
-
 </section>
-
-
-<!-- messenger -->
-<div class="messenger">
-    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
-</div>
-<div class="up">
-    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
-</div>
-
 
 <script>
     function showValueSugar(){

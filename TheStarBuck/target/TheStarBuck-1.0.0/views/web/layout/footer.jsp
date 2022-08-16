@@ -7,10 +7,6 @@
 --%>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- messenger -->
-<%--<div class="messenger">--%>
-<%--    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>--%>
-<%--</div>--%>
 <%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
 <meta property="fb:app_id" content="1106802269902043"/>
 <meta property="fb:admins" content="100005868942037"/>
