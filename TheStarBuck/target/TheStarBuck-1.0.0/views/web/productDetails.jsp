@@ -137,7 +137,7 @@
                                     Choose size
                                 </option>
                                 <option value="S">S</option>
-                                <option value="M">M</option>
+                                <option value="M" selected>M</option>
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
                             </select>
@@ -242,7 +242,7 @@
                 <div class="product-count">
                     <form action="#" class="display-flex">
                         <div class="qtyminus">-</div>
-                        <input type="text" name="quantity" value="1" class="qty">
+                        <input type="text" name="quantity" value="1" class="qty" min="1" max="50">
                         <div class="qtyplus">+</div>
                     </form>
                     <a href="<%=request.getContextPath()%>/add-cart?id=${product.id}" class="round-black-btn">Add to Cart</a>
