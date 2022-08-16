@@ -11,7 +11,30 @@
 <%--<div class="messenger">--%>
 <%--    <a href=""><img src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px"></a>--%>
 <%--</div>--%>
-<jsp:include page="facebook_noti.jsp"/>
+<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
+<meta property="fb:app_id" content="1106802269902043"/>
+<meta property="fb:admins" content="100005868942037"/>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1"
+        nonce="EknEoy7g"></script>
+<script src="<%= Asset.url("/template/web/js/jquery.js")%>"></script>
+<div class="fb-livechat" style="margin-bottom: 4rem ;margin-right: 2rem ;overflow: hidden; position: fixed;right: 20px;  bottom: 80px;">
+    <div class="ctrlq fb-overlay"></div>
+    <div class="fb-widget">
+        <div class="ctrlq fb-close"></div>
+        <div class="fb-page" data-href="https://www.facebook.com/Thestarbuck-108540498635694" data-tabs="messages"
+             data-width="360" data-height="400" data-small-header="true" data-hide-cover="true"
+             data-show-facepile="false">
+        </div>
+        <div class="fb-credit" style="font-weight: bold"><a href="https://www.facebook.com/Thestarbuck-108540498635694" target="_blank">Powered by 3 Con Ca</a></div>
+        <div id="fb-root"></div>
+    </div>
+</div>
+<div title="Send us a message via Facebook"
+     class="ctrlq fb-button">
+    <img class="messenger" src="<c:url value='https://i.ibb.co/kQJ0hLq/mees.png'/>" alt="" width="70px">
+</div>
+<%--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>--%>
 <div class="up">
     <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
@@ -79,6 +102,42 @@
         </div>
     </div>
 </footer>
+<script>
+    $(document).ready(function () {
+        let t = {delay: 125, overlay: $(".fb-overlay"), widget: $(".fb-widget"), button: $(".fb-button"),livechat:$('div.fb-livechat')};
+        setTimeout(function () {
+            t.livechat.fadeIn()
+        }, 8 * t.delay), t.button.on("click", function (e) {
+             t.overlay.is(":visible") ?
+                (t.overlay.fadeOut(t.delay), t.widget.stop().animate({
+                bottom: 0,
+                opacity: 0
+            }, function () {
+                t.button.show()
+            })) : t.button.fadeIn(
+                "medium", function () {
+                t.widget.stop().show().animate({bottom: "30px", opacity: 1}, 2 * t.delay), t.overlay.fadeIn(t.delay)
+            })
+        })
+    });
+
+
+    $(document).ready(function () {
+        var f = {delay: 125, overlay: $(".noti-overlay"), widget: $(".noti-widget"), button: $(".noti-button")};
+        setTimeout(function () {
+            $("div.noti-recieve").fadeIn()
+        }, 8 * f.delay), $(".ctrlf").on("click", function (e) {
+            e.preventDefault(), f.overlay.is(":visible") ? (f.overlay.fadeOut(f.delay), f.widget.stop().animate({
+                bottom: 0,
+                opacity: 0
+            }, 2 * f.delay, function () {
+                $(this).hide("slow"), f.button.show()
+            })) : f.button.fadeOut("medium", function () {
+                f.widget.stop().show().animate({bottom: "160px", opacity: 1}, 2 * f.delay), f.overlay.fadeIn(f.delay)
+            })
+        })
+    });
+</script>
 <script>
     var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "108540498635694");

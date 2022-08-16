@@ -5,9 +5,10 @@
 <!--facebook live-->
 <meta property="fb:app_id" content="1106802269902043"/>
 <meta property="fb:admins" content="100005868942037"/>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1"
-        nonce="EknEoy7g"></script>
+<%--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>--%>
+<%--<script async defer crossorigin="anonymous"--%>
+<%--        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1"--%>
+<%--        nonce="EknEoy7g"></script>--%>
 <script src="<%= Asset.url("/template/web/js/jquery.js")%>"></script>
 <div class="fb-livechat">
     <div class="ctrlq fb-overlay"></div>
@@ -17,7 +18,7 @@
              data-width="360" data-height="400" data-small-header="true" data-hide-cover="true"
              data-show-facepile="false">
         </div>
-        <div class="fb-credit"><a href="https://chanhtuoi.com" target="_blank">Powered by 3 Con Ca</a></div>
+        <div class="fb-credit"><a href="https://www.facebook.com/Thestarbuck-108540498635694" target="_blank">Powered by 3 Con Ca</a></div>
         <div id="fb-root"></div>
     </div>
     <a href="https://www.facebook.com/Thestarbuck-108540498635694" title="Send us a message via Facebook"
@@ -58,5 +59,4 @@
         })
     });
 </script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
