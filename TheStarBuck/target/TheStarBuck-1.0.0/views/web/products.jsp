@@ -196,7 +196,7 @@
               let val = obj[i];
               data += "<div class=\"product\">"
                       + "<div class=\"img-container\">"
-                      + "<img src=\"" + val.image + "\" />"
+                      + "<img class=\"lazy-image\" src=\"" + val.image + "\" />"
                       + "<div class=\"addCart\">"
                       + "<a href=\"<%=request.getContextPath()%>/add-cart?id=" + val.id + "\"><i class=\"fas fa-shopping-cart\"></i></a>"
                       + "</div>"

@@ -9,4 +9,6 @@ public interface IAccountDAO extends IGenericDAO<Account>{
     Long save(Account account);
     int getAmountItem();
     Account getItem(String id);
+    Account getAccountByEmail(String email);
+    boolean verifyAccount(String email);
 }

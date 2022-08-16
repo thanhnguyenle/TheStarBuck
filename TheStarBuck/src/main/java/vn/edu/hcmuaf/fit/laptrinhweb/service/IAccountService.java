@@ -9,4 +9,6 @@ public interface IAccountService {
     Long save(Account account);
     int getAmountItem();
     Account getAccount(String id);
+    Account getAccountByEmail(String email);
+    boolean verifyAccount(String email);
 }

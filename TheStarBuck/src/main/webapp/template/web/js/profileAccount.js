@@ -40,13 +40,7 @@ function clickClose(){
   document.querySelectorAll(".modal").forEach(a=>a.style.display = "none");
 }
 
-function confirmSendMail(){
-  if (confirm("You want verify your mail right now!") == true) {
-      //send mail to user
-  } else {
-    //nothing
-  }
-}
+
 
 $(document).ready(function(){  
   $('.addButtonSlide').slideUp();
