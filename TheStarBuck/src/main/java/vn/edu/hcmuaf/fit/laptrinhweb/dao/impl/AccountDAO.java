@@ -65,6 +65,11 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         System.out.println("upating ------------ " + output);
         return output == 1;
     }
+    public boolean editPassword(String id, String password){
+        long output = update(QUERIES.ACCOUNT.CHANGEPASS,password,id);
+        System.out.println("changePassword ------------ " + output);
+        return output == 1;
+    }
 
     public Map<String, Account> getAll(){
         List<Account> list =  query(QUERIES.ACCOUNT.GET_LIST, new AccountMapper(), "");
@@ -113,6 +118,21 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         insert(QUERIES.ACCOUNT.CREATE, "",username, "", 1, "123", email, new SimpleDateFormat("yyyy-MM-dd").format(new Date()), password, "", "", "", "", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "MEMBER", new SimpleDateFormat("yyyy-MM-dd").format(new Date()), new SimpleDateFormat("yyyy-MM-dd").format(new Date()), "NONE", "NONE");
         return number == 1;
     }
+    public boolean checkChangePass(String passwordOld,String passwordNew) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(passwordNew.getBytes());
+        byte[] digest = md.digest();
+        passwordNew = DatatypeConverter.printHexBinary(digest).toUpperCase();
+        return passwordOld.equals(passwordNew);
+    }
+    public String mdbPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+        byte[] digest = md.digest();
+        password = DatatypeConverter.printHexBinary(digest).toUpperCase();
+        return password;
+    }
+
 
     public boolean checkUserEmail(String email){
         boolean output = false;
@@ -155,4 +175,6 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
         int output = count(QUERIES.ACCOUNT.COUNT_ITEM);
         return output;
     }
+
+
 }

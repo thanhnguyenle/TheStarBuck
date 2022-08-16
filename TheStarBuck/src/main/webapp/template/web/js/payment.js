@@ -12,6 +12,7 @@ $(document).ready(function () {
 });
 
 //AJAX read file json -> generate list province, district, ward
+//AJAX read file json -> generate list province, district, ward
 $(document).ready(function () {
     const xmlhttp = new XMLHttpRequest();
     const url = "https://provinces.open-api.vn/api/?depth=3";

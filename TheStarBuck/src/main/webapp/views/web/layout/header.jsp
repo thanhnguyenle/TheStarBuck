@@ -73,9 +73,7 @@
     </div>
 </nav>
 <!-- serchBar -->
-<section class="ipSearchBox">
-
-</section>
+<section class="ipSearchBox"></section>
 <!-- thumbnail -->
 
 <script>

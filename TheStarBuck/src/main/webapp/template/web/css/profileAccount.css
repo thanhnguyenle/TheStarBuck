@@ -171,4 +171,45 @@ input[type=checkbox]{
     background-color: #017143;
     border-color: #017143;
 }
+.messenger{
+  background: transparent;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.28;
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  animation: shimmy3 2s infinite;
+  animation-direction: alternate;
+
+}
+.messenger img{
+  cursor: pointer;
+}
+@keyframes shimmy3 {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(10px, -10px);
+  }
+}
+.up{
+  font-size: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  color: #788d84;
+}
+.up:hover{
+  color: #00a05d;
+}
+.iconUp{
+  display: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
 
