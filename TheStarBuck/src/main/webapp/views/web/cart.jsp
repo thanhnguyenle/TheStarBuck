@@ -97,17 +97,6 @@
               </div>
           </aside>
           <aside class="col-lg-3">
-              <div class="card mb-3">
-                  <div class="card-body">
-                      <form>
-                          <div class="form-group"> <label>Have coupon?</label>
-                              <div class="input-group"> <input type="text" class="form-control coupon" name=""
-                                                               placeholder="Coupon code" style="border: 2px solid #017143; font-size:1.5rem"> <span class="input-group-append"> <button
-                                      class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
               <div class="card">
                   <div class="card-body">
                       <dl class="dlist-align">

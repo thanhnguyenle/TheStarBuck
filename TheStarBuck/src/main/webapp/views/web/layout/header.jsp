@@ -60,7 +60,7 @@
                 <label for="showdrop1" class="mobile-item"><span><i class="fas fa-chevron-down"></i></span></label>
                 <ul class="drop-menu1 <c:if test="${account == null}"> d-none </c:if>" >
 <%--                    <c:url value='http://localhost:8080/TheStarBuck/user-profile'/>--%>
-                    <li id="manual-ajax"><a href="#">Profile</a></li>
+                    <li id="manual-ajax"><a href="">Profile</a></li>
                     <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-profile-pass'/>">Change password</a></li>
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
@@ -75,9 +75,7 @@
     </div>
 </nav>
 <!-- serchBar -->
-<section class="ipSearchBox">
-
-</section>
+<section class="ipSearchBox"></section>
 <!-- thumbnail -->
 
 <script>

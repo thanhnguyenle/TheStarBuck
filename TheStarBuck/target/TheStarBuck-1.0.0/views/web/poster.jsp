@@ -33,15 +33,6 @@
           </div>
           <div class="poster-near">
             <div class="title">
-              <h4>Share</h4>
-            </div>
-            <ul class="poster-share">
-              <li class="facebook"><a href="#"><i class="fab fa-facebook"></i><span>Facebook</span></a></li>
-              <li class="twitter"><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-              <li class="google"><a href="#"><i class="fab fa-google"></i><span>Google</span></a></li>
-              <li class="instagram"><a href="#"><i class="fab fa-instagram-square"></i><span>Instagram</span></a></li>
-            </ul>
-            <div class="title">
               <h4>List Post</h4>
             </div>
             <ul class="poster-list">
