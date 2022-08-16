@@ -25,25 +25,25 @@ public class AccountVerifyServlet extends HttpServlet {
     }
     protected void processRequest (HttpServletRequest  request, HttpServletResponse response) throws ServletException, IOException {
         String emailTo = request.getParameter("email");
-        System.out.println(emailTo);
+        if(emailTo!=null){
         StringBuilder result = new StringBuilder();
         InputStream is = new URL(AssetProperties.getBaseUrl()+"views/web/content_mail/active_user.jsp").openStream();
-        System.out.println("done");
         BufferedReader netIn = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
         String line = "";
         String link = AssetProperties.getBaseUrl()+"activeAccountSuccess";
         while((line=netIn.readLine())!=null){
             String old = "#baseurl#";
-            System.out.println(link);
             if(line.contains(old)){
                 line = line.replaceAll(old,link );
-                System.out.println(line);
             }
                 result.append(line.trim());
         }
         boolean test = se.sendEmail(emailTo,result.toString());
-        System.out.println(test);
         if(test){
+            RequestDispatcher rd = request.getRequestDispatcher("/user-home");
+            rd.forward(request,response);
+        }
+        }else{
             RequestDispatcher rd = request.getRequestDispatcher("/user-home");
             rd.forward(request,response);
         }
