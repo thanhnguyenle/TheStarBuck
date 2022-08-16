@@ -5,6 +5,7 @@
     String errorUsername = (String) session.getAttribute("errorUsername");
     String errorEmail = (String) session.getAttribute("errorEmail");
     String errorPassword = (String) session.getAttribute("errorPassword");
+    String pleaseFill = (String) session.getAttribute("pleaseFill");
 %>
 
 <!DOCTYPE html>
@@ -30,8 +31,15 @@
                     <h1>CREATE ACCOUNT</h1>
                     <form action="${pageContext.request.contextPath}/doRegister" method="post">
 
-                            <div class="offset-1 col-lg-10">
-                                <div class="form-row py-3 pt-5">
+                        <div class="offset-1 col-lg-10">
+                            <div class="form-row py-3 pt-5">
+                                <%
+                                    if(pleaseFill != null) {
+                                %>
+                                <p> <%= pleaseFill %> <p>
+                                    <%
+                                        }
+                                        %>
                                     <%
                                         if(errorUsername != null) {
                                     %>
