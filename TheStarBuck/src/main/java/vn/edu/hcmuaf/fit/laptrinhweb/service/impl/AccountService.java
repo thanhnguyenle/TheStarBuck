@@ -41,6 +41,16 @@ public class AccountService implements IAccountService {
         return accountDAO.getItem(id);
     }
 
+    @Override
+    public Account getAccountByEmail(String email) {
+        return accountDAO.getAccountByEmail(email);
+    }
+
+    @Override
+    public boolean verifyAccount(String email) {
+        return accountDAO.verifyAccount(email);
+    }
+
     public Map<String, Account> getAll(){
         return  AccountDAO.getInstance().getAll();
     }
@@ -55,7 +65,24 @@ public class AccountService implements IAccountService {
     public boolean checkUserEmail(String email){
         return accountDAO.checkUserEmail(email);
     }
-
+    public boolean registerByGoogle(String username, String email, String avatar,String fullname)  {
+        Account account = new Account();
+        account.setUsername(username);
+        account.setEmail(email);
+        account.setAvatar(avatar);
+        account.setFullname(fullname);
+        account.setActive(true);
+        account.setGroupId("MEMBER");
+        account.setAddressId("");
+        account.setPhoneNumber("");
+        account.setAboutMe("");
+        account.setCreatedBy(fullname);
+        account.setModifiedBy(fullname);
+        account.setEmailVerifiedAt(null);
+        account.setId("");
+        accountDAO.registerAd(account);
+        return true;
+    }
     public Map<String, Object> register(String username, String email, String password,String retypepassword) throws NoSuchAlgorithmException {
         Map<String, Object> output = new HashMap<>();
         if(username.isEmpty() || email.isEmpty() || password.isEmpty() || retypepassword.isEmpty()){

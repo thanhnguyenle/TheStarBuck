@@ -52,7 +52,6 @@
                 </a>
             </li>
             <li class="icons login">
-<%--                <a href="<c:url value='/views/web/login.jsp'/>" class="desktop-item" style="float: left;">--%>
               <span>
                 <img src="<c:url value='/template/web/image/user.svg'/>" alt="" />
               </span>

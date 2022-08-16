@@ -11,7 +11,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JQUERY LIB--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script>
+    let lazyImages = [...document.querySelectorAll('.lazy-image')]
+    let inAdvance = 300
 
+    function lazyLoad() {
+        lazyImages.forEach(image => {
+            if (image.offsetTop < window.innerHeight + window.pageYOffset + inAdvance) {
+                image.src = image.dataset.src
+                image.onload = () => image.classList.add('loaded')
+            }
+        })
+
+        // if all loaded removeEventListener
+    }
+
+    lazyLoad()
+
+    window.addEventListener('scroll',_.throttle(lazyLoad,16))
+    window.addEventListener('resize', _.throttle(lazyLoad,16))
+
+</script>
 <%--Navigation script--%>
 <script>
     let openNav = document.querySelector(".open-btn");
@@ -191,25 +212,17 @@
 <%--<script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
 <script>
     // Open modal in AJAX callback
-    var onetime = false;
-    $(document).ready(function () {
-        $('#manual-ajax').click(function (event) {
-            event.preventDefault();
+    let onetime = false;
+        $('#manual-ajax').on('click',function (event) {
+           event.preventDefault();
             this.blur(); // Manually remove focus from clicked link.
             if (!onetime) {
                 $.get("<c:url value='/views/web/profileAccount.jsp'/>", function (html) {
                     $(html).appendTo('body').modal();
                 });
                 onetime = true;
+            }else{
+                document.querySelectorAll(".modal").forEach(a=>a.style.display = "block");
             }
         });
-//Get the button that opens the modal
-        var btn = document.getElementById('manual-ajax');
-
-// When the user clicks the button, open the modal
-        btn.onclick = function () {
-            document.querySelectorAll(".modal").forEach(a => a.style.display = "block");
-        }
-    });
-
 </script>

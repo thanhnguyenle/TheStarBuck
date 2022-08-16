@@ -102,7 +102,26 @@
     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
         error.remove();
     } else {
-        console.info("This page is not reloaded");
+        console.info( "This page is not reloaded");
+    }
+    function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        let name =  profile.getName();
+        let familyname =  profile.getFamilyName();
+       let imgUrl = profile.getImageUrl();
+       let email = profile.getEmail();
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        let posting = $.post("${pageContext.request.contextPath}/doLoginGoogle",{name:name,familyname:familyname,imgUrl:imgUrl,email:email});
+        posting.done(function (data){
+            if (confirm("You want login by current google?") === true) {
+                alert("login google success!");
+                window.location.replace("${pageContext.request.contextPath}/user-home");
+            }
+        });
     }
 
     function onSignIn(googleUser) {
