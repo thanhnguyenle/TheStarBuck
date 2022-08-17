@@ -27,31 +27,37 @@ public class AddAddressJson extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("utf-8");
+        req.setCharacterEncoding("utf-8");
         String userId = req.getParameter("ad_userId");
         String ad_provinceCode = req.getParameter("ad_provinceCode");
         String ad_districtCode = req.getParameter("ad_districtCode");
         String ad_wardCode = req.getParameter("ad_wardCode");
         String ad_addressDetail = req.getParameter("ad_addressDetail");
-        Address address = new Address();
-        address.setId("");
-        address.setIdAccount(userId);
-        address.setProvinceCode(ad_provinceCode);
-        address.setDistrictCode(ad_districtCode);
-        address.setWardCode(ad_wardCode);
-        address.setAddressDetails(ad_addressDetail);
-        address.setCreatedBy(userId);
+        if(ad_provinceCode!=null&&ad_districtCode!=null&&ad_wardCode!=null) {
+            Address address = new Address();
+            address.setId("");
+            address.setIdAccount(userId);
+            address.setProvinceCode(ad_provinceCode);
+            address.setDistrictCode(ad_districtCode);
+            address.setWardCode(ad_wardCode);
+            address.setAddressDetails(ad_addressDetail);
+            address.setCreatedBy(userId);
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                addressService.save(address);
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    addressService.save(address);
+                }
+            });
+            thread.start();
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });
-        thread.start();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        }else{
+
         }
     }
 }

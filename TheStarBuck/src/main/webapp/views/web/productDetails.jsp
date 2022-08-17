@@ -13,35 +13,12 @@
 
 <head>
     <jsp:include page="layout/css.jsp"/>
-<%--    <meta charset="UTF-8" />--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
-    <!-- Favicon -->
-<%--    <link rel="shortcut icon" href="./images/logo.png" type="image/png" />--%>
-    <!--Bootstrap 4 CSS -->
-    <!--Important link from https://bootsnipp.com/snippets/XqvZr-->
-<%--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
-
-    <!------ Include the above in your HEAD tag ---------->
-<%--    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">--%>
-<%--    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">--%>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap" />
     <!-- animated: Tạo hiệu ứng chuyển động sử dụng @Keyframe mà không cần sử dụng Javascript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1" nonce="3Xb9o66S"></script>
-<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />--%>
-    <!--custom navigation-->
-<%--    <link rel="stylesheet" href="css/navigation.css" />--%>
-<%--    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/navigation.css")%>" />--%>
-<%--    <!--custom footer-->--%>
-<%--&lt;%&ndash;    <link rel="stylesheet" href="css/footer.css" />&ndash;%&gt;--%>
-<%--    <link rel="stylesheet" href="<%= Asset.url("/template/web/css/footer.css")%>" />--%>
-    <!-- Custom StyleSheet -->
-<%--    <link rel="stylesheet" href="css/productDetails.css" />--%>
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/productDetails.css")%>" />
-    <!--modal-->
-<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />--%>
-    <!--lib support zoom-->
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="preload" href="https://source.unsplash.com/ILi48MzhxZA/900x1200" as="image">
     <link rel="stylesheet" href="<c:url value="/template/web/css/productDetails.css"/>">
@@ -115,15 +92,15 @@
                     <h1>${product.name}</h1>
                     <div class="reviews-counter">
                         <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" checked />
+                            <input type="radio" id="star-5" name="rate" value="5" checked />
                             <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" checked />
+                            <input type="radio" id="star-4" name="rate" value="4" checked />
                             <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" checked />
+                            <input type="radio" id="star-3" name="rate" value="3" checked />
                             <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
+                            <input type="radio" id="star-2" name="rate" value="2" />
                             <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
+                            <input type="radio" id="star-1" name="rate" value="1" />
                             <label for="star1" title="text">1 star</label>
                         </div>
                         <span>3 Reviews</span>
@@ -138,7 +115,7 @@
                                     Choose size
                                 </option>
                                 <option value="S">S</option>
-                                <option value="M">M</option>
+                                <option value="M" selected>M</option>
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
                             </select>
@@ -243,7 +220,7 @@
                 <div class="product-count">
                     <form action="#" class="display-flex">
                         <div class="qtyminus">-</div>
-                        <input type="text" name="quantity" value="1" class="qty">
+                        <input type="text" name="quantity" value="1" class="qty" min="1" max="${product.quantity}">
                         <div class="qtyplus">+</div>
                     </form>
                     <a href="<%=request.getContextPath()%>/add-cart?id=${product.id}" class="round-black-btn">Add to Cart</a>
@@ -269,6 +246,36 @@
                 ${product.description}
             </div>
             <div  class="tab-pane fade fb-comments" id="review" role="tabpanel" aria-labelledby="review-tab" data-href="https://app-thestarbuck-220816195917.azurewebsites.net/" data-width="" data-numposts="5"></div>
+
+            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div class="review-heading">REVIEWS</div>
+                <p class="mb-20">There are no reviews yet.</p>
+                <form class="review-form">
+                    <div class="form-group">
+                        <label>Your rating</label>
+                        <div class="reviews-counter">
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your message</label>
+                        <textarea class="form-control" rows="10"></textarea>
+                    </div>
+                    <button class="round-black-btn">Submit Review</button>
+                </form>
+
+            </div>
         </div>
     </div>
 </section>
@@ -294,23 +301,10 @@
     myShowToppings();
 </script>
 
-<!-- Footer -->
 <jsp:include page="layout/footer.jsp"/>
-<!-- End Footer -->
-<!-- jquery -->
 <jsp:include page="layout/script.jsp"/>
-<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--%>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>--%>
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>--%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>--%>
-
-<!-- Custom Scripts -->
-<%--<script src="./js/productDetails.js"></script>--%>
 <script src="<%= Asset.url("/template/web/js/productDetails.js")%>"></script>
-<!-- jQuery Modal -->
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>--%>
-
 </body>
 
 </html>

@@ -1,17 +1,25 @@
-<%@ page import="vn.edu.hcmuaf.fit.laptrinhweb.controller.web.Asset" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: NLTHANH
-  Date: 6/6/2022
-  Time: 9:26 AM
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JQUERY LIB--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script>
+    let lazyImages = [...document.querySelectorAll('.lazy-image')]
+    let inAdvance = 300
 
+    function lazyLoad() {
+        lazyImages.forEach(image => {
+            if (image.offsetTop < window.innerHeight + window.pageYOffset + inAdvance) {
+                image.src = image.dataset.src
+                image.onload = () => image.classList.add('loaded')
+            }
+        })
+    }
+    lazyLoad()
+    window.addEventListener('scroll',_.throttle(lazyLoad,16))
+    window.addEventListener('resize', _.throttle(lazyLoad,16))
+
+</script>
 <%--Navigation script--%>
 <script>
     let openNav = document.querySelector(".open-btn");
@@ -120,9 +128,6 @@
                             parsedObj.forEach((elements) => console.log(elements['id']));
                         }
                     })
-                    // .done(function( msg ) {
-                    //   alert( "Data Saved: " + msg );
-                    // });
                 });
             });
         }
@@ -169,47 +174,22 @@
         iconUp.addEventListener("click", scrollFunction);
     }
 </script>
-
-<%--Slim là bản jquery nhưng không có thư viện AJAX--%>
-<%--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"--%>
-<%--        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"--%>
-<%--        crossorigin="anonymous"></script>--%>
-<%--Bootstrap bundle tích hợp cả popper và bootstrap.min.js trong nó--%>
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
-<%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"--%>
-<%--        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"--%>
-<%--        crossorigin="anonymous"></script>--%>
-<%--&lt;%&ndash;Thư viện tạo các tooltip với tuỳ biến cao&ndash;%&gt;--%>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"--%>
-<%--        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"--%>
-<%--        crossorigin="anonymous"></script>--%>
-
-<%--<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>--%>
 <!-- jQuery Modal -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<!-- Custom Scripts -->
-<%--<script src="<%= Asset.url("/template/web/js/profileAccount.js")%>"></script>--%>
 <script>
     // Open modal in AJAX callback
-    var onetime = false;
-    $(document).ready(function () {
-        $('#manual-ajax').click(function (event) {
-            event.preventDefault();
+    let onetime = false;
+        $('#manual-ajax').on('click',function (event) {
+           event.preventDefault();
             this.blur(); // Manually remove focus from clicked link.
             if (!onetime) {
                 $.get("<c:url value='/views/web/profileAccount.jsp'/>", function (html) {
                     $(html).appendTo('body').modal();
                 });
                 onetime = true;
+            }else{
+                document.querySelectorAll(".modal").forEach(a=>a.style.display = "block");
             }
         });
-//Get the button that opens the modal
-        var btn = document.getElementById('manual-ajax');
-
-// When the user clicks the button, open the modal
-        btn.onclick = function () {
-            document.querySelectorAll(".modal").forEach(a => a.style.display = "block");
-        }
-    });
-
 </script>

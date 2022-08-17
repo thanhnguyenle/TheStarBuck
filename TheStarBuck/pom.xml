@@ -11,8 +11,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>9</maven.compiler.target>
+        <maven.compiler.source>9</maven.compiler.source>
         <junit.version>5.7.1</junit.version>
         <servlet.version>4.0.1</servlet.version>
         <jsp.version>2.0</jsp.version>
@@ -40,7 +40,6 @@
             <scope>provided</scope>
         </dependency>
 
-
         <!--lib of jstl-->
         <dependency>
             <groupId>jstl</groupId>
@@ -54,33 +53,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.connector.version}</version>
         </dependency>
-
-        <!--JDBC 8 maven-->
-        <!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>8</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}\src\main\webapp\WEB-INF\lib\ojdbc8-19.3.0.0.jar</systemPath>
-        </dependency>
-
-        <!--thu vien login fb-->
-        <!-- https://mvnrepository.com/artifact/com.restfb/restfb -->
-        <dependency>
-            <groupId>com.restfb</groupId>
-            <artifactId>restfb</artifactId>
-            <version>2022.7.0</version>
-        </dependency>
-        <!--thu vien login fb-->
-
-
-        <!--        &lt;!&ndash;Common codec decode MD5&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>commons-codec</groupId>-->
-<!--            <artifactId>commons-codec</artifactId>-->
-<!--            <version>1.14</version>-->
-<!--        </dependency>-->
 
         <!--ADD JAVA PACKAGE javax.xml.bind-->
         <dependency>
@@ -129,15 +101,6 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-        <!--ckfinder lib-->
-        <!-- https://mvnrepository.com/artifact/com.ckfinder/ckfinder -->
-        <dependency>
-            <groupId>com.ckfinder</groupId>
-            <artifactId>ckfinder</artifactId>
-            <version>2.6.2.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}\src\main\webapp\WEB-INF\lib\CKFinder-2.6.2.1.jar</systemPath>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
@@ -164,7 +127,11 @@
             <artifactId>jsoup</artifactId>
             <version>1.14.3</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -182,6 +149,7 @@
                     <target>9</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>

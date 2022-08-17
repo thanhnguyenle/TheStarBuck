@@ -2,10 +2,8 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>ForgetPassword</title>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
@@ -24,7 +22,7 @@
                 </div>
                 <div class="col-lg-7 text-center py-4 loginContent">
                     <h1>FORGOT PASSWORD</h1>
-                    <form action="#" method="post">
+                    <form action="${pageContext.request.contextPath}/send_mail" method="post">
                         <div class="form-row py-3">
                             <div class="offset-1 col-lg-10">
                                 <input type="text" class="inp px-3" placeholder="email">
@@ -33,7 +31,6 @@
                             <div class="offset-1 col-lg-10">
                                 <button type="submit" class="btn1">Submit</button>
                             </div>
-                        </div>
                     </form>                    
                     </div>
                 </div>

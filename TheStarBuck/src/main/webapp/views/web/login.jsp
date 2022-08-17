@@ -96,30 +96,33 @@
 <jsp:include page="layout/script.jsp"/>
 <%--    <script src="<c:url value="/template/web/js/login.js"/>"></script>--%>
 <script src="<%= Asset.url("/template/web/js/login.js")%>"></script>
-<%--    login google--%>
+
 <script>
     var error = document.querySelector('#error');
     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
         error.remove();
     } else {
-        console.info("This page is not reloaded");
+        console.info( "This page is not reloaded");
     }
-
     function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+        let name =  profile.getName();
+        let familyname =  profile.getFamilyName();
+       let imgUrl = profile.getImageUrl();
+       let email = profile.getEmail();
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-
-        //facebook
+        let posting = $.post("${pageContext.request.contextPath}/doLoginGoogle",{name:name,familyname:familyname,imgUrl:imgUrl,email:email});
+        posting.done(function (data){
+            if (confirm("You want login by current google?") === true) {
+                alert("login google success!");
+                window.location.replace("${pageContext.request.contextPath}/user-home");
+            }
+        });
+          //facebook
         // Get the modal
         var modal = document.getElementById('id01');
 // When the user clicks anywhere outside of the modal, close it
@@ -140,7 +143,9 @@
             'onsuccess': onSuccess,
             'onfailure': onFailure
         });
+
     }
+    
 </script>
 <!-- script dang nhap bang facebook -->
 <script>
@@ -161,7 +166,6 @@
         });
         FB.api('/me', {fields: ' name, email'}, function (response) {
             console.log(response);
-            // window.location.href = 'Login?action=Face&name='+response.name+'&email='+response.email+'&id='+response.id;
         });
     }
 
