@@ -243,4 +243,20 @@ ul.checkout-bar li.visited:after {
     margin-right: 0px !important;
 }
 
+#btnContinue{
+    padding: 10px 20px;
+    background: #00a05d;
+    color: white;
+    border-radius: 50px;
+    border: #00a05d solid;
+    font-weight: 600;
+}
+#btnContinue:hover{
+    background: white;
+    color: #00a05d;
+}
+.btnCon{
+    margin: 30px auto 0px;
+}
+
 /*End Check-out bar*/
