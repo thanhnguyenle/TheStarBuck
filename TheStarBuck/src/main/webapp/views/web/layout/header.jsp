@@ -53,6 +53,7 @@
                 <ul class="drop-menu1 <c:if test="${account == null}"> d-none </c:if>" >
                     <li id="manual-ajax"><a href="#">Profile</a></li>
                     <li><a href="<c:url value='http://localhost:8080/TheStarBuck/user-profile-pass'/>">Change password</a></li>
+                    <li><a href="<c:url value='/views/web/history.jsp'/>">History</a></li>
                     <li><a href="<c:url value='/doLogout'/>">Logout</a></li>
                 </ul>
                 <ul class="drop-menu1 <c:if test="${account != null}"> d-none </c:if>" >
