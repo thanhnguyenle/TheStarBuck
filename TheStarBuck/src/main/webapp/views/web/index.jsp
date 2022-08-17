@@ -339,26 +339,10 @@
     </div>
   </section>
   <!-- Footer -->
-
  <jsp:include page="layout/footer.jsp"/>
   <!-- End Footer -->
   <!-- jquery -->
  <jsp:include page="layout/script.jsp"/>
-
- <!-- Messenger Plugin chat Code -->
- <div id="fb-root"></div>
-
- <!-- Your Plugin chat code -->
- <div id="fb-customer-chat" class="fb-customerchat">
- </div>
-
-
-<%--Thư viện UI--%>
-<%-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>--%>
-<%-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>--%>
-    <!-- Custom Scripts -->
-<%-- 1 Thư viện để làm slider cho web khá hay và đơn giản--%>
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

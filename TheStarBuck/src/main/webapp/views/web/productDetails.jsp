@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap" />
     <!-- animated: Tạo hiệu ứng chuyển động sử dụng @Keyframe mà không cần sử dụng Javascript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1" nonce="3Xb9o66S"></script>
     <link rel="stylesheet" href="<%= Asset.url("/template/web/css/productDetails.css")%>" />
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="preload" href="https://source.unsplash.com/ILi48MzhxZA/900x1200" as="image">
@@ -28,8 +27,7 @@
     </head>
 
 <body>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1106802269902043&autoLogAppEvents=1" nonce="3Xb9o66S"></script>
+
 <!-- Navigation -->
 <jsp:include page="layout/header.jsp"/>
 
@@ -238,15 +236,13 @@
                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
+                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                 ${product.description}
             </div>
-            <div  class="tab-pane fade fb-comments" id="review" role="tabpanel" aria-labelledby="review-tab" data-href="https://app-thestarbuck-220816195917.azurewebsites.net/" data-width="" data-numposts="5"></div>
-
             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                 <div class="review-heading">REVIEWS</div>
                 <p class="mb-20">There are no reviews yet.</p>
@@ -278,7 +274,19 @@
             </div>
         </div>
     </div>
+
+
 </section>
+
+
+<!-- messenger -->
+<div class="messenger">
+    <a href=""><img src="images/mees.png" alt="" width="70px"></a>
+</div>
+<div class="up">
+    <a href="#" class="iconUp"><i class="fa fa-arrow-circle-up"></i></a>
+</div>
+
 
 <script>
     function showValueSugar(){
